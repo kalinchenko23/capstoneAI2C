@@ -1,0 +1,7 @@
+googlemaps
+uvicorn
+requests
+fastapi
+httpx
+secrets
+azure-data-tables
