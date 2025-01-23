@@ -20,11 +20,12 @@ def generate_token(length: int = 25):
 
 # Function to save a generated token into the Azure Table Storage
 # Stores the token along with user details and timestamp in the "Credentials" table.
-def save_token(user_id: str):
+def save_token(user_id: str, email: str):
     entity = {
         "PartitionKey": "Users",  
         "RowKey": user_id,        
         "Token": generate_token(), 
+        "Email": email,
         "CreatedAt": datetime.now().isoformat(), 
     }
     # Insert the entity into the Azure Table Storage.

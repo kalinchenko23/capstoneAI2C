@@ -1,10 +1,13 @@
 from fastapi import FastAPI, Query, Body, HTTPException
+from fastapi.responses import FileResponse
 from user_credentials_service import authenticate
+from api_service_helper_functions import getting_street_view_image, download_photo
 from typing import Optional
 import httpx
 import requests
 import googlemaps
 import json
+import os
 
 
 # Load the JSON secrets config
@@ -15,6 +18,7 @@ app = FastAPI()
 API_KEY = config["GOOGLE_API_KEY"]
 GEOCODE_URL="https://maps.googleapis.com/maps/api/geocode/json"
 BASE_URL_NEARBY_SEARCH = "https://places.googleapis.com/v1/places:searchNearby"
+STREETVIEW_URL="https://maps.googleapis.com/maps/api/streetview"
 
 
 #This FastAPI endpoint is used to perform geocoding (address to latitude/longitude conversion).
@@ -52,35 +56,56 @@ async def geocode(address = Body(),user_id = Body(), token: str =Body()):
 
 
 
+@app.post("/search_nearby")
+async def search_nearby_places(lat: float = Body(),
+                               lng: float = Body(),
+                               rad: float = Body(),
+                               includedTypes: Optional[list] =Body(default=None),
+                               fieldMask: str = Body(default="places.displayName,places.websiteUri,places.nationalPhoneNumber,places.formattedAddress,places.location,places.reviews,places.photos,places.regularOpeningHours,places.googleMapsUri,places.googleMapsLinks")):
+    headers = {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": API_KEY,
+        "X-Goog-FieldMask": fieldMask
+    }
 
-# @app.post("/search_nearby")
-# async def search_nearby_places(lat: float = Body(),long: float = Body(), rad: float = Body(), includedTypes: Optional[list] = Body(), locationRestriction: Optional[dict] = Body()):
-#     headers = {
-#         "Content-Type": "application/json",
-#         "X-Goog-Api-Key": API_KEY,
-#         "X-Goog-FieldMask": "places.displayName"
-#     }
-
-#     payload={
-#         "locationRestriction": {
-#             "circle": {
-#                 "center": {
-#                     "latitude": lat,
-#                     "longitude": long
-#                     },
-#                     "radius": rad
-#             }}
-#     }
-
-#     async with httpx.AsyncClient() as client:
-#         response = await client.post(BASE_URL_NEARBY_SEARCH, json=payload, headers=headers)
+    payload={
+        "locationRestriction": {
+            "circle": {
+                "center": {
+                    "latitude": lat,
+                    "longitude": lng
+                    },
+                    "radius": rad
+            }},
+    "includedTypes": includedTypes
     
-#     if response.status_code != 200:
-#         raise HTTPException(
-#             status_code=response.status_code,
-#             detail=f"Error from Google API: {response.text}"
-#         )
+    }
 
-#     return response.json()
+    async with httpx.AsyncClient() as client:
+        response = await client.post(BASE_URL_NEARBY_SEARCH, json=payload, headers=headers)
+    
+    if response.status_code != 200:
+        raise HTTPException(
+            status_code=response.status_code,
+            detail=f"Error from Google API: {response.text}"
+        )
+    
+    for i in response.json()["places"]:
+        location=i["formattedAddress"]
+        filename=i["displayName"]["text"]
+        await getting_street_view_image(location,filename,API_KEY,STREETVIEW_URL)
+    
+    for i in response.json()["places"]:
+        try:
+            for photo in i["photos"]:
+                name=photo["name"]
+                uri=f"https://places.googleapis.com/v1/{name}/media?key={API_KEY}&maxHeightPx=400&maxWidthPx=400"
+                print(uri)
+                await download_photo(uri,filename=i["displayName"]["text"])
+        except KeyError as e:
+            pass
+
+    return response.json()
+
 
 
