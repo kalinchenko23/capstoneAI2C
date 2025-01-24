@@ -23,7 +23,7 @@ STREETVIEW_URL="https://maps.googleapis.com/maps/api/streetview"
 
 #This FastAPI endpoint is used to perform geocoding (address to latitude/longitude conversion).
 @app.get("/geocode")
-async def geocode(address = Body(),user_id = Body(), token: str =Body()):
+async def geocode(address = Body(), user_id = Body(), token: str =Body()):
 
     #The function first checks if the provided user credentials
     if authenticate(user_id,token):
@@ -61,6 +61,8 @@ async def search_nearby_places(lat: float = Body(),
                                lng: float = Body(),
                                rad: float = Body(),
                                includedTypes: Optional[list] =Body(default=None),
+                               user_id = Body(), token: str =Body(),
+                               maxResultCount: int = Body(default=None),
                                fieldMask: str = Body(default="places.displayName,places.websiteUri,places.nationalPhoneNumber,places.formattedAddress,places.location,places.reviews,places.photos,places.regularOpeningHours,places.googleMapsUri,places.googleMapsLinks")):
     headers = {
         "Content-Type": "application/json",
@@ -77,7 +79,8 @@ async def search_nearby_places(lat: float = Body(),
                     },
                     "radius": rad
             }},
-    "includedTypes": includedTypes
+    "includedTypes": includedTypes,
+    "maxResultCount": maxResultCount
     
     }
 
@@ -90,22 +93,23 @@ async def search_nearby_places(lat: float = Body(),
             detail=f"Error from Google API: {response.text}"
         )
     
+    #Calling "street view" helper function 
     for i in response.json()["places"]:
         location=i["formattedAddress"]
         filename=i["displayName"]["text"]
         await getting_street_view_image(location,filename,API_KEY,STREETVIEW_URL)
     
+    #Calling "street view" helper function
     for i in response.json()["places"]:
         try:
+            counter=1
             for photo in i["photos"]:
                 name=photo["name"]
                 uri=f"https://places.googleapis.com/v1/{name}/media?key={API_KEY}&maxHeightPx=400&maxWidthPx=400"
-                print(uri)
-                await download_photo(uri,filename=i["displayName"]["text"])
+                file=i["displayName"]["text"]
+                await download_photo(uri,filename=f"{file}{counter}")
+                counter+=1
         except KeyError as e:
             pass
 
     return response.json()
-
-
-
