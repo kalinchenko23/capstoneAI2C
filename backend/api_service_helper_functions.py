@@ -1,9 +1,14 @@
 from fastapi import FastAPI, Query, Body, HTTPException
 import httpx
+import json
 
 
-
-"""
+async def getting_street_view_image(
+    location: str,
+    filename: str,
+    key: str,
+    streetview_url: str):
+    """
     Fetches a Street View image from the Google Street View API and saves it as a file.
 
     Args:
@@ -18,12 +23,6 @@ import httpx
     Returns:
         bool: True if the image is successfully fetched and saved.
     """
-
-async def getting_street_view_image(
-    location: str,
-    filename: str,
-    key: str,
-    streetview_url: str):
 
     if not location:
         raise HTTPException(
@@ -89,3 +88,59 @@ async def download_photo(photo_uri: str, filename: str):
     
     print(f"Image saved to {filename}")
     return True
+
+
+
+def response_formatter(responce):
+    """
+    Extracts specific fields from a JSON response provided by GoogleAPI and formats them into a structured list of dictionaries.
+
+    Args:
+        response (dict): The Google API JSON response containing place details.
+
+    Returns:
+        list: A list of formatted dictionaries containing relevant place information.
+    """
+    result=[]
+    try:
+        for place in responce["places"]:
+            new_data={}
+            try:
+                new_data["name"]=place["displayName"]["text"]
+            except KeyError as ex:
+                new_data["name"]="Name is not provided"
+            try:
+                new_data["website"]=place["websiteUri"]
+            except KeyError as ex:
+                new_data["website"]="Website is not provided"
+            try:
+                new_data["phone_number"]=place["nationalPhoneNumber"]
+            except KeyError as ex:
+                new_data["phone_number"]="Phone number is not provided"
+            try:
+                new_data["address"]=place["formattedAddress"]
+            except KeyError as ex:
+                new_data["address"]="Address number is not provided"
+            try:
+                new_data["latitude"]=place["location"]["latitude"]
+                new_data["longitude"]=place["location"]["longitude"]
+            except KeyError as ex:
+                new_data["latitude"]="Latitude is not provided"
+                new_data["longitude"]="Longitude is not provided"
+            try:
+                new_data["reviews"]=place["reviews"]
+            except KeyError as ex:
+                new_data["reviews"]="Reviews are not provided"
+            try:
+                new_data["photos"]=place["photos"]
+            except KeyError as ex:
+                new_data["photos"]="Photos are not provided"
+            try:
+                new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
+            except KeyError as ex:
+                new_data["working_hours"]="Working hours are not provided"
+            
+            result.append(new_data)
+    except KeyError as ex:
+        return result
+    return result
