@@ -1,0 +1,221 @@
+
+/* Define common colors as a global CSS variables */
+:root {
+    --primary-blue: rgb(14, 24, 158);
+    --secondary-blue: rgb(7, 98, 114);
+    --background-color: #201f20;
+    --text-color: #cee5f8;
+  }
+
+
+/* body {
+    background-color: #010005;
+    color: white !important;
+} */
+
+.stApp {
+    background-color: #010005;
+    color: white !important;
+}
+
+/* changes the default background and text color for the whole app
+div [data-testid='stApp'] {
+    background-color:rgb(5, 3, 14) !important;
+    color: rgb(201, 10, 153);
+    
+} */
+
+[data-testid="stHeader"] {
+    /* display: none; */
+    background-color: #010005 !important;
+    color: rgb(244, 237, 237) !important;
+}
+
+.stTextInput input[aria-label="location"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+div [data-baseweb='select'] > div:nth-child(1) {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+[data-testid='stSelectboxVirtualDropdown'] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+li[role="option"][aria-selected="true"]  {
+    color: #2b2c2c;;  
+}
+
+li[role="option"][aria-selected="false"]  {
+    color: var(--text-color);  
+}
+
+/* the 'search radius' input box */
+.stTextInput input[aria-label="search radius"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+[data-testid="InputInstructions"] {
+    display: none;
+}
+
+.stButton {
+    display: flex;
+    justify-content: right;
+}
+
+button[kind="secondary"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin-top: 24px; 
+    margin-right: 0px; 
+    /* min-width:100px; */
+}
+
+button[kind="secondary"]:hover {
+    background-color: var(--secondary-blue);
+    border-color: var(--secondary-blue) !important;
+    color: var(--text-color);
+    margin-top: 24px; 
+    margin-right: 0px; 
+}
+
+button[kind="secondary"]:active {
+    background-color: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+    color: var(--text-color);
+    margin-top: 24px; 
+    margin-right: 0px; 
+}
+
+button[kind="secondary"]:focus:not(:active) {
+    /* background-color: rgb(89,59,176); */
+    border-color: var(--secondary-blue);
+    color: var(--text-color);
+    margin-top: 24px; 
+    margin-right: 0px; 
+}
+
+/* shouldnt target it this way but I couldn't figure out how to do it better */
+/* this controls the border color of ALL the input boxes when they are clicked/active */
+.st-d8 {
+    border-color: var(--secondary-blue) !important; 
+}
+
+div [data-testid='stHorizontalBlock'] > div:nth-child(2) {
+    max-width: 100px;
+}
+
+div[data-baseweb="tooltip"] div[data-testid="stTooltipContent"] {
+    color: red !important;
+}
+
+div[role="alert"] {
+    font-family: monospace;
+    color: white;
+}
+
+/* 'api key' input box container */
+div [data-testid='stVerticalBlockBorderWrapper'] > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+    max-width: none !important;
+}
+
+/* 'api key' input box */
+.stTextInput input[aria-label="token"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* hide password text button in 'api key' box
+button[aria-label="Show password text"] {
+    background-color: rgb(89,59,176);
+
+} */
+
+/* 'user-id' input box */
+.stTextInput input[aria-label="user-id"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* hides the little "+"/"-" boxes on the map chip */
+div[class="mapboxgl-ctrl mapboxgl-ctrl-group"] {
+    display: none !important;
+}
+
+/* hides some streamlit 'tool' that pops up on the map chip */
+div[data-testid="stElementToolbar"] {
+    display: none !important;
+}
+
+/* hides the js div, script, doc, that is created in order to enable the auto-scroller */
+iframe[data-testid="stIFrame"] {
+    display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-testid="stDecoration"] {
+    background-image: linear-gradient(90deg, rgb(14, 24, 158), rgb(7, 98, 114), rgb(14, 24, 158)) !important;
+}
+
+[data-testid="stToolbar"] {
+    display: none;
+}
+
+a {
+    display: none !important;
+}
+
+svg {
+    display: none !important;
+}
+
+footer{
+    display: none;
+}
+
+
+/* this is all text related stuff 
+=============================================================== */
+[data-testid="stMarkdownContainer"] p {
+    font-size: 18px !important;
+    font-weight: bolder;
+}
+
+[data-testid="column"] {
+    justify-content: center;
+    align-content: center;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+[data-testid="column"] h1 {
+    text-align: center;
+    padding: 1.25rem 0px 1rem !important;
+}
+
+[data-testid="column"] h3 {
+    text-align: center;
+    padding: 1.25rem 0px 2rem !important;
+}
+/* =============================================================== */
+
