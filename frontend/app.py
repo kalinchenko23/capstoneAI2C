@@ -238,11 +238,10 @@ if st.session_state['query_submitted'] == True:
 # the map takes a while to load the first time the app is launched...
 
 # style
-# probably get rid of config.toml altogether
 # hide/show password for 'token' field, will likely need to bring my own svg for displaying
 # cancel and submit button styling
 # do we need classification / warning banner (see anchorman repo)
 
 # misc
 # scrape the shit out of the image ids for google places
-# package and deploy beta for team to test the shit out of...
+
