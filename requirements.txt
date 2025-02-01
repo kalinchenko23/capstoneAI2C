@@ -7,3 +7,5 @@ secrets
 azure-data-tables
 openai==1.55.3
 python-dotenv
+streamlit==1.41.1
+mgrs==1.5.0
