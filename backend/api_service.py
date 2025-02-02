@@ -1,5 +1,4 @@
-from fastapi import FastAPI, Query, Body, HTTPException
-from fastapi.responses import FileResponse
+from fastapi import FastAPI, Query, Body, HTTPException, Response
 from user_credentials_service import authenticate
 from api_service_helper_functions import getting_street_view_image, download_photo, response_formatter
 from typing import Optional
@@ -57,24 +56,24 @@ async def search_nearby_places(lat: float = Body(),
         )
     
     #Calling "street view" helper function 
-    for i in response.json()["places"]:
-        location=i["formattedAddress"]
-        filename=i["displayName"]["text"]
-        await getting_street_view_image(location,filename,API_KEY,STREETVIEW_URL)
+    # for i in response.json()["places"]:
+    #     location=i["formattedAddress"]
+    #     filename=i["displayName"]["text"]
+    #     await getting_street_view_image(location,filename,API_KEY,STREETVIEW_URL)
     
-    #Calling "download_photo" helper function
-    for i in response.json()["places"]:
-        try:
-            counter=1
-            for photo in i["photos"]:
-                name=photo["name"]
-                uri=f"https://places.googleapis.com/v1/{name}/media?key={API_KEY}&maxHeightPx=400&maxWidthPx=400"
-                file=i["displayName"]["text"]
-                await download_photo(uri,filename=f"{file}{counter}")
-                counter+=1
-        except KeyError as e:
-            pass
+    # #Calling "download_photo" helper function
+    # for i in response.json()["places"]:
+    #     try:
+    #         counter=1
+    #         for photo in i["photos"]:
+    #             name=photo["name"]
+    #             uri=f"https://places.googleapis.com/v1/{name}/media?key={API_KEY}&maxHeightPx=400&maxWidthPx=400"
+    #             file=i["displayName"]["text"]
+    #             await download_photo(uri,filename=f"{file}{counter}")
+    #             counter+=1
+    #     except KeyError as e:
+    #         pass
     
     #Calling "responce_fromatter" helper function to provide relevant fields for the output file
     data=response_formatter(response.json())
-    return {"places": data}
+    return  {"places": data}

@@ -1,0 +1,1239 @@
+{
+    "places": [
+        {
+            "nationalPhoneNumber": "(412) 505-8456",
+            "formattedAddress": "Sleep Inn, 1000 Park Ln Dr Building B, Pittsburgh, PA 15275, USA",
+            "location": {
+                "latitude": 40.4556465,
+                "longitude": -80.19110719999999
+            },
+            "googleMapsUri": "https://maps.google.com/?cid=2730314387098600227",
+            "websiteUri": "https://www.choicehotels.com/pennsylvania/pittsburgh/sleep-inn-hotels/pa744?mc=llgoxxpx",
+            "displayName": {
+                "text": "Sleep Inn & Suites",
+                "languageCode": "en"
+            },
+            "reviews": [
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/reviews/ChZDSUhNMG9nS0VJQ0FnSUQzblk3Qkl3EAE",
+                    "relativePublishTimeDescription": "2 months ago",
+                    "rating": 3,
+                    "text": {
+                        "text": "Simple, but updated and modern room for a fair price. Only downside was the desk attendant did not seem to show a concern when I told her the hairdryer was smoking and sparking when I asked for a new one. Said someone would be up shortly. No one ever showed up.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "Simple, but updated and modern room for a fair price. Only downside was the desk attendant did not seem to show a concern when I told her the hairdryer was smoking and sparking when I asked for a new one. Said someone would be up shortly. No one ever showed up.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Morgan Scott",
+                        "uri": "https://www.google.com/maps/contrib/115851094192442974253/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUdfVclrPmnwWMR8LlK5LPtIrVHxUnXhhK2RP0Xdufqnp9DvFqF=s128-c0x00000000-cc-rp-mo-ba3"
+                    },
+                    "publishTime": "2024-11-17T21:13:40.138823Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUQzblk3Qkl3EAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQzblk3Qkl3EAE!2m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/reviews/ChZDSUhNMG9nS0VJQ0FnSUNmcXVxOEZREAE",
+                    "relativePublishTimeDescription": "a month ago",
+                    "rating": 3,
+                    "text": {
+                        "text": "It was alright. Good for the price, not sketchy...except for the guests who for whatever reason decided to stomp around like an elephant well past sleeping hours. Front desk didn't do a whole lot. The whole second floor was shaking, no joke. Can't say I appreciate it.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "It was alright. Good for the price, not sketchy...except for the guests who for whatever reason decided to stomp around like an elephant well past sleeping hours. Front desk didn't do a whole lot. The whole second floor was shaking, no joke. Can't say I appreciate it.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Rosie Faust",
+                        "uri": "https://www.google.com/maps/contrib/117180577175135650774/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUyQq3cDrwBwn-C9j5FKSnMcsZ-Zu7XTqDWZUufAd3G0EjLrhWn=s128-c0x00000000-cc-rp-mo-ba4"
+                    },
+                    "publishTime": "2024-12-28T01:20:44.357116Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUNmcXVxOEZREAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNmcXVxOEZREAE!2m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/reviews/ChdDSUhNMG9nS0VJQ0FnSUQ3MzhleXdnRRAB",
+                    "relativePublishTimeDescription": "5 months ago",
+                    "rating": 2,
+                    "text": {
+                        "text": "Booked this hotel for a concert since I live so far from the venue, and can honestly say I wouldn’t book this hotel again. Our first floor rooms windows wouldn't lock, and upon looking closer the locks seem to be broken in. Similarly, the door bolt had been busted and I was unsure about even staying in the room at this point, but it was so late at night I just propped some things against the door just in case.\nAs far as cleanliness, there were a few stains on the couch, carpet, and office chair (why?). Id say the most concerning part of the cleanliness was there was still fecal matter in the toilet. This made me worried about if they even washed the sheets.\nOnly pro was waffles when i woke up.\nAll in all, save yourself the trouble and go somewhere else.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "Booked this hotel for a concert since I live so far from the venue, and can honestly say I wouldn’t book this hotel again. Our first floor rooms windows wouldn't lock, and upon looking closer the locks seem to be broken in. Similarly, the door bolt had been busted and I was unsure about even staying in the room at this point, but it was so late at night I just propped some things against the door just in case.\nAs far as cleanliness, there were a few stains on the couch, carpet, and office chair (why?). Id say the most concerning part of the cleanliness was there was still fecal matter in the toilet. This made me worried about if they even washed the sheets.\nOnly pro was waffles when i woke up.\nAll in all, save yourself the trouble and go somewhere else.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Nunya Biznez",
+                        "uri": "https://www.google.com/maps/contrib/104018588916505295335/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXj1CFmJpml0Bm5bc1hyJx0zrwuy3TM4dH0BabgLOwzL87DoneB=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2024-08-30T11:18:28.837993Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUQ3MzhleXdnRRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUQ3MzhleXdnRRAB!2m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/reviews/ChZDSUhNMG9nS0VJQ0FnSURiOTc2MFhBEAE",
+                    "relativePublishTimeDescription": "5 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "It's on the cheaper side in terms of quality, but it's not a dive or anything. Staff is friendly and our room had a mini fridge, microwave, and in room coffee maker. No pool or anything for in-hotel activities but that's okay for us. Great location as it's close to Robinson for restaurants and it's close enough to downtown Pittsburgh.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "It's on the cheaper side in terms of quality, but it's not a dive or anything. Staff is friendly and our room had a mini fridge, microwave, and in room coffee maker. No pool or anything for in-hotel activities but that's okay for us. Great location as it's close to Robinson for restaurants and it's close enough to downtown Pittsburgh.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Robbie Speelman (DJBawb)",
+                        "uri": "https://www.google.com/maps/contrib/107952086990242335540/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUXdNUPs-UaqBYpvGpufId3RQ3j7vYM0rjdi8pMeWElXZ_Qw3LvWA=s128-c0x00000000-cc-rp-mo-ba4"
+                    },
+                    "publishTime": "2024-08-10T14:37:20.471425Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSURiOTc2MFhBEAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURiOTc2MFhBEAE!2m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/reviews/ChZDSUhNMG9nS0VJQ0FnSURydUp6M093EAE",
+                    "relativePublishTimeDescription": "6 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "Good price, rooms are clean and big.  If you have 5 people you for a night and want to keep the cost down this is a good choice.\n2 Q and a sleeper sofa. Plenty of room for luggage and a cooler. It is basic, so if you want to use a microwave, have a few paper plates and napkins. Be sure to tell the clerk you are using the pull out. If not you will have to come back down for the linens and a 5th towel. Breakfast is decent with sausage, eggs, waffle, cereal, bread and bagles,  some fruit. The staff are polite and nice.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "Good price, rooms are clean and big.  If you have 5 people you for a night and want to keep the cost down this is a good choice.\n2 Q and a sleeper sofa. Plenty of room for luggage and a cooler. It is basic, so if you want to use a microwave, have a few paper plates and napkins. Be sure to tell the clerk you are using the pull out. If not you will have to come back down for the linens and a 5th towel. Breakfast is decent with sausage, eggs, waffle, cereal, bread and bagles,  some fruit. The staff are polite and nice.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Virgil Otto",
+                        "uri": "https://www.google.com/maps/contrib/112159152913225158273/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIPg3ilrN2Um89mk8PZjpiHqTB2ekavsfmuMMAUpgsh3eicRw=s128-c0x00000000-cc-rp-mo-ba5"
+                    },
+                    "publishTime": "2024-07-14T11:24:07.106301Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSURydUp6M093EAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURydUp6M093EAE!2m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                }
+            ],
+            "photos": [
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdblo9IZQ18mDmKaZFmiWQKgp6MZcejdTig1BYcC52e3OtGLbIwDSMdUAX5OIhq80uKMrhbBMEZGCKCFjvOIApfylkjo3c-4Qn92V8eIxLhQqzLqclHECg1Py4rMyogSPskq2BJ7_7AaK3vf9r7BpuPb6mefUoapjQaj-",
+                    "widthPx": 2880,
+                    "heightPx": 1922,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipNesoWjHB3R11xXkx_pp80k2ZPVLCDVLSk4fwXG&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNesoWjHB3R11xXkx_pp80k2ZPVLCDVLSk4fwXG!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdbnZWQzFVTxlXEkR_Ax9AJFf6AIqjTdQRpjA9gFYfnJ3yboj2LJDBdT3CwRKTU15u_WFxMo0OecLw-oXWL79E0v9ltjdUKtbFIyJCT-0UHMcpLw6KaOWes2wzWqkm0cG3W9oN1zhvkBuZv6-njlUWrmhhhkcroy5EqqH",
+                    "widthPx": 599,
+                    "heightPx": 400,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipNq6LL7HCKMpEFGmVUoBANwNXrJanxv2nUbeE81&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNq6LL7HCKMpEFGmVUoBANwNXrJanxv2nUbeE81!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdblxG0ZxS3irA_b5exBehgzlnnEeeVNTDxUdVND4te42IZT-qRb24CS_2uuHBaF_SwFrJP_OqhcOwCaNutA7ffOYLiJiYEI51a72dK4lcB4FdZ5VHJG2mmpkn9DvIaDxpiCwKojuuUBp87lPGMFfj2UcS1bJ6okYNMr6",
+                    "widthPx": 2880,
+                    "heightPx": 1922,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipM0Ey24JXetQ_cUUKkIIQ70A5iC3FxHkJqzJTSc&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM0Ey24JXetQ_cUUKkIIQ70A5iC3FxHkJqzJTSc!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdblI9G5ACLmxr_UVI008BrAiEVo7w-Exo4vSLWTa99p6KKlZI5UL1l0FCDSvCJs1JReu8WE30sauL4Cn9Il-US8zX4TIn6qpP6-cM8NdPnupV4nOA7p4u-Bjw8OhfI75VpLs8Z1VJoJw4cfELWRJIJTQGDJGpzJiQi1F",
+                    "widthPx": 1280,
+                    "heightPx": 1024,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipPM4smo7SBkPSJmqYjVd3oHuJtAhSghBnib0Ex-&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPM4smo7SBkPSJmqYjVd3oHuJtAhSghBnib0Ex-!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdbljhV-NWJlsgRbslXGWAyGWlZIUl39BD4Nvc1DgTx8B9VPU_ElwsKqUt_wrTPtsS-oTSc234QMVkGeGNuK_VQ4NjtY1hW-jxLSbFBKTDOsgWP1nHRsjOFIg7zJHJv2vmdeTB8m1PsbzBTMF8TLua0PL-4vztVtyuqo1",
+                    "widthPx": 599,
+                    "heightPx": 400,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipPa7yVJBu7VYBF7IIwlB0XRL9XIsEwHvExz7OfD&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPa7yVJBu7VYBF7IIwlB0XRL9XIsEwHvExz7OfD!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdblAfVvybFiRT1_XP3JRRbfb2Kyi9EFknvxCFNI9JceW3nIgDs8IqDyt0DP36FUjRH7jb3wxNLoIi9hi7IaEui4CHRFIHCOXcGWsnyrLF_kbjNO7oDroacwyZ-aXj4-wU1cPPeC2XmJxBLlgr1x-upiyKB-HkhlIFwLF",
+                    "widthPx": 711,
+                    "heightPx": 400,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipPpvQgUYglg03C0PRpcO2-4Mb1l2VaCNvB6e6cK&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPpvQgUYglg03C0PRpcO2-4Mb1l2VaCNvB6e6cK!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdbnc645pedj85t8vj0hv7km9ypO-XZnewnj8pKJshA4h43DELDRXkKZSIQwzuuvf3Ky_I7HGBntXgej8a6Kcfxg5fYJml84N4z3mag7w3NPrwMRStClcu3lQakopcyHa3pDXhx5xYcysYMh-nnX4H422F2e7E2FKxF1u",
+                    "widthPx": 1280,
+                    "heightPx": 1024,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipNogP23sMctpksjvNP1nYb0OS7y85o3w67_oUVK&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNogP23sMctpksjvNP1nYb0OS7y85o3w67_oUVK!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdbkrUZVJvcIqjbLzAdXb2II0CtA8qZozrCYF8jumG5tRZi73V-VtNYbYKxf62sXCRecUZeA1yibnKSTGWSMviUkjmO1tLQ4nV0khACLKPjPh02DMCquxYDGvemhwbuBcT8vkNWF3pfL_RmEYVVu_8neuBLCs1ZJtdalm",
+                    "widthPx": 1280,
+                    "heightPx": 1024,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOxn_wyvwvY3ct2qsOpy1ogwXbrckLG2oX_Jzou&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOxn_wyvwvY3ct2qsOpy1ogwXbrckLG2oX_Jzou!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdbn65aPT6UYuIoIFsDgr9pl28nk5Lq5y9ASwxj5OwPwyMgHhsYcsiWWkcNgULTTYXsZqfTipIYZPMnnmvI7zw8BriVmLWZsew1U3Xh2dFr2mJwk9OHVNqvw2YUpWEAh9QSTjJJbyGFHwb0h4dvA_NZjygUrqLNOVwAMS",
+                    "widthPx": 1280,
+                    "heightPx": 1024,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipMApET2px1lYkrFPVa5y3qdb41bucn1wJKD4dp6&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMApET2px1lYkrFPVa5y3qdb41bucn1wJKD4dp6!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                },
+                {
+                    "name": "places/ChIJocr8JfxbNIgRI4MmIHgG5CU/photos/AVzFdblvLMJM4zRwv0d34qNBLAombTHT0_prFOAk8zo2b98n1MmZBJonEtpcL8zqWtdF4I09vqX6dvBtQDBh9GeMFctEmsMqmncw0KEAj1WoZZpnFNvFiH-7-QZ5aDFoQqZ_ItKXIE7x4FCIMKHbqqD36ZqHKyMxC6E-YKWG",
+                    "widthPx": 1920,
+                    "heightPx": 1080,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Sleep Inn & Suites",
+                            "uri": "https://maps.google.com/maps/contrib/112785149006702756911",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUEPb8mGI0zKhMz3nU7DXsG7hk1ve53BDjNXgrB6mapqUX9Renf=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipMROM5BMl5xjtNCDGwqma75lkfcAhh59Uz5VhD1&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMROM5BMl5xjtNCDGwqma75lkfcAhh59Uz5VhD1!2e10!4m2!3m1!1s0x88345bfc25fccaa1:0x25e4067820268323"
+                }
+            ],
+            "googleMapsLinks": {
+                "directionsUri": "https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x88345bfc25fccaa1:0x25e4067820268323!3e0",
+                "placeUri": "https://maps.google.com/?cid=2730314387098600227",
+                "writeAReviewUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x88345bfc25fccaa1:0x25e4067820268323!12e1",
+                "reviewsUri": "https://www.google.com/maps/place//data=!4m4!3m3!1s0x88345bfc25fccaa1:0x25e4067820268323!9m1!1b1",
+                "photosUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x88345bfc25fccaa1:0x25e4067820268323!10e5"
+            }
+        },
+        {
+            "nationalPhoneNumber": "(412) 490-7343",
+            "formattedAddress": "1000 Park Ln Dr, Pittsburgh, PA 15275, USA",
+            "location": {
+                "latitude": 40.455518,
+                "longitude": -80.191029
+            },
+            "googleMapsUri": "https://maps.google.com/?cid=16170655324156455912",
+            "websiteUri": "https://www.choicehotels.com/pennsylvania/pittsburgh/mainstay-hotels/pa069?mc=llgoxxpx",
+            "displayName": {
+                "text": "MainStay Suites Pittsburgh Airport",
+                "languageCode": "en"
+            },
+            "reviews": [
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/reviews/ChdDSUhNMG9nS0VJQ0FnSUNyaWFmTDBRRRAB",
+                    "relativePublishTimeDescription": "6 months ago",
+                    "rating": 1,
+                    "text": {
+                        "text": "The room was nice overall. However, the air conditioning stopped working in the middle of the night. The room got to 78°. It was too hot to sleep even after opening the window. It was also super awkward entering the room for the first time as housekeeping was still cleaning. She said to come in but was on the phone and in the space so it would have been very uncomfortable to stay there. We ended up leaving for a little bit to give her time to finish.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "The room was nice overall. However, the air conditioning stopped working in the middle of the night. The room got to 78°. It was too hot to sleep even after opening the window. It was also super awkward entering the room for the first time as housekeeping was still cleaning. She said to come in but was on the phone and in the space so it would have been very uncomfortable to stay there. We ended up leaving for a little bit to give her time to finish.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Maria DeLisa",
+                        "uri": "https://www.google.com/maps/contrib/103204487990477379711/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX3ocknvBwYu3Rl4FAMiy_4JgBqnTyue_TUM2W88YRkLjyatpNg3g=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2024-07-08T15:54:36.847492Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUNyaWFmTDBRRRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNyaWFmTDBRRRAB!2m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/reviews/ChZDSUhNMG9nS0VJQ0FnSUNIdlA3cUp3EAE",
+                    "relativePublishTimeDescription": "5 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "* Comfortable Stay with Excellent Service”\n\n\"I stayed at MainStay Suites Pittsburgh Airport Hotel from 7th Aug to 1st Sep'2024. The check-in process was quick, and the staff were extremely welcoming. My room was a standard double, spacious, and very clean room  with a full kitchen. Hot and cold breakfast selections were great, and fully stocked each morning, the bed was comfortable.  The hotel location is very calm and quiet. The breakfast buffet was varied and delicious,  like coffee, tea, oats, hot chocalate drinks, coffee, fruit drinks, fruits, donuts, begal, bread, (peanut butter, honey, jelly various types )  toaster, microwave, egg boiled and scrambled, cereals, ( 2 types ) waffle machine ( we have to make our own based on our need- the batter is provided).\n\nRoom service provided upon request and they change the towels and set the bed in a friendly way.\nMy daughter was not well, once i request their support they on board and provided full support, espectially my sincere thanks goes to Ms. ANA and the fd guy for their great help.\n\nNo restaurant or stores nearby. But there is a shuttle service available and we can pay 0.25 every trip and need book online / call. which brings us to the nearby shops like taco bell, walmart, aldy, target, IKEA...... Laundry service available by paying 2$ for each washer and dryer.\n\nOverall, I had a great stay and would definitely return, especially for the friendly service and for the price I paid, this was a great value.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "* Comfortable Stay with Excellent Service”\n\n\"I stayed at MainStay Suites Pittsburgh Airport Hotel from 7th Aug to 1st Sep'2024. The check-in process was quick, and the staff were extremely welcoming. My room was a standard double, spacious, and very clean room  with a full kitchen. Hot and cold breakfast selections were great, and fully stocked each morning, the bed was comfortable.  The hotel location is very calm and quiet. The breakfast buffet was varied and delicious,  like coffee, tea, oats, hot chocalate drinks, coffee, fruit drinks, fruits, donuts, begal, bread, (peanut butter, honey, jelly various types )  toaster, microwave, egg boiled and scrambled, cereals, ( 2 types ) waffle machine ( we have to make our own based on our need- the batter is provided).\n\nRoom service provided upon request and they change the towels and set the bed in a friendly way.\nMy daughter was not well, once i request their support they on board and provided full support, espectially my sincere thanks goes to Ms. ANA and the fd guy for their great help.\n\nNo restaurant or stores nearby. But there is a shuttle service available and we can pay 0.25 every trip and need book online / call. which brings us to the nearby shops like taco bell, walmart, aldy, target, IKEA...... Laundry service available by paying 2$ for each washer and dryer.\n\nOverall, I had a great stay and would definitely return, especially for the friendly service and for the price I paid, this was a great value.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Shobia Joseph",
+                        "uri": "https://www.google.com/maps/contrib/105383333230787736646/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKyeVv3Iwvp3avKvXmFLBK-So95WAs51ECBZ9IDdVu0NxGnMQ=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2024-09-02T13:38:14.264789Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUNIdlA3cUp3EAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNIdlA3cUp3EAE!2m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/reviews/ChdDSUhNMG9nS0VJQ0FnSUNEaHFfY2tBRRAB",
+                    "relativePublishTimeDescription": "10 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "Pros: The breakfast menu is very good. It is quiet, and the washing machines and dryers are clean too. The general manager is very attentive and listens very carefully to the customers' concerns. I've stayed at the Extended Stay America across from this hotel before and did not like it there -- I am very, very happy to have switched to stay at this MainStay Suites.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "Pros: The breakfast menu is very good. It is quiet, and the washing machines and dryers are clean too. The general manager is very attentive and listens very carefully to the customers' concerns. I've stayed at the Extended Stay America across from this hotel before and did not like it there -- I am very, very happy to have switched to stay at this MainStay Suites.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Yuko Eguchi",
+                        "uri": "https://www.google.com/maps/contrib/103413096163939104415/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKFdkHim_iGZHJKmo7EBcVj_0oCj_NeMaVrOWj5zggEXAaSew=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2024-03-27T14:09:01.967693Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUNEaHFfY2tBRRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNEaHFfY2tBRRAB!2m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/reviews/ChZDSUhNMG9nS0VJQ0FnSUNSZ2ItVU5BEAE",
+                    "relativePublishTimeDescription": "a year ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "This was my first time here and I'm not disappointed. The rooms are clean and the bed is very comfortable. The room could use a chair and not just a sofa. I think it's time for the sofa to be replaced or the cushions to be refilled. The breakfast was delicious. The eggs were done perfectly and the sausage was good. They have bagels, toast, cereal, yogurt, fruit and juices.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "This was my first time here and I'm not disappointed. The rooms are clean and the bed is very comfortable. The room could use a chair and not just a sofa. I think it's time for the sofa to be replaced or the cushions to be refilled. The breakfast was delicious. The eggs were done perfectly and the sausage was good. They have bagels, toast, cereal, yogurt, fruit and juices.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Ellen Sabo",
+                        "uri": "https://www.google.com/maps/contrib/106298611420646126494/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL9A99P6KG5cmd4ikQIK_riL-tXX0CofF1bXWhl-UA65PiXQw=s128-c0x00000000-cc-rp-mo-ba5"
+                    },
+                    "publishTime": "2023-04-03T14:02:07.312771Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUNSZ2ItVU5BEAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNSZ2ItVU5BEAE!2m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/reviews/ChZDSUhNMG9nS0VJQ0FnSUNKNXJiWEp3EAE",
+                    "relativePublishTimeDescription": "a year ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "I had to check-in early and the front desk staff was very accommodating and helped me get settled with no issues. The place itself is nice and quiet, I couldn't hear any noise from my neighbors or traffic outside. The room is clean, a little outdated but it met my needs. The hotel is close to pretty much everything, main road to get to the city, about 5 min from a shopping area to eat food or get grocery. The cleaning staff were friendly as well. Overall, would recommend!",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "I had to check-in early and the front desk staff was very accommodating and helped me get settled with no issues. The place itself is nice and quiet, I couldn't hear any noise from my neighbors or traffic outside. The room is clean, a little outdated but it met my needs. The hotel is close to pretty much everything, main road to get to the city, about 5 min from a shopping area to eat food or get grocery. The cleaning staff were friendly as well. Overall, would recommend!",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Emmalia Colendrino",
+                        "uri": "https://www.google.com/maps/contrib/117228276059865503134/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKMnnnBt3v7nVByGpB7Ce8NWtW3xifhuwOe0YJd9RlgWy7fixc=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2023-06-26T12:45:35.271923Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUNKNXJiWEp3EAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNKNXJiWEp3EAE!2m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                }
+            ],
+            "photos": [
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbl1ARjBsHMoHmq_2zXxQwwGnE7Nt5_dNr2ZzgFjmloJl621_oIjEQgfWg5QboRjPWUgbtcRvcEwlSEOVtprk_dg6NpUYFvCDl3Gdpnab38wI8Nn-3Hqrx-FJzPkIeJEIyiI2iv9UTr8gBj0EiKzGBq7uCK87vp4M1w-",
+                    "widthPx": 711,
+                    "heightPx": 400,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOSO2UntJwdsOMKRuwSTn0qr761_M74JmqjYjm3&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOSO2UntJwdsOMKRuwSTn0qr761_M74JmqjYjm3!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbmZqdGSQd40RWkRkWOcdDOluch6tZjHHf0TGLXmewVLQyR0CC91IIa0AGix0tDxLL03K5oPDLXI-JbINM5Ajpp9WcQcq-PFe6Zt4A9e7_VonYO9sSIuRNAUtDQh4fJF-bRm5kuJKId_xKZ8XcQAD5REXq1PHBM--bP2",
+                    "widthPx": 600,
+                    "heightPx": 480,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipPxSf7VWtcprPD3H7LctSKFS7isgRL4653Fad7o&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPxSf7VWtcprPD3H7LctSKFS7isgRL4653Fad7o!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbkcb10Fa94VnoKw3bD_YezH0i2zFFsM4IoxwVf8I40D3SePL_VuF38VdbFF3oqnTFEfGHNmKIpWwu_2edgnbA4-e6dipZxuuLThR_SlMz3ERRbVCgc2e9QamRXrhxruwlWU-tZA8ZYER26cKlKgtYtFlOTOscjgMU8k",
+                    "widthPx": 2880,
+                    "heightPx": 2304,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipMM5EbpbkPOsGAXBF49F4gsPnKk20GVvKfk6f4n&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMM5EbpbkPOsGAXBF49F4gsPnKk20GVvKfk6f4n!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbn0KlsfTCeoYAoS0Bk2l2J7rSgMDOKyMGyE_nKN9_9OQ05dxf6AgDs2Fa60nweArt5eak-T_q1GBamVIHkBG9LbPdp7Hgwc0Z8TSYeN2apzhPDeRDvPuJa5Tp-n-cXMH2-xZScBt2hy1v-xf3zCkfq11A2VbIGhqWep",
+                    "widthPx": 1280,
+                    "heightPx": 854,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOKgZWtO86aVUXAoeXPvG6Jqk8jvViCJ2NOs8AV&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOKgZWtO86aVUXAoeXPvG6Jqk8jvViCJ2NOs8AV!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbm4DCiRW_wjH8XGyouDtmA6qpnByyo-S-pbmbAOvxer9m12cGOQq7L3WLyplOnBqoVlaGp61pbfS4tgE0v1K6gfurEAWhb0MVsVIiup9Rw6AWUom9W7dfylL6iIfdJiiI9p9q6Inen7XoMq65yXPIGNwSPnM26LAr0o",
+                    "widthPx": 1280,
+                    "heightPx": 854,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipMgIO0W7HTtSc6wRmT2Y3kyZsJCXe4dcO4OUyGR&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMgIO0W7HTtSc6wRmT2Y3kyZsJCXe4dcO4OUyGR!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdblbypIufE568Qmh8VAd2jyFXfsBoijK5J-ufZ8h2tBzvGt0XQOZIKwUUDY_3o0C3ikFi269Goqtd-8dBWKXoBSutNhQvF1x0wuS4v8hgD1IK1NxGcKZdoLkNp81hMPU_KXDaDMHdCczVEWh3ldHSfbCUyIm6nUBagyo",
+                    "widthPx": 600,
+                    "heightPx": 480,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipORZXQNII1JVRx4K7CioYEAaxhV9aV9251DAXjr&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipORZXQNII1JVRx4K7CioYEAaxhV9aV9251DAXjr!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbli8m2orT5lHrD32mesES2c2JO7TWgXi0IviUlKE93yX8qQ58t9eUO-DIaZlilVp8f8Bj3Vt_187zGRaSWqVY1p6d8De0cVIEeHfXhQS9enMw2jV5tvE3AeMiBfkyGS0XYYD13UnQ6Z1ygafsDrPCMK_ur3Dr7Sbkoz",
+                    "widthPx": 600,
+                    "heightPx": 480,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOz4f2JThlEh0vVLvqhg5GtLB8r9kOGLA8TYOw9&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOz4f2JThlEh0vVLvqhg5GtLB8r9kOGLA8TYOw9!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbkLii3eZnS_othU3QmxP5N4f3T1cCCZj9FL2kIqVGrRcBRcjxdhEUnUpte4VdE8th3gWBzRYQVaxcwk5hsMEFBMVGWMOXteVFIQYs-0chCQLEcohlx-nigbpNhRlQQU-crhvBJVDXYy-zllvE1YsJnqoCuToPzZuwgj",
+                    "widthPx": 600,
+                    "heightPx": 480,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOWS9L06ipX_xAdZwotwwFOKt6dzcZoByXgnS8m&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOWS9L06ipX_xAdZwotwwFOKt6dzcZoByXgnS8m!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbnHpFPsCLcaeecCBh61X5HgjrdMF9craS5E88EeXaUkjaXm5r7xtHO0vZU7WsrOGrfzI7uK0JuGQe18kt0r3Nd-j_NTyYnL7TYMdt6b8lqGarjnX07mvQgGSWdMuZAsjV2yaWAYDGuJDoN8UgspEFvxFMBVooI1uY-h",
+                    "widthPx": 1350,
+                    "heightPx": 1080,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipP6358xXx_F7dkBQdfy3LlnqzGUp20cIf4nrUdr&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipP6358xXx_F7dkBQdfy3LlnqzGUp20cIf4nrUdr!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                },
+                {
+                    "name": "places/ChIJlT0VJfxbNIgR6OufbVe1aeA/photos/AVzFdbmb1AmT0WWeL8yMYFKfubgU1Bb1yJw1fqC5DlMY3MWcdmGYC8lSN3NGbbU6nzN8iXSVhNWI9MrEhyV3FBodlfWwrM_o8G5o6JWlbslOiSQX1PyU-3_BbnG6t4cyK98lN2Oica0wS1MBNv1S1WrIW_Es_cD5c7w4C3B1",
+                    "widthPx": 2880,
+                    "heightPx": 2304,
+                    "authorAttributions": [
+                        {
+                            "displayName": "MainStay Suites Pittsburgh Airport",
+                            "uri": "https://maps.google.com/maps/contrib/116479183130574769853",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUCvonK6IW-PU3xmmuTGm4iSDHoxxcMIv2zLjPDbx_mbw6yarZO=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipNpO_ahOY0sgqDGL9f3TxJKVoZa5PSB1AdlOlWv&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNpO_ahOY0sgqDGL9f3TxJKVoZa5PSB1AdlOlWv!2e10!4m2!3m1!1s0x88345bfc25153d95:0xe069b5576d9febe8"
+                }
+            ],
+            "googleMapsLinks": {
+                "directionsUri": "https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x88345bfc25153d95:0xe069b5576d9febe8!3e0",
+                "placeUri": "https://maps.google.com/?cid=16170655324156455912",
+                "writeAReviewUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x88345bfc25153d95:0xe069b5576d9febe8!12e1",
+                "reviewsUri": "https://www.google.com/maps/place//data=!4m4!3m3!1s0x88345bfc25153d95:0xe069b5576d9febe8!9m1!1b1",
+                "photosUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x88345bfc25153d95:0xe069b5576d9febe8!10e5"
+            }
+        },
+        {
+            "nationalPhoneNumber": "(412) 990-2746",
+            "formattedAddress": "1500 Park Ln Dr, Pittsburgh, PA 15275, USA",
+            "location": {
+                "latitude": 40.4558848,
+                "longitude": -80.188694
+            },
+            "googleMapsUri": "https://maps.google.com/?cid=16170306418909067492",
+            "websiteUri": "https://www.trellisnorthfayette.com/?utm_knock=gmb",
+            "regularOpeningHours": {
+                "openNow": false,
+                "periods": [
+                    {
+                        "open": {
+                            "day": 1,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 1,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 2,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 2,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 3,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 3,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 4,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 4,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 5,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 5,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    }
+                ],
+                "weekdayDescriptions": [
+                    "Monday: 8:00 AM – 5:00 PM",
+                    "Tuesday: 8:00 AM – 5:00 PM",
+                    "Wednesday: 8:00 AM – 5:00 PM",
+                    "Thursday: 8:00 AM – 5:00 PM",
+                    "Friday: 8:00 AM – 5:00 PM",
+                    "Saturday: Closed",
+                    "Sunday: Closed"
+                ],
+                "nextOpenTime": "2025-02-03T13:00:00Z"
+            },
+            "displayName": {
+                "text": "TRELLIS NORTH FAYETTE Apartments",
+                "languageCode": "en"
+            },
+            "reviews": [
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/reviews/ChZDSUhNMG9nS0VJQ0FnSUNfcF9tdVZBEAE",
+                    "relativePublishTimeDescription": "2 weeks ago",
+                    "rating": 1,
+                    "text": {
+                        "text": "I lived at this location for 3 years and it was an absolute nightmare. The buildings are extremely old and are constantly under renovation or repair. There is no concern for public health as they do these repairs/renovations with people living in the building and the air systems are never cleaned; tenants are constantly breathing in 20 year old wall dust (lead and arsenic exposure.) Building 2 is infested with rice weevils. There are constant water issues in the units which cause flooding or ceiling damage to other units. These issues are handled by the on site maintenance man who has no experience with mold remediation. There is mold throughout all of the buildings. I was having consistent migraines due to mold exposure. The walls are paper thin without any insulation so you will hear every conversation all of your neighbors are having, you will hear all of their movies and music, and there will always be a cold breeze on your feet because the heat is constantly escaping. If you live on the parking side you will hear garbage trucks and loud music in the morning. If you live on the court side you will hear people playing basketball at 2am and partying in the pool all night in the summer. If you have any kind of noise sensitivity this is absolutely not the community for you. I left this community at lease resigning because the office indicated, through letters, that tenants would need to manually resign leases  to continue being a part of the community. I chose to not resign my lease, I indicated my intent to leave, and provided a forwarding address when handing my keys to Sara in the office. To date, I have never received a certified mail letter with my list of expenses or a reason for deduction of my deposit. I have a $4000 charge that has been added to my credit report, erroneously, as I have never received the proper correspondence from their office. This office is very unprofessional and doesn’t communicate well. If you are having any medical issues while living in these buildings I would speak to your doctor about the potential of exposure to mold and harmful chemicals.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "I lived at this location for 3 years and it was an absolute nightmare. The buildings are extremely old and are constantly under renovation or repair. There is no concern for public health as they do these repairs/renovations with people living in the building and the air systems are never cleaned; tenants are constantly breathing in 20 year old wall dust (lead and arsenic exposure.) Building 2 is infested with rice weevils. There are constant water issues in the units which cause flooding or ceiling damage to other units. These issues are handled by the on site maintenance man who has no experience with mold remediation. There is mold throughout all of the buildings. I was having consistent migraines due to mold exposure. The walls are paper thin without any insulation so you will hear every conversation all of your neighbors are having, you will hear all of their movies and music, and there will always be a cold breeze on your feet because the heat is constantly escaping. If you live on the parking side you will hear garbage trucks and loud music in the morning. If you live on the court side you will hear people playing basketball at 2am and partying in the pool all night in the summer. If you have any kind of noise sensitivity this is absolutely not the community for you. I left this community at lease resigning because the office indicated, through letters, that tenants would need to manually resign leases  to continue being a part of the community. I chose to not resign my lease, I indicated my intent to leave, and provided a forwarding address when handing my keys to Sara in the office. To date, I have never received a certified mail letter with my list of expenses or a reason for deduction of my deposit. I have a $4000 charge that has been added to my credit report, erroneously, as I have never received the proper correspondence from their office. This office is very unprofessional and doesn’t communicate well. If you are having any medical issues while living in these buildings I would speak to your doctor about the potential of exposure to mold and harmful chemicals.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Mary Aliff",
+                        "uri": "https://www.google.com/maps/contrib/114538579769543077314/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJuE-wrPf09DDMbCT8t2gI-h6P2BfFciCNAiN7jjSGgLZhjXw=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2025-01-19T15:06:07.206094Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUNfcF9tdVZBEAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNfcF9tdVZBEAE!2m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/reviews/ChZDSUhNMG9nS0VJQ0FnSURYM1BTc0ZBEAE",
+                    "relativePublishTimeDescription": "3 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "My son and his girlfriend live there and it is perfect for them. ALL utilities included. Very nice common room; swimming pool, weight room, basketball court. Also, a stones throw from all of the Robinson - North Fayette shopping.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "My son and his girlfriend live there and it is perfect for them. ALL utilities included. Very nice common room; swimming pool, weight room, basketball court. Also, a stones throw from all of the Robinson - North Fayette shopping.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Joyce Ramirez",
+                        "uri": "https://www.google.com/maps/contrib/100989252107053941127/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV-shjies8AoJZRdLSbptArGAyXXnvP4RC4RJWNIepe3HudiNk24Q=s128-c0x00000000-cc-rp-mo-ba4"
+                    },
+                    "publishTime": "2024-10-25T02:18:59.432976Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSURYM1BTc0ZBEAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURYM1BTc0ZBEAE!2m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/reviews/ChZDSUhNMG9nS0VJQ0FnSUQ3LW82NmJ3EAE",
+                    "relativePublishTimeDescription": "5 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "I’m a past resident of the apartment complex and I have to say this has been one of the best apartment complex in the Robinson area.\nSara who’s the property manager made our stay a breeze! She was very responsive and professional.\nI would recommend this apartment complex specially that all utilities are included in your rent :)",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "I’m a past resident of the apartment complex and I have to say this has been one of the best apartment complex in the Robinson area.\nSara who’s the property manager made our stay a breeze! She was very responsive and professional.\nI would recommend this apartment complex specially that all utilities are included in your rent :)",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Alejo Burgos",
+                        "uri": "https://www.google.com/maps/contrib/101342016002623298367/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWWQHCuCoQs7c4A1aYztQcs9cfSi5UcqAPLN_CjVSu1H_aifcFatQ=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2024-08-23T17:54:05.380957Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUQ3LW82NmJ3EAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ3LW82NmJ3EAE!2m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/reviews/ChdDSUhNMG9nS0VJQ0FnSURpNlB1TWd3RRAB",
+                    "relativePublishTimeDescription": "4 years ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "Went to home town of Pittsburgh PA for a brief visit before the holidays. Exceptional few day, beautiful full sunshine fall foliage day and the very next snow showers. Two first for our fur baby Sonny. Hotel was convenient, easy access to everything we need to do while there. Friendly front desk staff.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "Went to home town of Pittsburgh PA for a brief visit before the holidays. Exceptional few day, beautiful full sunshine fall foliage day and the very next snow showers. Two first for our fur baby Sonny. Hotel was convenient, easy access to everything we need to do while there. Friendly front desk staff.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Dawn Benson",
+                        "uri": "https://www.google.com/maps/contrib/103694627554233748526/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL0QFuVvWBXU97qMt9oPi4Ks4SjorROgyapb2iMFPGYADbtmA=s128-c0x00000000-cc-rp-mo-ba4"
+                    },
+                    "publishTime": "2020-11-23T23:55:59.486727Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSURpNlB1TWd3RRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURpNlB1TWd3RRAB!2m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/reviews/ChdDSUhNMG9nS0VJQ0FnSUNYOFlyTG93RRAB",
+                    "relativePublishTimeDescription": "3 months ago",
+                    "rating": 1,
+                    "text": {
+                        "text": "It’s a hotel posing as an apartment complex charging out the wazoo for a literal hotel. don’t get me started on other residents leaving cigarette butts around and dog shit. LMFAO joke of a residence and not worth the price. Ron is cool tho give him a raise!",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "It’s a hotel posing as an apartment complex charging out the wazoo for a literal hotel. don’t get me started on other residents leaving cigarette butts around and dog shit. LMFAO joke of a residence and not worth the price. Ron is cool tho give him a raise!",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Rachel Rohe",
+                        "uri": "https://www.google.com/maps/contrib/111019986347471413693/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLlg71s8T2u3QQFYRvaq1f4SOCdivbU0gTk3fF2ORJ6l7k5iw=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2024-10-17T20:25:37.669208Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUNYOFlyTG93RRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNYOFlyTG93RRAB!2m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                }
+            ],
+            "photos": [
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbmo9-Hd_qRXTuu1ev8esrmYbwTYCI-i6Xq5PhzJjai-8pJZjhYyeeTs5b0zxwVyDdwkQ8ZcL8U8rFnO4ISjNHmbyWDQAP1pPMA0fJecALPzkX5ZyD1uWqnjs7oWkk4ja53MmXuuBU4KdYHxOiXlE7X60VeBnvtDVSdL",
+                    "widthPx": 1499,
+                    "heightPx": 1000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipPR3343FM6_f8ZL7FA_jPzty80Z0-Dy8HDpcEuV&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPR3343FM6_f8ZL7FA_jPzty80Z0-Dy8HDpcEuV!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbkd91ygaNLIVUwj33dEhaWsLadeSISy1UfPYuIa_rKVVQ3oSojwYb5hk76llcBMrOCcBDxyxIUQtCpfcXAGAHDNNqrkz817jQwkrNLFTLwVrqLF3hZ8KyMPIh-J11o5bzNc7-XMfs4X9o6i8d47SDY34Dd1XA0JY4V8",
+                    "widthPx": 1500,
+                    "heightPx": 1000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipP_NkHQyv-aD5qEHk29VKWyuc71sSV3fgNIThpv&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipP_NkHQyv-aD5qEHk29VKWyuc71sSV3fgNIThpv!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdblcttYWkjMRvmf4C5bp6RK94JfilftAinqUKsMtm9MmE_jbfTho6lI_JC529fy7HwSmjwAHnmv1POnJ7uP-npiukTJiQyKdIxGtCQuQKL7yiTibt5nEJhspvV-pdmV-YtUUrwmv2tPqlAcQooOzvkQYFCjKGaJ1zVMQ",
+                    "widthPx": 1499,
+                    "heightPx": 1000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipPBDm2dfIjXcYr2hOwUGoVHamB1WVtlpCjo27Do&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPBDm2dfIjXcYr2hOwUGoVHamB1WVtlpCjo27Do!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbkcjygDERywmkohzyYzl4KIuO8-EQ1hLvpjMU_0yWlcsChAkQPak76ySeRG6SoFVw6MJu6GzFI8mbpMiV0FryVzbX96yXaXLtvvCLnomvAhh3_m4CyIM_p22kBsFTb9Leg9l9fwj_snnU7k-4pf56ITlChxF30UHgzl",
+                    "widthPx": 1500,
+                    "heightPx": 1000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOUpJhks-Yf8zNamxemOwX7jmyI6ACbCAjm1hDH&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOUpJhks-Yf8zNamxemOwX7jmyI6ACbCAjm1hDH!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbnouswyRwVOPHBgnHrsDfB3PXieTnDMFguuU4LwLwhvIFbi31z9L7xjHL2pW2FdvUosw_pC0DGbo4QjznIHG8n47mpH9Mlj_O90J6vnpSAekWulVVND-BFIiTq-U7WazWEZojDB5k-aqXiKLFjr5TSlY5QHg7lbuou8",
+                    "widthPx": 3000,
+                    "heightPx": 2001,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOo5lMoPZJ2ts5J5x-QjFUHzqzxqMmYj_G5IckO&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOo5lMoPZJ2ts5J5x-QjFUHzqzxqMmYj_G5IckO!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbmnscP5Od-DIYNyFof4RgipskYGoA39ICfZv4n5n5jonbn780IkPLmHpTR1qZXdogOKrrT1KMQx795rXg2_yAusZCKCQpeGgX5fGgyQe452-l9e4RCkInjfw1oM6PFsTCdFMslRPoz26HHV-7GQWETWCLDNMRnJgg08",
+                    "widthPx": 1499,
+                    "heightPx": 1000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipO_JyoSYGMUNB--DRasW9zmYJZkeerwZRMLnOWh&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipO_JyoSYGMUNB--DRasW9zmYJZkeerwZRMLnOWh!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbmWUivcXxV1rK2Ylm_m5itgfY9XgVcFDLp4nNdglSwdlQrTYOqDMZ4HkA-dHotKcj2UueMJqeOsDwMGPZvnUIyT_YD8luyEW-e9mBWW4-EjMYA6VL_14QyFzsDN0sNYL0CiFNdl5gNrARq8Syi-d64Hvwa0GyZoXSJ4",
+                    "widthPx": 1499,
+                    "heightPx": 1000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipPHxjbNMHvnGQ1AjwP1BsnlPUXrrQ2D5TwY_17K&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPHxjbNMHvnGQ1AjwP1BsnlPUXrrQ2D5TwY_17K!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbkcv5qMR_1eU_jet3GJopHzYPW7fwJFb-4XR2jHv3NY_p5DaMNVjfeZPqXaubscCAMWldrfaxYUo6jmLD6brdr4UEpEAN1r2JZE4h8NFw3PRdsHTP1lGU0R0o1u1Tl-A8VlMC5Qnc_e2A2dKc3ZPvX9RbWnWZYjQ5-z",
+                    "widthPx": 1499,
+                    "heightPx": 1000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOuw-1RT6PddCm3Z_nWh83gcuDfMFAeSg3LD72J&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOuw-1RT6PddCm3Z_nWh83gcuDfMFAeSg3LD72J!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbmwuc27fIdHVgQYZd20ekSLQerrpqr1mXbDVK-BCvGnogFiq28cUUekiqt8uX2Q1OriHuq3DtzI_y1oRS9_hk_NykA5kp_w0tgKu9fN1K-PratY58-KkTtWurpAQTsCTqrbcsUrDn-TeZsaIjAuVVj3cIZllhB22xuZ",
+                    "widthPx": 1233,
+                    "heightPx": 689,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipN3Olv9zdtiPQGQv8furUB2aItYJLPJTpognU2D&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN3Olv9zdtiPQGQv8furUB2aItYJLPJTpognU2D!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                },
+                {
+                    "name": "places/ChIJxU8HDf5bNIgR5DhLmAN4aOA/photos/AVzFdbk-qAqePJxX-2946nIiBvSa5FOVvKdUxQdo5iYuaYOV6TBZIXSZVWNJcnwb-8YN7EY1sSeq1ROXO9aTQE3pF0Xb060jqOfxd7NunCYXoC4xB3Qkvqxet0RxGZ_SrkbnOzv1preUizpFL5ubVgo665lL_n1pAwDCOLb9",
+                    "widthPx": 1499,
+                    "heightPx": 1000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "TRELLIS NORTH FAYETTE Apartments",
+                            "uri": "https://maps.google.com/maps/contrib/101701655701587817549",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVZwoBPuYkJGv2vqYyT-4XKPBgQ-pE6zHcvUFmhfNMKSdEtdL08=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipOj0NirnDFepgMCvNfQxnSaPzHWB3TGeAWEK_Yy&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOj0NirnDFepgMCvNfQxnSaPzHWB3TGeAWEK_Yy!2e10!4m2!3m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4"
+                }
+            ],
+            "googleMapsLinks": {
+                "directionsUri": "https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x88345bfe0d074fc5:0xe0687803984b38e4!3e0",
+                "placeUri": "https://maps.google.com/?cid=16170306418909067492",
+                "writeAReviewUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x88345bfe0d074fc5:0xe0687803984b38e4!12e1",
+                "reviewsUri": "https://www.google.com/maps/place//data=!4m4!3m3!1s0x88345bfe0d074fc5:0xe0687803984b38e4!9m1!1b1",
+                "photosUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x88345bfe0d074fc5:0xe0687803984b38e4!10e5"
+            }
+        },
+        {
+            "nationalPhoneNumber": "(800) 244-6224",
+            "formattedAddress": "3000 Park Ln Dr, Pittsburgh, PA 15275, USA",
+            "location": {
+                "latitude": 40.4553395,
+                "longitude": -80.18724499999999
+            },
+            "googleMapsUri": "https://maps.google.com/?cid=10210447062456295616",
+            "websiteUri": "https://www.cigna.com/",
+            "regularOpeningHours": {
+                "openNow": false,
+                "periods": [
+                    {
+                        "open": {
+                            "day": 1,
+                            "hour": 9,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 1,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 2,
+                            "hour": 9,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 2,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 3,
+                            "hour": 9,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 3,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 4,
+                            "hour": 9,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 4,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 5,
+                            "hour": 9,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 5,
+                            "hour": 17,
+                            "minute": 0
+                        }
+                    }
+                ],
+                "weekdayDescriptions": [
+                    "Monday: 9:00 AM – 5:00 PM",
+                    "Tuesday: 9:00 AM – 5:00 PM",
+                    "Wednesday: 9:00 AM – 5:00 PM",
+                    "Thursday: 9:00 AM – 5:00 PM",
+                    "Friday: 9:00 AM – 5:00 PM",
+                    "Saturday: Closed",
+                    "Sunday: Closed"
+                ],
+                "nextOpenTime": "2025-02-03T14:00:00Z"
+            },
+            "displayName": {
+                "text": "Cigna Healthcare",
+                "languageCode": "en"
+            },
+            "reviews": [
+                {
+                    "name": "places/ChIJPbK5xmpZNIgRwGCji4HLso0/reviews/ChdDSUhNMG9nS0VJQ0FnSUNUeFl6eG1RRRAB",
+                    "relativePublishTimeDescription": "8 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "Everyone here is nice. Very friendly place to work.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "Everyone here is nice. Very friendly place to work.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Denise Schaeffer",
+                        "uri": "https://www.google.com/maps/contrib/117979695154018615466/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ8owMpguLFuYe3CGjaiYSmfRNi_qcqbzkQcgZid0kPbVPeEA=s128-c0x00000000-cc-rp-mo-ba4"
+                    },
+                    "publishTime": "2024-05-17T02:25:05.269803Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUNUeFl6eG1RRRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNUeFl6eG1RRRAB!2m1!1s0x8834596ac6b9b23d:0x8db2cb818ba360c0"
+                },
+                {
+                    "name": "places/ChIJPbK5xmpZNIgRwGCji4HLso0/reviews/ChdDSUhNMG9nS0VJQ0FnSUN6bGJIY25BRRAB",
+                    "relativePublishTimeDescription": "8 months ago",
+                    "rating": 1,
+                    "authorAttribution": {
+                        "displayName": "Redmist 78",
+                        "uri": "https://www.google.com/maps/contrib/102376308787213986811/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXF-imJciu-kfeJ89ugGe_ci0yAvqlkJe1BfrtT1beoVRcVabrU=s128-c0x00000000-cc-rp-mo-ba3"
+                    },
+                    "publishTime": "2024-06-03T18:00:00.436738Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUN6bGJIY25BRRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN6bGJIY25BRRAB!2m1!1s0x8834596ac6b9b23d:0x8db2cb818ba360c0"
+                }
+            ],
+            "googleMapsLinks": {
+                "directionsUri": "https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x8834596ac6b9b23d:0x8db2cb818ba360c0!3e0",
+                "placeUri": "https://maps.google.com/?cid=10210447062456295616",
+                "writeAReviewUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x8834596ac6b9b23d:0x8db2cb818ba360c0!12e1",
+                "reviewsUri": "https://www.google.com/maps/place//data=!4m4!3m3!1s0x8834596ac6b9b23d:0x8db2cb818ba360c0!9m1!1b1",
+                "photosUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x8834596ac6b9b23d:0x8db2cb818ba360c0!10e5"
+            }
+        },
+        {
+            "nationalPhoneNumber": "(412) 722-0102",
+            "formattedAddress": "1000 Cliff Mine Rd #110, Pittsburgh, PA 15275, USA",
+            "location": {
+                "latitude": 40.4576268,
+                "longitude": -80.19113569999999
+            },
+            "googleMapsUri": "https://maps.google.com/?cid=16935405888192764906",
+            "regularOpeningHours": {
+                "openNow": false,
+                "periods": [
+                    {
+                        "open": {
+                            "day": 1,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 1,
+                            "hour": 18,
+                            "minute": 30
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 2,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 2,
+                            "hour": 16,
+                            "minute": 30
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 3,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 3,
+                            "hour": 16,
+                            "minute": 30
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 4,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 4,
+                            "hour": 16,
+                            "minute": 30
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 5,
+                            "hour": 8,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 5,
+                            "hour": 16,
+                            "minute": 0
+                        }
+                    }
+                ],
+                "weekdayDescriptions": [
+                    "Monday: 8:00 AM – 6:30 PM",
+                    "Tuesday: 8:00 AM – 4:30 PM",
+                    "Wednesday: 8:00 AM – 4:30 PM",
+                    "Thursday: 8:00 AM – 4:30 PM",
+                    "Friday: 8:00 AM – 4:00 PM",
+                    "Saturday: Closed",
+                    "Sunday: Closed"
+                ],
+                "nextOpenTime": "2025-02-03T13:00:00Z"
+            },
+            "displayName": {
+                "text": "Montour Family Healthcare PC",
+                "languageCode": "en"
+            },
+            "reviews": [
+                {
+                    "name": "places/ChIJ5baj-f5bNIgR6tvJfO2lBus/reviews/ChdDSUhNMG9nS0VJQ0FnSUMzNE1iOHhBRRAB",
+                    "relativePublishTimeDescription": "3 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "I started going here and seeing Falkenstein around 23 years ago as a young adult fresh back from the military as a brand new Type 1 Diabetic. He has always treated me with respect and dignity no mater what my life entailed. Dr Erica is who I see now, for the last 6 ish years. She is fantastic as well. Nobody in that office ever rushes you. The listen and believe you. The do the research if needed. From the office staff to all the doctors this is a literal life saving place!",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "I started going here and seeing Falkenstein around 23 years ago as a young adult fresh back from the military as a brand new Type 1 Diabetic. He has always treated me with respect and dignity no mater what my life entailed. Dr Erica is who I see now, for the last 6 ish years. She is fantastic as well. Nobody in that office ever rushes you. The listen and believe you. The do the research if needed. From the office staff to all the doctors this is a literal life saving place!",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Elizabeth Neal",
+                        "uri": "https://www.google.com/maps/contrib/104119000892564055112/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLF-vhjzkEm1HxCI9J6TIm0H6hCVOAHDpRgiMNCmTbn49JSiA=s128-c0x00000000-cc-rp-mo-ba4"
+                    },
+                    "publishTime": "2024-11-01T21:21:53.820201Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUMzNE1iOHhBRRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUMzNE1iOHhBRRAB!2m1!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea"
+                },
+                {
+                    "name": "places/ChIJ5baj-f5bNIgR6tvJfO2lBus/reviews/ChZDSUhNMG9nS0VJQ0FnSUQ3cE83V0NBEAE",
+                    "relativePublishTimeDescription": "5 months ago",
+                    "rating": 1,
+                    "text": {
+                        "text": "The PA is phenomenal however the office staff is absolutely ridiculous. They are rude, unprofessional, and constantly have an attitude. My first time there, I walked into the office, and could hear them talking about another patient loud enough for me and everyone else in the waiting room to hear. Very immature and not exactly how I expected a doctor office to be ran.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "The PA is phenomenal however the office staff is absolutely ridiculous. They are rude, unprofessional, and constantly have an attitude. My first time there, I walked into the office, and could hear them talking about another patient loud enough for me and everyone else in the waiting room to hear. Very immature and not exactly how I expected a doctor office to be ran.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Ashley",
+                        "uri": "https://www.google.com/maps/contrib/100352034742953813793/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKZRkboKpckw4ur_Ct7eze4CIj9nxTgKaMNGcZdrhZUp9mLlQ_R=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2024-08-21T13:42:35.789668Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUQ3cE83V0NBEAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ3cE83V0NBEAE!2m1!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea"
+                },
+                {
+                    "name": "places/ChIJ5baj-f5bNIgR6tvJfO2lBus/reviews/ChdDSUhNMG9nS0VJQ0FnSUNBbnNicWtnRRAB",
+                    "relativePublishTimeDescription": "7 years ago",
+                    "rating": 4,
+                    "text": {
+                        "text": "My primary care physician is with this office and I have the highest respect and appreciation of him. I have also seen a sports medicine doctor and another doctor - all 3 have excellent rapport skills and make me feel well cared for. The downfall is the front office of staff - rude, abrupt, and have actually blamed me when a pharmacy did not receive a prescription that they faxed. They have scolded me for utilizing my insurance's online prescription fulfillment when the delay was because they didn't check the box next to the applicable physician's name. And  I have no success trying to call them during my lunch break, on multiple occasions I have called between 11 - 1 to receive no answer and no voicemail.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "My primary care physician is with this office and I have the highest respect and appreciation of him. I have also seen a sports medicine doctor and another doctor - all 3 have excellent rapport skills and make me feel well cared for. The downfall is the front office of staff - rude, abrupt, and have actually blamed me when a pharmacy did not receive a prescription that they faxed. They have scolded me for utilizing my insurance's online prescription fulfillment when the delay was because they didn't check the box next to the applicable physician's name. And  I have no success trying to call them during my lunch break, on multiple occasions I have called between 11 - 1 to receive no answer and no voicemail.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Ellen Salizzoni",
+                        "uri": "https://www.google.com/maps/contrib/107957745579639738211/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKLePEjr_mxeEu7g64DxJxl5W03fO0CfHBZZ56V2ndg8cmNSQ=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2017-11-06T21:41:28.593Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUNBbnNicWtnRRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNBbnNicWtnRRAB!2m1!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea"
+                },
+                {
+                    "name": "places/ChIJ5baj-f5bNIgR6tvJfO2lBus/reviews/ChdDSUhNMG9nS0VJQ0FnSUNleDl2c2xnRRAB",
+                    "relativePublishTimeDescription": "2 years ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "I’m really happy I chose this office as my new PCP since moving back to Pittsburgh. Both the nurse and PA I saw were so kind and I felt like they really took their time and listened to me as we walked through my medical history. I get pretty bad health anxiety but I felt really at ease here!",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "I’m really happy I chose this office as my new PCP since moving back to Pittsburgh. Both the nurse and PA I saw were so kind and I felt like they really took their time and listened to me as we walked through my medical history. I get pretty bad health anxiety but I felt really at ease here!",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Kacie Erb",
+                        "uri": "https://www.google.com/maps/contrib/118086896999016128359/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWAQbZBRkDxjcZN5NO1SVRC5OLhAD0-GnELMnstysEs55vLjSsD=s128-c0x00000000-cc-rp-mo-ba4"
+                    },
+                    "publishTime": "2022-09-25T16:55:43.763955Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUNleDl2c2xnRRAB&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNleDl2c2xnRRAB!2m1!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea"
+                },
+                {
+                    "name": "places/ChIJ5baj-f5bNIgR6tvJfO2lBus/reviews/ChZDSUhNMG9nS0VJQ0FnSUN3eVlPakJnEAE",
+                    "relativePublishTimeDescription": "7 years ago",
+                    "rating": 1,
+                    "text": {
+                        "text": "His office asst is nasty, unfriendly & unprofessional. After being injured in a car accident, she denied me an appt for 5 weeks & wouldnt even put me on cancellation list. So many unnecessary arguments with her. However the young girls in the office were always kind & helpful.\nDr Falkenstein used to listen to my concerns, but after this accident I was in, he wasn’t the same guy. Tried to tell him I had concussion, a thyroid issue, neck & back injury but he fluffed it off. Got diagnosed many months later  elsewhere by other doctors for all of those things. I took it upon myself to see a specialist who would help with injuries (do injections, nerve block) & Dr. Falkensteins immediate response was to stop treating me with meds for pain so cut me off with no notice (but his office lady lied & tried to tell me he gave me notice).  I went 5 weeks in the most horrific pain & not being able to get out of bed due to the car accident until I could get a pain management doctor to take over.\nMy specialists said any office asst who refused me an appt after car accident injuries & a doctor who missed many important diagnosis’s let alone left me in such horrible pain refusing to continue treating me until pain mgmt could take over were not worth going back to & urged me to find a much better doctor who cared about my well being.",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "His office asst is nasty, unfriendly & unprofessional. After being injured in a car accident, she denied me an appt for 5 weeks & wouldnt even put me on cancellation list. So many unnecessary arguments with her. However the young girls in the office were always kind & helpful.\nDr Falkenstein used to listen to my concerns, but after this accident I was in, he wasn’t the same guy. Tried to tell him I had concussion, a thyroid issue, neck & back injury but he fluffed it off. Got diagnosed many months later  elsewhere by other doctors for all of those things. I took it upon myself to see a specialist who would help with injuries (do injections, nerve block) & Dr. Falkensteins immediate response was to stop treating me with meds for pain so cut me off with no notice (but his office lady lied & tried to tell me he gave me notice).  I went 5 weeks in the most horrific pain & not being able to get out of bed due to the car accident until I could get a pain management doctor to take over.\nMy specialists said any office asst who refused me an appt after car accident injuries & a doctor who missed many important diagnosis’s let alone left me in such horrible pain refusing to continue treating me until pain mgmt could take over were not worth going back to & urged me to find a much better doctor who cared about my well being.",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Rachel Sell",
+                        "uri": "https://www.google.com/maps/contrib/103334140644353884861/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUd-wz1uvz7Ccs8ugtALGg3fU4Uxd0mbsjYNEFnmx2cnXLysXAy=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2017-11-14T19:19:07.992Z",
+                    "flagContentUri": "https://www.google.com/local/review/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUN3eVlPakJnEAE&d=17924085&t=1",
+                    "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN3eVlPakJnEAE!2m1!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea"
+                }
+            ],
+            "photos": [
+                {
+                    "name": "places/ChIJ5baj-f5bNIgR6tvJfO2lBus/photos/AVzFdbnUo7c9ew6W5S6TqHbGUi1y_M0QCl8hlW1ik178DNDljXDzEpFcvOifpDY_-XXB5JUvadL-XQVSRi4PRsXnwd-rUCkZnZDxbHfgDWkIuzsSrTUNn8FxIbdjcC-l_Cn0MoQCtRgOKpMiW6NSiqd3FdRvsCh4BNd8JJWg",
+                    "widthPx": 4032,
+                    "heightPx": 3024,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Huayun Huang",
+                            "uri": "https://maps.google.com/maps/contrib/100503502565620254340",
+                            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUygeg3y91IjWTyQ40IPGIVJrObjQlJnaK23wgGs2V5I3HvKQzh=s100-p-k-no-mo"
+                        }
+                    ],
+                    "flagContentUri": "https://www.google.com/local/imagery/report/?cb_client=maps_api_places.places_api&image_key=!1e10!2sAF1QipN5eCP4R2R49D69b-JRET1h3eSHQgIWEna2XYTa&hl=en-US",
+                    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN5eCP4R2R49D69b-JRET1h3eSHQgIWEna2XYTa!2e10!4m2!3m1!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea"
+                }
+            ],
+            "googleMapsLinks": {
+                "directionsUri": "https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea!3e0",
+                "placeUri": "https://maps.google.com/?cid=16935405888192764906",
+                "writeAReviewUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea!12e1",
+                "reviewsUri": "https://www.google.com/maps/place//data=!4m4!3m3!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea!9m1!1b1",
+                "photosUri": "https://www.google.com/maps/place//data=!4m3!3m2!1s0x88345bfef9a3b6e5:0xeb06a5ed7cc9dbea!10e5"
+            }
+        }
+    ]
+}
