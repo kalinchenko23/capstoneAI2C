@@ -89,19 +89,6 @@ async def search_nearby_places(lat: float = Body(),
             detail=f"Error from Google API: {response.text}"
         )
     
-    # #Calling "download_photo" helper function
-    # for i in response.json()["places"]:
-    #     try:
-    #         counter=1
-    #         for photo in i["photos"]:
-    #             name=photo["name"]
-    #             uri=f"https://places.googleapis.com/v1/{name}/media?key={API_KEY}&maxHeightPx=400&maxWidthPx=400"
-    #             file=i["displayName"]["text"]
-    #             await download_photo(uri,filename=f"{file}{counter}")
-    #             counter+=1
-    #     except KeyError as e:
-    #         pass
-    
     #Calling "responce_fromatter" helper function to provide relevant fields for the output file
     data = await response_formatter(response.json(),API_KEY)
     return  {"places": data}

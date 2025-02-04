@@ -1,26 +1,20 @@
 from fastapi import FastAPI, Query, Body, HTTPException
 import httpx
 import json
-
+import base64
 
 async def getting_street_view_image(
     location: str,
-    filename: str,
     key: str):
     """
-    Fetches a Street View image from the Google Street View API and saves it as a file.
+    Fetches a Street View image from the Google Street View API and encodes it for VLM processing.
 
     Args:
         location (str): The location for the Street View image. Can be an address or latitude/longitude.
-        filename (str): The name of the file to save the image as (without extension).
         key (str): The API key for authenticating with the Google Street View API.
-        streetview_url (str): The base URL for the Google Street View API.
-
-    Raises:
-        HTTPException: If the `location` is not provided or the API request fails.
 
     Returns:
-        bool: True if the image is successfully fetched and saved.
+        tuple: (Image URI, Encoded Image)
     """
 
     if not location:
@@ -40,53 +34,36 @@ async def getting_street_view_image(
     query = "&".join(f"{k}={v}" for k, v in params.items())
     url = f"https://maps.googleapis.com/maps/api/streetview?{query}"
 
+    # Gets and Base64 encodes the imagae
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
+        encoded_string = base64.b64encode(response.content).decode('utf-8')
 
     if response.status_code != 200:
         raise HTTPException(
             status_code=response.status_code,
             detail=f"Failed to fetch the image: {response.text}"
-        )
-    
-    # Save the image to a temporary file
-    with open(f"streetview_images/{filename}.jpg", "wb") as f:
-        print(f"Saving image {filename}")
-        f.write(response.content)
-    
-    return str(response.url)
+        ) 
+    return (str(response.url),encoded_string)
 
 
 
-async def download_photo(photo_uri: str, filename: str):
+async def get_photo(photo_uri: str):
     """
-    Downloads an image from the provided photo URI and saves it as a file.
-
-    Args:
-        photo_uri (str): The URL of the photo to download.
-        filename (str): The name of the file to save the image as (without extension).
+    Get and encode an image from the provided photo URI.
 
     Returns:
-         bool: True if the image is successfully fetched and saved.
+         str: Base64 encoded string.
     """
     # Validate input
     if not photo_uri:
         raise ValueError("The 'photo_uri' parameter cannot be empty.")
     
-    # Download the image
+    # Base64 encode image
     async with httpx.AsyncClient(follow_redirects=True) as client:
         response = await client.get(photo_uri)
-        
-        # Check if the request was successful
-        if response.status_code != 200:
-            raise Exception(f"Failed to download the image. Status code: {response.status_code}")
-        
-        # Save the image to a file
-        with open(f"photos/{filename}.jpg", "wb") as file:
-            file.write(response.content)
-    
-    print(f"Image saved to {filename}")
-    return True
+    encoded_string = base64.b64encode(response.content).decode('utf-8')
+    return encoded_string
 
 
 
@@ -141,7 +118,7 @@ async def response_formatter(responce,api_key):
 
             location=place["formattedAddress"]
             filename=place["displayName"]["text"]
-            new_data["street_view"]= "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED" #await getting_street_view_image(location,filename,api_key)
+            new_data["street_view"]= "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED" #await getting_street_view_image(location,filename,api_key)[0]
 
             try:
                 new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
