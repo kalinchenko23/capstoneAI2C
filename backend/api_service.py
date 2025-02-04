@@ -15,7 +15,41 @@ with open("secrets.json") as config_file:
 app = FastAPI()
 API_KEY = config["GOOGLE_API_KEY"]
 BASE_URL_NEARBY_SEARCH = "https://places.googleapis.com/v1/places:searchNearby"
-STREETVIEW_URL="https://maps.googleapis.com/maps/api/streetview"
+GEOCODE_URL="https://maps.googleapis.com/maps/api/geocode/json"
+
+
+@app.get("/geocode")
+async def geocode(address = Body(), user_id = Body(), token: str =Body()):
+
+    #The function first checks if the provided user credentials
+    if authenticate(user_id,token):
+
+        #Constructs the request URL and parameters for the geocoding service.
+        url = GEOCODE_URL
+        params = {
+            "address": address,
+            "key": API_KEY
+        }
+        
+        #Makes an asynchronous HTTP GET request to the geocoding API (`GEOCODE_URL`), passing the address and API key.
+        async with httpx.AsyncClient() as client:
+            response = await client.get(url, params=params)
+            if response.status_code != 200:
+                raise HTTPException(status_code=response.status_code, detail="Error contacting the geocoding service")
+            data = response.json()
+
+        #If the API responds successfully, it extracts the latitude and longitude
+        if data.get("status") != "OK":
+            raise HTTPException(status_code=400, detail=f"Geocoding error: {data.get('status')}")
+
+        location = data["results"][0]["geometry"]["location"]
+        lat = location["lat"]
+        lng = location["lng"]
+        return (lat,lng)
+    
+    else: 
+        return "Credentials are incorrect"
+
 
 
 @app.post("/search_nearby")
@@ -55,12 +89,6 @@ async def search_nearby_places(lat: float = Body(),
             detail=f"Error from Google API: {response.text}"
         )
     
-    #Calling "street view" helper function 
-    # for i in response.json()["places"]:
-    #     location=i["formattedAddress"]
-    #     filename=i["displayName"]["text"]
-    #     await getting_street_view_image(location,filename,API_KEY,STREETVIEW_URL)
-    
     # #Calling "download_photo" helper function
     # for i in response.json()["places"]:
     #     try:
@@ -75,5 +103,5 @@ async def search_nearby_places(lat: float = Body(),
     #         pass
     
     #Calling "responce_fromatter" helper function to provide relevant fields for the output file
-    data=response_formatter(response.json())
+    data = await response_formatter(response.json(),API_KEY)
     return  {"places": data}

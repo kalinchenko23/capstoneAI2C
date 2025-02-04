@@ -6,8 +6,7 @@ import json
 async def getting_street_view_image(
     location: str,
     filename: str,
-    key: str,
-    streetview_url: str):
+    key: str):
     """
     Fetches a Street View image from the Google Street View API and saves it as a file.
 
@@ -39,11 +38,11 @@ async def getting_street_view_image(
         params["location"] = location
     
     query = "&".join(f"{k}={v}" for k, v in params.items())
-    url = f"{streetview_url}?{query}"
+    url = f"https://maps.googleapis.com/maps/api/streetview?{query}"
 
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
-    
+
     if response.status_code != 200:
         raise HTTPException(
             status_code=response.status_code,
@@ -55,7 +54,7 @@ async def getting_street_view_image(
         print(f"Saving image {filename}")
         f.write(response.content)
     
-    return True
+    return str(response.url)
 
 
 
@@ -91,7 +90,7 @@ async def download_photo(photo_uri: str, filename: str):
 
 
 
-def response_formatter(responce):
+async def response_formatter(responce,api_key):
     """
     Extracts specific fields from a JSON response provided by GoogleAPI and formats them into a structured list of dictionaries.
 
@@ -128,13 +127,22 @@ def response_formatter(responce):
                 new_data["latitude"]="Latitude is not provided"
                 new_data["longitude"]="Longitude is not provided"
             try:
-                new_data["reviews"]=place["reviews"]
+                new_data["reviews"] = []
+                for photo in place["reviews"]:
+                    new_data["reviews"].append(photo["googleMapsUri"])
             except KeyError as ex:
                 new_data["reviews"]="Reviews are not provided"
             try:
-                new_data["photos"]=place["photos"]
+                new_data["photos"] = []
+                for photo in place["photos"]:
+                    new_data["photos"].append(photo["googleMapsUri"])
             except KeyError as ex:
                 new_data["photos"]="Photos are not provided"
+
+            location=place["formattedAddress"]
+            filename=place["displayName"]["text"]
+            new_data["street_view"]= await getting_street_view_image(location,filename,api_key)
+
             try:
                 new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
             except KeyError as ex:
