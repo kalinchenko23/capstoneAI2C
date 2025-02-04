@@ -141,7 +141,7 @@ async def response_formatter(responce,api_key):
 
             location=place["formattedAddress"]
             filename=place["displayName"]["text"]
-            new_data["street_view"]= await getting_street_view_image(location,filename,api_key)
+            new_data["street_view"]= "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED" #await getting_street_view_image(location,filename,api_key)
 
             try:
                 new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
