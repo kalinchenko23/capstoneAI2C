@@ -1,11 +1,9 @@
 from fastapi import FastAPI, Query, Body, HTTPException, Response
 from user_credentials_service import authenticate
-from api_service_helper_functions import getting_street_view_image, download_photo, response_formatter
+from api_service_helper_functions import getting_street_view_image, response_formatter
 from typing import Optional
 import httpx
 import json
-
-
 
 # Load the JSON secrets config
 with open("secrets.json") as config_file:
@@ -14,7 +12,7 @@ with open("secrets.json") as config_file:
 #Defining global variables
 app = FastAPI()
 API_KEY = config["GOOGLE_API_KEY"]
-BASE_URL_NEARBY_SEARCH = "https://places.googleapis.com/v1/places:searchNearby"
+TEXT_SEARCH_URL = "https://places.googleapis.com/v1/places:searchText"
 GEOCODE_URL="https://maps.googleapis.com/maps/api/geocode/json"
 
 
@@ -53,13 +51,20 @@ async def geocode(address = Body(), user_id = Body(), token: str =Body()):
 
 
 @app.post("/search_nearby")
-async def search_nearby_places(lat: float = Body(),
-                               lng: float = Body(),
-                               rad: float = Body(),
-                               includedTypes: Optional[list] =Body(default=None),
+async def search_nearby_places(text_query: str =Body(),
+                               lat_sw: float = Body(),
+                               lng_sw: float = Body(),
+                               lat_ne: float = Body(),
+                               lng_ne: float = Body(),
                                user_id = Body(), token: str =Body(),
-                               maxResultCount: int = Body(default=None),
-                               fieldMask: str = Body(default="places.displayName,places.websiteUri,places.nationalPhoneNumber,places.formattedAddress,places.location,places.reviews,places.photos,places.regularOpeningHours,places.googleMapsUri,places.googleMapsLinks")):
+                               pageToken: Optional[str] = Body(default=None),
+                               fieldMask: str = Body(default="places.displayName,places.websiteUri,places.nationalPhoneNumber,places.formattedAddress,places.location,places.reviews,places.photos,places.regularOpeningHours,places.googleMapsUri,nextPageToken")):
+    
+    """
+    This endpoint performs a text-based search for places within a specified bounding box.
+    It returns places that match the given text query and includes pagination support.
+    """
+    
     headers = {
         "Content-Type": "application/json",
         "X-Goog-Api-Key": API_KEY,
@@ -67,28 +72,52 @@ async def search_nearby_places(lat: float = Body(),
     }
 
     payload={
-        "locationRestriction": {
-            "circle": {
-                "center": {
-                    "latitude": lat,
-                    "longitude": lng
-                    },
-                    "radius": rad
-            }},
-    "includedTypes": includedTypes,
-    "maxResultCount": maxResultCount
+    "textQuery": text_query,
+    "locationRestriction": {
+        "rectangle": {
+            "low": {
+                "latitude": lat_sw,
+                "longitude": lng_sw
+            },
+            "high": {
+                "latitude": lat_ne,
+                "longitude": lng_ne
+            }
+        }
+    },
+    "pageToken": pageToken
     
     }
-
-    async with httpx.AsyncClient() as client:
-        response = await client.post(BASE_URL_NEARBY_SEARCH, json=payload, headers=headers)
-    
-    if response.status_code != 200:
-        raise HTTPException(
-            status_code=response.status_code,
-            detail=f"Error from Google API: {response.text}"
-        )
-    
-    #Calling "responce_fromatter" helper function to provide relevant fields for the output file
-    data = await response_formatter(response.json(),API_KEY)
-    return  {"places": data}
+    result={}
+    if authenticate(user_id,token):
+        async with httpx.AsyncClient() as client:
+            response = await client.post(TEXT_SEARCH_URL, json=payload, headers=headers)
+            
+        if response.status_code != 200:
+            raise HTTPException(
+                status_code=response.status_code,
+                detail=f"Error from Google API: {response.text}"
+            )
+        
+        if "places" in response.json().keys():
+            result=response.json()["places"]
+        else:
+            return result
+        
+        #Reccursive function that checks if there is a next page 
+        async def next_page(next_page_response: dict):
+            if "nextPageToken" in next_page_response.keys():
+                async with httpx.AsyncClient() as client:
+                    payload["pageToken"]=next_page_response["nextPageToken"]
+                    # payload["pageSize"]=20
+                    response = await client.post(TEXT_SEARCH_URL, json=payload, headers=headers)
+                    for place in response.json()["places"]:
+                        result.append(place)
+                    await next_page(response.json())
+            else:
+                return False
+        await next_page(response.json())
+                    
+        #Calling "responce_fromatter" helper function to provide relevant fields for the output file
+        data = await response_formatter(result,API_KEY)
+    return {"places": data}

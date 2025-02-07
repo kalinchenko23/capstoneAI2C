@@ -1,7 +1,9 @@
 from fastapi import FastAPI, Query, Body, HTTPException
+from llm_service import get_review_summary
 import httpx
 import json
 import base64
+from datetime import datetime
 
 async def getting_street_view_image(
     location: str,
@@ -66,7 +68,6 @@ async def get_photo(photo_uri: str):
     return encoded_string
 
 
-
 async def response_formatter(responce,api_key):
     """
     Extracts specific fields from a JSON response provided by GoogleAPI and formats them into a structured list of dictionaries.
@@ -78,54 +79,75 @@ async def response_formatter(responce,api_key):
         list: A list of formatted dictionaries containing relevant place information.
     """
     result=[]
-    try:
-        for place in responce["places"]:
-            new_data={}
-            try:
-                new_data["name"]=place["displayName"]["text"]
-            except KeyError as ex:
-                new_data["name"]="Name is not provided"
-            try:
-                new_data["website"]=place["websiteUri"]
-            except KeyError as ex:
-                new_data["website"]="Website is not provided"
-            try:
-                new_data["phone_number"]=place["nationalPhoneNumber"]
-            except KeyError as ex:
-                new_data["phone_number"]="Phone number is not provided"
-            try:
-                new_data["address"]=place["formattedAddress"]
-            except KeyError as ex:
-                new_data["address"]="Address number is not provided"
-            try:
-                new_data["latitude"]=place["location"]["latitude"]
-                new_data["longitude"]=place["location"]["longitude"]
-            except KeyError as ex:
-                new_data["latitude"]="Latitude is not provided"
-                new_data["longitude"]="Longitude is not provided"
-            try:
-                new_data["reviews"] = []
-                for photo in place["reviews"]:
-                    new_data["reviews"].append(photo["googleMapsUri"])
-            except KeyError as ex:
-                new_data["reviews"]="Reviews are not provided"
-            try:
-                new_data["photos"] = []
-                for photo in place["photos"]:
-                    new_data["photos"].append(photo["googleMapsUri"])
-            except KeyError as ex:
-                new_data["photos"]="Photos are not provided"
 
-            location=place["formattedAddress"]
-            filename=place["displayName"]["text"]
-            new_data["street_view"]= "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED" #await getting_street_view_image(location,filename,api_key)[0]
-
-            try:
-                new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
-            except KeyError as ex:
-                new_data["working_hours"]="Working hours are not provided"
+    for place in responce:
+        new_data={}
+        try:
+            new_data["name"]=place["displayName"]["text"]
+        except KeyError as ex:
+            new_data["name"]="Name is not provided"
+        try:
+            new_data["website"]=place["websiteUri"]
+        except KeyError as ex:
+            new_data["website"]="Website is not provided"
+        try:
+            new_data["phone_number"]=place["nationalPhoneNumber"]
+        except KeyError as ex:
+            new_data["phone_number"]="Phone number is not provided"
+        try:
+            new_data["address"]=place["formattedAddress"]
+        except KeyError as ex:
+            new_data["address"]="Address number is not provided"
+        try:
+            new_data["latitude"]=place["location"]["latitude"]
+            new_data["longitude"]=place["location"]["longitude"]
+        except KeyError as ex:
+            new_data["latitude"]="Latitude is not provided"
+            new_data["longitude"]="Longitude is not provided"
             
-            result.append(new_data)
-    except KeyError as ex:
-        return result
+        try:
+
+            # new_data["reviews_summary"] = get_review_summary(place["reviews"])
+            
+            new_data["reviews"] = []
+            ratings=[]
+            times=[]
+            for review in place["reviews"]:
+                new_data["reviews"].append(review["googleMapsUri"])
+                ratings.append(review["rating"])
+                times.append(review["publishTime"])
+            
+            #Calculates average reviews value
+            average = sum(ratings) / len(ratings)
+            new_data["rating"]=f"average: {average} out of {len(ratings)} reviews"
+
+            #Calculates average time span
+            timestamp_objects = [datetime.fromisoformat(ts.rstrip("Z")).date() for ts in times]
+            latest_date = max(timestamp_objects)
+            most_recent_date = min(timestamp_objects)
+            date_diff = latest_date - most_recent_date
+            new_data["reviews_span"]=f"latest date: {latest_date}, most recent date: {most_recent_date}, date difference: {date_diff.days} days"
+
+        except KeyError as ex:
+            new_data["reviews"]="Reviews are not provided"
+
+        try:
+            new_data["photos"] = []
+            for photo in place["photos"]:
+                new_data["photos"].append(photo["googleMapsUri"])
+        except KeyError as ex:
+            new_data["photos"]="Photos are not provided"
+
+        location=place["formattedAddress"]
+        filename=place["displayName"]["text"]
+        new_data["street_view"]= "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED" #await getting_street_view_image(location,filename,api_key)[0]
+
+        try:
+            new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
+        except KeyError as ex:
+            new_data["working_hours"]="Working hours are not provided"
+        
+        result.append(new_data)
+        
     return result
+
