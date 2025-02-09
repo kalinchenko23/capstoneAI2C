@@ -44,6 +44,25 @@ SOF analysts manually extract location-based information from **Google Maps**, r
 
 ---
 
+## Capacity / Capability Gaps
+- No capacity or capability gaps identified at this time.
+
+---
+
+## AI2C Fit:
+- This project directly aligns with AI2C / SOF Portfolios guidance for the SOF OPE Toolkit.
+
+---
+
+## RFI's for Customer:
+- RFI are handled by the AI2c mentors and by a member of the development team
+
+---
+
+## Mentor and Customer Info:
+
+---
+
 ## Key Features
 
 ✅ **Automated Google Maps Data Extraction** – Uses **Google Maps API** to retrieve places, reviews, and photos.
@@ -106,7 +125,7 @@ Ensure you have the following installed:
 
 ---
 
-## Roadmap
+## Roadmap / Anticipated Tasks
 
 ### 📌 Current Progress
 - ✅ User authentication & access control
