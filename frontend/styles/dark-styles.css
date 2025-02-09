@@ -5,13 +5,7 @@
     --secondary-blue: rgb(7, 98, 114);
     --background-color: #201f20;
     --text-color: #cee5f8;
-  }
-
-
-/* body {
-    background-color: #010005;
-    color: white !important;
-} */
+}
 
 .stApp {
     background-color: #010005;
@@ -158,10 +152,23 @@ iframe[data-testid="stIFrame"] {
     display: none !important;
 }
 
+/* sidebar styles */
+section[data-testid="stSidebar"] {
+    background-color: var(--background-color);
+}
 
+/* filters dropdown
+iframe[data-testid="stCustomComponentV1"] {
+    background-color: var(--background-color) !important;
+} */
 
+#root {
+    background-color: red !important;
+}
 
-
+#root > div:nth-child(1) > div.withScreencast > div > div > section.stSidebar.st-emotion-cache-vmpjyt.e1dbuyne0 > div.st-emotion-cache-6qob1r.e1dbuyne8 > div.st-emotion-cache-a6qe2i.e1dbuyne7 > div > div > div > div > div > iframe {
+    background-color: red !important;
+}
 
 
 

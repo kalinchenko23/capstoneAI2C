@@ -1,14 +1,14 @@
 import streamlit as st
 import mgrs
 
-# icon used in all of the st.warnings
-icon="⚠️"
+# icon used in all of the st.errors
+icon="❌"
 
 
 def validate_location(location, location_type):
     # first ensure that a value has been input for the "location" input field
     if len(location.strip()) == 0:
-        st.warning('location field can not be empty', icon=icon)
+        st.error('location field can not be empty', icon=icon)
 
     else:
         # instantiting the conversion object needed for any conversions
@@ -22,7 +22,7 @@ def validate_location(location, location_type):
                 return mgrs_to_dd
             
             except mgrs.core.MGRSError:
-                st.warning(f'Invalid MGRS - "{location}"\n', icon=icon)
+                st.error(f'Invalid MGRS - "{location}"\n', icon=icon)
 
 
         elif location_type == 'Lat/Lon':
@@ -34,7 +34,7 @@ def validate_location(location, location_type):
                     lat_str, lon_str = location.split(" ")
             
             except ValueError:
-                st.warning("""
+                st.error("""
                             Invalid location format\n
                             Please enter coordinates in one of the following valid formats:
                             
@@ -53,7 +53,7 @@ def validate_location(location, location_type):
                     raise ValueError
 
             except ValueError:
-                st.warning(f"""
+                st.error(f"""
                             Invalid latitude - "{lat_str}"\n
                             Please ensure that latitude is between -90 and 90
                             """, icon=icon)
@@ -68,7 +68,7 @@ def validate_location(location, location_type):
                     raise ValueError
 
             except ValueError: # happens when lon cant be casted to a float
-                st.warning(f"""
+                st.error(f"""
                             Invalid longitude - "{lon_str}"\n
                             Please ensure that longitude is between -180 and 180
                             """, icon=icon)
@@ -85,7 +85,7 @@ def validate_location(location, location_type):
 def validate_search_radius(search_radius, search_radius_units):
     # ensure that a value has been input for the "search radius" input field
     if len(search_radius.strip()) == 0:
-        st.warning('search radius field can not be empty', icon=icon)
+        st.error('search radius field can not be empty', icon=icon)
 
     else:
         try:
@@ -104,17 +104,17 @@ def validate_search_radius(search_radius, search_radius_units):
                 return search_radius_number
             
         except ValueError:
-            st.warning('Please enter a valid search radius (number between 1 and 5000)', icon=icon)
+            st.error('Please enter a valid search radius (number between 1 and 5000)', icon=icon)
 
 def validate_user_id(user_id):
     if len(user_id.strip()) == 0:
-        st.warning('user-id field can not be empty', icon=icon) 
+        st.error('user-id field can not be empty', icon=icon) 
     else:
         return user_id     
 
 def validate_token(token):
     if len(token.strip()) == 0:
-        st.warning('token field can not be empty', icon=icon) 
+        st.error('token field can not be empty', icon=icon) 
     else:
         return token 
     

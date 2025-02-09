@@ -2,6 +2,7 @@ import streamlit as st
 
 from helpers.validation_helper_functions import validate_location, validate_search_radius, validate_user_id, validate_token
 from helpers.generate_map import generate_map, scroll_to_top_of_map
+from helpers.nearby_search_and_download import nearby_search_post_request
 
 # This is displayed on the tab that the application is opened in
 # other options for app icon = 🛠️ 🧰
@@ -10,10 +11,10 @@ st.set_page_config(
    page_icon="🧰",
 )
 
-# st.header('Tactical OPE Toolkit')
+st.subheader('Tactical OPE Toolkit')
 
 # imports and reads the "styles.css file"
-with open('./styles/styles.css') as f:
+with open('./styles/light-styles.css') as f:
     st.markdown(f'<style>{f.read()}<style>', unsafe_allow_html=True)
 
 # initializing a state variable that will track if all inputs have been validated
@@ -37,11 +38,12 @@ with st.container(border=True):
     # This creates a 1row x 2column "grid" that the input boxes are sitting in
     user_id_column, token_column = st.columns(2)
 
-# This creates a 1row x 2column "grid" that the input boxes are sitting in
-location_column, location_type_column = st.columns(2)
+with st.container(border=True):
+    # This creates a 1row x 2column "grid" that the input boxes are sitting in
+    location_column, location_type_column = st.columns(2)
 
-# This creates a 1row x 2column "grid" that the input boxes are sitting in
-search_radius_column, search_radius_units_column = st.columns(2)
+    # This creates a 1row x 2column "grid" that the input boxes are sitting in
+    search_radius_column, search_radius_units_column = st.columns(2)
 
 # creates the "user_id" input field
 user_id = user_id_column.text_input(
@@ -64,7 +66,7 @@ token = token_column.text_input(
     value="", 
     max_chars=None, 
     key='token_input', 
-    type='default', 
+    type='password',  # hides the user input
     help=None, 
     autocomplete=None, 
     on_change=reset_inputs, 
@@ -83,9 +85,9 @@ location = location_column.text_input(
     help=None, 
     autocomplete=None, 
     on_change=reset_inputs, 
-    placeholder=None, 
+    placeholder='location', 
     disabled=False, 
-    label_visibility="visible"
+    label_visibility="hidden"
     )
 
 # creates the location "type" drop down select box adjacent to the "location" textbox
@@ -114,9 +116,9 @@ search_radius = search_radius_column.text_input(
     help=None, 
     autocomplete=None, 
     on_change=reset_inputs, 
-    placeholder='', 
+    placeholder='search radius', 
     disabled=False, 
-    label_visibility="visible"
+    label_visibility="hidden"
     )
 
 # creates the "units" drop down select box adjacent to the "search radius" textbox
@@ -203,7 +205,7 @@ if st.session_state['map_displayed'] == True:
     key='submit_button',  
     type="secondary",  
     disabled=False, 
-    use_container_width=False
+    use_container_width=False, 
     )
 
     # when the submit button is clicked
@@ -212,21 +214,13 @@ if st.session_state['map_displayed'] == True:
         reset_inputs()
         st.rerun()
 
+# triggered when the submit button is clicked
 if st.session_state['query_submitted'] == True:
-    request_body = {
-        'lat': float(st.session_state['validated_location'][0]), 
-        'lon': float(st.session_state['validated_location'][1]), 
-        'rad': float(st.session_state['validated_search_radius']), 
-        'includedTypes': [], 
-        'user_id': str(st.session_state['validated_user_id']), 
-        'token': str(st.session_state['validated_token'])
-    }
+    nearby_search_post_request()
+    st.session_state['query_submitted'] = False
 
-    st.write('post request to "/search_nearby" endpoint')
-    st.write(request_body)
 
-        
-# st.write(st.session_state)
+# st.write(f'{st.session_state['query_submitted']}')
 
 # TODO: 
 # function
@@ -236,6 +230,13 @@ if st.session_state['query_submitted'] == True:
 # 'included types' shenanigans
 # kmz download option
 # the map takes a while to load the first time the app is launched...
+# vlm input field (for use with the VLM)
+# field mask passed to backend
+# a check to ensure there is atleast one place returned before writing the output
+# banner instructions for user input
+# ne/sw corners for bounding box
+# interactive map for bounding box
+# option for general places query OR fill in the field for a specific query
 
 # style
 # hide/show password for 'token' field, will likely need to bring my own svg for displaying
