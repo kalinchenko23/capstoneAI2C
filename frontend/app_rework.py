@@ -1,7 +1,7 @@
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
-from folium.plugins import Draw 
+from folium.plugins import Draw, Geocoder, MeasureControl
 import requests
 
 
@@ -19,6 +19,8 @@ st.set_page_config(
 # # imports and reads the "styles.css file"
 # with open('./styles/light-styles.css') as f:
 #     st.markdown(f'<style>{f.read()}<style>', unsafe_allow_html=True)
+
+
 
 
 # st.subheader('Tactical OPE Toolkit')
@@ -87,14 +89,34 @@ with st.container(border=True):
     # Create a map centered at a specific location
     m = folium.Map(location=[15.721049, 47.4529562], zoom_start=5)
 
+    draw_options = {
+        'polyline': False, 
+        'polygon': False,
+        'circle': False, 
+        'circlemarker': False
+    }
+
     # Add the drawing tool to the map
-    draw = Draw(export=False)
+    draw = Draw(export=False, draw_options=draw_options)
     m.add_child(draw)
+
+    # so 'geocoding' kind of sucks in the middle east where I tested BUT
+    # does enable searching for grids
+    Geocoder().add_to(m)
+
+    # measure control
+    m.add_child(MeasureControl())
+
+    # Mouse Position
+    # 
+
+
+    # returned_objects: Iterable A list of folium objects (as keys of the returned dictionary) that will be returned to the user when they interact with the map. If None, all folium objects will be returned. This is mainly useful for when you only want your streamlit app to rerun under certain conditions, and not every time the user interacts with the map. If an object not in returned_objects changes on the map, the app will not rerun. 
 
     # Display the map in Streamlit
     # !!! for some reason, adding the 'key' param to st_folium is causing a duplication in the st.session_state
-    #     however, the original key is dynamically named and I don't want to risk not targeting it correctly.
-    #     So I am opting to leave the 'map' key in, as I can ensure that I can target that state object
+    #     however, the original key is dynamically named and I don't want to risk targeting it incorrectly (with the wrong name).
+    #     So I am opting to leave the 'map' key in, as I can ensure that I can target that key in the state object
     output = st_folium(m, key='map', use_container_width=True, height=350)
 
     # Check if anything was drawn
@@ -111,19 +133,18 @@ with st.container(border=True):
             min_lon = min(coord[0] for coord in coordinates)
             max_lon = max(coord[0] for coord in coordinates)  
 
-# logic for handling the interactivity of inputting coords vs drawing a box
-# if 'map' in st.session_state:
-# still fucked
-if st.session_state['map']['last_active_drawing'] == None:
-    sw_value = ''
-    ne_value = ''
-    label_visibility = 'hidden'
-else:
+# logic for displaying the coordinates of a drawn box in the input fields
+# when the page loads and there is no box drawn, 'min_lat' and 'min_lon' are not defined
+try:
     sw_value = f'{min_lat}, {min_lon}'
     ne_value = f'{max_lat}, {max_lon}'
     label_visibility = 'visible'
+except:
+    sw_value = ''
+    ne_value = ''
+    label_visibility = 'hidden'
 
-
+# creates the sw corner input field
 southwest_coordinate = southwest_coordinate_column.text_input(
     'southwest coordinate', 
     value=sw_value, 
