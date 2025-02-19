@@ -22,7 +22,7 @@ initialize_state()
 
 def test_callback():
     if st.session_state['navbar'] == 'User Credentials':
-        scroll_to_top_of_map('user-credentials')
+        scroll_to_top_of_map()
 
 with st.sidebar:
     st.subheader('Tactical OPE Toolkit')   
