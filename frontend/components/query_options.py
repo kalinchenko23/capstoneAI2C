@@ -2,8 +2,6 @@ import streamlit as st
 
 # TODO:
 # big info box
-# explanation of the fields in the field select help 
-# breakout field selection into "tiers" based on pricing from the google maps api
 
 def show_query_options():
     # creates the "select output fields" containers and pills
