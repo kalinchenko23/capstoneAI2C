@@ -7,9 +7,6 @@ from .validation_helper_functions import validate_location
 
 # TODO:
 # info box articulating the need to minimize search area...
-# figure out how to draw bounding box if the user chooses to drop their own grids
-# does that field handle mgrs natively, if not does it need to?
-# nail down which map provider you're going with (currently 'arcgis')
 # allow polygon draws? how does the bounding box respond to that?
 
 # 15.366927651980896, 43.6001600047099
@@ -41,16 +38,13 @@ def show_search_area():
         # creates the location "type" drop down select box adjacent to the "location" textbox
         location_type = location_type_column.selectbox(
             label='type', 
-            # options=['Lat/Lon', 'MGRS', 'DMS'],
             options=['Lat/Lon', 'MGRS', 'Address'],
             index=0, 
-            # format_func=special_internal_function, 
             key='location_type', 
             help=None, 
             on_change=None, 
             placeholder="Choose an option", 
             disabled=False, 
-            # label_visibility="visible"
             label_visibility="collapsed"
             )
         
