@@ -117,4 +117,26 @@ def validate_token(token):
         st.error('token field can not be empty', icon=icon) 
     else:
         return token 
+
+def validate_establishment_search(establishment_search_input):
+    if len(establishment_search_input.strip()) == 0:
+        st.error('establishment search field can not be empty', icon=icon) 
+    else:
+        return establishment_search_input 
+    
+def validate_bounding_box(map):
+    if len(map['all_drawings']) == 0 or len(map['last_active_drawing']) == 0:
+        st.error('you must provide a valid search area', icon=icon) 
+    else:
+        return map
+    
+
+# Ensures the code runs only when this file is executed directly
+if __name__ == "__main__":
+    validate_location()
+    validate_search_radius()
+    validate_user_id()
+    validate_token()
+    validate_establishment_search()
+    validate_bounding_box()
     

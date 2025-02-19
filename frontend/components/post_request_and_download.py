@@ -38,17 +38,18 @@ def download_df(data):
         height=0,
 )
     
-def nearby_search_post_request():
-
+def text_search_post_request():
     request_body = {
-        'lat': float(st.session_state['validated_location'][0]), 
-        'lng': float(st.session_state['validated_location'][1]), 
-        'rad': float(st.session_state['validated_search_radius']),
-        'user_id': str(st.session_state['validated_user_id']),
-        'token': str(st.session_state['validated_token']),
-        'includedTypes': [], 
-        'maxResultCount': 20
-    }
+            "text_query": st.session_state['establishment_search_input'], 
+            "lat_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][1], 
+            "lng_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][0], 
+            "lat_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][1], 
+            "lng_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][0],
+            "user_id": "user123", 
+            "token": "290aa941a27675013735d287d1fc5ebe16983a8dd08937819f"
+            # "user_id": st.session_state['user_id'], 
+            # "token": st.session_state['token_input']
+            }
 
     url = 'http://127.0.0.1:8080/search_nearby'
 
@@ -58,6 +59,10 @@ def nearby_search_post_request():
     
     download_df(data)
 
-
+# Ensures the code runs only when this file is executed directly
+if __name__ == "__main__":
+    download_button()
+    download_df()
+    text_search_post_request()
 
 
