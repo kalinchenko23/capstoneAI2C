@@ -48,7 +48,8 @@ def review_and_submit_query():
     )
 
     if review_button:
-        st.write('lets review shit')
+        # TODO: build out review pane
+        st.write('lets review...')
 
     if submit_button:
         validated_user_id = validate_user_id(st.session_state['user_id'])
