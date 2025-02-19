@@ -46,7 +46,7 @@ def text_search_post_request():
             "lat_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][1], 
             "lng_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][0],
             "user_id": "user123", 
-            "token": "290aa941a27675013735d287d1fc5ebe16983a8dd08937819f"
+            "token": ""
             # "user_id": st.session_state['user_id'], 
             # "token": st.session_state['token_input']
             }
