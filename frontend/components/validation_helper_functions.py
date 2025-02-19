@@ -1,14 +1,12 @@
 import streamlit as st
 import mgrs
 
-# icon used in all of the st.errors
-icon="❌"
-
+from icons.icons import validation_error_icon
 
 def validate_location(location, location_type):
     # first ensure that a value has been input for the "location" input field
     if len(location.strip()) == 0:
-        st.error('location field can not be empty', icon=icon)
+        st.error('location field can not be empty', icon=validation_error_icon)
 
     else:
         # instantiting the conversion object needed for any conversions
@@ -22,7 +20,7 @@ def validate_location(location, location_type):
                 return mgrs_to_dd
             
             except mgrs.core.MGRSError:
-                st.error(f'Invalid MGRS - "{location}"\n', icon=icon)
+                st.error(f'Invalid MGRS - "{location}"\n', icon=validation_error_icon)
 
 
         elif location_type == 'Lat/Lon':
@@ -41,7 +39,7 @@ def validate_location(location, location_type):
                             - Latitude, Longitude (e.g., 21.318604, -157.9254212)
                             - Latitude,Longitude (e.g., 21.318604,-157.9254212)
                             - Latitude Longitude (e.g., 21.318604 -157.9254212)
-                          """, icon=icon)
+                          """, icon=validation_error_icon)
                 return
 
                 
@@ -56,7 +54,7 @@ def validate_location(location, location_type):
                 st.error(f"""
                             Invalid latitude - "{lat_str}"\n
                             Please ensure that latitude is between -90 and 90
-                            """, icon=icon)
+                            """, icon=validation_error_icon)
                 return
                     
 
@@ -71,7 +69,7 @@ def validate_location(location, location_type):
                 st.error(f"""
                             Invalid longitude - "{lon_str}"\n
                             Please ensure that longitude is between -180 and 180
-                            """, icon=icon)
+                            """, icon=validation_error_icon)
                 return 
                     
 
@@ -85,7 +83,7 @@ def validate_location(location, location_type):
 def validate_search_radius(search_radius, search_radius_units):
     # ensure that a value has been input for the "search radius" input field
     if len(search_radius.strip()) == 0:
-        st.error('search radius field can not be empty', icon=icon)
+        st.error('search radius field can not be empty', icon=validation_error_icon)
 
     else:
         try:
@@ -104,29 +102,29 @@ def validate_search_radius(search_radius, search_radius_units):
                 return search_radius_number
             
         except ValueError:
-            st.error('Please enter a valid search radius (number between 1 and 5000)', icon=icon)
+            st.error('Please enter a valid search radius (number between 1 and 5000)', icon=validation_error_icon)
 
 def validate_user_id(user_id):
     if len(user_id.strip()) == 0:
-        st.error('user-id field can not be empty', icon=icon) 
+        st.error('user-id field can not be empty', icon=validation_error_icon) 
     else:
         return user_id     
 
 def validate_token(token):
     if len(token.strip()) == 0:
-        st.error('token field can not be empty', icon=icon) 
+        st.error('token field can not be empty', icon=validation_error_icon) 
     else:
         return token 
 
 def validate_establishment_search(establishment_search_input):
     if len(establishment_search_input.strip()) == 0:
-        st.error('establishment search field can not be empty', icon=icon) 
+        st.error('establishment search field can not be empty', icon=validation_error_icon) 
     else:
         return establishment_search_input 
     
 def validate_bounding_box(map):
     if len(map['all_drawings']) == 0 or len(map['last_active_drawing']) == 0:
-        st.error('you must provide a valid search area', icon=icon) 
+        st.error('you must provide a valid search area', icon=validation_error_icon) 
     else:
         return map
     
