@@ -1,0 +1,77 @@
+import streamlit as st
+
+from icons.icons import toolbox_icon
+from components.initialize_state import initialize_state
+from components.user_credentials import show_user_credentials
+from components.establishment_search import establishment_search
+from components.search_area import show_search_area
+from components.query_options import show_query_options
+from components.review_query import review_and_submit_query
+
+
+st.set_page_config(
+   page_title="Tactical OPE Toolkit", 
+   page_icon=toolbox_icon,
+   layout="wide"
+)
+
+initialize_state()
+
+# got this off the internet
+# it is a way to get around streamlit tabs not supporting dynamic rendering
+def tabs(default_tabs = [], default_active_tab=0):
+        if not default_tabs:
+            return None
+        active_tab = st.radio("required_label", default_tabs, index=default_active_tab, label_visibility='collapsed', key='active_tab')
+        child = default_tabs.index(active_tab)+1
+        st.markdown(""" 
+            <style type="text/css">
+            div[role=radiogroup] {
+                border-bottom: 2px solid rgba(49, 51, 63, 0.1);
+            }
+            div[role=radiogroup] > label > div:first-of-type {
+               display: none
+            }
+            div[role=radiogroup] {
+                flex-direction: unset
+            }
+            div[role=radiogroup] label {
+                padding-bottom: 0.5em;
+                border-radius: 0;
+                position: relative;
+                top: 3px;
+            }
+            div[role=radiogroup] label .st-fc {
+                padding-left: 0;
+            }
+            div[role=radiogroup] label:hover p {
+                color: red;
+            }
+            div[role=radiogroup] label:nth-child(""" + str(child) + """) {   
+                border-bottom: 2px solid rgb(255, 75, 75);
+            }     
+            div[role=radiogroup] label:nth-child(""" + str(child) + """) p {   
+                color: rgb(255, 75, 75);
+                padding-right: 0;
+            }           
+            </style>
+        """,unsafe_allow_html=True)       
+        return active_tab
+
+# define the tabs you want displayed
+active_tab = tabs(['User Credentials', 'Search Area', 'Query Options', 'Review + Submit'])
+
+
+
+if st.session_state['active_tab'] == 'User Credentials':
+      show_user_credentials()
+elif st.session_state['active_tab'] == 'Search Area':
+      establishment_search()
+      show_search_area()
+elif st.session_state['active_tab'] == 'Query Options':
+      show_query_options()
+elif st.session_state['active_tab'] == 'Review + Submit':
+      review_and_submit_query()
+
+
+# st.write(st.session_state)

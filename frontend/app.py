@@ -20,13 +20,13 @@ st.set_page_config(
 
 initialize_state()
 
-def test_callback():
-    if st.session_state['navbar'] == 'User Credentials':
-        scroll_to_top_of_map()
+# def test_callback():
+#     if st.session_state['navbar'] == 'User Credentials':
+#         scroll_to_top_of_map()
 
 with st.sidebar:
     st.subheader('Tactical OPE Toolkit')   
-    st.radio("Navigation", ['User Credentials', 'Search Area', 'Query Options', 'Review + Submit'], label_visibility='collapsed', key='navbar', on_change=test_callback)
+    st.radio("Navigation", ['User Credentials', 'Search Area', 'Query Options', 'Review + Submit'], label_visibility='collapsed', key='navbar')
     # st.write(st.session_state)
     
 st.subheader('User Credentials')
