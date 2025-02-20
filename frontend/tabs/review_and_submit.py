@@ -14,30 +14,38 @@ def review_and_submit():
         st.warning('Submitting a query **will** incur a cost for your orginaztion based on the query options you have selected.', 
                    icon=warning_icon)
         
-    # # creates the review container
-    # with st.container(border=True):
-    #     st.write(f'user id: {st.session_state['user_id']}')
-    #     st.write(f'Searching for "{st.session_state['image_analysis_input']}" IVO {st.session_state['location_input']}')
-    #     st.write(f'Results will include: Basic Admin data, Review Summaries, Photo Captions')
-    #     st.write(f'Photo Captions Target Phrase: "Security Cameras"')
+
+    requested_results = ''
+    if st.session_state['basic_data_checkbox']:
+        requested_results += 'Basic Admin data'
+    if st.session_state['include_reviews_checkbox']:
+        requested_results += ', Review Summaries'
+    if st.session_state['include_photo_captioning_checkbox']:
+        requested_results += ', Photo Captions'
+
+    photo_captions_target_phrase = ''
+    if st.session_state['image_analysis_input'] == "":
+        photo_captions_target_phrase = 'None'
+    else:
+        photo_captions_target_phrase = f'{st.session_state['image_analysis_input']}'
 
 
-    # This creates a 1row x 2column "grid" that the buttons are sitting in
-    review_button_column, submit_button_column = st.columns(2)
-    # review button
-    review_button = review_button_column.button(
-    'review', 
-    key='review_button', 
-    help=None, 
-    on_click=None, 
-    type="secondary", 
-    icon=None, 
-    disabled=False, 
-    use_container_width=False, 
-    )
+
+    # creates the review container
+    with st.container(border=True):
+        st.write('Query Review')
+        st.write(f'user id: {st.session_state['user_id']}')
+        st.write(f'Searching for: "{st.session_state['establishment_search_input']}" IVO ({st.session_state['location_input']})')
+
+        st.write(f'Results will include: {requested_results}')
+
+        st.write(f'Photo Captions Target Phrase: {photo_captions_target_phrase}')
+
+        st.write(f'Include KMZ download: {st.session_state['kml_download_option']}')
+
 
     # submit button
-    submit_button = submit_button_column.button(
+    submit_button = st.button(
     'submit', 
     key='submit_button', 
     help=None, 
@@ -47,10 +55,6 @@ def review_and_submit():
     disabled=False, 
     use_container_width=False, 
     )
-
-    if review_button:
-        # TODO: build out review pane
-        st.write('lets review...')
 
     if submit_button:
         validated_user_id = validate_user_id(st.session_state['user_id'])
