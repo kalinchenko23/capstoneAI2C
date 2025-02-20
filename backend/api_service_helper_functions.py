@@ -122,12 +122,13 @@ async def response_formatter(responce,api_key):
             new_data["rating"]=f"average: {average} out of {len(ratings)} reviews"
 
             #Calculates average time span
-            timestamp_objects = [datetime.fromisoformat(ts.rstrip("Z")).date() for ts in times]
+            timestamp_objects = [datetime.fromisoformat(ts[:26]).date() for ts in times]
             latest_date = max(timestamp_objects)
             most_recent_date = min(timestamp_objects)
             date_diff = latest_date - most_recent_date
             new_data["reviews_span"]=f"latest date: {latest_date}, most recent date: {most_recent_date}, date difference: {date_diff.days} days"
-
+        except ValueError as ex:
+            new_data["reviews_span"]="Error retreiving timestamp"
         except KeyError as ex:
             new_data["reviews"]="Reviews are not provided"
 

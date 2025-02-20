@@ -4,6 +4,7 @@ from api_service_helper_functions import getting_street_view_image, response_for
 from typing import Optional
 import httpx
 import json
+import re
 
 # Load the JSON secrets config
 with open("secrets.json") as config_file:
@@ -89,6 +90,10 @@ async def search_nearby_places(text_query: str =Body(),
     
     }
     result={}
+    if not re.match(r'^[a-zA-Z0-9 _-]+$', user_id):
+        raise HTTPException(status_code=401, detail=f"user_id field contains invalid characters. Only letters, numbers, spaces, underscores, and hyphens are allowed.")
+    elif not re.match(r'^[a-zA-Z0-9 _-]+$', token):
+        raise HTTPException(status_code=422, detail="token field contains invalid characters. Only letters, numbers, spaces, underscores, and hyphens are allowed.")
     if authenticate(user_id,token):
         async with httpx.AsyncClient() as client:
             response = await client.post(TEXT_SEARCH_URL, json=payload, headers=headers)
@@ -120,4 +125,7 @@ async def search_nearby_places(text_query: str =Body(),
                     
         #Calling "responce_fromatter" helper function to provide relevant fields for the output file
         data = await response_formatter(result,API_KEY)
-    return {"places": data}
+        return {"places": data}
+    else:
+        raise HTTPException(status_code=401, detail="Invalid user credentials")
+    
