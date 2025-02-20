@@ -87,7 +87,6 @@ def query_options():
     # creates the kml/kmz toggle
     st.toggle(
         'Include KML/KMZ Download', 
-        value=False, 
         key='kml_download_option', 
         help=None, 
         on_change=None, 
