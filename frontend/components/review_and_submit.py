@@ -8,7 +8,7 @@ from .post_request_and_download import text_search_post_request
 # build out a nice looking review for the user that highlights all of the options they have chosen
 
 @st.fragment
-def review_and_submit_query():
+def review_and_submit():
     #
     with st.container(border=True):
         st.warning('Submitting a query **will** incur a cost for your orginaztion based on the query options you have selected.', 
@@ -72,4 +72,4 @@ def review_and_submit_query():
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
-    review_and_submit_query()
+    review_and_submit()

@@ -6,7 +6,7 @@ from components.user_credentials import user_credentials
 from components.establishment_search import establishment_search
 from components.search_area import search_area
 from components.query_options import query_options
-from components.review_query import review_and_submit_query
+from components.review_and_submit import review_and_submit
 
 
 st.set_page_config(
@@ -29,7 +29,7 @@ elif st.session_state['active_tab'] == 'Search Area':
 elif st.session_state['active_tab'] == 'Query Options':
       query_options()
 elif st.session_state['active_tab'] == 'Review + Submit':
-      review_and_submit_query()
+      review_and_submit()
 
 
 # st.write(st.session_state)
