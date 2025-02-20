@@ -2,7 +2,7 @@ from streamlit.components.v1 import html
 import time
 
 # not 100% sure how this thing works but it does so....
-# when a user clicks "validate" and a map is generated, the entire page scrolls down so the map is the focus
+# when a user clicks "User Credentials", the entire page scrolls so that section is the focus
 def scroll_to_top_of_map():
     html('''
     <script>
