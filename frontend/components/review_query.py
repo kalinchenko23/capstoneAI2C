@@ -60,6 +60,9 @@ def review_and_submit_query():
 
         if validated_user_id and validated_token and validated_establishment_search and validated_bounding_box:
             # need to add a try catch block here for when you fail to touch the backend
+            # so after accidentally pushing a request without having the user token hardcoded, I think we need better errors
+            # the error I got was:
+            # UnboundLocalError: local variable 'data' referenced before assignment
             text_search_post_request()
         else:
             st.write('Validation Failed')

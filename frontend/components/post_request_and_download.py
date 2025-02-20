@@ -45,11 +45,13 @@ def text_search_post_request():
             "lng_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][0], 
             "lat_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][1], 
             "lng_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][0],
-            "user_id": "user123", 
-            "token": ""
-            # "user_id": st.session_state['user_id'], 
-            # "token": st.session_state['token_input']
+            # "user_id": "user123", 
+            # "token": ""
+            "user_id": st.session_state['user_id'], 
+            "token": st.session_state['token_input']
             }
+    
+    st.write(request_body)
 
     url = 'http://127.0.0.1:8080/search_nearby'
 
