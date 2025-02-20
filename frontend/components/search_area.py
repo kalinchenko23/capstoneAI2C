@@ -21,7 +21,7 @@ from components.auto_scroller import scroll_to_top_of_map
 # 38RPN6193537057
 
 @st.fragment
-def show_search_area():
+def search_area():
 
     if 'location_validation_results' not in st.session_state:
         st.session_state['location_validation_results'] = [0, 0]
@@ -112,7 +112,7 @@ def show_search_area():
     st.write(st.session_state)
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
-    show_search_area()
+    search_area()
    
 
 
