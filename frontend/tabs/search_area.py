@@ -108,8 +108,6 @@ def search_area():
 
         
         
-
-    st.write(st.session_state)
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     search_area()
