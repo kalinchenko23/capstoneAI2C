@@ -1,7 +1,7 @@
 import streamlit as st
 
 @st.fragment
-def show_user_credentials():
+def user_credentials():
     with st.container(border=True):
         # This creates a 1row x 2column "grid" that the input boxes are sitting in
         user_id_column, token_column = st.columns(2)
@@ -38,4 +38,4 @@ def show_user_credentials():
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
-    show_user_credentials()
+    user_credentials()
