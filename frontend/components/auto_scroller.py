@@ -9,7 +9,7 @@ def scroll_to_top_of_map():
         // Time of creation of this script = {now}.
         // The time changes everytime and hence would force streamlit to execute JS function
         function scrollToMySection() {{
-            var element = window.parent.document.getElementById("user-credentials");
+            var element = window.parent.document.querySelector('[class="stVerticalBlock st-key-map-container st-emotion-cache-1o3oenk eiemyj3"]');
             if (element) {{
                 element.scrollIntoView({{ behavior: "smooth" }});
             }} else {{
@@ -24,3 +24,7 @@ def scroll_to_top_of_map():
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     scroll_to_top_of_map()
+
+
+# var element = window.parent.document.getElementById("st-key-map_container");
+# let inputElement = document.querySelector('[class="stVerticalBlock st-key-map-container st-emotion-cache-1o3oenk eiemyj3"]')

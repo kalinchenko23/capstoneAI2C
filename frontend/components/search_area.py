@@ -4,19 +4,22 @@ from streamlit_folium import st_folium
 from folium.plugins import Draw, Geocoder
 
 from .validation_helper_functions import validate_location
+from components.auto_scroller import scroll_to_top_of_map
 
 # TODO:
 # info box articulating the need to minimize search area...
 # allow polygon draws? how does the bounding box respond to that?
+# auto scroller for the map
 
 # 15.366927651980896, 43.6001600047099
 # 38RPN6193537057
 
+@st.fragment
 def show_search_area():
     if 'location_validation_results' not in st.session_state:
         st.session_state['location_validation_results'] = None
 
-    with st.container(border=True):
+    with st.container(border=True, key='map-container'):
         # This creates a 1row x 2column "grid" that the input boxes are sitting in
         location_column, location_type_column = st.columns(2)
 
@@ -50,6 +53,7 @@ def show_search_area():
         
         def on_drop_pin_press():
             st.session_state['location_validation_results'] = validate_location(location, location_type)
+            # scroll_to_top_of_map()
 
         st.button('Drop Pin', key='drop_pin_button', on_click=on_drop_pin_press)
 
@@ -76,23 +80,10 @@ def show_search_area():
                                returned_objects=['all_drawings', 'last_active_drawing'] # just limits the amount of stuff returned by the map/stored in state
                                )
 
-            # # check if anything was drawn
-            # if output and "last_active_drawing" in output:
-            #     drawing = output["last_active_drawing"]
-            #     if drawing and drawing["geometry"]["type"] == "Polygon":
-                    
-            #         # Extract coordinates of the bounding box
-            #         coordinates = drawing["geometry"]["coordinates"][0]
-            #         min_lat = min(coord[1] for coord in coordinates)
-            #         max_lat = max(coord[1] for coord in coordinates)
-            #         min_lon = min(coord[0] for coord in coordinates)
-            #         max_lon = max(coord[0] for coord in coordinates) 
-
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     show_search_area()
    
-
 
 
 # 15.366927651980896, 43.6001600047099

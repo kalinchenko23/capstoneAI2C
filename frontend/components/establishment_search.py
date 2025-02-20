@@ -1,5 +1,6 @@
 import streamlit as st
 
+@st.fragment
 def establishment_search():
     # creates the "establishment search" container and input field
     with st.container(border=True, key='establishment_search_container'):

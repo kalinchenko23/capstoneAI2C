@@ -1,5 +1,6 @@
 import streamlit as st
 
+@st.fragment
 def show_user_credentials():
     with st.container(border=True):
         # This creates a 1row x 2column "grid" that the input boxes are sitting in

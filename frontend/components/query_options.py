@@ -3,6 +3,7 @@ import streamlit as st
 # TODO:
 # big info box
 
+@st.fragment
 def show_query_options():
     # creates the "select output fields" containers and pills
     with st.container(border=True, key='select_output_fields_container'):

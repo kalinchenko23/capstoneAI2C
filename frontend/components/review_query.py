@@ -7,6 +7,7 @@ from .post_request_and_download import text_search_post_request
 # TODO:
 # build out a nice looking review for the user that highlights all of the options they have chosen
 
+@st.fragment
 def review_and_submit_query():
     #
     with st.container(border=True):
