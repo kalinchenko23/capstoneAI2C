@@ -1,12 +1,13 @@
 import streamlit as st
 
 from icons.icons import toolbox_icon
-from components.create_tabs import create_tabs
-from components.user_credentials import user_credentials
-from components.establishment_search import establishment_search
-from components.search_area import search_area
-from components.query_options import query_options
-from components.review_and_submit import review_and_submit
+from tabs.create_tabs import create_tabs
+
+from tabs.user_credentials import user_credentials
+from tabs.establishment_search import establishment_search
+from tabs.search_area import search_area
+from tabs.query_options import query_options
+from tabs.review_and_submit import review_and_submit
 
 
 st.set_page_config(

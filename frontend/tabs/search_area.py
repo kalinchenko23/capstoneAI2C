@@ -1,10 +1,10 @@
 import folium 
 import streamlit as st
 from streamlit_folium import st_folium
-from folium.plugins import Draw, Geocoder
+from folium.plugins import Draw
 
-from .validation_helper_functions import validate_location
-from components.auto_scroller import scroll_to_top_of_map
+from components.validation_functions import validate_location
+# from components.auto_scroller import scroll_to_top_of_map
 
 # TODO:
 # info box articulating the need to minimize search area...

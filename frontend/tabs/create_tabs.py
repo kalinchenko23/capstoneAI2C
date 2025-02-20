@@ -1,8 +1,7 @@
 import streamlit as st
 
-from components.initialize_state import initialize_state
-from components.persist_state import persist_state
-
+from state_management.initialize_state import initialize_state
+from state_management.persist_state import persist_state
 
 def reset_state_callback():
     initialize_state() # initializes state variables when a tab changes
