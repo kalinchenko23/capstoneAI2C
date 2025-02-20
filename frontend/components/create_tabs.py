@@ -10,7 +10,7 @@ def reset_state_callback():
     
 # got this off the internet
 # it is a way to get around streamlit tabs not supporting conditional rendering: (https://docs.streamlit.io/develop/api-reference/layout/st.tabs)
-def tabs(default_tabs = [], default_active_tab=0):
+def create_tabs(default_tabs = [], default_active_tab=0):
         if not default_tabs:
             return None
         active_tab = st.radio("required_label", default_tabs, index=default_active_tab, label_visibility='collapsed', key='active_tab', on_change=reset_state_callback)
@@ -51,4 +51,4 @@ def tabs(default_tabs = [], default_active_tab=0):
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
-    tabs()
+    create_tabs()
