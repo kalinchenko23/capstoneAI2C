@@ -9,26 +9,6 @@ def show_query_options():
     with st.container(border=True, key='select_output_fields_container'):
         st.write('Select the Data Included in Output')
 
-        def update_states_all_selected():
-            if st.session_state['all_fields_checkbox']:
-                st.session_state['basic_data_checkbox'] = True
-                st.session_state['include_reviews_checkbox'] = True
-                st.session_state['include_photo_captioning_checkbox'] = True
-            else:
-                st.session_state['basic_data_checkbox'] = True
-                st.session_state['include_reviews_checkbox'] = False
-                st.session_state['include_photo_captioning_checkbox'] = False
-
-        def update_states_basic_selected():
-            st.session_state['basic_data_checkbox'] = True
-
-        # so the real question is... do we want users to be able to ever do a query that DOESNT return the 'Basic Data'
-        def update_states_reviews_or_captions_seclected():
-            if st.session_state['include_reviews_checkbox'] or st.session_state['include_photo_captioning_checkbox']:
-                st.session_state['basic_data_checkbox'] = True
-        
-        st.checkbox(label='All', value=False, key='all_fields_checkbox', help='test', on_change=update_states_all_selected)
-
         # sentences displayed when a user hovers over the corresponding '?' 
         # need to do something in the styling to differentiate the help text box from the background
         basic_data_help = '''
@@ -44,35 +24,47 @@ def show_query_options():
         review_summarization_help = 'Selecting this option will trigger AI to summarize the reviews for each location.'
         photo_captioning_help = 'Selecting this option will trigger AI to caption all available photos from each location.'
 
-        
-        with st.container(border=True):
+        # triggered when the 'All' checkbox is selected; automatically selects/deselects the other checkboxes
+        def update_states_all_selected():
+            if st.session_state['all_fields_checkbox']:
+                st.session_state['include_reviews_checkbox'] = True
+                st.session_state['include_photo_captioning_checkbox'] = True
+            else:
+                st.session_state['include_reviews_checkbox'] = False
+                st.session_state['include_photo_captioning_checkbox'] = False
 
+        # this forces the 'Basic Data' checkbox to always be True
+        def update_states_basic_selected():
+            st.session_state['basic_data_checkbox'] = True
+
+        # all chekbox
+        st.checkbox(label='All', 
+                    key='all_fields_checkbox',  
+                    on_change=update_states_all_selected)
+
+        with st.container(border=True):
             # basic data chekbox
             st.checkbox(label='Basic Data', 
-                        # value=True if st.session_state['all_fields_checkbox'] else False, 
-                        value=True,
-                        # disabled=True, 
                         key='basic_data_checkbox', 
                         help=basic_data_help, 
-                        on_change=update_states_basic_selected)
+                        on_change=update_states_basic_selected
+                        )
 
-        # ai review summary checkbox
-            st.checkbox(label='Include AI Review Summarization', 
-                        value=True if st.session_state['all_fields_checkbox'] else False, 
+            # ai review summary checkbox
+            st.checkbox(label='Include AI Review Summarization',  
                         key='include_reviews_checkbox', 
                         help=review_summarization_help, 
-                        on_change=update_states_reviews_or_captions_seclected)
+                        )
 
         
-        # ai photo captions checkbox
-            st.checkbox(label='Include AI Photo Captioning', 
-                        value=True if st.session_state['all_fields_checkbox'] else False, 
+            # ai photo captions checkbox
+            st.checkbox(label='Include AI Photo Captioning',  
                         key='include_photo_captioning_checkbox', 
                         help=photo_captioning_help, 
-                        on_change=update_states_reviews_or_captions_seclected)
+                        )
 
+            # if 'include ai photo captioning' is selected, creates the text input field
             if st.session_state['include_photo_captioning_checkbox']:
-                # creates the "image_analysis_input" text input
                 with st.container(border=True, key='image_analysis_container'):
                     vlm_input = st.text_input(
                         label='Enter Keywords for AI to Highlight (leave blank for generic image captioning)', 
