@@ -54,7 +54,7 @@ def initialize_state():
 
     # initialize state variable that tracks the 'Include KML/KMZ Download' toggle in 'Query Options'
     if 'kml_download_option' not in st.session_state:
-        st.session_state['kml_download_option'] = False
+        st.session_state['kml_download_option'] = True
 
 
 # Ensures the code runs only when this file is executed directly
