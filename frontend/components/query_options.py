@@ -4,7 +4,7 @@ import streamlit as st
 # big info box
 
 @st.fragment
-def show_query_options():
+def query_options():
     # creates the "select output fields" containers and pills
     with st.container(border=True, key='select_output_fields_container'):
         st.write('Select the Data Included in Output')
@@ -97,4 +97,4 @@ def show_query_options():
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
-    show_query_options()
+    query_options()

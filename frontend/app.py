@@ -5,7 +5,7 @@ from components.custom_tabs import tabs
 from components.user_credentials import user_credentials
 from components.establishment_search import establishment_search
 from components.search_area import search_area
-from components.query_options import show_query_options
+from components.query_options import query_options
 from components.review_query import review_and_submit_query
 
 
@@ -27,7 +27,7 @@ elif st.session_state['active_tab'] == 'Search Area':
       establishment_search()
       search_area()
 elif st.session_state['active_tab'] == 'Query Options':
-      show_query_options()
+      query_options()
 elif st.session_state['active_tab'] == 'Review + Submit':
       review_and_submit_query()
 
