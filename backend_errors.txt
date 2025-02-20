@@ -121,8 +121,8 @@ The post request that caused this was:
 "lng_sw":-124.804688
 "lat_ne":46.920255
 "lng_ne":-73.828125
-# "user_id":"user123"
-# "token":REDACTED
+# "user_id":""
+# "token":""
 }
 
 I accidentally pushed a request with no hardcoded user token and recieved an error.
