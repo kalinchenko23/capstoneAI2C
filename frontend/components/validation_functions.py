@@ -1,7 +1,7 @@
 import streamlit as st
 import mgrs
 
-from icons.icons import validation_error_icon
+from styles.icons.icons import validation_error_icon
 
 def validate_location(location, location_type):
     # first ensure that a value has been input for the "location" input field

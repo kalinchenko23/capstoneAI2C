@@ -1,6 +1,6 @@
 import streamlit as st
 
-from icons.icons import toolbox_icon
+from styles.icons.icons import toolbox_icon
 from tabs.create_tabs import create_tabs
 
 from tabs.user_credentials import user_credentials

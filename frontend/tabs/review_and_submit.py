@@ -1,6 +1,6 @@
 import streamlit as st
 
-from icons.icons import warning_icon
+from styles.icons.icons import warning_icon
 from components.validation_functions import validate_user_id, validate_token, validate_establishment_search, validate_bounding_box
 from components.post_request_and_download import text_search_post_request
 # from components.post_request_and_download import mock_post_request
