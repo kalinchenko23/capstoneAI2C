@@ -16,6 +16,10 @@ st.set_page_config(
    layout="wide"
 )
 
+# imports and reads the "styles.css file"
+with open('./styles/styles.css') as f:
+    st.markdown(f'<style>{f.read()}<style>', unsafe_allow_html=True)
+
 st.subheader('Tactical OPE Toolkit') 
 
 # define the tabs you want displayed

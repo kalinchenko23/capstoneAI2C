@@ -1,70 +1,100 @@
-import streamlit as st
-import requests
-import json
 import base64
-import streamlit.components.v1 as components
+import requests
+import streamlit as st
 from datetime import datetime
 
-# this is streamlit shenanigans to enable the "auto" download
-def download_button(object_to_download, download_filename):
-    # Convert the object to a JSON string (ensure it's pretty-printed with unicode characters intact)
-    object_to_download_str = json.dumps(object_to_download, ensure_ascii=False, indent=4)
+from .create_excel import json_to_excel
 
-    # Encode the JSON string into base64
-    try:
-        b64 = base64.b64encode(object_to_download_str.encode('utf-8')).decode('utf-8')
-    except AttributeError as e:
-        b64 = base64.b64encode(object_to_download_str).decode('utf-8')
+# the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
+# handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
 
-    # Generate the download link with embedded base64 data
-    dl_link = f"""
+@st.fragment
+def generate_download_html(base64_data, download_filename):
+    """Creates an HTML + JavaScript snippet to auto-download a file."""
+    html = f"""
     <html>
     <head>
-    <title>Start Auto Download file</title>
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Auto Download File</title>
     <script>
-    $('<a href="data:text/json;base64,{b64}" download="{download_filename}">')[0].click()
+    function downloadExcel() {{
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{base64_data}');
+        element.setAttribute('download', '{download_filename}');
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }}
+    window.onload = downloadExcel;
     </script>
     </head>
+    <body>
+    <p>Your download should start automatically. If not, <a href="#" onclick="downloadExcel()">click here</a>.</p>
+    </body>
     </html>
     """
-    
-    return dl_link
+    return html
 
-def download_df(data):
+@st.fragment
+def auto_download_excel(in_memory_file):
+    """Injects JavaScript download logic into Streamlit using an in-memory file."""
     formatted_time = datetime.now().strftime("%Y%m%d_%H%M")
-    components.html(
-        download_button(data, f'{formatted_time}.json'),
-        height=0,
-)
-    
+    download_filename = f"{formatted_time}.xlsx"
+
+    # Convert the in-memory Excel file to Base64
+    in_memory_file.seek(0)  # Ensure we're at the start of the file
+    file_data = in_memory_file.read()
+    base64_data = base64.b64encode(file_data).decode("utf-8")
+
+    # Generate the HTML for auto-download
+    html = generate_download_html(base64_data, download_filename)
+    st.components.v1.html(html, height=0)  # Embed auto-download script
+
+@st.fragment
 def text_search_post_request():
+    """Handles the POST request, converts JSON response to Excel, and auto-downloads, with error handling."""
     request_body = {
-            "text_query": st.session_state['establishment_search_input'], 
-            "lat_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][1], 
-            "lng_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][0], 
-            "lat_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][1], 
-            "lng_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][0],
-            # "user_id": "user123", 
-            # "token": ""
-            "user_id": st.session_state['user_id'], 
-            "token": st.session_state['token_input']
-            }
-    
-    st.write(request_body)
+        "text_query": st.session_state['establishment_search_input'],
+        "lat_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][1],
+        "lng_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][0],
+        "lat_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][1],
+        "lng_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][0],
+        "user_id": st.session_state['user_id'],
+        "token": st.session_state['token_input']
+    }
 
     url = 'http://127.0.0.1:8080/search_nearby'
 
-    response = requests.post(url, json=request_body)
-    data = json.loads(response.content)
+    try:
+        # Make the POST request and get the response
+        response = requests.post(url, json=request_body, timeout=10)  # Added timeout for graceful fail
+        response.raise_for_status()  # Will raise an HTTPError for bad responses (4xx, 5xx)
+        
+        # Check if the response contains valid JSON
+        data = response.json()
+        if not data:
+            raise ValueError("Received empty response or invalid JSON.")
+        
+        # Generate Excel file in memory
+        in_memory_file = json_to_excel(data)
 
-    
-    download_df(data)
+        # Auto-download in browser
+        auto_download_excel(in_memory_file)
+
+    except requests.exceptions.Timeout:
+        # Handle timeout error (e.g., server takes too long to respond)
+        st.error("The request timed out. Please try again later.")
+    except requests.exceptions.RequestException as e:
+        # Handle other request exceptions (e.g., network issues, bad status codes)
+        st.error(f"An error occurred while making the request: {e}")
+    except ValueError as e:
+        # Handle case where the response is empty or invalid JSON
+        st.error(f"Invalid response received from the API: {e}")
+    except Exception as e:
+        # Catch any other unforeseen errors
+        st.error(f"An unexpected error occurred: {e}")
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
-    download_button()
-    download_df()
+    generate_download_html()
+    auto_download_excel()
     text_search_post_request()
-
-

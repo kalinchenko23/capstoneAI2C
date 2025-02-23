@@ -3,6 +3,7 @@ import streamlit as st
 from icons.icons import warning_icon
 from components.validation_functions import validate_user_id, validate_token, validate_establishment_search, validate_bounding_box
 from components.post_request_and_download import text_search_post_request
+# from components.post_request_and_download import mock_post_request
 
 # TODO:
 # build out a nice looking review for the user that highlights all of the options they have chosen
@@ -56,6 +57,9 @@ def review_and_submit():
     use_container_width=False, 
     )
 
+    # if submit_button: # for mocking
+    #     mock_post_request()
+
     if submit_button:
         validated_user_id = validate_user_id(st.session_state['user_id'])
         validated_token = validate_token(st.session_state['token_input'])
@@ -63,11 +67,8 @@ def review_and_submit():
         validated_bounding_box = validate_bounding_box(st.session_state['map'])
 
         if validated_user_id and validated_token and validated_establishment_search and validated_bounding_box:
-            # need to add a try catch block here for when you fail to touch the backend
-            # so after accidentally pushing a request without having the user token hardcoded, I think we need better errors
-            # the error I got was:
-            # UnboundLocalError: local variable 'data' referenced before assignment
-            text_search_post_request()
+            with st.spinner():
+                text_search_post_request()
         else:
             st.write('Validation Failed')
 
