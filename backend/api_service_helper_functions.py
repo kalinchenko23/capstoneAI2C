@@ -113,12 +113,17 @@ async def response_formatter(responce,api_key):
             ratings=[]
             times=[]
             for review in place["reviews"]:
-
-                #retreives an original language of the review
-                og_language=review["originalText"]["languageCode"]
-
                 #appends review link and origianl language
-                new_data["reviews"].append((review["googleMapsUri"],f"Original Language: {og_language}"))
+                r={}
+                r["review_url"]=review["googleMapsUri"]
+                r["text"]=review["text"]["text"]
+                r["original_text"]=review["originalText"]["text"]
+                r["original_language"]=review["originalText"]["languageCode"]
+                r["author_name"]=review["authorAttribution"]["displayName"]
+                r["author_url"]=review["authorAttribution"]["uri"]
+                new_data["reviews"].append(r)
+
+                
                 ratings.append(review["rating"])
                 times.append(review["publishTime"])
             
