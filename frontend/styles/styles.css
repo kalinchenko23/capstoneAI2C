@@ -1,1 +1,12 @@
 
+[data-testid="stHeader"] {
+    display: none; 
+}
+
+/* hides the js div, script, doc, that is created in order to enable the auto-scroller */
+iframe[data-testid="stIFrame"] {
+    display: none !important;
+}
+
+
+
