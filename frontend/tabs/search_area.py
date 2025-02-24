@@ -4,7 +4,7 @@ from streamlit_folium import st_folium
 from folium.plugins import Draw
 
 from components.validation_functions import validate_location
-# from components.auto_scroller import scroll_to_top_of_map
+from components.auto_scroller import scroll_to_top_of_map
 
 # TODO:
 # info box articulating the need to minimize search area...
@@ -70,6 +70,7 @@ def search_area():
         if st.button('Drop Pin', key='drop_pin_button'):
             st.session_state['feature_group_to_add'] = folium.FeatureGroup()
             st.session_state['location_validation_results'] = validate_location(location, location_type)
+            scroll_to_top_of_map()
             
             if st.session_state['location_validation_results']:
                 folium.Marker(location=st.session_state['location_validation_results'],popup=st.session_state['location_validation_results'], icon=folium.Icon(color='red', icon='crosshairs', prefix='fa')).add_to(st.session_state['feature_group_to_add'])
