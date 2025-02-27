@@ -5,6 +5,15 @@ import json
 import base64
 from datetime import datetime
 
+# Load the JSON secrets config
+with open("secrets.json") as config_file:
+    config = json.load(config_file)
+
+
+AZURE_OAI_ENDPOINT = config["AZURE_OAI_ENDPOINT"]
+AZURE_OAI_KEY = config["AZURE_OAI_KEY"]
+AZURE_OAI_DEPLOYMENT = config["AZURE_OAI_DEPLOYMENT"]
+
 async def getting_street_view_image(
     location: str,
     key: str):
@@ -107,7 +116,8 @@ async def response_formatter(responce,api_key):
             
         try:
 
-            # new_data["reviews_summary"] = get_review_summary(place["reviews"])
+            #Calling LLM summarization function
+            new_data["reviews_summary"] = get_review_summary(AZURE_OAI_ENDPOINT,AZURE_OAI_KEY,AZURE_OAI_DEPLOYMENT,place["reviews"])
             
             new_data["reviews"] = []
             ratings=[]

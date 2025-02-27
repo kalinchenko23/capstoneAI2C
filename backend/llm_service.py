@@ -2,12 +2,11 @@ import os
 import json
 from openai import AzureOpenAI
 
-def get_review_summary(reviews): 
+def get_review_summary(azure_oai_endpoint,azure_oai_key,azure_oai_deployment,reviews): 
         
     try: 
         # Iterate over each place in the response
         
-            
         reviews_list=[]    
         # Iterate over the reviews for each place
         for review in reviews:
@@ -17,12 +16,7 @@ def get_review_summary(reviews):
             reviews_list.append(review_data)
 
         """Initialize the OpenAI client, provide system message, pass json reviews to OpenAI Model"""
-        # Get configuration settings 
-        
-        azure_oai_endpoint = "..."
-        azure_oai_key = "..."
-        azure_oai_deployment = "..."
-        
+       
         # Initialize the Azure OpenAI client...
         client = AzureOpenAI(
                 azure_endpoint = azure_oai_endpoint, 

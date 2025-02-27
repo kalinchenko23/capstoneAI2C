@@ -1,5 +1,4 @@
-{
-    "places": [
+"places": [
         {
             "name": "Kvartal",
             "website": "Website is not provided",
@@ -7,6 +6,7 @@
             "address": "Mezhyhirska St, 26/24, Kyiv, Ukraine, 02000",
             "latitude": 50.468392599999994,
             "longitude": 30.5134183,
+            "reviews_summary": "The reviews highlight that the store is a 24-hour minimarket, making it a convenient option for late-night needs. While it offers a decent selection of basic items and alcohol, some customers note that the prices are on the higher side and the product variety is limited. It is described as an \"emergency\" place for quick grocery runs, but overall, it is considered just an ordinary grocery market. Despite its limitations, the store serves its purpose for those in need of essentials at any hour.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURRdm95cmtRRRAB!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
@@ -81,6 +81,7 @@
             "address": "Vvedenska St, 23, Kyiv, Ukraine, 04071",
             "latitude": 50.470787099999995,
             "longitude": 30.510510099999994,
+            "reviews_summary": "The reviews indicate a strong dissatisfaction with the establishment, primarily due to the rude behavior of the sales staff. Customers have reported that the seller is often absent, taking extended breaks, which adds to the frustration. Additionally, there are complaints about technical issues occurring shortly after the establishment's opening. Overall, the negative experiences have led to a desire for significant changes in staff and service quality.",
             "reviews": "Reviews are not provided",
             "photos": [
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNGl6dQONpzgj3_HG3FHyKDdUmTyAgfmPY61zsL!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
@@ -99,6 +100,7 @@
             "address": "Shchekavytska St, 45, Kyiv, Ukraine, 02000",
             "latitude": 50.471961699999994,
             "longitude": 30.5146242,
+            "reviews_summary": "The reviews highlight a mix-up regarding store locations, with one reviewer expressing satisfaction with the service at Schekavitskaya 45, while criticizing the rudeness of staff at the nearby Schekavitskaya 49. Customers appreciate the variety and quality of products available, noting that the store offers fresh fruits and vegetables, baked goods, and essential household items at reasonable prices. The friendly and helpful staff are frequently mentioned as a positive aspect of the shopping experience. Overall, the store is recognized for its strong assortment and moderate pricing, making it a reliable choice for local shoppers.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUMzdWZQdFh3EAE!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
@@ -167,24 +169,13 @@
             ]
         },
         {
-            "name": "Продуктовий Магазин",
-            "website": "Website is not provided",
-            "phone_number": "Phone number is not provided",
-            "address": "Pochainynska St, 23, Kyiv, Ukraine, 02000",
-            "latitude": 50.4690387,
-            "longitude": 30.519373699999996,
-            "reviews": "Reviews are not provided",
-            "photos": "Photos are not provided",
-            "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
-            "working_hours": "Working hours are not provided"
-        },
-        {
             "name": "Коло",
             "website": "https://kolomarket.com.ua/",
             "phone_number": "0800 507 969",
             "address": "Vvedenska St, 32, Kyiv, Ukraine, 04071",
             "latitude": 50.471230299999995,
             "longitude": 30.511337699999995,
+            "reviews_summary": "The reviews highlight a mix of experiences at a local grocery store. While some customers appreciate the convenience and friendly staff, others express frustration with specific incidents, such as a refusal to exchange expired milk and a lack of enforcement of mask-wearing among customers. The store is noted for its cleanliness and organization, with a decent selection of products, including popular items like paninis and good coffee. Overall, it serves as a handy option for quick purchases, though improvements in customer service and adherence to health guidelines are suggested.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURKNHU3UFJBEAE!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
@@ -251,47 +242,16 @@
             ]
         },
         {
-            "name": "Магазин продукты",
+            "name": "Продуктовий Магазин",
             "website": "Website is not provided",
             "phone_number": "Phone number is not provided",
-            "address": "Khoryva St, 43/23, Kyiv, Ukraine, 02000",
-            "latitude": 50.4686589,
-            "longitude": 30.5188354,
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNLN3ZlMnp3RRAB!2m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
-                    "text": "Well done sellers, be patient.",
-                    "original_text": "Продавцы молодцы, терпения вам.",
-                    "original_language": "ru",
-                    "author_name": "yurhik",
-                    "author_url": "https://www.google.com/maps/contrib/113376685953266719497/reviews"
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNDeEp2TXdnRRAB!2m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
-                    "text": "Sellers are rude",
-                    "original_text": "Продавцы хамят",
-                    "original_language": "ru",
-                    "author_name": "ELENA",
-                    "author_url": "https://www.google.com/maps/contrib/107831942730784740362/reviews"
-                }
-            ],
-            "rating": "average: 3.0 out of 2 reviews",
-            "reviews_span": "latest date: 2021-04-06, most recent date: 2020-08-11, date difference: 238 days",
-            "photos": [
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPq8xEBEqIfjeXEqUE0G-9yHB5yB3vH2x5J_nbV!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN-aVoH5nsND9_u8UnS8x4e_Q-f6SIoMLtzaTcK!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMt-K8JblNKI8AhX7ejyd3COg2w4j0yIwMLgx5z!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
-            ],
+            "address": "Pochainynska St, 23, Kyiv, Ukraine, 02000",
+            "latitude": 50.4690387,
+            "longitude": 30.519373699999996,
+            "reviews": "Reviews are not provided",
+            "photos": "Photos are not provided",
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
-            "working_hours": [
-                "Monday: 10:00 AM – 9:00 PM",
-                "Tuesday: 10:00 AM – 9:00 PM",
-                "Wednesday: 10:00 AM – 9:00 PM",
-                "Thursday: 10:00 AM – 9:00 PM",
-                "Friday: 10:00 AM – 9:00 PM",
-                "Saturday: 10:00 AM – 9:00 PM",
-                "Sunday: 10:00 AM – 9:00 PM"
-            ]
+            "working_hours": "Working hours are not provided"
         },
         {
             "name": "Silpo",
@@ -300,6 +260,7 @@
             "address": "Yaroslavska St, 56а, Kyiv, Ukraine, 02000",
             "latitude": 50.471407,
             "longitude": 30.5175096,
+            "reviews_summary": "The reviews highlight a mix of experiences at the supermarket, with some praising its impressive interior design and wide selection of products, particularly for vegetarians and vegans. However, there are complaints about high prices and inconsistent service, especially in the sweets department where staff availability is an issue. While some customers appreciate the quality of ingredients and the tasty, affordable pizza, others express frustration over the difficulty in finding certain items, like minced meat, especially during late hours. Overall, the supermarket is regarded as one of the best in Ukraine, despite its higher prices compared to competitors.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN5dTR1UmNBEAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
@@ -346,15 +307,15 @@
             "reviews_span": "latest date: 2021-10-25, most recent date: 2020-07-26, date difference: 456 days",
             "photos": [
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPu0MjANaJ9N-5nEU37kQC8hIP9v3BJd9fCQ-92!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOC46VEcqQYOYPPZPpCrMC2hlIpty9HPtbARik-!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOFxX0h83L6-blSO5YuY12N1AUbkauaJ3Zu1Gsb!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMhWC00WZ3D18yWchCnK4hKV6LD18LRtOXeRxWJ!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNP2-55JIScEMUG6zZQUyVg8yhv5epANySW0AB9!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOvcUybPFk4MNQ8A8X2ciNO2zDby9F8mMsfc02O!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOWEul8M54JcC6tc3X12hnH5CdGK8BOHx-OWsMJ!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNDPZfk_dTRNXjDjFtlukW7SLOxxpWnZHdUUJ3y!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOzwza3GlkzyD6A4CR1R6ZxeZHAAAYQ2xojQ2wd!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMLirnG6_m7atQ17J7g6vUbYCEBhc6H0MpfgNsp!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNX_8wYxcMrH5e4ks505oOZOlWxVd4_22HNuKyh!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNCnpPenVNEpf-rTcAv8BkAQF_Njazj7MOcoyA!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNCnpPenVNEpf-rTcAv8BkAQF_Njazj7MOcoyA!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMXPMWeqShoXj4Hrs1QDKjil_TohSsBwUNDC6ik!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": [
@@ -368,86 +329,13 @@
             ]
         },
         {
-            "name": "Natur Boutique - Organic shop of products",
-            "website": "http://natur-boutique.ua/",
-            "phone_number": "044 425 2598",
-            "address": "Verkhnii Val St, 50, Kyiv, Ukraine, 04070",
-            "latitude": 50.469089999999994,
-            "longitude": 30.517486999999996,
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN3amNpT21nRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "Friendly personnel, healthy food, tasty drinks and a wide variety everyday household things.",
-                    "original_text": "Friendly personnel, healthy food, tasty drinks and a wide variety everyday household things.",
-                    "original_language": "en",
-                    "author_name": "Olha Rymartsova",
-                    "author_url": "https://www.google.com/maps/contrib/110941737497707123724/reviews"
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ2bTllcU9BEAE!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "Good organic products shop",
-                    "original_text": "Good organic products shop",
-                    "original_language": "en",
-                    "author_name": "SAIRAM A",
-                    "author_url": "https://www.google.com/maps/contrib/108637370801469125024/reviews"
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNZMGYySXV3RRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "Healthy food,  natural goods",
-                    "original_text": "Healthy food,  natural goods",
-                    "original_language": "en",
-                    "author_name": "Oleg Bogdan",
-                    "author_url": "https://www.google.com/maps/contrib/114391229351849812194/reviews"
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURtajRPanVnRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "A cozy store, many natural, various teas, there are cosmetics. I haven't been in for a long time and was pleasantly surprised)",
-                    "original_text": "Затишний магазин, багато натуральних, різноманітних чаїв, є косметика. Дуже давно не заходила і була приємно вражена)",
-                    "original_language": "uk",
-                    "author_name": "Dina Parhomchyk",
-                    "author_url": "https://www.google.com/maps/contrib/110600137106243347463/reviews"
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNRcnVTaHlnRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "Paradise organic place of Beauty and Health. This is excellent! Thanks for the Organic Products!!! And for the Beauty and Health Studio, there you can do hair removal, makeup, visit a cosmetologist and a doctor! Complete set :)",
-                    "original_text": "Райское органическое место Красоты и Здоровья. Это превосходно! Спасибо за Органические продукты!!! И за Студию Красоты и Здоровья, там можно сделать эпиляцию, макияж, посетить косметолога и врача! Полный комплект:)",
-                    "original_language": "ru",
-                    "author_name": "Alise Shapoval",
-                    "author_url": "https://www.google.com/maps/contrib/103801770926727059614/reviews"
-                }
-            ],
-            "rating": "average: 5.0 out of 5 reviews",
-            "reviews_span": "latest date: 2022-02-12, most recent date: 2017-01-26, date difference: 1843 days",
-            "photos": [
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN6w0wSxsslOpZv6SlOBCUlhHWazyeLqrLkHNxQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNc01kNeXPPjBP7CubiJmt39-9KfNbFJ4UrLoWS!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipO5AlWm5IOrgO2yo3g2xw7zKyYMmxFQYLfFbHZQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNnpmBPA54Hk-MW7N1QmYOxl2z1L97MUklXvg1z!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOUhKPGBLFVGHtVQyW6U8FpFoChodxF5zzlmQAT!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNXAdERbAs-rAFaJcrbCAqAxoVhZbfiK7R15rA3!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM7G4VN0i_uDcKZSRCTz5dEn5XO6yEaLEIWzhMa!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPrCPO9gr4EVJOLEZvpjoDR9vzOR_RJX1aBOI8R!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPQO5UdQbppbPiARfwINqcBO3Tm5GlPCBfbgi3s!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMem09rGmoV22jDmaowddizxx8f5HfAzTiFg2vq!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-            ],
-            "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
-            "working_hours": [
-                "Monday: 9:00 AM – 8:00 PM",
-                "Tuesday: 9:00 AM – 8:00 PM",
-                "Wednesday: 9:00 AM – 8:00 PM",
-                "Thursday: 9:00 AM – 8:00 PM",
-                "Friday: 9:00 AM – 8:00 PM",
-                "Saturday: 10:00 AM – 6:00 PM",
-                "Sunday: Closed"
-            ]
-        },
-        {
             "name": "La Gazza Delicatezze",
             "website": "https://www.instagram.com/lagazza_delicatezze/",
             "phone_number": "097 121 7934",
             "address": "Verkhnii Val St, 52, Kyiv, Ukraine, 02000",
             "latitude": 50.4693214,
             "longitude": 30.517692699999998,
+            "reviews_summary": "The grocery store is praised for its amazing service and a delightful selection of high-quality foods, including Italian ham and cheese, Western European sweets, and Ukrainian ready-meals. However, there are serious concerns about spoiled products, with one customer reporting food poisoning from meat purchased there and citing rude staff. Despite these issues, many customers appreciate the extensive range of Italian products and the generous portions of Rio tuna available. The store is particularly beloved by families for its excellent coffee, friendly staff, and its resilience during challenging times in Kyiv, making it a cherished local spot.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN5NnEtUzlBRRAB!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
@@ -516,6 +404,125 @@
             ]
         },
         {
+            "name": "Natur Boutique - Organic shop of products",
+            "website": "http://natur-boutique.ua/",
+            "phone_number": "044 425 2598",
+            "address": "Verkhnii Val St, 50, Kyiv, Ukraine, 04070",
+            "latitude": 50.469089999999994,
+            "longitude": 30.517486999999996,
+            "reviews_summary": "The reviews highlight a welcoming atmosphere with friendly staff and a focus on healthy, organic products. Customers appreciate the variety of natural goods available, including food, drinks, teas, and cosmetics. Many express surprise and delight at the cozy store's offerings, which contribute to a sense of well-being. Additionally, the presence of a beauty and health studio adds to the appeal, providing services like hair removal and cosmetic consultations.",
+            "reviews": [
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN3amNpT21nRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                    "text": "Friendly personnel, healthy food, tasty drinks and a wide variety everyday household things.",
+                    "original_text": "Friendly personnel, healthy food, tasty drinks and a wide variety everyday household things.",
+                    "original_language": "en",
+                    "author_name": "Olha Rymartsova",
+                    "author_url": "https://www.google.com/maps/contrib/110941737497707123724/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ2bTllcU9BEAE!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                    "text": "Good organic products shop",
+                    "original_text": "Good organic products shop",
+                    "original_language": "en",
+                    "author_name": "SAIRAM A",
+                    "author_url": "https://www.google.com/maps/contrib/108637370801469125024/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNZMGYySXV3RRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                    "text": "Healthy food,  natural goods",
+                    "original_text": "Healthy food,  natural goods",
+                    "original_language": "en",
+                    "author_name": "Oleg Bogdan",
+                    "author_url": "https://www.google.com/maps/contrib/114391229351849812194/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURtajRPanVnRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                    "text": "A cozy store, many natural, various teas, there are cosmetics. I haven't been in for a long time and was pleasantly surprised)",
+                    "original_text": "Затишний магазин, багато натуральних, різноманітних чаїв, є косметика. Дуже давно не заходила і була приємно вражена)",
+                    "original_language": "uk",
+                    "author_name": "Dina Parhomchyk",
+                    "author_url": "https://www.google.com/maps/contrib/110600137106243347463/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNRcnVTaHlnRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                    "text": "Paradise organic place of Beauty and Health. This is excellent! Thanks for the Organic Products!!! And for the Beauty and Health Studio, there you can do hair removal, makeup, visit a cosmetologist and a doctor! Complete set :)",
+                    "original_text": "Райское органическое место Красоты и Здоровья. Это превосходно! Спасибо за Органические продукты!!! И за Студию Красоты и Здоровья, там можно сделать эпиляцию, макияж, посетить косметолога и врача! Полный комплект:)",
+                    "original_language": "ru",
+                    "author_name": "Alise Shapoval",
+                    "author_url": "https://www.google.com/maps/contrib/103801770926727059614/reviews"
+                }
+            ],
+            "rating": "average: 5.0 out of 5 reviews",
+            "reviews_span": "latest date: 2022-02-12, most recent date: 2017-01-26, date difference: 1843 days",
+            "photos": [
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN6w0wSxsslOpZv6SlOBCUlhHWazyeLqrLkHNxQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNc01kNeXPPjBP7CubiJmt39-9KfNbFJ4UrLoWS!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipO5AlWm5IOrgO2yo3g2xw7zKyYMmxFQYLfFbHZQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNnpmBPA54Hk-MW7N1QmYOxl2z1L97MUklXvg1z!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOUhKPGBLFVGHtVQyW6U8FpFoChodxF5zzlmQAT!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNXAdERbAs-rAFaJcrbCAqAxoVhZbfiK7R15rA3!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM7G4VN0i_uDcKZSRCTz5dEn5XO6yEaLEIWzhMa!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPrCPO9gr4EVJOLEZvpjoDR9vzOR_RJX1aBOI8R!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPQO5UdQbppbPiARfwINqcBO3Tm5GlPCBfbgi3s!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMem09rGmoV22jDmaowddizxx8f5HfAzTiFg2vq!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+            ],
+            "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
+            "working_hours": [
+                "Monday: 9:00 AM – 8:00 PM",
+                "Tuesday: 9:00 AM – 8:00 PM",
+                "Wednesday: 9:00 AM – 8:00 PM",
+                "Thursday: 9:00 AM – 8:00 PM",
+                "Friday: 9:00 AM – 8:00 PM",
+                "Saturday: 10:00 AM – 6:00 PM",
+                "Sunday: Closed"
+            ]
+        },
+        {
+            "name": "Магазин продукты",
+            "website": "Website is not provided",
+            "phone_number": "Phone number is not provided",
+            "address": "Khoryva St, 43/23, Kyiv, Ukraine, 02000",
+            "latitude": 50.4686589,
+            "longitude": 30.5188354,
+            "reviews_summary": "The reviews reflect mixed experiences with the sellers. One reviewer appreciates the sellers' efforts and encourages patience, while another criticizes them for being rude. This suggests that customer interactions may vary significantly, with some finding the sellers to be accommodating and others feeling disrespected. Overall, potential customers might want to prepare for a range of service quality when engaging with the sellers.",
+            "reviews": [
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNLN3ZlMnp3RRAB!2m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
+                    "text": "Well done sellers, be patient.",
+                    "original_text": "Продавцы молодцы, терпения вам.",
+                    "original_language": "ru",
+                    "author_name": "yurhik",
+                    "author_url": "https://www.google.com/maps/contrib/113376685953266719497/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNDeEp2TXdnRRAB!2m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
+                    "text": "Sellers are rude",
+                    "original_text": "Продавцы хамят",
+                    "original_language": "ru",
+                    "author_name": "ELENA",
+                    "author_url": "https://www.google.com/maps/contrib/107831942730784740362/reviews"
+                }
+            ],
+            "rating": "average: 3.0 out of 2 reviews",
+            "reviews_span": "latest date: 2021-04-06, most recent date: 2020-08-11, date difference: 238 days",
+            "photos": [
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPq8xEBEqIfjeXEqUE0G-9yHB5yB3vH2x5J_nbV!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN-aVoH5nsND9_u8UnS8x4e_Q-f6SIoMLtzaTcK!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMt-K8JblNKI8AhX7ejyd3COg2w4j0yIwMLgx5z!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
+            ],
+            "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
+            "working_hours": [
+                "Monday: 10:00 AM – 9:00 PM",
+                "Tuesday: 10:00 AM – 9:00 PM",
+                "Wednesday: 10:00 AM – 9:00 PM",
+                "Thursday: 10:00 AM – 9:00 PM",
+                "Friday: 10:00 AM – 9:00 PM",
+                "Saturday: 10:00 AM – 9:00 PM",
+                "Sunday: 10:00 AM – 9:00 PM"
+            ]
+        },
+        {
             "name": "Beetle РА",
             "website": "Website is not provided",
             "phone_number": "044 467 7877",
@@ -534,6 +541,93 @@
                 "Saturday: 8:00 AM – 9:00 PM",
                 "Sunday: 8:00 AM – 9:00 PM"
             ]
+        },
+        {
+            "name": "Хлібар",
+            "website": "Website is not provided",
+            "phone_number": "095 128 2828",
+            "address": "Mezhyhirska St, 28, Kyiv, Ukraine, 02000",
+            "latitude": 50.468741699999995,
+            "longitude": 30.5127737,
+            "reviews_summary": "Customers have praised the fantastic atmosphere and delicious offerings at Hlibar, particularly highlighting the tasty vegetarian quiche and a great selection of cakes and pastries. Many reviewers appreciate the friendly staff and the pleasant service, with one noting the quick service despite a long line. However, some have expressed frustration with the wait times, especially when it seems that police officers are prioritized over other customers. Overall, while the coffee shop has its drawbacks, it remains a favorite spot in Podil for its delightful menu and inviting ambiance.",
+            "reviews": [
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNYcnYyelJBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                    "text": "Thank you so much for the fantastic atmosphere, tasty vegetarian quiche and a great selection of delicious cakes and pastries! Now Hlibar is one of my favourite places in Podil)\nWith love from France,\nMarie",
+                    "original_text": "Thank you so much for the fantastic atmosphere, tasty vegetarian quiche and a great selection of delicious cakes and pastries! Now Hlibar is one of my favourite places in Podil)\nWith love from France,\nMarie",
+                    "original_language": "en",
+                    "author_name": "Світлана",
+                    "author_url": "https://www.google.com/maps/contrib/101790350705102555202/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNfM3ZXYVBBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                    "text": "Very pleasant man in the apron explained in english the wide variety of pastries. Took only one but all look delish. Need to return",
+                    "original_text": "Very pleasant man in the apron explained in english the wide variety of pastries. Took only one but all look delish. Need to return",
+                    "original_language": "en",
+                    "author_name": "HarryInUkraine",
+                    "author_url": "https://www.google.com/maps/contrib/108679295553081711779/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNXek16dUxBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                    "text": "Nice place it this part of Podil.\nTasty coffee, nice sweets, friendly staff!\nCinnabone good but not excellent.",
+                    "original_text": "Nice place it this part of Podil.\nTasty coffee, nice sweets, friendly staff!\nCinnabone good but not excellent.",
+                    "original_language": "en",
+                    "author_name": "Sviat Aleksandrovych",
+                    "author_url": "https://www.google.com/maps/contrib/113121196932935969610/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURQNWFhMXpnRRAB!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                    "text": "This coffee shop is amazing, a long line, but super nice and fast service! Beautiful menu.",
+                    "original_text": "This coffee shop is amazing, a long line, but super nice and fast service! Beautiful menu.",
+                    "original_language": "en",
+                    "author_name": "Trude Bergh",
+                    "author_url": "https://www.google.com/maps/contrib/113143795168338731685/reviews"
+                },
+                {
+                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURwOU5handBRRAB!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                    "text": "Be prepared to wait a long time, they make coffee for the police without a queue, and there are a lot of police stations nearby, everyone else has to wait, like in a real totalitarian state. They do everything slowly, forget about the order",
+                    "original_text": "Be prepared to wait a long time, they make coffee for the police without a queue, and there are a lot of police stations nearby, everyone else has to wait, like in a real totalitarian state. They do everything slowly, forget about the order",
+                    "original_language": "en",
+                    "author_name": "Pelykh Denys",
+                    "author_url": "https://www.google.com/maps/contrib/112975712147128329373/reviews"
+                }
+            ],
+            "rating": "average: 4.2 out of 5 reviews",
+            "reviews_span": "latest date: 2025-01-16, most recent date: 2022-02-19, date difference: 1062 days",
+            "photos": [
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMZp-AP3mdAeeSjAyQROc_WT2deTqgDRsC7gBGj!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMdyqp5Do0qUTMDdb-F4wbqIxdnQzRZelvl4hEq!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN9QFGNdRdR1EpzcAkADw08b5X18b3t8gUgAvqx!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNQ9RG6IMhtr-grxr7o2DoYmCqiPJuKVVtxf3vp!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMrAjLFmFoxq16j-wMUODMt2QFyyu7cCOl2ccM8!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNhP7AjVCFh3wcujC1hszDS4VFuJVo1-u2EQuHU!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMC12tOxZQLQddezMemkAohbmPJ2EH48RjaaxQi!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMZznozqRS1RnpnWh7jPyS2KQvnv1CUc61Tn3Oj!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOdLRsiHJq8dCkrKwY4N4JwbNMvRp3BENYA8OhS!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMwor1aOn71kaRLUFbJf4wXnGgTMMHa22emnLZ5!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
+            ],
+            "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
+            "working_hours": [
+                "Monday: 8:00 AM – 9:00 PM",
+                "Tuesday: 8:00 AM – 9:00 PM",
+                "Wednesday: 8:00 AM – 9:00 PM",
+                "Thursday: 8:00 AM – 9:00 PM",
+                "Friday: 8:00 AM – 9:00 PM",
+                "Saturday: 8:00 AM – 9:00 PM",
+                "Sunday: 8:00 AM – 9:00 PM"
+            ]
+        },
+        {
+            "name": "Rosing",
+            "website": "Website is not provided",
+            "phone_number": "044 207 1137",
+            "address": "Shchekavytska St, 30/39, Kyiv, Ukraine, 02000",
+            "latitude": 50.4705407,
+            "longitude": 30.513688000000002,
+            "reviews": "Reviews are not provided",
+            "photos": "Photos are not provided",
+            "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
+            "working_hours": "Working hours are not provided"
         },
         {
             "name": "Домашній маркет",
