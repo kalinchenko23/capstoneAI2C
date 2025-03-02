@@ -131,6 +131,8 @@ async def response_formatter(responce,api_key):
                 r["original_language"]=review["originalText"]["languageCode"]
                 r["author_name"]=review["authorAttribution"]["displayName"]
                 r["author_url"]=review["authorAttribution"]["uri"]
+                r["publish_date"]=review["relativePublishTimeDescription"]
+                r["rating"]=review["rating"]
                 new_data["reviews"].append(r)
 
                 

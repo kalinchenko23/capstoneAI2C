@@ -1,4 +1,5 @@
-{"places": [
+{
+    "places": [
         {
             "name": "Kvartal",
             "website": "Website is not provided",
@@ -14,7 +15,9 @@
                     "original_text": "24 hour store. Very decent selection for location and size. Get your basics and your beer.",
                     "original_language": "en",
                     "author_name": "V. Will",
-                    "author_url": "https://www.google.com/maps/contrib/112316417525391344653/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/112316417525391344653/reviews",
+                    "publish_date": "7 years ago",
+                    "rating": 3
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURRX3MzSnJRRRAB!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
@@ -22,7 +25,9 @@
                     "original_text": "Minimarket, open 24H, the prices are high and not lot of products available",
                     "original_language": "en",
                     "author_name": "Akram",
-                    "author_url": "https://www.google.com/maps/contrib/114692125139376970372/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/114692125139376970372/reviews",
+                    "publish_date": "7 years ago",
+                    "rating": 4
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURhNHZ2X3dBRRAB!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
@@ -30,7 +35,9 @@
                     "original_text": "24/7 with alcohol sold around the clock. An \"emergency\" place ;)",
                     "original_language": "en",
                     "author_name": "Dana Ver",
-                    "author_url": "https://www.google.com/maps/contrib/102216186094384484833/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/102216186094384484833/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNzLU51bXlRRRAB!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
@@ -38,7 +45,9 @@
                     "original_text": "24/7 convenient grocery",
                     "original_language": "en",
                     "author_name": "Mykola Verkhohlyad",
-                    "author_url": "https://www.google.com/maps/contrib/102851189248074940892/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/102851189248074940892/reviews",
+                    "publish_date": "5 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM0eUk2LUF3EAE!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
@@ -46,22 +55,24 @@
                     "original_text": "Just ordinary grocery market",
                     "original_language": "en",
                     "author_name": "Yaroslav M.",
-                    "author_url": "https://www.google.com/maps/contrib/111597778517820280714/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/111597778517820280714/reviews",
+                    "publish_date": "5 years ago",
+                    "rating": 3
                 }
             ],
             "rating": "average: 4.0 out of 5 reviews",
             "reviews_span": "latest date: 2021-08-17, most recent date: 2017-07-31, date difference: 1478 days",
             "photos": [
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNLZqf5vAKhYFS99yC7AeKNhISJcqPZtYiDh_AC!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNnh0CymWnqeSJ1nAC2XoDeM8IaQU0W-hiIWjiW!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM66S8-xhiHu5JrEP56Lp7E3p4iryjQch77hwDD!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM-YKWqa8-XzI00kxwpj1OSTIg-71194xLa39Oc!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMbLTXWMi_QnuNcwYRuPHs6ZqDingXMALqgF5pm!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPIDaV0ryfMsWXFdJBTc0kuycnTafN2oQWvIdxR!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMZaiY6QWg4YTdYCR-qp54TKnaIPcrOJUd5j17Y!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOZWKfpV3AO36T7ureOWjx5z1ZYLnrnyJi6F2h9!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMg_5Y4SCJlpzYDyxChyk6z0KQIB5M10ke__stT!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM05lUchpzIfG0_6mDextuhO3l_O8eyd2H1_w8r!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID4n-K75gE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICckozFdQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDK2srpcg!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICckozFuwE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDk5vaOGw!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICc66KmggE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDEgbSHOA!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICEocmL5QE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICczf25VQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDC58KBCQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": [
@@ -84,11 +95,11 @@
             "reviews_summary": "The reviews indicate a strong dissatisfaction with the establishment, primarily due to the rude behavior of the sales staff. Customers have reported that the seller is often absent, taking extended breaks, which adds to the frustration. Additionally, there are complaints about technical issues occurring shortly after the establishment's opening. Overall, the negative experiences have led to a desire for significant changes in staff and service quality.",
             "reviews": "Reviews are not provided",
             "photos": [
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNGl6dQONpzgj3_HG3FHyKDdUmTyAgfmPY61zsL!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNtPEAo0xPDznoq1PLhcc2ZfO25WGdWM-Ho7aGe!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN865CXr_cQCCcvA2sMwrXWSTRPi7xtkliVbCTy!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNXE0gVdOQOMxrslEkRAtUHGvjD-ZcIgJV7anZ4!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMszL6ibiRN-zUxewzAlUAbVeuC1Y7_tmKiFX00!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDzuNjmswE!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDzuNjzVQ!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDzuNiNlQE!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDzuNihWA!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDzuNjBxwE!2e10!4m2!3m1!1s0x40d4cf0050d658ad:0x41789734b8569d0"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": "Working hours are not provided"
@@ -100,7 +111,7 @@
             "address": "Shchekavytska St, 45, Kyiv, Ukraine, 02000",
             "latitude": 50.471961699999994,
             "longitude": 30.5146242,
-            "reviews_summary": "The reviews highlight a mix-up regarding store locations, with one reviewer expressing satisfaction with the service at Schekavitskaya 45, while criticizing the rudeness of staff at the nearby Schekavitskaya 49. Customers appreciate the variety and quality of products available, noting that the store offers fresh fruits and vegetables, baked goods, and essential household items at reasonable prices. The friendly and helpful staff are frequently mentioned as a positive aspect of the shopping experience. Overall, the store is recognized for its strong assortment and moderate pricing, making it a reliable choice for local shoppers.",
+            "reviews_summary": "The reviews highlight a mix-up regarding store locations, with one reviewer expressing satisfaction with the service at Schekavitskaya 45, while criticizing the rudeness of staff at the nearby store on Shchekavitskaya 49. Customers appreciate the variety and quality of products available, noting that the store offers fresh fruits and vegetables, baked goods, and a wide range of household items at reasonable prices. The friendly and helpful staff are frequently mentioned as a positive aspect of the shopping experience. Overall, the store is described as a reliable local option for essential groceries and household supplies.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUMzdWZQdFh3EAE!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
@@ -108,7 +119,9 @@
                     "original_text": "Да , вы правы. Я перепутал магазин. В этом магазине все отзывчивые и очень позитивные.) А в том другом магазине с короткой стрижкой, женщина - овчарка😂",
                     "original_language": "ru",
                     "author_name": "maksim zaycev",
-                    "author_url": "https://www.google.com/maps/contrib/109537947078670939098/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/109537947078670939098/reviews",
+                    "publish_date": "3 months ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNqMmIzZ2pRRRAB!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
@@ -116,7 +129,9 @@
                     "original_text": "Шановний Максим! Ви мабуть переплутали магазин, хожу сюди постійно, дуже задоволений (Щекавицкая 45), а вот новий на Щекавицкой 49-то да, сервіс ніже 1,і продавчіня там з короткой стрижкой дуже хамовіто в обслуговуванні",
                     "original_language": "uk",
                     "author_name": "Ttt Ttt",
-                    "author_url": "https://www.google.com/maps/contrib/117629345796340936506/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/117629345796340936506/reviews",
+                    "publish_date": "10 months ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNhOXZfbFp3EAE!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
@@ -124,7 +139,9 @@
                     "original_text": "Є все необхідне за помірними цінами. Овочі і фрукти завжди свіжі і смачні. Є випічка. Привітні продавці зможуть порадити і допомогти у виборі.",
                     "original_language": "uk",
                     "author_name": "Марина Утуренко",
-                    "author_url": "https://www.google.com/maps/contrib/101584638269145255928/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/101584638269145255928/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNzMVAtWGxnRRAB!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
@@ -132,7 +149,9 @@
                     "original_text": "Старый магазин с местным названием \"Колокольчик\" и  крепким ассортиментом: базовые овощи, фрукты, колбасы, заморозка, пирожные, конфеты, печенье, хлеб, спиртное, соки воды; хозяйственные продукты: бытовая химия, средства гигиены... Все что может неожиданно закончится дома тут есть, цены умеренные.",
                     "original_language": "ru",
                     "author_name": "Tetiana Komarova",
-                    "author_url": "https://www.google.com/maps/contrib/117565403592971949830/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/117565403592971949830/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 4
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNpNVAtS1ZnEAE!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
@@ -140,22 +159,24 @@
                     "original_text": "Суппер",
                     "original_language": "ky",
                     "author_name": "Виталий Сысак",
-                    "author_url": "https://www.google.com/maps/contrib/109553147810109781279/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/109553147810109781279/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 5
                 }
             ],
             "rating": "average: 4.8 out of 5 reviews",
             "reviews_span": "latest date: 2024-11-07, most recent date: 2020-10-22, date difference: 1477 days",
             "photos": [
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPDmZsLGNN3g5HcvEYxzLF4KxAbSjE3ZeZvTUpY!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNWfb1txTm-jQOEG_LBu5R4RUOdN00SMAv-06-7!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPqhQtTlHZNfEB8nmoxfjTNlHCDUwIEizgdseHT!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN35CeuIyJXljiH9Fe4Fz7Stv-o329KthPC5FvW!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOP7x4On22eEOsq64ufc4GcdeLbZzT-K-WveYFS!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNZ1eOViF5TDI8O0kg-RLS-7YNSWALZdoiTTtIe!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNew1Vqr1x-_T73ogWYWqivtlqw6FlF4qVc9MgA!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMC0fnhPCfFxOhuygP6FgeY9pcEzZOtmWXLuKcc!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPbSsWQ-mhK3j2ihgr7zrnQL0eEOZmljMPAF2hv!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNqGHYdqhH2ecnLYGOXasn5y5e8PJFIn4CDo55_!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P_jsgE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P-zHQ!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P-rxgE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDi_JawiAE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDi_JbwugE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P-rbA!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P-LnwE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDi_Jbw_AE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDi_JbgrgE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDCkPajggE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": [
@@ -183,7 +204,9 @@
                     "original_text": "Дитина пішла ввечері в 21:00 за молоком в найближчій магазин у дома. Але після оплати побачила, що термін придатності спливає сьогодня ж. Звернулась до касира, щоб обміняти на більш свіжий продукт, тому що ми фізично не здатні випити все сьогодня. Касир відмовив (!!!) дитині і заявив, що підстав обміняти молоко на свіже немає! Бо, якщо не помітив, коли брав, то вже піздно.\nДитина прийшла дуже засмучена. Я був вимушений одягатись і йти. Продавець мені зарядила теж саме про відсутність підстав. Довелось пояснити, що бажання покупця та чек на руках - це все що треба для продуктової групи, щоб обміняти товар негайно по першій вимозі.\nШановне «КОЛО», навчайте своїх продавців законам України та, насамперед, ввічливості. Навіть, якщо б дитина була не права, так поводитись не можна.",
                     "original_language": "uk",
                     "author_name": "Sergiy M.",
-                    "author_url": "https://www.google.com/maps/contrib/111034095195207201438/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/111034095195207201438/reviews",
+                    "publish_date": "a year ago",
+                    "rating": 1
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN5cU5UanJBRRAB!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
@@ -191,7 +214,9 @@
                     "original_text": "Маленький продуктовый магазинчик для тех, кому не хочется далеко бежать. Закупки на неделю конечно не сделать, но выйти за хлебом - самое то. Цены выше средних, но не космические. В продаже есть вкусные панини, но их разметают довольно быстро. Сотрудники очень обходительны и приветливы.",
                     "original_language": "ru",
                     "author_name": "Сергей Мухин",
-                    "author_url": "https://www.google.com/maps/contrib/108614174081430321367/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/108614174081430321367/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 4
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUQ2c0xXeDZRRRAB!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
@@ -199,7 +224,9 @@
                     "original_text": "Персонал привітний. АЛЕ. Про те, що в магазині потрібно знаходитись в масці знає лише продавець. Клієнти обнагліли та не вдягають маски (повний магазин покупців без масок), а касир без зауважень відпускає товар. Я розумію , що потрібно зробити касу, та все ж інших клієнтів також потрібно поважати.",
                     "original_language": "uk",
                     "author_name": "Svk",
-                    "author_url": "https://www.google.com/maps/contrib/108239472609909561658/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/108239472609909561658/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 3
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURHdGFULXZnRRAB!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
@@ -207,7 +234,9 @@
                     "original_text": "Очень неплохо организована торговля в этом минимаркете. Товар выложен максимально удобно, чисто, ну а если добавить приветливость продавцов и нормальный кофе, то в общем нормальный магазин 😀",
                     "original_language": "ru",
                     "author_name": "василий щербина",
-                    "author_url": "https://www.google.com/maps/contrib/111583001422499834545/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/111583001422499834545/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUM4cnF6QnVRRRAB!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
@@ -215,7 +244,9 @@
                     "original_text": "Отличный магазинчик с продуктами, отвечает своему названию: продукты возле твоего дома. Хороший кофе, умеренные цены. Есть все необходимое, если очень нужно срочно.",
                     "original_language": "ru",
                     "author_name": "Tetiana Komarova",
-                    "author_url": "https://www.google.com/maps/contrib/117565403592971949830/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/117565403592971949830/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 5
                 }
             ],
             "rating": "average: 3.6 out of 5 reviews",
@@ -224,11 +255,11 @@
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMaKCiuYJQ1dgNub4FowXaOGr05deI1S4PIyCRW!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN7NogaJKaMlT4MkXktyKfV18Ehbcgy6pJFT972!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPEsRU7URmDQY3a2prtGaKhu49-KXCNNMIYu0vX!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNCVM-wZrzkuTUmBiteO9-U5x6puyK3v9_MDi5_!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNap57Z9H2n_fqsDRu1mnGWVqLB-XNcPe_2w99e!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMBT4ldKD-oYykBiFVN2BHweVT6InvqF5qJBICi!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNNLYDp5z8odxumiueDAva86kzGpR0v9e71K9v3!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMjRAvgyRXVhMBjLa7b4OvXhOEKDztwGB-X6WIf!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICGmPrkEQ!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICcwZHH6wE!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICijerBcA!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICijereggE!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICijeqRpwE!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": [
@@ -260,7 +291,7 @@
             "address": "Yaroslavska St, 56а, Kyiv, Ukraine, 02000",
             "latitude": 50.471407,
             "longitude": 30.5175096,
-            "reviews_summary": "The reviews highlight a mix of experiences at the supermarket, with some praising its impressive interior design and wide selection of products, particularly for vegetarians and vegans. However, there are complaints about high prices and inconsistent service, especially in the sweets department where staff availability is an issue. While some customers appreciate the quality of ingredients and the tasty, affordable pizza, others express frustration over the difficulty in finding certain items, like minced meat, especially during late hours. Overall, the supermarket is regarded as one of the best in Ukraine, despite its higher prices compared to competitors.",
+            "reviews_summary": "The reviews highlight a mix of experiences at the supermarket, with some praising its impressive interior design and wide selection of products, particularly for vegetarians and vegans. However, there are complaints about high prices and inconsistent service, especially in the sweets department where customers often wait for assistance. While some shoppers appreciate the quality of ingredients and the tasty, affordable pizza, others express frustration over the availability of certain items, like minced meat, especially during late hours. Overall, the supermarket is regarded as one of the best in Ukraine, despite its higher prices compared to competitors.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN5dTR1UmNBEAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
@@ -268,7 +299,9 @@
                     "original_text": "Good market, with cool staff and without queues. But, I give only one star, because in department where sells sweets always absent seller!!!! Always wait they during 15 minutes, or have to find somebody to serve me. Do you think it is normal service???",
                     "original_language": "en",
                     "author_name": "Roman Stadnik",
-                    "author_url": "https://www.google.com/maps/contrib/115549917378242701583/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/115549917378242701583/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 1
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNpNXFTQ1R3EAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
@@ -276,7 +309,9 @@
                     "original_text": "A huge supermarket. Some positions here are a bit overpriced, the location is pretty good. There is a wide variety of products for vegetarians/vegans, pricetags are depressing though. They also make tasty and cheap pizza",
                     "original_language": "en",
                     "author_name": "Iurii Mykhailov",
-                    "author_url": "https://www.google.com/maps/contrib/117382402660779121729/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/117382402660779121729/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 4
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ4M2VHX0F3EAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
@@ -284,7 +319,9 @@
                     "original_text": "Amazing interior design with an ode to historic Podil. Akin to an art exhibition. Outstanding selection of produce and products. Excellent food hall. Prices more expensive than regular Silpos. Could be considered a second tier Silpo, after Le Silpo.",
                     "original_language": "en",
                     "author_name": "V. Will",
-                    "author_url": "https://www.google.com/maps/contrib/112316417525391344653/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/112316417525391344653/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 4
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN5bFBQZ0tREAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
@@ -292,7 +329,9 @@
                     "original_text": "Couldn't find minced meat, or maybe it's because I went there past 9pm other than that, it's a good one stop shop",
                     "original_language": "en",
                     "author_name": "Jackie Kirungu",
-                    "author_url": "https://www.google.com/maps/contrib/112748543097772916868/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/112748543097772916868/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 4
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURpLXJxYUNREAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
@@ -300,22 +339,24 @@
                     "original_text": "One of the best supermarkets in ukraine. Quality ingredients and good service but its just more expensive than any other store but its still one of the best.",
                     "original_language": "en",
                     "author_name": "Issa Mousa",
-                    "author_url": "https://www.google.com/maps/contrib/101694425077638201500/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/101694425077638201500/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 4
                 }
             ],
             "rating": "average: 3.4 out of 5 reviews",
             "reviews_span": "latest date: 2021-10-25, most recent date: 2020-07-26, date difference: 456 days",
             "photos": [
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPu0MjANaJ9N-5nEU37kQC8hIP9v3BJd9fCQ-92!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOFxX0h83L6-blSO5YuY12N1AUbkauaJ3Zu1Gsb!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMhWC00WZ3D18yWchCnK4hKV6LD18LRtOXeRxWJ!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOWEul8M54JcC6tc3X12hnH5CdGK8BOHx-OWsMJ!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNDPZfk_dTRNXjDjFtlukW7SLOxxpWnZHdUUJ3y!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDSt72llQE!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDm7LrpUg!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDKysz5igE!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDm7Lqafw!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOzwza3GlkzyD6A4CR1R6ZxeZHAAAYQ2xojQ2wd!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMLirnG6_m7atQ17J7g6vUbYCEBhc6H0MpfgNsp!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNX_8wYxcMrH5e4ks505oOZOlWxVd4_22HNuKyh!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNCnpPenVNEpf-rTcAv8BkAQF_Njazj7MOcoyA!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMXPMWeqShoXj4Hrs1QDKjil_TohSsBwUNDC6ik!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC8wpXRRQ!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICGxvH9fw!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDK8qyYdg!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC88oS52QE!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": [
@@ -335,7 +376,7 @@
             "address": "Verkhnii Val St, 52, Kyiv, Ukraine, 02000",
             "latitude": 50.4693214,
             "longitude": 30.517692699999998,
-            "reviews_summary": "The grocery store is praised for its amazing service and a delightful selection of high-quality foods, including Italian ham and cheese, Western European sweets, and Ukrainian ready-meals. However, there are serious concerns about spoiled products, with one customer reporting food poisoning from meat purchased there and citing rude staff. Despite these issues, many customers appreciate the extensive range of Italian products and the generous portions of Rio tuna available. The store is particularly beloved by families for its excellent coffee, friendly staff, and its resilience during challenging times in Kyiv, making it a cherished local spot.",
+            "reviews_summary": "The grocery store is praised for its amazing service and a delightful selection of high-quality foods, including Italian ham and cheese, Western European sweets, and Ukrainian ready-meals. However, there are serious concerns about food safety, as some customers reported purchasing spoiled meat products that led to food poisoning, along with experiences of rude staff. Despite these issues, many families consider it their favorite store, particularly for its excellent coffee, olives, cheeses, and jamon, with some highlighting its resilience during challenging times in Kyiv. Overall, while the store has a loyal customer base that appreciates its offerings, the inconsistency in product quality and service remains a significant concern.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN5NnEtUzlBRRAB!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
@@ -343,7 +384,9 @@
                     "original_text": "An amazing service and a pleasent assortment of high quality foods like ham and cheese from Italy, sweets from Western Europe and even ready-meals made in Ukraine meet you in this family owned classic grocery store.",
                     "original_language": "en",
                     "author_name": "Johannes Wamberg Andersen",
-                    "author_url": "https://www.google.com/maps/contrib/106279822883325102976/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/106279822883325102976/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUR4M0k2eG53RRAB!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
@@ -351,7 +394,9 @@
                     "original_text": "They sell spoiled products, we got poisoned by meat products bought from them, very rude staff.",
                     "original_language": "en",
                     "author_name": "Jim Jared",
-                    "author_url": "https://www.google.com/maps/contrib/117171388732595943099/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/117171388732595943099/reviews",
+                    "publish_date": "a year ago",
+                    "rating": 1
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURDdGJTdWRnEAE!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
@@ -359,7 +404,9 @@
                     "original_text": "Great selection of Italian products, the biggest portions of Rio tuna in town!",
                     "original_language": "en",
                     "author_name": "Daria Sipigina",
-                    "author_url": "https://www.google.com/maps/contrib/106598854558799537157/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/106598854558799537157/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN2bm9mbThnRRAB!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
@@ -367,7 +414,9 @@
                     "original_text": "Улюблений магазин і кавʼярня нашої родини і особливо дітей! Найкраща кава, оливки, сири та хамон! Єдиний магазин на Подолі, який не зачинявся під час найважчих часів Києва у 2022 і турбувався про всіх мешканців навколо🥰",
                     "original_language": "uk",
                     "author_name": "Antonina Prudko",
-                    "author_url": "https://www.google.com/maps/contrib/111821057533119825657/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/111821057533119825657/reviews",
+                    "publish_date": "2 months ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN2bnB1T01REAE!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
@@ -375,7 +424,9 @@
                     "original_text": "Улюблений магазин моєї родини. Найсмачніша кава на Подолі. Привітний персонал.",
                     "original_language": "uk",
                     "author_name": "Roman Polonets",
-                    "author_url": "https://www.google.com/maps/contrib/106770014778149925767/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/106770014778149925767/reviews",
+                    "publish_date": "2 months ago",
+                    "rating": 5
                 }
             ],
             "rating": "average: 4.2 out of 5 reviews",
@@ -387,8 +438,8 @@
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPexGTWvXQFmOEvQiuYBPgM0-GmZVJCyzItLAzj!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMXtaFSYZ9rHV6IwFqTo5Klu6GfbW27uaUeS6G_!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipO3fJMahh3SDL2GQtm3c94W1K1jDyfpwsqPbFT1!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOY5NJpGSYZONn6kPhxCiGd1B7Ggr0h21ZDowOg!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMmjRvP08g_B6kXK1w59Bg0VslkhP60XN0wtDoM!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDq5PDVTg!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICcnvemQQ!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMJwOTzkW1WMNOGtudylH705JBqhjSBvsVR8ZQv!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNHB55a7Muc1HcLIW_b4KnSynosPc28UQdGx4mI!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
             ],
@@ -410,7 +461,7 @@
             "address": "Verkhnii Val St, 50, Kyiv, Ukraine, 04070",
             "latitude": 50.469089999999994,
             "longitude": 30.517486999999996,
-            "reviews_summary": "The reviews highlight a welcoming atmosphere with friendly staff and a focus on healthy, organic products. Customers appreciate the variety of natural goods available, including food, drinks, teas, and cosmetics. Many express surprise and delight at the cozy store's offerings, which contribute to a sense of well-being. Additionally, the presence of a beauty and health studio adds to the appeal, providing services like hair removal and cosmetic consultations.",
+            "reviews_summary": "The reviews highlight a welcoming atmosphere with friendly staff and a focus on healthy, organic products. Customers appreciate the variety of natural goods available, including food, drinks, teas, and cosmetics. Many express satisfaction with the quality of the offerings and the overall cozy environment of the store. Additionally, the presence of a beauty and health studio adds to the appeal, providing services like hair removal and cosmetic consultations.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN3amNpT21nRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
@@ -418,7 +469,9 @@
                     "original_text": "Friendly personnel, healthy food, tasty drinks and a wide variety everyday household things.",
                     "original_language": "en",
                     "author_name": "Olha Rymartsova",
-                    "author_url": "https://www.google.com/maps/contrib/110941737497707123724/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/110941737497707123724/reviews",
+                    "publish_date": "8 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ2bTllcU9BEAE!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
@@ -426,7 +479,9 @@
                     "original_text": "Good organic products shop",
                     "original_language": "en",
                     "author_name": "SAIRAM A",
-                    "author_url": "https://www.google.com/maps/contrib/108637370801469125024/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/108637370801469125024/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNZMGYySXV3RRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
@@ -434,7 +489,9 @@
                     "original_text": "Healthy food,  natural goods",
                     "original_language": "en",
                     "author_name": "Oleg Bogdan",
-                    "author_url": "https://www.google.com/maps/contrib/114391229351849812194/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/114391229351849812194/reviews",
+                    "publish_date": "5 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURtajRPanVnRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
@@ -442,7 +499,9 @@
                     "original_text": "Затишний магазин, багато натуральних, різноманітних чаїв, є косметика. Дуже давно не заходила і була приємно вражена)",
                     "original_language": "uk",
                     "author_name": "Dina Parhomchyk",
-                    "author_url": "https://www.google.com/maps/contrib/110600137106243347463/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/110600137106243347463/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNRcnVTaHlnRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
@@ -450,22 +509,24 @@
                     "original_text": "Райское органическое место Красоты и Здоровья. Это превосходно! Спасибо за Органические продукты!!! И за Студию Красоты и Здоровья, там можно сделать эпиляцию, макияж, посетить косметолога и врача! Полный комплект:)",
                     "original_language": "ru",
                     "author_name": "Alise Shapoval",
-                    "author_url": "https://www.google.com/maps/contrib/103801770926727059614/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/103801770926727059614/reviews",
+                    "publish_date": "8 years ago",
+                    "rating": 5
                 }
             ],
             "rating": "average: 5.0 out of 5 reviews",
             "reviews_span": "latest date: 2022-02-12, most recent date: 2017-01-26, date difference: 1843 days",
             "photos": [
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN6w0wSxsslOpZv6SlOBCUlhHWazyeLqrLkHNxQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNc01kNeXPPjBP7CubiJmt39-9KfNbFJ4UrLoWS!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipO5AlWm5IOrgO2yo3g2xw7zKyYMmxFQYLfFbHZQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICG64re5gE!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICG64r6Bg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNnpmBPA54Hk-MW7N1QmYOxl2z1L97MUklXvg1z!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOUhKPGBLFVGHtVQyW6U8FpFoChodxF5zzlmQAT!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDmj4OjRg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNXAdERbAs-rAFaJcrbCAqAxoVhZbfiK7R15rA3!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM7G4VN0i_uDcKZSRCTz5dEn5XO6yEaLEIWzhMa!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPrCPO9gr4EVJOLEZvpjoDR9vzOR_RJX1aBOI8R!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPQO5UdQbppbPiARfwINqcBO3Tm5GlPCBfbgi3s!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMem09rGmoV22jDmaowddizxx8f5HfAzTiFg2vq!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC4yumxPg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC4yqm9SQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": [
@@ -485,7 +546,7 @@
             "address": "Khoryva St, 43/23, Kyiv, Ukraine, 02000",
             "latitude": 50.4686589,
             "longitude": 30.5188354,
-            "reviews_summary": "The reviews reflect mixed experiences with the sellers. One reviewer appreciates the sellers' efforts and encourages patience, while another criticizes them for being rude. This suggests that customer interactions may vary significantly, with some finding the sellers to be accommodating and others feeling disrespected. Overall, potential customers might want to prepare for a range of service quality when engaging with the sellers.",
+            "reviews_summary": "The reviews reflect mixed experiences with the sellers. One reviewer appreciates the sellers' efforts and encourages patience, while another criticizes them for being rude. This suggests that customer interactions may vary significantly, with some finding the sellers helpful and others feeling disrespected. Overall, potential customers might want to prepare for a range of service quality when engaging with the sellers.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNLN3ZlMnp3RRAB!2m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
@@ -493,7 +554,9 @@
                     "original_text": "Продавцы молодцы, терпения вам.",
                     "original_language": "ru",
                     "author_name": "yurhik",
-                    "author_url": "https://www.google.com/maps/contrib/113376685953266719497/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/113376685953266719497/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNDeEp2TXdnRRAB!2m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
@@ -501,15 +564,17 @@
                     "original_text": "Продавцы хамят",
                     "original_language": "ru",
                     "author_name": "ELENA",
-                    "author_url": "https://www.google.com/maps/contrib/107831942730784740362/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/107831942730784740362/reviews",
+                    "publish_date": "4 years ago",
+                    "rating": 1
                 }
             ],
             "rating": "average: 3.0 out of 2 reviews",
             "reviews_span": "latest date: 2021-04-06, most recent date: 2020-08-11, date difference: 238 days",
             "photos": [
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPq8xEBEqIfjeXEqUE0G-9yHB5yB3vH2x5J_nbV!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN-aVoH5nsND9_u8UnS8x4e_Q-f6SIoMLtzaTcK!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMt-K8JblNKI8AhX7ejyd3COg2w4j0yIwMLgx5z!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_mDeA!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_nzpgE!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_nT4gE!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": [
@@ -549,7 +614,7 @@
             "address": "Mezhyhirska St, 28, Kyiv, Ukraine, 02000",
             "latitude": 50.468741699999995,
             "longitude": 30.5127737,
-            "reviews_summary": "Customers have praised the fantastic atmosphere and delicious offerings at Hlibar, particularly highlighting the tasty vegetarian quiche and a great selection of cakes and pastries. Many reviewers appreciate the friendly staff and the pleasant service, with one noting the quick service despite a long line. However, some have expressed frustration with the wait times, especially when it seems that police officers are prioritized over other customers. Overall, while the coffee shop has its drawbacks, it remains a favorite spot in Podil for its delightful menu and inviting ambiance.",
+            "reviews_summary": "Customers have praised the fantastic atmosphere and delicious offerings at Hlibar, particularly highlighting the tasty vegetarian quiche and a great selection of cakes and pastries. Many reviewers appreciate the friendly staff and the pleasant service, with one noting the quick service despite a long line. However, some have expressed frustration with the wait times, especially when it seems that police officers are prioritized over regular customers. Overall, Hlibar is seen as a charming spot in Podil, but potential visitors should be prepared for possible delays.",
             "reviews": [
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNYcnYyelJBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
@@ -557,7 +622,9 @@
                     "original_text": "Thank you so much for the fantastic atmosphere, tasty vegetarian quiche and a great selection of delicious cakes and pastries! Now Hlibar is one of my favourite places in Podil)\nWith love from France,\nMarie",
                     "original_language": "en",
                     "author_name": "Світлана",
-                    "author_url": "https://www.google.com/maps/contrib/101790350705102555202/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/101790350705102555202/reviews",
+                    "publish_date": "4 months ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNfM3ZXYVBBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
@@ -565,7 +632,9 @@
                     "original_text": "Very pleasant man in the apron explained in english the wide variety of pastries. Took only one but all look delish. Need to return",
                     "original_language": "en",
                     "author_name": "HarryInUkraine",
-                    "author_url": "https://www.google.com/maps/contrib/108679295553081711779/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/108679295553081711779/reviews",
+                    "publish_date": "a month ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNXek16dUxBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
@@ -573,7 +642,9 @@
                     "original_text": "Nice place it this part of Podil.\nTasty coffee, nice sweets, friendly staff!\nCinnabone good but not excellent.",
                     "original_language": "en",
                     "author_name": "Sviat Aleksandrovych",
-                    "author_url": "https://www.google.com/maps/contrib/113121196932935969610/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/113121196932935969610/reviews",
+                    "publish_date": "3 years ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURQNWFhMXpnRRAB!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
@@ -581,7 +652,9 @@
                     "original_text": "This coffee shop is amazing, a long line, but super nice and fast service! Beautiful menu.",
                     "original_language": "en",
                     "author_name": "Trude Bergh",
-                    "author_url": "https://www.google.com/maps/contrib/113143795168338731685/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/113143795168338731685/reviews",
+                    "publish_date": "2 months ago",
+                    "rating": 5
                 },
                 {
                     "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURwOU5handBRRAB!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
@@ -589,22 +662,24 @@
                     "original_text": "Be prepared to wait a long time, they make coffee for the police without a queue, and there are a lot of police stations nearby, everyone else has to wait, like in a real totalitarian state. They do everything slowly, forget about the order",
                     "original_language": "en",
                     "author_name": "Pelykh Denys",
-                    "author_url": "https://www.google.com/maps/contrib/112975712147128329373/reviews"
+                    "author_url": "https://www.google.com/maps/contrib/112975712147128329373/reviews",
+                    "publish_date": "a year ago",
+                    "rating": 1
                 }
             ],
             "rating": "average: 4.2 out of 5 reviews",
             "reviews_span": "latest date: 2025-01-16, most recent date: 2022-02-19, date difference: 1062 days",
             "photos": [
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMZp-AP3mdAeeSjAyQROc_WT2deTqgDRsC7gBGj!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID6prq3XA!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
                 "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMdyqp5Do0qUTMDdb-F4wbqIxdnQzRZelvl4hEq!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN9QFGNdRdR1EpzcAkADw08b5X18b3t8gUgAvqx!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNQ9RG6IMhtr-grxr7o2DoYmCqiPJuKVVtxf3vp!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMrAjLFmFoxq16j-wMUODMt2QFyyu7cCOl2ccM8!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNhP7AjVCFh3wcujC1hszDS4VFuJVo1-u2EQuHU!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMC12tOxZQLQddezMemkAohbmPJ2EH48RjaaxQi!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMZznozqRS1RnpnWh7jPyS2KQvnv1CUc61Tn3Oj!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOdLRsiHJq8dCkrKwY4N4JwbNMvRp3BENYA8OhS!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMwor1aOn71kaRLUFbJf4wXnGgTMMHa22emnLZ5!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICDycn7ygE!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID1xPq_QQ!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICt2PP0KA!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDGtJPfggE!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDK4PKaFg!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICl3fmaKA!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICXrv2zpAE!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
+                "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICDycn7Kg!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
             ],
             "street_view": "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED",
             "working_hours": [
