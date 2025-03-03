@@ -5,13 +5,15 @@ from components.validation_functions import validate_user_id, validate_token, va
 from components.post_request_and_download import text_search_post_request
 # from components.post_request_and_download import mock_post_request
 
+from components.auto_scroller import scroll_to_top_of_submit
+
 # TODO:
 # build out a nice looking review for the user that highlights all of the options they have chosen
 
 @st.fragment
 def review_and_submit():
     #
-    with st.container(border=True):
+    with st.container(border=True, key='review-submit-container'):
         st.warning('Submitting a query **will** incur a cost for your orginaztion based on the query options you have selected.', 
                    icon=warning_icon)
         
@@ -33,7 +35,7 @@ def review_and_submit():
 
 
     # creates the review container
-    with st.container(border=True):
+    with st.container(border=True, key='review-container'):
         st.write('Query Review')
         st.write(f'user id: {st.session_state['user_id']}')
         st.write(f'Searching for: "{st.session_state['establishment_search_input']}" IVO ({st.session_state['location_input']})')
@@ -65,6 +67,7 @@ def review_and_submit():
         validated_token = validate_token(st.session_state['token_input'])
         validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
         validated_bounding_box = validate_bounding_box(st.session_state['map'])
+        scroll_to_top_of_submit()
 
         if validated_user_id and validated_token and validated_establishment_search and validated_bounding_box:
             with st.spinner():

@@ -2,7 +2,7 @@ import streamlit as st
 
 @st.fragment
 def user_credentials():
-    with st.container(border=True):
+    with st.container(border=True, key='user-credentials-container'):
         # This creates a 1row x 2column "grid" that the input boxes are sitting in
         user_id_column, token_column = st.columns(2)
 

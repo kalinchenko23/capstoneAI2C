@@ -1,6 +1,19 @@
 
-[data-testid="stHeader"] {
-    display: none; 
+#MainMenu {visibility: hidden;}  /* Hide the hamburger menu */
+footer {visibility: hidden;}     /* Hide the footer */
+header {visibility: hidden;}     /* Hide the header */
+
+h3 {
+    margin-left: -80px !important;
+    margin-top: -85px !important;
+    position: absolute !important;  
+    left: 1% !important; 
+    font-size: 24px !important;
+    
+}
+
+[data-testid="InputInstructions"] {
+    display: none;
 }
 
 /* hides the js div, script, doc, that is created in order to enable the auto-scroller */

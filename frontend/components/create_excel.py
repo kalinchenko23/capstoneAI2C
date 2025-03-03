@@ -11,6 +11,10 @@ import re
 # But this made me realize that with up to 60 sheets in an excel, its gonna be REALLY hard for the user to correlate these increments to the og
 # don't plan on fixing it now but its something we are going to have to deal with
 
+# pin main tab to the bottom of workbook
+# link to corresponding tab
+# change tab name to: (place name + x digits of address) ex: 'Starbucks 1015'
+
 def json_to_dict(j_file):
     if isinstance(j_file, str):
         with open(j_file, "r", encoding="utf-8") as file:
