@@ -1,6 +1,8 @@
 from fastapi import FastAPI, Query, Body, HTTPException
 from llm_service import get_review_summary
+from vlm_service import analyze_images_api, get_safe_prompt
 import httpx
+import aiohttp
 import json
 import base64
 from datetime import datetime
@@ -59,22 +61,33 @@ async def getting_street_view_image(
 
 
 
-async def get_photo(photo_uri: str):
+async def get_photo(name: str,api_key):
     """
     Get and encode an image from the provided photo URI.
 
     Returns:
          str: Base64 encoded string.
     """
+
     # Validate input
-    if not photo_uri:
-        raise ValueError("The 'photo_uri' parameter cannot be empty.")
+    if not name:
+        raise ValueError("The 'name' parameter cannot be empty.")
+
+    MAX_WIDTH = 800  
+    MAX_HEIGHT = 600  
+    url = f"https://places.googleapis.com/v1/{name}/media?key={api_key}&maxWidthPx={MAX_WIDTH}&maxHeightPx={MAX_HEIGHT}"
     
-    # Base64 encode image
-    async with httpx.AsyncClient(follow_redirects=True) as client:
-        response = await client.get(photo_uri)
-    encoded_string = base64.b64encode(response.content).decode('utf-8')
-    return encoded_string
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            if response.status == 200:
+                image_data = await response.read()
+                
+                #Base64 encode image
+                encoded_image = base64.b64encode(image_data).decode('utf-8')
+                return encoded_image
+            else:
+                print(f"Error: {response.status}, {await response.text()}")
+  
 
 
 async def response_formatter(responce,api_key):
@@ -154,17 +167,32 @@ async def response_formatter(responce,api_key):
         except KeyError as ex:
             new_data["reviews"]="Reviews are not provided"
 
+        keywords= ["business", "storefront", "street view"]
+        vlm_prompt=get_safe_prompt(keywords)
         try:
             new_data["photos"] = []
             for photo in place["photos"]:
-                new_data["photos"].append(photo["googleMapsUri"])
+                photo_info={}
+                #Retreiving photos
+                encoded_photo=await get_photo(photo["name"],api_key)
+
+                #Sending photos to VLM for the insight
+                vlm_insight=await analyze_images_api(encoded_photo,vlm_prompt)
+                photo_info["vlm_insight"]=vlm_insight
+                photo_info["url"]=photo["googleMapsUri"]
+                new_data["photos"].append(photo_info)
         except KeyError as ex:
             new_data["photos"]="Photos are not provided"
 
         location=place["formattedAddress"]
         filename=place["displayName"]["text"]
-        new_data["street_view"]= "URL_CONTAINS_KEY_CAN'T_BE_EXPOSED" #await getting_street_view_image(location,filename,api_key)[0]
-
+        
+        #Getting streetview images
+        encoded_street_view_image = await getting_street_view_image(location,api_key)
+        street_view_info={}
+        street_view_info["vlm_insight"]=await analyze_images_api(encoded_street_view_image[1],vlm_prompt)
+        street_view_info["url"]= "URL contains api key, can't be exposed" #encoded_street_view_image[0]
+        new_data["street_view"]=street_view_info
         try:
             new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
         except KeyError as ex:
