@@ -113,6 +113,10 @@ async def response_formatter(responce,api_key):
         except KeyError as ex:
             new_data["website"]="Website is not provided"
         try:
+            new_data["google_maps_url"]=place["googleMapsUri"]
+        except KeyError as ex:
+            new_data["google_maps_url"]="Google maps url is not provided"    
+        try:
             new_data["phone_number"]=place["nationalPhoneNumber"]
         except KeyError as ex:
             new_data["phone_number"]="Phone number is not provided"
@@ -132,6 +136,7 @@ async def response_formatter(responce,api_key):
             #Calling LLM summarization function
             new_data["reviews_summary"] = get_review_summary(AZURE_OAI_ENDPOINT,AZURE_OAI_KEY,AZURE_OAI_DEPLOYMENT,place["reviews"])
             
+            new_data["url_to_all_reviews"]=place["googleMapsLinks"]["reviewsUri"]
             new_data["reviews"] = []
             ratings=[]
             times=[]
@@ -147,7 +152,6 @@ async def response_formatter(responce,api_key):
                 r["publish_date"]=review["relativePublishTimeDescription"]
                 r["rating"]=review["rating"]
                 new_data["reviews"].append(r)
-
                 
                 ratings.append(review["rating"])
                 times.append(review["publishTime"])
@@ -169,7 +173,9 @@ async def response_formatter(responce,api_key):
 
         keywords= ["business", "storefront", "street view"]
         vlm_prompt=get_safe_prompt(keywords)
+        
         try:
+            new_data["url_to_all_photos"]=place["photos"][0]["googleMapsUri"]
             new_data["photos"] = []
             for photo in place["photos"]:
                 photo_info={}

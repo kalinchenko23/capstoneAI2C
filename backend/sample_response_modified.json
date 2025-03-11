@@ -1,111 +1,127 @@
 {
     "places": [
         {
+            "name": "Kvartal",
+            "website": "Website is not provided",
+            "google_maps_url": "https://maps.google.com/?cid=6590132690537269774",
+            "phone_number": "Phone number is not provided",
+            "address": "Mezhyhirska St, 26/24, Kyiv, Ukraine, 02000",
+            "latitude": 50.468392599999994,
+            "longitude": 30.5134183,
+            "reviews_summary": "The reviews highlight a 24-hour minimarket that offers a decent selection of basic groceries and alcohol, making it a convenient option for late-night needs. While some customers appreciate the availability of essentials, others note that the prices are relatively high and the product variety is limited. Overall, it is described as an ordinary grocery store that serves as an \"emergency\" stop for quick purchases. Despite its limitations, the store's round-the-clock hours make it a practical choice for those in need of convenience.",
+            "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID4n-K75gE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
+            "photos": [
+                {
+                    "vlm_insight": "This image shows the exterior of a business storefront located on an urban street. The storefront features a prominent archway with decorative ironwork and a large sign above the entrance that reads \"продам квартали\" in Cyrillic script, suggesting the business is related to real estate. The building's facade is painted in a light yellow hue and includes architectural details like quoins and a cornice, indicative of a classical influence. Additional signage and advertisements are visible on the windows and walls, offering various services and products, which adds a commercial feel to the setting.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID4n-K75gE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image provided does not depict the exterior of a business storefront as viewed from the street. Instead, it shows an interior view of a liquor store with shelves stocked with various bottles of liquor. The shelves are organized and well-lit, displaying a wide range of brands and types of alcohol. The focus is on the product arrangement and the variety of options available for purchase.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICckozFdQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image shows a corner building with a business storefront on the ground floor, located on a busy urban street. The building features a classic architectural style with ornate window frames, balconies, and a beige facade. The storefront includes signage for a business named \"ALA,\" visible through a blue sign with white lettering above the entrance. The street is lined with cars and trees, suggesting a blend of urban functionality and greenery, typical of city thoroughfares.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDK2srpcg!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image you provided is actually of the interior of a liquor store, not the exterior of a business storefront. It shows a wide variety of alcoholic beverages neatly arranged on multiple shelving units. The shelves are stocked with an assortment of bottles, including spirits, liquors, and possibly some mixers. The store appears well-organized, with products grouped likely by type or brand, facilitating easy browsing for customers.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICckozFuwE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image shows a business storefront located on a corner of a city street, featuring a mix of architectural styles. The building has an older, classical appearance with ornate details on the upper floors, contrasting with the modern, simpler style of the ground-level storefront. The storefront includes yellow and green paneling and a white sign with Cyrillic text, indicating the nature of the business. The street is equipped with pedestrian crossings, street lamps, and overhead trolleybus wires, suggesting a well-used urban area.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDk5vaOGw!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image you provided is actually of the interior of a store, not the exterior of a business storefront. It shows a well-stocked aisle with a variety of snacks and beverages. On the left, there are shelves filled with different brands of snacks, including chips and chocolates. On the right side, there is a display of Pepsi products next to a refrigerator filled with assorted drinks. The store appears to be a convenience or grocery store based on the products displayed.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICc66KmggE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image shows a business storefront located on a busy urban street. The building housing the business is an older structure with ornate architectural details, including sculpted facades and decorative moldings around the windows and corners. The storefront itself features a simple design with a large window and a yellow awning, and it has signage above indicating it is a café named \"КАПИТАЛЬ.\" The street is lined with similar historic buildings and is busy with vehicle traffic, suggesting a central location in a city.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDEgbSHOA!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image shows the exterior of a business storefront with a traditional design. The facade is clad in yellow tiles, and the entrance features a white door flanked by large windows displaying various posters and advertisements. Above the door, a large white awning with black text displays the name of the business, \"Продмаг Квартал,\" which suggests it is a grocery or convenience store. The building appears to be located on a city street, characterized by its architectural style that includes decorative tile work and detailed cornices, giving it a quaint, historical appearance.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICEocmL5QE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image you provided does not show a business storefront or a street scene. Instead, it depicts a close-up view of a food item, specifically a pastry with cheese topping, placed on a white tray and wrapped in a red plastic bag. The background shows a floor, and there are partial views of a person's feet wearing sneakers. The barcode and label on the packaging suggest it was purchased at a store.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICczf25VQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                },
+                {
+                    "vlm_insight": "The image shows the exterior of a small business storefront, specifically an electrician's shop, as indicated by the signage above the door that reads \"ЕЛЕКТРИК\" (Electrician in English). The storefront is modest with a simple design, featuring a glass door and a window with metal security bars above it. The building's facade is made of brick, and there are several signs in Cyrillic script, suggesting the location is in a region where this script is used, possibly Eastern Europe or Russia. The street appears to be a quieter, possibly residential area, indicated by the lack of bustling activity and the style of lighting and buildings visible.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDC58KBCQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
+                }
+            ],
+            "street_view": {
+                "vlm_insight": "The image shows a business storefront with a Fujifilm sign, indicating a photography or printing-related shop. The storefront is part of an older building with a weathered facade, featuring architectural details like ornate moldings around the windows and doors. The shop is located on a pedestrian-friendly street with a paved sidewalk, suggesting a city or town setting. The overall appearance of the building suggests a mix of commercial use on the ground floor with possible residential use above, typical of urban mixed-use areas.",
+                "url": "URL contains api key, can't be exposed"
+            },
+            "working_hours": [
+                "Monday: Open 24 hours",
+                "Tuesday: Open 24 hours",
+                "Wednesday: Open 24 hours",
+                "Thursday: Open 24 hours",
+                "Friday: Open 24 hours",
+                "Saturday: Open 24 hours",
+                "Sunday: Open 24 hours"
+            ]
+        },
+        {
             "name": "МАГАЗИН ЧП ЭРАК",
             "website": "Website is not provided",
+            "google_maps_url": "https://maps.google.com/?cid=11640868201906676140",
             "phone_number": "044 425 6030",
             "address": "Shchekavytska St, 45, Kyiv, Ukraine, 02000",
             "latitude": 50.471961699999994,
             "longitude": 30.5146242,
-            "reviews_summary": "Customers consistently praise the store for its friendly and polite sales staff, highlighting the excellent service they receive. The assortment of products is noted to be extensive, with fresh fruits, vegetables, and baked goods available at reasonable prices. Many reviewers appreciate the store's ability to provide a wide range of items, from groceries to household products, making it a convenient stop for everyday needs. Overall, the positive experiences shared by customers emphasize the store's commitment to quality and customer satisfaction.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUNRenVIREd3EAE!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                    "text": "Very friendly, beautiful and polite saleswomen, good service. A large assortment and always fresh products at a reasonable price.",
-                    "original_text": "Дуже привітні гарні і вічливі продавчині, гарне обслуговування. Великий асортимент і завжди свіжий товар по помірній  ціні.",
-                    "original_language": "uk",
-                    "author_name": "Михайло Побережний",
-                    "author_url": "https://www.google.com/maps/contrib/110906350019650587224/reviews",
-                    "publish_date": "a week ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUMzdWZQdFh3EAE!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                    "text": "Yes, you're right. I got the wrong store. Everyone in this store is responsive and very positive.) And in that other store with a short haircut, the woman is a shepherd😂",
-                    "original_text": "Да , вы правы. Я перепутал магазин. В этом магазине все отзывчивые и очень позитивные.) А в том другом магазине с короткой стрижкой, женщина - овчарка😂",
-                    "original_language": "ru",
-                    "author_name": "maksim zaycev",
-                    "author_url": "https://www.google.com/maps/contrib/109537947078670939098/reviews",
-                    "publish_date": "4 months ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNqMmIzZ2pRRRAB!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                    "text": "Dear Maxim! You must have mixed up the store, I go here all the time, I am very satisfied (Schekavitskaya 45), but the new one on Shchekavitskaya 49, yes, the service is lower than 1, and the saleswoman there with a short haircut is very rude in service",
-                    "original_text": "Шановний Максим! Ви мабуть переплутали магазин, хожу сюди постійно, дуже задоволений (Щекавицкая 45), а вот новий на Щекавицкой 49-то да, сервіс ніже 1,і продавчіня там з короткой стрижкой дуже хамовіто в обслуговуванні",
-                    "original_language": "uk",
-                    "author_name": "Ttt Ttt",
-                    "author_url": "https://www.google.com/maps/contrib/117629345796340936506/reviews",
-                    "publish_date": "10 months ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNhOXZfbFp3EAE!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                    "text": "There is everything you need at reasonable prices. Vegetables and fruits are always fresh and tasty. There are pastries. Friendly sellers will be able to advise and help you choose.",
-                    "original_text": "Є все необхідне за помірними цінами. Овочі і фрукти завжди свіжі і смачні. Є випічка. Привітні продавці зможуть порадити і допомогти у виборі.",
-                    "original_language": "uk",
-                    "author_name": "Марина Утуренко",
-                    "author_url": "https://www.google.com/maps/contrib/101584638269145255928/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNzMVAtWGxnRRAB!2m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
-                    "text": "An old store with the local name \"Bell\" and a strong assortment: basic vegetables, fruits, sausages, frozen foods, cakes, sweets, cookies, bread, alcohol, juices, water; household products: household chemicals, hygiene products... Everything that might unexpectedly run out at home is here, prices are moderate.",
-                    "original_text": "Старый магазин с местным названием \"Колокольчик\" и  крепким ассортиментом: базовые овощи, фрукты, колбасы, заморозка, пирожные, конфеты, печенье, хлеб, спиртное, соки воды; хозяйственные продукты: бытовая химия, средства гигиены... Все что может неожиданно закончится дома тут есть, цены умеренные.",
-                    "original_language": "ru",
-                    "author_name": "Tetiana Komarova",
-                    "author_url": "https://www.google.com/maps/contrib/117565403592971949830/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 4
-                }
-            ],
-            "rating": "average: 4.8 out of 5 reviews",
-            "reviews_span": "latest date: 2025-03-04, most recent date: 2020-11-29, date difference: 1556 days",
+            "reviews_summary": "Customers consistently praise the store for its friendly and polite sales staff, highlighting the excellent service they receive. The assortment of products is noted to be extensive, with fresh fruits, vegetables, and baked goods available at reasonable prices. Many reviewers express satisfaction with the store's offerings, emphasizing the convenience of finding a wide range of items, from groceries to household products. Overall, the positive experiences shared by customers suggest that this store is a reliable choice for quality products and helpful service.",
+            "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P_jsgE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac",
             "photos": [
                 {
-                    "vlm_insight": "The image provided does not show the exterior of a business establishment from the street. Instead, it displays an interior view of a refrigerated section in a grocery store or supermarket. The refrigerator is stocked with various dairy products including cheeses, yogurts, and bottled beverages. The products are well-organized, and the display is brightly lit to highlight the items for sale.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront or its architectural design and signage. Instead, it displays an interior view of a grocery store focusing on a refrigerated display filled with various dairy products such as cheeses, yogurts, and milk. The products are well-organized, and the display is brightly lit to highlight the items for sale. The image captures the commercial environment inside a store, showcasing a typical setup for dairy product merchandising.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P_jsgE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image provided shows the interior of a small grocery store rather than the exterior of a business establishment. Inside, the store is stocked with a variety of products including fresh fruits and vegetables displayed in open coolers, bottled beverages, cleaning supplies, and packaged goods arranged on metal shelving units. The layout is compact and efficiently organized to maximize the use of space. Bright lighting and clear signage make the products easily visible and accessible to customers.",
+                    "vlm_insight": "The image provided shows the interior of a small grocery store rather than the exterior of a business storefront. Inside, the store is well-stocked with various products ranging from fresh fruits and vegetables displayed in open coolers at the front, to shelves filled with household goods, beverages, and packaged foods. The layout is compact and efficiently organized to maximize the use of space. Bright lighting illuminates the products, enhancing their visibility and appeal to customers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P-zHQ!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image provided is actually an interior view of a grocery store, not the exterior of a business establishment. It shows a variety of fresh produce displayed on shelves and in baskets, including potatoes, onions, tomatoes, and cabbages. Prices are visible on handwritten labels, indicating the cost per kilogram for each item. The setting suggests a small, local grocery store with a focus on fresh, possibly locally sourced produce.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront from a street view. Instead, it displays the interior of a small grocery store or market. The shelves are stocked with a variety of fresh produce including tomatoes, onions, potatoes, and cabbage. There are also refrigerated sections visible, containing other food items, and prices are displayed on handwritten labels in front of the products.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P-rxgE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image provided is actually an interior view of a small grocery store rather than an exterior view of a business establishment. The store is densely stocked with a variety of products ranging from fresh fruits and vegetables displayed in open coolers at the front, to bottled beverages, cleaning supplies, and packaged goods organized on shelving units. The layout appears compact and efficiently organized to maximize product display in a limited space. The lighting is bright, enhancing the visibility of the products, and the overall ambiance suggests a typical local convenience store setup.",
+                    "vlm_insight": "The image provided shows the interior of a small grocery store rather than the exterior of a business storefront. The store is packed with various products ranging from fresh fruits and vegetables displayed in open coolers at the front to shelves stocked with household cleaning supplies, personal care items, and packaged foods. The layout appears compact, utilizing every available space to maximize product display. The lighting is bright, enhancing the visibility of the products, and the store's organization suggests a focus on accessibility and variety for shoppers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDi_JawiAE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image provided shows the interior of a small grocery store rather than the exterior of a business establishment. Inside, there are shelves and refrigerated sections stocked with various fresh produce and packaged goods. Items such as tomatoes, potatoes, onions, and cabbages are neatly arranged and labeled with prices. The store appears to be compact and efficiently organized to maximize the display of a variety of food products.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront or its architectural design and signage. Instead, it displays the interior of a grocery store with various fresh produce items such as fruits and vegetables neatly arranged on shelves and in bins. Prices are visible on handwritten labels, indicating the cost of items like potatoes, onions, and tomatoes. The setting suggests a small, possibly local grocery store focused on providing fresh food options to customers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDi_JbwugE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image provided does not show the exterior of a business establishment or its architectural style, signage, and overall setting from the street. Instead, it displays an assortment of food items in various plastic containers, possibly within a market or store. The containers are labeled with prices, suggesting they are for sale. The items include fish, pickles, and other preserved or marinated foods.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront or any architectural elements. Instead, it displays an assortment of food items in clear plastic containers, possibly inside a market or store. The containers are labeled with prices and seem to contain various pickled or preserved foods, including fish and vegetables. This scene is typical of a grocery store or specialty food market interior.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P-rbA!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image provided does not show the exterior of a business establishment or its architectural style, signage, and setting. Instead, it displays an assortment of packaged meats and sausages, likely inside a grocery store or market. The products are variously priced with labels in a non-English language, suggesting a diverse selection typical of a deli section. The image captures the items closely packed under bright lighting, emphasizing the variety and abundance of choices available.",
+                    "vlm_insight": "The image you've provided is not of a business storefront or its exterior. Instead, it shows a close-up view of various packaged food items, likely displayed inside a grocery store or market. The products include different types of sausages, meats, and possibly some condiments, all labeled with prices and some with brand names. The items are densely packed, showcasing a variety of options available for purchase.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICs1P-LnwE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image provided does not show the exterior of a business establishment or its architectural style, signage, and overall setting. Instead, it displays an assortment of food items in transparent containers, possibly within a market or store. The containers are labeled with prices, suggesting they are for sale. The items include various pickled or preserved foods and fresh herbs, indicating a focus on culinary ingredients.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront or any architectural elements. Instead, it displays a variety of food items in transparent containers, possibly within a market or grocery store. The containers are labeled with prices, suggesting they are for sale. The assortment includes different types of pickles, salads, and possibly other preserved or marinated foods.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDi_Jbw_AE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image you provided shows an assortment of packaged meats and sausages displayed in a refrigerated section, likely within a grocery store or market. The products include various types of sausages, some labeled with prices and descriptions in a non-English language, suggesting a location outside of English-speaking countries. The items are densely packed, showcasing a variety of brands and types, indicating a store with a wide selection of meat products. This image does not depict the exterior of a business establishment or provide details about architectural style or signage.",
+                    "vlm_insight": "The image you provided does not depict the exterior of a business storefront or any architectural elements. Instead, it shows a variety of packaged meats and sausages displayed in a refrigerated section, likely within a grocery store or market. The products are labeled with prices and some have brand names visible. This scene is typical of a food retail environment, focusing on the presentation and sale of food items.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDi_JbgrgE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 },
                 {
-                    "vlm_insight": "The image provided does not show the exterior of a business establishment viewed from the street. Instead, it displays an assortment of baked goods for sale, likely within a bakery or grocery store. The items include cinnamon rolls, sliced cake, and cookies, each with visible price tags. The setting appears to be a commercial food display, with the products neatly arranged in trays and covered with clear plastic for protection and easy viewing by customers.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront or its architectural design and signage. Instead, it displays an assortment of baked goods for sale, including cinnamon rolls, cookies, and other pastries, presented in a store setting. The items are packaged in clear plastic containers with visible price tags, indicating the cost of each item. The setting suggests a bakery or grocery store environment where these goods are displayed on a countertop for customer selection.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDCkPajggE!2e10!4m2!3m1!1s0x40d4ce13ff805fab:0xa18cabf423c9a1ac"
                 }
             ],
             "street_view": {
-                "vlm_insight": "The image shows a street corner with an older, multi-story building that appears to be residential rather than a business establishment. The architecture of the building is utilitarian, with a plain facade, visible balconies, and a mix of open and closed window shutters. There is no visible signage indicating a business on the ground floor, which is typical for residential buildings in many urban settings. The overall setting includes parked cars and a tree, contributing to a typical urban residential area atmosphere.",
+                "vlm_insight": "The image shows a street view of a multi-story building that appears to be a residential or mixed-use structure with a potential ground-floor business. The building features a weathered facade with visible signs of aging and wear, such as peeling paint and some graffiti. There are multiple balconies with metal railings, and the windows are a mix of different styles, suggesting various renovations over time. There is no clear signage visible in this view that indicates the presence of a business, making the primary function of the building somewhat ambiguous from this angle.",
                 "url": "URL contains api key, can't be exposed"
             },
             "working_hours": [
@@ -121,97 +137,46 @@
         {
             "name": "Коло",
             "website": "https://kolomarket.com.ua/",
+            "google_maps_url": "https://maps.google.com/?cid=2086789191381068799",
             "phone_number": "0800 507 969",
             "address": "Vvedenska St, 32, Kyiv, Ukraine, 04071",
             "latitude": 50.471230299999995,
             "longitude": 30.511337699999995,
-            "reviews_summary": "The reviews highlight a mix of experiences at a local grocery store. While some customers appreciate the convenience and friendly staff, others express frustration with specific incidents, such as a refusal to exchange expired milk and a lack of enforcement of mask-wearing among customers. The store is noted for its cleanliness and organization, with a good selection of products, including popular items like paninis and coffee. Overall, it serves as a handy option for quick purchases, though improvements in customer service and adherence to health guidelines are suggested.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURKNHU3UFJBEAE!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                    "text": "The child went in the evening at 9:00 p.m. to buy milk at the nearest store at home. But after paying, I saw that the expiration date is today. I turned to the cashier to exchange for a fresher product, because we are physically unable to drink everything today. The cashier refused (!!!) the child and stated that there is no reason to exchange milk for fresh! Because if you didn't notice when you took it, it's already too late.\nThe child came very upset. I had to get dressed and go. The seller also charged me precisely about the lack of grounds. I had to explain that the buyer's desire and the receipt in hand is all that is needed for the product group to exchange the product immediately at the first request.\nDear \"KOLO\", educate your sellers about the laws of Ukraine and, above all, politeness. Even if the child was wrong, you can't behave like that.",
-                    "original_text": "Дитина пішла ввечері в 21:00 за молоком в найближчій магазин у дома. Але після оплати побачила, що термін придатності спливає сьогодня ж. Звернулась до касира, щоб обміняти на більш свіжий продукт, тому що ми фізично не здатні випити все сьогодня. Касир відмовив (!!!) дитині і заявив, що підстав обміняти молоко на свіже немає! Бо, якщо не помітив, коли брав, то вже піздно.\nДитина прийшла дуже засмучена. Я був вимушений одягатись і йти. Продавець мені зарядила теж саме про відсутність підстав. Довелось пояснити, що бажання покупця та чек на руках - це все що треба для продуктової групи, щоб обміняти товар негайно по першій вимозі.\nШановне «КОЛО», навчайте своїх продавців законам України та, насамперед, ввічливості. Навіть, якщо б дитина була не права, так поводитись не можна.",
-                    "original_language": "uk",
-                    "author_name": "Sergiy M.",
-                    "author_url": "https://www.google.com/maps/contrib/111034095195207201438/reviews",
-                    "publish_date": "a year ago",
-                    "rating": 1
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN5cU5UanJBRRAB!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                    "text": "A small grocery store for those who don’t want to run far. Of course, you can’t make purchases for the week, but going out to buy bread is just the thing. Prices are above average, but not astronomical. There are delicious paninis on sale, but they sell out pretty quickly. The staff are very courteous and friendly.",
-                    "original_text": "Маленький продуктовый магазинчик для тех, кому не хочется далеко бежать. Закупки на неделю конечно не сделать, но выйти за хлебом - самое то. Цены выше средних, но не космические. В продаже есть вкусные панини, но их разметают довольно быстро. Сотрудники очень обходительны и приветливы.",
-                    "original_language": "ru",
-                    "author_name": "Сергей Мухин",
-                    "author_url": "https://www.google.com/maps/contrib/108614174081430321367/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 4
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUQ2c0xXeDZRRRAB!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                    "text": "The staff is friendly. BUT. Only the seller knows that it is necessary to wear a mask in the store. Customers are angry and don't wear masks (the store is full of customers without masks), and the cashier lets go of the goods without comment. I understand that you need to make a cash register, but you still need to respect other customers as well.",
-                    "original_text": "Персонал привітний. АЛЕ. Про те, що в магазині потрібно знаходитись в масці знає лише продавець. Клієнти обнагліли та не вдягають маски (повний магазин покупців без масок), а касир без зауважень відпускає товар. Я розумію , що потрібно зробити касу, та все ж інших клієнтів також потрібно поважати.",
-                    "original_language": "uk",
-                    "author_name": "Svk",
-                    "author_url": "https://www.google.com/maps/contrib/108239472609909561658/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 3
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURHdGFULXZnRRAB!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                    "text": "Trade in this minimarket is very well organized. The goods are laid out as conveniently as possible, clean, but if you add the friendliness of the sellers and normal coffee, then in general it’s a normal store 😀",
-                    "original_text": "Очень неплохо организована торговля в этом минимаркете. Товар выложен максимально удобно, чисто, ну а если добавить приветливость продавцов и нормальный кофе, то в общем нормальный магазин 😀",
-                    "original_language": "ru",
-                    "author_name": "василий щербина",
-                    "author_url": "https://www.google.com/maps/contrib/111583001422499834545/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUM4cnF6QnVRRRAB!2m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
-                    "text": "An excellent grocery store that lives up to its name: groceries near your home. Good coffee, reasonable prices. There is everything you need if you really need it urgently.",
-                    "original_text": "Отличный магазинчик с продуктами, отвечает своему названию: продукты возле твоего дома. Хороший кофе, умеренные цены. Есть все необходимое, если очень нужно срочно.",
-                    "original_language": "ru",
-                    "author_name": "Tetiana Komarova",
-                    "author_url": "https://www.google.com/maps/contrib/117565403592971949830/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 5
-                }
-            ],
-            "rating": "average: 3.6 out of 5 reviews",
-            "reviews_span": "latest date: 2023-07-13, most recent date: 2020-07-07, date difference: 1101 days",
+            "reviews_summary": "The reviews highlight a mix of experiences at a local grocery store. While some customers appreciate the convenience and friendly staff, others express frustration with specific incidents, such as a refusal to exchange expired milk and a lack of enforcement of mask-wearing among customers. The store is noted for its cleanliness and organization, as well as its reasonable prices and availability of essential items. Overall, it serves as a handy option for quick purchases, though improvements in customer service and adherence to health guidelines are suggested.",
+            "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMaKCiuYJQ1dgNub4FowXaOGr05deI1S4PIyCRW!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff",
             "photos": [
                 {
-                    "vlm_insight": "The image shows the storefront of a business with a modern architectural style. The facade features a prominent orange sign with the name \"КОЛО\" in white letters, accompanied by smaller text \"продукти дому\" which translates to \"home products\" in English. The building itself has a clean, straightforward design with a flat roof and is partially clad in brick-like tiles, giving it a textured appearance. Additionally, there are large windows and an air conditioning unit visible, suggesting functionality and comfort for the interior space.",
+                    "vlm_insight": "The image shows the exterior of a business storefront with a modern and functional design. The storefront features a bold orange sign with Cyrillic script, indicating the name of the business and the type of products it offers. Architecturally, the building incorporates a mix of materials, including brick columns with a textured finish and a simple, white overhanging structure that supports the signage. The presence of an air conditioning unit and promotional posters on the windows suggests practical use of space and an effort to attract customers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMaKCiuYJQ1dgNub4FowXaOGr05deI1S4PIyCRW!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
                 },
                 {
-                    "vlm_insight": "The image provided is actually of the interior of a grocery store, not a storefront viewed from the street. It shows several aisles stocked with a variety of food products, including bread, dairy, and canned goods. The store features bright lighting and clean, organized shelves. The signage inside the store is in a non-English script, indicating product categories and promotions.",
+                    "vlm_insight": "The image you provided is actually an interior view of a grocery store, not the exterior of a business storefront. The store features well-organized shelves stocked with a variety of food products, including bread, dairy, and canned goods. Bright lighting and clear signage above the aisles make it easy for customers to navigate through different sections. The overall layout is designed for efficient shopping, with wide aisles and accessible product placement.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN7NogaJKaMlT4MkXktyKfV18Ehbcgy6pJFT972!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
                 },
                 {
-                    "vlm_insight": "This image shows a business storefront with a simple architectural style, featuring a flat facade and a single-story structure. The building is constructed with a brick base and a plastered upper section painted in a light color. A prominent orange signboard runs across the top of the storefront, displaying the name \"продукти КОЛО тебе\" in Cyrillic script, which suggests that the store likely sells groceries or food products. The storefront also includes a large window with an advertisement showing beverages and snacks, enhancing its visual appeal and providing information about the products offered.",
+                    "vlm_insight": "This image shows a small business storefront with a simple, utilitarian architectural design. The building features a plain facade with a brick base and a peach-colored upper section, topped with a brown roof that extends over the entrance to form a small porch. The storefront is adorned with vibrant orange signage displaying the name \"КОЛО тебе\" and images of groceries, which suggests it is a local grocery store. The shop is integrated into a residential area, evident from the apartment building directly above and adjacent to it, blending the commercial space seamlessly with the urban environment.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPEsRU7URmDQY3a2prtGaKhu49-KXCNNMIYu0vX!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
                 },
                 {
-                    "vlm_insight": "The image you provided is not of a business storefront but rather shows a product on a store shelf. The product is a bag of \"Krupa Pshenichna Poltavska\" by the brand \"Priviv,\" which appears to be a type of wheat grain. The packaging is predominantly blue and yellow, featuring the brand name at the top. The price tag below the product indicates a price of 15.00, although the currency is not specified.",
+                    "vlm_insight": "The image you provided is not of a business storefront; instead, it shows a product on a store shelf. The product is a bag of buckwheat from the brand \"Pryvit,\" labeled in Ukrainian. The packaging is predominantly blue and yellow, featuring the product name and the claim of being 100% natural. The price tag below the product displays a price of 15.00, likely indicating the cost in the local currency.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICijerBcA!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
                 },
                 {
-                    "vlm_insight": "The image shows a business storefront with a simple architectural style, featuring a ground-level shop in a multi-story building. The facade is a combination of painted brick and decorative stone cladding. The shop features a bright orange awning with Cyrillic script that reads \"продукти коло тебе,\" which translates to \"products near you\" in English. The storefront includes large windows displaying advertisements and promotional posters, enhancing its visibility and appeal to passersby.",
+                    "vlm_insight": "The image shows a business storefront with a simple architectural design, featuring a light brick facade and a stone base. The storefront includes a bright orange awning with Cyrillic text that translates to \"products for you,\" suggesting it is a grocery or convenience store. The signage is vibrant and colorful, with graphics of fruits and vegetables, which helps it stand out in the urban setting. The store integrates into a residential area, as indicated by the apartment building directly above and adjacent to it, blending commercial and residential uses in close proximity.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICcwZHH6wE!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
                 },
                 {
-                    "vlm_insight": "The image provided does not show a business storefront or its architectural style. Instead, it displays a close-up view of various prepaid mobile phone cards on a rack, likely inside a store. The cards are prominently labeled with different denominations and service features, such as \"4G\" and \"10 GB.\" The background is slightly blurred but suggests an indoor retail environment with shelves stocked with other products.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront or any architectural elements. Instead, it displays a close-up view of a rack holding various prepaid phone cards inside a store. The cards are prominently labeled with different denominations and mobile network logos, suggesting they are for mobile data or call credit. The background is slightly blurred but shows a glimpse of a refrigerated section, indicating that the setting might be a convenience store or similar retail environment.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICijereggE!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
                 },
                 {
-                    "vlm_insight": "The image provided does not show a business storefront or any architectural elements. Instead, it depicts a close-up view of a product shelf, likely inside a store. The shelf features price tags, with one prominently displaying the number \"5\" and the price \"50,\" possibly indicating the cost of the item in a specific currency. The background is slightly blurred, but it includes other shelved items and possibly a shopping environment.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront. Instead, it displays a close-up view of a product shelf, likely inside a store. The focus is on a price tag attached to a shelf that holds various items, possibly in a retail or grocery store environment. The background is slightly blurred, showing other products and possibly a shopping cart, indicating the setting is indoors.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICijeqRpwE!2e10!4m2!3m1!1s0x40d4cf74e0de9359:0x1cf5c3b69964abff"
                 }
             ],
             "street_view": {
-                "vlm_insight": "The image provided does not depict a business storefront; instead, it shows a residential building. The building is a multi-story structure with balconies, featuring a brick facade that suggests a utilitarian, post-war architectural style typical of many urban apartment buildings. There are several windows visible, some with air conditioning units installed. The scene also includes green trees in the foreground and a parked car on the street, indicating a lived-in urban environment.",
+                "vlm_insight": "The image shows a residential building rather than a business storefront. The building is a multi-story structure with brickwork and balconies, typical of urban apartment buildings. There are no visible signs or elements that indicate the presence of a business within this section of the building. The environment includes trees lining the street and a parked car, suggesting a mixed residential area.",
                 "url": "URL contains api key, can't be exposed"
             },
             "working_hours": [
@@ -225,289 +190,76 @@
             ]
         },
         {
-            "name": "Kvartal",
+            "name": "Продуктовий Магазин",
             "website": "Website is not provided",
+            "google_maps_url": "https://maps.google.com/?cid=11936667798578313865",
             "phone_number": "Phone number is not provided",
-            "address": "Mezhyhirska St, 26/24, Kyiv, Ukraine, 02000",
-            "latitude": 50.468392599999994,
-            "longitude": 30.5134183,
-            "reviews_summary": "The reviews highlight that the store is a 24-hour minimarket with a decent selection of basic items, including alcohol. While it serves as a convenient option for late-night needs, some customers note that the prices are relatively high and the product variety is limited. Overall, it is described as an ordinary grocery store that fulfills emergency shopping needs. Despite its limitations, it remains a reliable choice for essentials at any hour.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURRdm95cmtRRRAB!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                    "text": "24 hour store. Very decent selection for location and size. Get your basics and your beer.",
-                    "original_text": "24 hour store. Very decent selection for location and size. Get your basics and your beer.",
-                    "original_language": "en",
-                    "author_name": "V. Will",
-                    "author_url": "https://www.google.com/maps/contrib/112316417525391344653/reviews",
-                    "publish_date": "7 years ago",
-                    "rating": 3
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURRX3MzSnJRRRAB!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                    "text": "Minimarket, open 24H, the prices are high and not lot of products available",
-                    "original_text": "Minimarket, open 24H, the prices are high and not lot of products available",
-                    "original_language": "en",
-                    "author_name": "Akram",
-                    "author_url": "https://www.google.com/maps/contrib/114692125139376970372/reviews",
-                    "publish_date": "7 years ago",
-                    "rating": 4
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURhNHZ2X3dBRRAB!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                    "text": "24/7 with alcohol sold around the clock. An \"emergency\" place ;)",
-                    "original_text": "24/7 with alcohol sold around the clock. An \"emergency\" place ;)",
-                    "original_language": "en",
-                    "author_name": "Dana Ver",
-                    "author_url": "https://www.google.com/maps/contrib/102216186094384484833/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNzLU51bXlRRRAB!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                    "text": "24/7 convenient grocery",
-                    "original_text": "24/7 convenient grocery",
-                    "original_language": "en",
-                    "author_name": "Mykola Verkhohlyad",
-                    "author_url": "https://www.google.com/maps/contrib/102851189248074940892/reviews",
-                    "publish_date": "5 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM0eUk2LUF3EAE!2m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e",
-                    "text": "Just ordinary grocery market",
-                    "original_text": "Just ordinary grocery market",
-                    "original_language": "en",
-                    "author_name": "Yaroslav M.",
-                    "author_url": "https://www.google.com/maps/contrib/111597778517820280714/reviews",
-                    "publish_date": "5 years ago",
-                    "rating": 3
-                }
-            ],
-            "rating": "average: 4.0 out of 5 reviews",
-            "reviews_span": "latest date: 2021-08-17, most recent date: 2017-07-31, date difference: 1478 days",
-            "photos": [
-                {
-                    "vlm_insight": "This image shows the storefront of a business with signage that reads \"Продам Квартали\" in Cyrillic script, suggesting it is located in a region where Russian is spoken. The storefront features a large, elegant signboard with decorative elements and illustrations, possibly depicting architectural drawings, which hangs over the entrance. The facade of the building is constructed with yellow bricks, and the entrance is framed by a classical archway with a white trim. Above the doorway, there is a small, ornate metal balcony railing, adding a refined touch to the building's exterior. The street appears to be a typical urban setting with minimal visible landscaping or special lighting.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID4n-K75gE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "The image provided does not show a business storefront or a street view perspective. Instead, it displays an interior view of a store, specifically focusing on shelves stocked with a variety of liquor bottles. The shelves are well-organized, showcasing numerous brands and types of alcohol, primarily in glass bottles with various labels and colors. The lighting in the store highlights the products on the shelves, enhancing their visibility and appeal.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICckozFdQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "The image depicts a corner business storefront situated in a historic building with European architectural influences. The facade features a mix of beige and light brown colors, with ornate balconies and large windows that add to its classic charm. The ground floor hosts several businesses, including a café with visible outdoor seating under umbrellas, and signage that includes a blue and white \"ALA\" sign. The street scene is lively, with cars parked along the side, overhead cables suggesting tram or bus routes, and mature trees lining the sidewalk, providing a pleasant, shaded environment.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDK2srpcg!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "The image you've provided is actually of the interior of a liquor store, not a business storefront from a street view. It shows a variety of alcoholic beverages neatly arranged on multiple shelving units. The shelves are stocked with an assortment of bottles, including spirits, wines, and liquors, each organized by type and brand. The store's lighting highlights the products on the shelves, enhancing visibility and creating a clean, organized shopping environment.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICckozFuwE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "The image shows a business storefront situated at a street corner, featuring a combination of modern and classic architectural elements. The facade of the business is clad in yellow and green tiles, providing a vibrant contrast to the more traditional white and ornate building directly above it. Signage on the storefront includes the word \"Карат\" in Cyrillic script, indicating the name of the business, possibly a jewelry store given the name's connotation to 'carat,' a unit for measuring gemstones. The street scene includes pedestrian crossings, street lamps styled with spherical fixtures, and a small tree, enhancing the urban environment.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDk5vaOGw!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "The image provided is actually an interior view of a store rather than a street view of a business storefront. It shows a variety of products on shelves, including snacks, beverages, and other packaged goods. The shelves are fully stocked and organized, displaying brands like Coca-Cola and Pepsi. The store appears to be well-lit, with bright overhead lighting enhancing the visibility of the products.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICc66KmggE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "The image shows a business storefront located on a busy street in an urban setting, featuring a historic building with ornate architectural details. The facade of the building is characterized by light-colored walls, decorative moldings, and balconies with intricate metal railings, typical of early 20th-century European architecture. The business signage, which appears to be for a cafe named \"КАПИТАЛЬ\", is mounted on a simple, light-colored awning that contrasts with the elaborate facade. The street is bustling with traffic and pedestrians, and includes modern elements like street signs and cars, blending the historical with the contemporary.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDEgbSHOA!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "This image depicts the storefront of a business with signage in Cyrillic script, suggesting it is located in a region where Slavic languages are spoken. The facade of the building is clad in yellow bricks, and the entrance features a white door framed by a white architrave. Above the door, a large, white awning extends outward, displaying additional signage and decorative elements that include a drawing of a bottle and glass, possibly indicating the nature of the business. The street view shows a modest urban setting without visible landscaping or special lighting, focusing attention on the storefront itself.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICEocmL5QE!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "The image provided does not show a business storefront or any architectural elements. Instead, it features a close-up view of a pastry with cheese on top, placed on a white tray and wrapped in a red plastic bag. The barcode and label on the pastry are visible, suggesting it might be from a bakery or grocery store. The background includes a glimpse of a floor and someone's feet, indicating the photo was taken indoors, possibly at the point of purchase.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICczf25VQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                },
-                {
-                    "vlm_insight": "This image shows a business storefront with a simple architectural design. The facade is constructed from brick, painted in a muted brown color, and features a single glass door flanked by two small windows. Above the door, there are multiple signs, one of which prominently displays the word \"ЕЛЕКТРИК\" (Electrician in English), indicating the nature of the business. The storefront is equipped with an overhead light fixture that illuminates the entrance area, and the street appears to be a typical urban setting with minimal landscaping.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDC58KBCQ!2e10!4m2!3m1!1s0x40d4ce14b75a7af7:0x5b74dac41a29ca0e"
-                }
-            ],
+            "address": "Pochainynska St, 23, Kyiv, Ukraine, 02000",
+            "latitude": 50.4690387,
+            "longitude": 30.519373699999996,
+            "reviews": "Reviews are not provided",
+            "photos": "Photos are not provided",
             "street_view": {
-                "vlm_insight": "The image shows a business storefront with a street view perspective, featuring a Fujifilm shop. The facade of the building is painted in a bright yellow color, contrasting with the white and gray tones of the adjacent buildings. The storefront includes large windows displaying promotional posters and a green and white Fujifilm sign above the entrance, clearly identifying the business. The street in front of the shop is paved with red bricks, and there is minimal landscaping or street lighting visible, giving the area a simple urban look.",
+                "vlm_insight": "The image depicts a business storefront located on the ground floor of an older, multi-story building with a faded yellow facade. The architectural style of the building is utilitarian with simple, rectangular windows and minimal decorative elements, typical of mid-20th century urban construction. The storefront features a prominent signage in Cyrillic script, suggesting a local business, possibly a shop or small eatery, set against a background of graffiti-tagged walls which adds a gritty, urban character to the scene. The setting is a tree-lined street in a city, with cars parked along the curb and a pedestrian crossing nearby, indicating a moderately busy area. Notably, the presence of an old, weathered car parked directly in front of the store adds a sense of decay",
                 "url": "URL contains api key, can't be exposed"
             },
-            "working_hours": [
-                "Monday: Open 24 hours",
-                "Tuesday: Open 24 hours",
-                "Wednesday: Open 24 hours",
-                "Thursday: Open 24 hours",
-                "Friday: Open 24 hours",
-                "Saturday: Open 24 hours",
-                "Sunday: Open 24 hours"
-            ]
-        },
-        {
-            "name": "Магазин продукты",
-            "website": "Website is not provided",
-            "phone_number": "Phone number is not provided",
-            "address": "Khoryva St, 43/23, Kyiv, Ukraine, 02000",
-            "latitude": 50.4686589,
-            "longitude": 30.5188354,
-            "reviews_summary": "The reviews reflect mixed experiences with the sellers. While one reviewer appreciates the sellers and encourages patience, another criticizes them for being rude. This suggests that customer interactions may vary significantly, leading to differing perceptions of service quality. Overall, potential customers might want to prepare for a range of attitudes from the sellers.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNLN3ZlMnp3RRAB!2m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
-                    "text": "Well done sellers, be patient.",
-                    "original_text": "Продавцы молодцы, терпения вам.",
-                    "original_language": "ru",
-                    "author_name": "yurhik",
-                    "author_url": "https://www.google.com/maps/contrib/113376685953266719497/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNDeEp2TXdnRRAB!2m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
-                    "text": "Sellers are rude",
-                    "original_text": "Продавцы хамят",
-                    "original_language": "ru",
-                    "author_name": "ELENA",
-                    "author_url": "https://www.google.com/maps/contrib/107831942730784740362/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 1
-                }
-            ],
-            "rating": "average: 3.0 out of 2 reviews",
-            "reviews_span": "latest date: 2021-04-06, most recent date: 2020-08-11, date difference: 238 days",
-            "photos": [
-                {
-                    "vlm_insight": "The image shows a business storefront with a simple, functional design typical of urban commercial buildings. The facade features a combination of signage in Cyrillic script, indicating that the store likely sells groceries or general products. The storefront is equipped with a large window displaying an advertisement, which helps in attracting the attention of passersby. Additional elements like the awning and the small, recessed entryway contribute to the practical layout of the shop, designed to maximize the use of space on a busy street.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_mDeA!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
-                },
-                {
-                    "vlm_insight": "The image depicts a small business storefront with a narrow facade, located in a multi-story building. The storefront features a prominent red awning with the word \"МАГАЗИН\" (meaning \"shop\" in Russian) in white letters, indicating it is a retail outlet. Below the awning, the glass door and window display allow a clear view into the brightly lit interior, showcasing various products. Additional signage and a sandwich board on the sidewalk suggest promotional efforts and provide further visual elements characteristic of a retail environment.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_nzpgE!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
-                },
-                {
-                    "vlm_insight": "This image shows the storefront of a business with the sign \"Продукты\" prominently displayed, indicating a grocery or food-related store. The architecture is straightforward, featuring a simple, functional design with a large window displaying an image of fresh produce, which helps to communicate the nature of the business. Above the window, there are multiple signs, including one with Asian characters, suggesting a multicultural product range. The building itself is part of a larger structure with residential apartments above, typical of urban mixed-use buildings.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_nT4gE!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
-                }
-            ],
-            "street_view": {
-                "vlm_insight": "The image shows a multi-story building with a ground-level business storefront. The facade of the building is a mix of plain and lightly textured surfaces, painted in a muted color palette. The business entrance is a large white garage-style door, which is closed, and there is a smaller pedestrian door to its left. The street view is adorned with small flower planters, adding a touch of greenery to the urban environment, and the overall setting appears to be in a residential area with limited pedestrian space.",
-                "url": "URL contains api key, can't be exposed"
-            },
-            "working_hours": [
-                "Monday: 10:00 AM – 9:00 PM",
-                "Tuesday: 10:00 AM – 9:00 PM",
-                "Wednesday: 10:00 AM – 9:00 PM",
-                "Thursday: 10:00 AM – 9:00 PM",
-                "Friday: 10:00 AM – 9:00 PM",
-                "Saturday: 10:00 AM – 9:00 PM",
-                "Sunday: 10:00 AM – 9:00 PM"
-            ]
+            "working_hours": "Working hours are not provided"
         },
         {
             "name": "Silpo",
             "website": "https://silpo.ua/",
+            "google_maps_url": "https://maps.google.com/?cid=14515441619330086257",
             "phone_number": "0800 301 707",
             "address": "Yaroslavska St, 56а, Kyiv, Ukraine, 02000",
             "latitude": 50.471407,
             "longitude": 30.5175096,
-            "reviews_summary": "The reviews highlight a mix of experiences at the supermarket, with some praising its impressive interior design and wide selection of products, particularly for vegetarians and vegans. However, there are complaints about high prices and inconsistent service, especially in the sweets department where customers often wait for assistance. While some shoppers appreciate the quality of ingredients and the tasty, affordable pizza, others express frustration over the availability of certain items, like minced meat, especially during late hours. Overall, despite its higher prices, many consider it one of the best supermarkets in Ukraine due to its unique offerings and quality.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN5dTR1UmNBEAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                    "text": "Good market, with cool staff and without queues. But, I give only one star, because in department where sells sweets always absent seller!!!! Always wait they during 15 minutes, or have to find somebody to serve me. Do you think it is normal service???",
-                    "original_text": "Good market, with cool staff and without queues. But, I give only one star, because in department where sells sweets always absent seller!!!! Always wait they during 15 minutes, or have to find somebody to serve me. Do you think it is normal service???",
-                    "original_language": "en",
-                    "author_name": "Roman Stadnik",
-                    "author_url": "https://www.google.com/maps/contrib/115549917378242701583/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 1
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNpNXFTQ1R3EAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                    "text": "A huge supermarket. Some positions here are a bit overpriced, the location is pretty good. There is a wide variety of products for vegetarians/vegans, pricetags are depressing though. They also make tasty and cheap pizza",
-                    "original_text": "A huge supermarket. Some positions here are a bit overpriced, the location is pretty good. There is a wide variety of products for vegetarians/vegans, pricetags are depressing though. They also make tasty and cheap pizza",
-                    "original_language": "en",
-                    "author_name": "Iurii Mykhailov",
-                    "author_url": "https://www.google.com/maps/contrib/117382402660779121729/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 4
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ4M2VHX0F3EAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                    "text": "Amazing interior design with an ode to historic Podil. Akin to an art exhibition. Outstanding selection of produce and products. Excellent food hall. Prices more expensive than regular Silpos. Could be considered a second tier Silpo, after Le Silpo.",
-                    "original_text": "Amazing interior design with an ode to historic Podil. Akin to an art exhibition. Outstanding selection of produce and products. Excellent food hall. Prices more expensive than regular Silpos. Could be considered a second tier Silpo, after Le Silpo.",
-                    "original_language": "en",
-                    "author_name": "V. Will",
-                    "author_url": "https://www.google.com/maps/contrib/112316417525391344653/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 4
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN5bFBQZ0tREAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                    "text": "Couldn't find minced meat, or maybe it's because I went there past 9pm other than that, it's a good one stop shop",
-                    "original_text": "Couldn't find minced meat, or maybe it's because I went there past 9pm other than that, it's a good one stop shop",
-                    "original_language": "en",
-                    "author_name": "Jackie Kirungu",
-                    "author_url": "https://www.google.com/maps/contrib/112748543097772916868/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 4
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURpLXJxYUNREAE!2m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
-                    "text": "One of the best supermarkets in ukraine. Quality ingredients and good service but its just more expensive than any other store but its still one of the best.",
-                    "original_text": "One of the best supermarkets in ukraine. Quality ingredients and good service but its just more expensive than any other store but its still one of the best.",
-                    "original_language": "en",
-                    "author_name": "Issa Mousa",
-                    "author_url": "https://www.google.com/maps/contrib/101694425077638201500/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 4
-                }
-            ],
-            "rating": "average: 3.4 out of 5 reviews",
-            "reviews_span": "latest date: 2021-10-25, most recent date: 2020-07-26, date difference: 456 days",
+            "reviews_summary": "The reviews highlight a mix of experiences at the supermarket, with some praising its impressive interior design and wide selection of products, particularly for vegetarians and vegans. However, there are complaints about high prices and inconsistent service, especially in the sweets department where customers often wait for assistance. While some shoppers appreciate the quality of ingredients and the tasty, affordable pizza, others express frustration over the availability of certain items, like minced meat, especially during late hours. Overall, despite the higher costs, many consider it one of the best supermarkets in Ukraine due to its unique offerings and quality.",
+            "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPu0MjANaJ9N-5nEU37kQC8hIP9v3BJd9fCQ-92!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571",
             "photos": [
                 {
-                    "vlm_insight": "The image shows a vibrant and colorful business storefront with a modern architectural style. The facade is adorned with a bold, graphic mural featuring geometric shapes and playful designs in a palette of purple, orange, yellow, and red. Prominently displayed on the building is the business name \"Сільпо\" in stylized script, which is a supermarket chain. The setting includes a clear blue sky and urban elements like parked bicycles and potted plants, enhancing the lively and inviting atmosphere of the storefront.",
+                    "vlm_insight": "The image shows a vibrant and colorful business storefront with a modern architectural style. The facade is adorned with a bold and artistic mural featuring geometric shapes and playful designs in a palette of purple, orange, yellow, and blue. Prominent signage in a cursive, retro style displays the name \"Сытного\" in bright orange against a purple background, enhancing the storefront's visibility and appeal. Additional elements like potted plants, outdoor seating, and a row of bicycles parked in front contribute to a welcoming and lively street presence.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPu0MjANaJ9N-5nEU37kQC8hIP9v3BJd9fCQ-92!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "The image provided is an indoor view of a grocery store or market, not a street view of a business storefront. It features a variety of fresh produce displayed in the center and other food items around in an organized layout. The ceiling is industrial-style with visible ductwork and lighting fixtures, contributing to a modern yet functional aesthetic. The environment is busy with shoppers, indicating a popular and well-utilized space.",
+                    "vlm_insight": "The image depicts the interior of a modern grocery store rather than a street view of a business storefront. The store features an extensive array of fresh produce displayed in the center, surrounded by other food sections like baked goods and refrigerated items. The ceiling is equipped with industrial-style lighting and an elaborate system of beams, contributing to a contemporary and functional design. The overall layout and organization of the store create an inviting and professional atmosphere for shoppers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDm7Lq2lwE!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront from a street view but rather shows the interior of a retail store, specifically a liquor store. The store features well-organized aisles with a variety of alcoholic beverages displayed on shelves. The lighting is subdued with spotlighting on certain sections, creating a warm ambiance. A customer is visible in the scene, browsing products, which adds a human element to the retail environment.",
+                    "vlm_insight": "The image provided is not of a business storefront from a street view, but rather an interior view of a retail store, possibly a liquor store, given the visible assortment of bottles and beverages. The store features well-organized aisles with metal shelving units stocked with various products. The lighting is subdued with spotlights highlighting certain areas, contributing to a modern and clean aesthetic. A customer is visible in the scene, browsing products, which adds a human element to the setting.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDm7LrpUg!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront from a street view, but rather shows the interior of a delicatessen or food market. The setting includes a variety of gourmet foods displayed in a modern, well-lit counter. Items such as cheeses, meats, and other delicacies are neatly arranged and labeled with prices, indicating a focus on specialty foods. The environment suggests a clean and contemporary design, with visible kitchen equipment in the background, enhancing the fresh and upscale feel of the market.",
+                    "vlm_insight": "The image provided does not depict a business storefront from a street view. Instead, it shows an indoor view of a delicatessen or cheese shop. The display is well-organized, featuring a variety of cheeses, meats, and other delicacies under clear, labeled covers and on neatly arranged shelves. The setting includes a clean, modern interior with a focus on accessibility and product visibility, enhancing the professional appearance of the establishment.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDKysz5Dg!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront from a street view but rather shows the interior of a grocery store. The store features modern shelving units filled with a variety of products ranging from snacks to household goods. The flooring is tiled in grey, and the ceiling has visible ductwork, contributing to an industrial aesthetic. The layout is organized with clear aisles for easy navigation, and there is a customer visible in the background, enhancing the everyday shopping scene.",
+                    "vlm_insight": "The image provided is actually an interior view of a grocery store, not a business storefront from a street view. It shows a well-organized aisle filled with various food products neatly displayed on shelves. The flooring is a dark gray tile, and the ceiling has exposed beams and lighting fixtures, contributing to a modern and clean aesthetic. A person is visible in the background, shopping, which adds a human element to the scene.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICKlOSlVg!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "This image depicts an indoor market scene with a distinctive and creative storefront designed to resemble a traditional European street. The storefront features a facade that mimics a classic architectural style with ornate detailing and a faux second-story window, painted in bright, eye-catching colors. The signage above the store is clear and prominently displays the name \"Колбасный Ряд\" in Cyrillic script, which suggests that the business specializes in sausages or meats. The overall setting is bustling and modern, with the storefront seamlessly integrated into a larger indoor market environment, surrounded by other food stalls and under a vast, industrial-style ceiling that adds a contemporary contrast to the traditional facade of the shop.",
+                    "vlm_insight": "The image shows an indoor market stall designed to mimic a traditional street view storefront. The stall features a facade that resembles a classic European-style building with ornate architectural details and a vibrant, realistic mural of a cityscape in the background, enhancing the street-like atmosphere. The signage above the stall is clear and prominently displays the name \"Колбасный Ряд\" in Cyrillic script, which suggests the stall specializes in sausages or meats. The professional appearance is further emphasized by the neat arrangement of products, modern display cases, and overall clean and organized layout.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOzwza3GlkzyD6A4CR1R6ZxeZHAAAYQ2xojQ2wd!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "The image provided does not show a business storefront from a street view but instead depicts an interior view of a bakery section within a grocery store or market. The scene is filled with various types of bread displayed in wooden bins, creating a warm and inviting atmosphere. Above the bread display, there is a decorative sign that appears to be in Cyrillic script, suggesting the location might be in a region where this script is used, possibly Eastern Europe or Russia. The overall setting is well-lit and appears to be part of a larger store, as other food sections and products are visible in the background.",
+                    "vlm_insight": "The image provided is an interior view of a bakery section within a grocery store, not a street view of a business storefront. It showcases a variety of breads neatly displayed on wooden shelves, enhancing the visual appeal and accessibility of the products. The bakery has clear signage overhead with decorative elements that contribute to a rustic and inviting atmosphere. The overall setup is well-organized, emphasizing the store's commitment to quality and customer experience.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICGxvH9fw!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "The image you provided does not depict a business storefront from a street view but rather shows the interior of a grocery store focusing on a display of pre-packaged fresh fruit. The display is well-organized, featuring a variety of fruits such as pineapples, strawberries, and mixed fruit containers, all arranged neatly in a refrigerated section. Above the display, there is a sign in Cyrillic script, which suggests the store might be located in a region where this script is used, possibly in Eastern Europe or Russia. The store's environment appears clean and well-maintained, emphasizing a focus on fresh produce.",
+                    "vlm_insight": "The image provided does not show a business storefront from a street view, but rather the interior of a grocery store or market. It features a display of various pre-packaged fresh fruits, neatly arranged in a refrigerated section. Above the display, there is a sign in Cyrillic script, likely indicating the section or promoting the products. The overall presentation is clean and organized, enhancing the professional appearance of the store.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC8wpXRRQ!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront from a street view but instead shows the interior of a grocery store. The store features a vibrant display of fresh produce in the foreground, including a variety of brightly colored vegetables and fruits. Overhead, there are numerous hanging signs indicating different sections such as \"International,\" \"Bakery,\" and \"Dairy,\" which help in navigating the store. The interior design includes industrial-style lighting and ceiling elements, creating a modern and inviting shopping environment.",
+                    "vlm_insight": "The image provided is an interior view of a grocery store, not a street view of a business storefront. The store features a vibrant display of fresh produce in the foreground, including a variety of colorful vegetables and fruits neatly arranged in wooden bins. Overhead, the lighting is warm and highlights the products effectively, while the ceiling is adorned with artistic, mural-like paintings, adding a unique aesthetic to the shopping environment. Signage within the store is visible, presenting a rustic and organic style, which contributes to the overall welcoming and professional appearance of the establishment.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC8qLOg9gE!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 },
                 {
-                    "vlm_insight": "This image depicts the interior of a bustling market hall rather than a street view of a business storefront. The market features an industrial-style architecture with visible ductwork and metal beams overhead, contributing to a spacious and open atmosphere. Various food stalls are neatly arranged throughout the space, offering a wide array of products such as baked goods, meats hanging from hooks, and other delicacies. The setting is busy with activity, highlighting a vibrant shopping environment where customers can browse and purchase a variety of fresh and artisanal foods.",
+                    "vlm_insight": "The image shows the interior of a modern market or delicatessen, not a storefront viewed from the street. Inside, various food items are displayed, including hanging cured meats, baskets of bread, and a variety of other delicacies. The market features an industrial-style design with exposed ductwork and lighting, which creates a contemporary and open atmosphere. The space is well-organized with clear signage over different sections, enhancing the professional appearance of the venue.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID7reHEogE!2e10!4m2!3m1!1s0x40d4cfbbfda31829:0xc971353f26173571"
                 }
             ],
             "street_view": {
-                "vlm_insight": "This image shows a business storefront with a modern architectural style, featuring a clean, straightforward facade with large glass windows and a central entrance. The signage above the entrance reads \"Кальцій,\" which suggests the name of the business, possibly a shop or a health-related store. Adjacent to this business are other commercial entities, including a restaurant named \"Piano\" to the right, which has a covered outdoor seating area, and another store with signage in red to the left. The street scene is busy with parked cars directly in front of the businesses, indicating a bustling urban environment.",
+                "vlm_insight": "This image shows a business storefront with a modern architectural style, characterized by a clean, straightforward facade with large glass windows and a prominent entrance. The signage above the entrance is bold and clear, featuring the name \"Кальцони\" in large, red letters against a white background, which helps in attracting attention. Additional signage in the window displays offers information about sales and contact numbers, enhancing the storefront's commercial appeal. The overall appearance is neat and professional, with an adjacent restaurant and other retail outlets indicating a busy commercial area.",
                 "url": "URL contains api key, can't be exposed"
             },
             "working_hours": [
@@ -523,109 +275,58 @@
         {
             "name": "La Gazza Delicatezze",
             "website": "https://www.instagram.com/lagazza_delicatezze/",
+            "google_maps_url": "https://maps.google.com/?cid=5151094113014967660",
             "phone_number": "097 121 7934",
             "address": "Verkhnii Val St, 52, Kyiv, Ukraine, 02000",
             "latitude": 50.4693214,
             "longitude": 30.517692699999998,
-            "reviews_summary": "The grocery store is praised for its amazing service and a delightful selection of high-quality foods, including Italian ham and cheese, Western European sweets, and Ukrainian ready-meals. However, there are serious concerns about food safety, as some customers reported purchasing spoiled meat products that led to food poisoning, along with experiences of rude staff. Despite these issues, many reviews highlight the store's excellent selection of Italian products and the largest portions of Rio tuna available. It is particularly beloved by families for its delicious coffee, friendly staff, and its commitment to serving the community during challenging times in Kyiv.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN5NnEtUzlBRRAB!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
-                    "text": "An amazing service and a pleasent assortment of high quality foods like ham and cheese from Italy, sweets from Western Europe and even ready-meals made in Ukraine meet you in this family owned classic grocery store.",
-                    "original_text": "An amazing service and a pleasent assortment of high quality foods like ham and cheese from Italy, sweets from Western Europe and even ready-meals made in Ukraine meet you in this family owned classic grocery store.",
-                    "original_language": "en",
-                    "author_name": "Johannes Wamberg Andersen",
-                    "author_url": "https://www.google.com/maps/contrib/106279822883325102976/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUR4M0k2eG53RRAB!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
-                    "text": "They sell spoiled products, we got poisoned by meat products bought from them, very rude staff.",
-                    "original_text": "They sell spoiled products, we got poisoned by meat products bought from them, very rude staff.",
-                    "original_language": "en",
-                    "author_name": "Jim Jared",
-                    "author_url": "https://www.google.com/maps/contrib/117171388732595943099/reviews",
-                    "publish_date": "a year ago",
-                    "rating": 1
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURDdGJTdWRnEAE!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
-                    "text": "Great selection of Italian products, the biggest portions of Rio tuna in town!",
-                    "original_text": "Great selection of Italian products, the biggest portions of Rio tuna in town!",
-                    "original_language": "en",
-                    "author_name": "Daria Sipigina",
-                    "author_url": "https://www.google.com/maps/contrib/106598854558799537157/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN2bm9mbThnRRAB!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
-                    "text": "Favorite store and coffee shop of our family and especially children! The best coffee, olives, cheeses and jamon! The only store in Podil that did not close during the most difficult times of Kyiv in 2022 and was concerned about all the residents around 🥰",
-                    "original_text": "Улюблений магазин і кавʼярня нашої родини і особливо дітей! Найкраща кава, оливки, сири та хамон! Єдиний магазин на Подолі, який не зачинявся під час найважчих часів Києва у 2022 і турбувався про всіх мешканців навколо🥰",
-                    "original_language": "uk",
-                    "author_name": "Antonina Prudko",
-                    "author_url": "https://www.google.com/maps/contrib/111821057533119825657/reviews",
-                    "publish_date": "3 months ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUN2bnB1T01REAE!2m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
-                    "text": "My family's favorite store. The most delicious coffee in Podil. Friendly staff.",
-                    "original_text": "Улюблений магазин моєї родини. Найсмачніша кава на Подолі. Привітний персонал.",
-                    "original_language": "uk",
-                    "author_name": "Roman Polonets",
-                    "author_url": "https://www.google.com/maps/contrib/106770014778149925767/reviews",
-                    "publish_date": "3 months ago",
-                    "rating": 5
-                }
-            ],
-            "rating": "average: 4.2 out of 5 reviews",
-            "reviews_span": "latest date: 2024-12-11, most recent date: 2020-10-05, date difference: 1528 days",
+            "reviews_summary": "The grocery store is praised for its amazing service and a delightful selection of high-quality foods, including Italian ham and cheese, Western European sweets, and Ukrainian ready-meals. However, there are serious concerns about spoiled products, with one customer reporting food poisoning from meat purchased there and citing rude staff. Despite this, many customers appreciate the great selection of Italian products and the store's generous portions, particularly of Rio tuna. It is a beloved spot for families, especially for its excellent coffee and commitment to serving the community during challenging times in Kyiv.",
+            "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMk5vSRjxN1kJQKccrBAG-Oq7dXxxW2Qz1e5d1A!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c",
             "photos": [
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront viewed from the street but rather the interior of a specialty food store. The store features rustic architectural elements, including exposed white brick walls and decorative tile flooring, creating a warm and inviting atmosphere. The shelving is neatly organized, displaying a variety of products ranging from gourmet foods and beverages to household items, enhancing the shop's functionality and appeal. Notable features include the artistic tile work on a column and the strategic placement of plants, which add a touch of greenery and enhance the aesthetic appeal of the space.",
+                    "vlm_insight": "The image provided is actually of the interior of a delicatessen or specialty food store rather than a street view of a business storefront. The store features an array of products neatly displayed on shelves and in refrigerated cases, including beverages, packaged foods, and fresh deli items. The architectural details visible include white painted brick walls and a decorative tile floor, creating a warm and inviting atmosphere. Decorative elements like plants and framed pictures add a personal touch to the space, enhancing the overall ambiance of the shop.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMk5vSRjxN1kJQKccrBAG-Oq7dXxxW2Qz1e5d1A!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront from the street but rather shows the interior of a store, focusing on a refrigerated display case filled with various food items. The display is well-organized, showcasing an array of products such as beverages, dairy products, and packaged snacks. The case is equipped with clear glass panels on the front and top, allowing for easy visibility and access to the products inside. Notable features include the strategic placement of popular brands and the use of bright lighting inside the case to enhance the visual appeal of the products.",
+                    "vlm_insight": "The image you've provided actually shows the interior of a store, specifically focusing on a refrigerated display case filled with various food items. The case is stocked with an assortment of products including beverages, dairy products, packaged snacks, and condiments. Visible brands suggest a variety of international and local products, catering to diverse tastes. The overall setting implies a convenience store or a small grocery shop, aimed at providing a quick and varied selection for shoppers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNprKyAjZuRvYO2DPu3D8SkAb5WkYVnQ_AaDR1T!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "The image you provided is actually of various platters of food, including meats, cheeses, and pickled vegetables, rather than a business storefront. The platters are arranged neatly on a stainless steel surface, showcasing an array of colors and textures that make the food inviting. This display could be inside a deli or specialty food store, highlighting the store's offerings in a visually appealing manner. The arrangement and presentation of the food suggest a focus on quality and variety, which are important for attracting and pleasing customers.",
+                    "vlm_insight": "The image you've provided is not of a business storefront or a street view. Instead, it features an assortment of gourmet foods typically found in a deli or catering service. The display includes various types of cured meats, cheeses, and accompaniments such as olives, tomatoes, and pickled vegetables, arranged attractively on wooden boards and in a segmented serving dish. This presentation is commonly used for catering events, parties, or in deli showcases to entice customers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNmKdyo7rbJa27UfE9sHQgdVeVhKU0-HKxBYwXJ!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "The image you've provided is not of a business storefront but rather shows a collection of gourmet food and beverages inside a gift box. The box contains various items such as a bottle of Hennessy cognac, a bottle of Prosecco, Illy coffee, and assorted cheeses including Leek France Camembert. There are also some cured meats and decorative elements like Christmas baubles, suggesting this box might be a festive or holiday gift. This setup highlights a luxurious and thoughtful selection of products, likely intended for a special occasion.",
+                    "vlm_insight": "The image you provided is not of a business storefront or a street view. Instead, it shows a box filled with various gourmet food and drink items. The contents include a bottle of Hennessy cognac, a bottle of Prosecco, a can of Illy coffee, and various types of cheese and meats, along with some Christmas decorations. This arrangement suggests a festive or celebratory gift box.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMLyP1T5PxikvcXFnGa22JjkNJYj-En-EE7D6mU!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "This image depicts a business storefront with a distinctive architectural design, featuring a facade adorned with blue tiles and brown stone-like tiles that create a visually appealing contrast. The storefront includes large windows framed by vibrant blue tiles, which not only enhance its aesthetic appeal but also allow passersby to view the products inside. Signage above the windows is simple and clear, ensuring easy identification of the business. The storefront integrates well with the urban environment, positioned on a sidewalk lined with trees and adjacent to other businesses, contributing to a lively street scene.",
+                    "vlm_insight": "The image shows a business storefront with a distinctive architectural style, featuring a facade adorned with blue tiles and brown stone accents. The storefront has large glass windows framed by the blue tiles, and there is visible signage including the name \"B. BAN 52\" in bold white letters. The street setting appears to be a quiet, urban area with light snow on the ground, and a few pedestrians are visible, adding to the serene ambiance. The overall look is quaint and picturesque, enhanced by the unique tile work and the muted winter colors.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPexGTWvXQFmOEvQiuYBPgM0-GmZVJCyzItLAzj!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "The image you provided is not of a business storefront viewed from the street but rather shows an interior view of a retail counter displaying various food products. The counter is well-stocked with an assortment of items including cookies, candies, and packaged snacks, arranged to attract customer attention. The display includes a glass dome covering pastries, enhancing the visual appeal and indicating freshness. The background shows a refrigerator filled with beverages, suggesting that this is a convenience store or a similar retail setting.",
+                    "vlm_insight": "The image provided does not show a business storefront from a street view but rather focuses on an assortment of snacks and confectionery items displayed on a counter, possibly within a store or cafe. The counter is topped with a blue surface and showcases various products including cookies, wrapped candies, and boxed snacks. Visible brands include \"Balconi Roll Max,\" \"Orbit\" gum, and other assorted treats. The background hints at a refrigerated section filled with beverages, suggesting an indoor setting typical of a convenience store or small food market.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMXtaFSYZ9rHV6IwFqTo5Klu6GfbW27uaUeS6G_!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront or its architectural design from the street. Instead, it shows a close-up display of various cured meats, including salami and fuet (a type of Catalan sausage), arranged on a wooden board. In the background, there is a glimpse of a red vintage-style scooter, possibly used as a decorative element within a shop or at a promotional event. The setting suggests a focus on gourmet or specialty foods, and the presentation is designed to be visually appealing, enhancing the overall aesthetic and thematic coherence of the display.",
+                    "vlm_insight": "The image provided does not depict a business storefront or a street view. Instead, it shows an indoor display featuring various types of cured meats, including several sticks of salami and packaged products labeled \"Fuet.\" These items are presented on a wooden surface, possibly within a deli or specialty food store. A red Vespa scooter and a red Berkel meat slicer are also visible in the background, adding a distinctive, thematic touch to the display.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipO3fJMahh3SDL2GQtm3c94W1K1jDyfpwsqPbFT1!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "This image shows the interior of a small, charming business storefront that is likely a deli or grocery store. The architectural design features exposed brick elements and a decorative tile floor, creating a rustic and welcoming atmosphere. The walls are adorned with a mural depicting a quaint village scene, adding a unique artistic touch that enhances the store's aesthetic appeal. The large glass front window allows natural light to fill the space, making the environment feel open and inviting while providing a view of the street outside.",
+                    "vlm_insight": "The image shows the interior of a cozy, small-scale grocery or specialty food store. The store features a charming mural on a white brick wall depicting a quaint village scene, adding a rustic and artistic touch to the ambiance. Architectural details include decorative tiles on the floor and a mix of modern and vintage elements, such as exposed brick columns and contemporary lighting fixtures. The shop is well-stocked with various products ranging from snacks and beverages in a refrigerated display to gourmet items and local specialties, creating a welcoming and community-oriented atmosphere.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDq5PDVTg!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "The image you provided is actually an interior view of a deli or cheese shop, focusing on a display case filled with various types of cheese and other dairy products. The display case is well-lit, showcasing an array of cheeses with visible price tags and names, enhancing the appeal for customers who might be interested in exploring different cheese varieties. The arrangement of the products is neat and organized, making it easy for customers to browse and select their desired items. This setup is typical for specialty food stores aiming to attract customers with a wide selection of unique and high-quality products.",
+                    "vlm_insight": "The image provided does not show a business storefront from a street view but instead focuses on the interior of a cheese shop. The display is filled with various types of cheeses, some of which are labeled with prices in a foreign currency. The cheeses are arranged in a refrigerated display case, and there are also other dairy products visible, such as yogurt. The image captures a close-up view of the products, emphasizing the variety and quality of the items for sale.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICcnvemQQ!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 },
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront as viewed from the street. Instead, it shows the interior of a small, cozy grocery store or delicatessen packed with a variety of products. The shop features a prominent display case filled with an assortment of meats and cheeses, flanked by shelves stocked with packaged goods, beverages, and culinary items. The interior design includes a white brick wall, a chalkboard menu, and decorative elements like plants and framed pictures, creating a welcoming and rustic atmosphere.",
+                    "vlm_insight": "The image provided is an interior view of a small, cozy delicatessen rather than a street view of a business storefront. The shop is packed with a variety of goods including packaged snacks, bottled beverages, and a large selection of meats and cheeses displayed in a glass counter. The back wall features shelves filled with more products and a chalkboard menu, contributing to a rustic and inviting atmosphere. Decorative elements like potted plants and framed pictures add a personal touch to the space, enhancing the quaint and friendly ambiance of the deli.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMJwOTzkW1WMNOGtudylH705JBqhjSBvsVR8ZQv!2e10!4m2!3m1!1s0x40d4cf2787e2b7ff:0x477c5ccddadced6c"
                 }
             ],
             "street_view": {
-                "vlm_insight": "This image shows a business storefront with a traditional and somewhat eclectic architectural style, nestled between other buildings on a city street. The storefront features a prominent green and white awning with cursive signage that reads \"Flower Boutique,\" which clearly indicates the nature of the business. The building itself has a classic facade with ornate architectural details and a contrasting modern touch provided by the graffiti on the adjacent walls. The presence of large display windows allows passersby to view the interior offerings, enhancing its street appeal and inviting potential customers to enter.",
+                "vlm_insight": "This image shows a business storefront with a classic architectural style, featuring ornate window frames and a detailed facade. The signage above the store reads \"Flower Boutique,\" indicating the nature of the business. The building's exterior combines exposed brick and plaster, contributing to a vintage aesthetic. The street scene includes parked cars and pedestrians, adding a lively urban ambiance to the setting.",
                 "url": "URL contains api key, can't be exposed"
             },
             "working_hours": [
@@ -639,8 +340,115 @@
             ]
         },
         {
+            "name": "Natur Boutique - Organic shop of products",
+            "website": "http://natur-boutique.ua/",
+            "google_maps_url": "https://maps.google.com/?cid=13311217489654206737",
+            "phone_number": "044 425 2598",
+            "address": "Verkhnii Val St, 50, Kyiv, Ukraine, 04070",
+            "latitude": 50.469089999999994,
+            "longitude": 30.517486999999996,
+            "reviews_summary": "The reviews highlight a welcoming atmosphere with friendly staff and a focus on healthy, organic products. Customers appreciate the variety of natural goods available, including food, drinks, teas, and cosmetics. Many express surprise and delight at the cozy store's offerings, which contribute to a sense of well-being. Additionally, the presence of a beauty and health studio adds to the appeal, providing services like hair removal and cosmetic consultations.",
+            "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN6w0wSxsslOpZv6SlOBCUlhHWazyeLqrLkHNxQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
+            "photos": [
+                {
+                    "vlm_insight": "The image shows a business storefront with a clear street view perspective. The storefront belongs to \"Natur Boutique,\" which is indicated by the signage on the windows and the wall, advertising products like vitamins, herbal remedies, natural beauty, and organic food. Architecturally, the building features a simple, functional design with large windows and a wooden door, providing a welcoming entrance. The street appears clean and well-maintained, with decorative planters placed in front of the store, enhancing the overall aesthetic and appeal of the business environment.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN6w0wSxsslOpZv6SlOBCUlhHWazyeLqrLkHNxQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image depicts a café setting rather than a street view of a business storefront. The background features a large, realistic mural of a charming street scene, complete with rustic architectural elements such as weathered doors, shuttered windows, and vibrant flower boxes. The mural adds a quaint and inviting atmosphere to the café, enhancing the dining experience by creating the illusion of dining in a picturesque alley. The actual setting includes a wooden table with food and drinks, suggesting a cozy, casual dining environment.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICG64re5gE!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image shows the interior of a cozy café with a rustic and modern design. The café features wooden furniture, decorative wall elements like clocks and framed pictures, and a bookshelf filled with books, contributing to a warm and inviting atmosphere. Through the large window, a view of the street outside is visible, showing trees and a glimpse of the urban environment, suggesting a clean and well-maintained outdoor area. The café appears to be a pleasant place for patrons to relax and enjoy their time, as indicated by the customers seated at the tables.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICG64r6Bg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image provided is an interior view of a grocery store, not a street view of a business storefront. The store features neatly organized shelves stocked with various food products, including bottled beverages, packaged goods, and refrigerated items. A wooden basket filled with vegetables is prominently placed in the foreground, suggesting a focus on fresh, possibly organic produce. The store's clean and well-lit environment, along with visible signage in a non-English script, contributes to an inviting atmosphere for shoppers.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNnpmBPA54Hk-MW7N1QmYOxl2z1L97MUklXvg1z!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image shows a dining area with a large wall mural depicting a picturesque European-style street scene, rather than an actual storefront. The mural features a rustic building facade with a wooden door and green shutters, adorned with various plants and flowers, creating a charming and inviting atmosphere. The dining setup includes a simple wooden table and chairs, positioned to face the mural, enhancing the illusion of dining in an outdoor setting. This setting is indoors, and there are no real street elements like pedestrian activity or actual street cleanliness visible in the image.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDmj4OjRg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image provided is an interior view of a business, not a street view of a storefront. The business has a cozy and inviting atmosphere with rustic and eclectic decor, including wooden furniture, decorative wall art, and a variety of items displayed on shelves. The space is well-lit, with natural light complementing the soft interior lighting. There is no visible signage in the image that identifies the business, and no features of the street such as cleanliness, landscaping, or pedestrian activity can be observed from this indoor perspective.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNXAdERbAs-rAFaJcrbCAqAxoVhZbfiK7R15rA3!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image provided is actually an interior view of a grocery store, not a street view of a business storefront. The store features well-organized shelves stocked with a variety of products including snacks, beverages, and canned goods. There is a wooden cart filled with bread in the foreground, suggesting a focus on fresh and possibly local produce. The space is clean and well-lit, with white walls and a simple, functional layout that emphasizes the products.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM7G4VN0i_uDcKZSRCTz5dEn5XO6yEaLEIWzhMa!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image provided shows the interior of a business rather than a street view of a storefront. Inside, the space is organized and well-lit, featuring a variety of products on neatly arranged shelves and a cozy seating area with wooden tables and chairs. The design includes decorative elements like a wall clock, framed pictures, and hanging lights, creating a welcoming atmosphere. Through the window, a glimpse of the street outside shows a clean urban environment with trees, indicating some level of landscaping and a pedestrian-friendly area.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPrCPO9gr4EVJOLEZvpjoDR9vzOR_RJX1aBOI8R!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image you've described is actually an indoor view of a cozy, well-lit store that combines elements of a café and a retail space. The store features a variety of seating arrangements, including tables with floral tablecloths and chairs, creating a welcoming atmosphere for customers. The interior includes shelves stocked with books, organic products, and other health-related items, emphasizing the store's focus on wellness. Signage inside the store, such as \"Organic Bar,\" suggests that it offers organic food and beverages, contributing to its unique identity as a health-oriented venue.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC4yumxPg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                },
+                {
+                    "vlm_insight": "The image provided does not depict a business storefront from a street view perspective but rather shows the interior of a store. The store is well-lit with a variety of shelving units stocked with products, primarily health and organic food items. A Christmas tree is centrally placed, suggesting the photo was taken during a festive season, adding a decorative element to the space. Visible signage within the store includes labels and banners promoting organic products, contributing to the store's branding as a health-focused retailer.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC4yqm9SQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
+                }
+            ],
+            "street_view": {
+                "vlm_insight": "This image shows a business storefront with a distinctly aged architectural style, featuring ornate detailing on the facade and a faded color scheme. The signage above the entrance reads \"НОТАРИУС,\" indicating a notary office. The street in front of the building appears worn, with visible patches and graffiti on nearby surfaces, suggesting an urban setting with some maintenance issues. There is minimal pedestrian activity, with only one person visible, which contributes to a quiet street scene.",
+                "url": "URL contains api key, can't be exposed"
+            },
+            "working_hours": [
+                "Monday: 9:00 AM – 8:00 PM",
+                "Tuesday: 9:00 AM – 8:00 PM",
+                "Wednesday: 9:00 AM – 8:00 PM",
+                "Thursday: 9:00 AM – 8:00 PM",
+                "Friday: 9:00 AM – 8:00 PM",
+                "Saturday: 10:00 AM – 6:00 PM",
+                "Sunday: Closed"
+            ]
+        },
+        {
+            "name": "Магазин продукты",
+            "website": "Website is not provided",
+            "google_maps_url": "https://maps.google.com/?cid=16098181959069759337",
+            "phone_number": "Phone number is not provided",
+            "address": "Khoryva St, 43/23, Kyiv, Ukraine, 02000",
+            "latitude": 50.4686589,
+            "longitude": 30.5188354,
+            "reviews_summary": "The reviews reflect mixed experiences with the sellers. One reviewer appreciates the sellers' efforts and encourages patience, while another criticizes them for being rude. This suggests that customer interactions may vary significantly, with some finding the sellers to be accommodating and others feeling disrespected. Overall, potential customers might want to prepare for a range of service quality when engaging with the sellers.",
+            "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_mDeA!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769",
+            "photos": [
+                {
+                    "vlm_insight": "The image shows a business storefront with a simple, functional architectural design typical of mid-20th century urban buildings. The facade features two main entrances, each flanked by large windows displaying products and advertisements. The signage above the store is prominent, with bold Cyrillic lettering in red and green colors that read \"МАГАЗИН\" and \"ПРОДУКТИ,\" indicating a grocery or general store. Additional elements like graffiti on the wall and an air conditioning unit suggest a utilitarian, everyday use of the space.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_mDeA!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
+                },
+                {
+                    "vlm_insight": "The image shows a narrow business storefront on a city street, featuring a simple two-story architectural design. The upper part of the building has a plain facade with visible windows, while the ground floor hosts the commercial space. The store's entrance is marked by a prominent red awning with the word \"МАГАЗИН\" (meaning \"store\" in Russian) in white letters, indicating its function. Additional signage and a sandwich board are visible, suggesting the store offers various products or services.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_nzpgE!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
+                },
+                {
+                    "vlm_insight": "The image shows the storefront of a business with a sign that reads \"Продукти\" in bold, green and red letters, indicating a grocery store. The architecture is simple, featuring a plain facade with a large window displaying an image of fresh produce. Above the window, there are additional signs, one of which appears to be for a mobile network, and another displaying Chinese characters, suggesting a multi-purpose or multi-business location. The street-level view includes a bit of the sidewalk and a satellite dish attached to the building, adding to the urban setting.",
+                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDUx_nT4gE!2e10!4m2!3m1!1s0x40d4cf1a4e915277:0xdf683b332ff47769"
+                }
+            ],
+            "street_view": {
+                "vlm_insight": "This image shows a view of a building facade that appears to be a combination of residential and possibly commercial use, characterized by its utilitarian architectural design. The building features a plain, light-colored exterior with multiple garage doors on the ground level and balconies above, suggesting mixed functionality. There is no prominent signage visible that clearly indicates a business, which might imply a more private or residential usage. The setting includes a tree-lined street and flower planters, adding a touch of greenery to the urban environment.",
+                "url": "URL contains api key, can't be exposed"
+            },
+            "working_hours": [
+                "Monday: 10:00 AM – 9:00 PM",
+                "Tuesday: 10:00 AM – 9:00 PM",
+                "Wednesday: 10:00 AM – 9:00 PM",
+                "Thursday: 10:00 AM – 9:00 PM",
+                "Friday: 10:00 AM – 9:00 PM",
+                "Saturday: 10:00 AM – 9:00 PM",
+                "Sunday: 10:00 AM – 9:00 PM"
+            ]
+        },
+        {
             "name": "Beetle РА",
             "website": "Website is not provided",
+            "google_maps_url": "https://maps.google.com/?cid=8556906277373745762",
             "phone_number": "044 467 7877",
             "address": "Voloska St, 38, Kyiv, Ukraine, 02000",
             "latitude": 50.469750999999995,
@@ -648,7 +456,7 @@
             "reviews": "Reviews are not provided",
             "photos": "Photos are not provided",
             "street_view": {
-                "vlm_insight": "The image shows a street view with a series of buildings that have a traditional architectural style, likely from the late 19th or early 20th century. The buildings feature ornate facades with decorative moldings and balconies, typical of period architecture. The street is lined with mature trees and parked cars, indicating a quiet, possibly residential area. There are no clear business storefronts visible in this particular view, focusing more on the residential aspect of the street.",
+                "vlm_insight": "This image shows a tree-lined street in an urban area with older buildings featuring traditional architectural elements such as ornate facades and balconies. The street is relatively quiet with a few cars parked along the sides and a couple of pedestrians visible in the distance. There are no clear business storefronts visible in this particular view, as the focus is more on the residential aspect of the street. The overall ambiance is serene and shaded, likely providing a pleasant environment for both residents and visitors.",
                 "url": "URL contains api key, can't be exposed"
             },
             "working_hours": [
@@ -664,109 +472,58 @@
         {
             "name": "Хлібар",
             "website": "Website is not provided",
+            "google_maps_url": "https://maps.google.com/?cid=15854843015867440449",
             "phone_number": "095 128 2828",
             "address": "Mezhyhirska St, 28, Kyiv, Ukraine, 02000",
             "latitude": 50.468741699999995,
             "longitude": 30.5127737,
-            "reviews_summary": "Hlibar has quickly become a favorite spot for many visitors in Podil, praised for its fantastic atmosphere, tasty vegetarian quiche, and a delightful selection of cakes and pastries. Customers appreciate the friendly staff and the pleasant service, with one reviewer highlighting the efficient service despite the long lines. However, some guests have expressed frustration with the wait times, particularly when it seems that local police receive priority service. Overall, while the coffee shop offers delicious treats and a lovely ambiance, the inconsistency in service speed may be a point of concern for some patrons.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNYcnYyelJBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                    "text": "Thank you so much for the fantastic atmosphere, tasty vegetarian quiche and a great selection of delicious cakes and pastries! Now Hlibar is one of my favourite places in Podil)\nWith love from France,\nMarie",
-                    "original_text": "Thank you so much for the fantastic atmosphere, tasty vegetarian quiche and a great selection of delicious cakes and pastries! Now Hlibar is one of my favourite places in Podil)\nWith love from France,\nMarie",
-                    "original_language": "en",
-                    "author_name": "Світлана",
-                    "author_url": "https://www.google.com/maps/contrib/101790350705102555202/reviews",
-                    "publish_date": "4 months ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNfM3ZXYVBBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                    "text": "Very pleasant man in the apron explained in english the wide variety of pastries. Took only one but all look delish. Need to return",
-                    "original_text": "Very pleasant man in the apron explained in english the wide variety of pastries. Took only one but all look delish. Need to return",
-                    "original_language": "en",
-                    "author_name": "HarryInUkraine",
-                    "author_url": "https://www.google.com/maps/contrib/108679295553081711779/reviews",
-                    "publish_date": "a month ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNXek16dUxBEAE!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                    "text": "Nice place it this part of Podil.\nTasty coffee, nice sweets, friendly staff!\nCinnabone good but not excellent.",
-                    "original_text": "Nice place it this part of Podil.\nTasty coffee, nice sweets, friendly staff!\nCinnabone good but not excellent.",
-                    "original_language": "en",
-                    "author_name": "Sviat Aleksandrovych",
-                    "author_url": "https://www.google.com/maps/contrib/113121196932935969610/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURQNWFhMXpnRRAB!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                    "text": "This coffee shop is amazing, a long line, but super nice and fast service! Beautiful menu.",
-                    "original_text": "This coffee shop is amazing, a long line, but super nice and fast service! Beautiful menu.",
-                    "original_language": "en",
-                    "author_name": "Trude Bergh",
-                    "author_url": "https://www.google.com/maps/contrib/113143795168338731685/reviews",
-                    "publish_date": "3 months ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURwOU5handBRRAB!2m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
-                    "text": "Be prepared to wait a long time, they make coffee for the police without a queue, and there are a lot of police stations nearby, everyone else has to wait, like in a real totalitarian state. They do everything slowly, forget about the order",
-                    "original_text": "Be prepared to wait a long time, they make coffee for the police without a queue, and there are a lot of police stations nearby, everyone else has to wait, like in a real totalitarian state. They do everything slowly, forget about the order",
-                    "original_language": "en",
-                    "author_name": "Pelykh Denys",
-                    "author_url": "https://www.google.com/maps/contrib/112975712147128329373/reviews",
-                    "publish_date": "a year ago",
-                    "rating": 1
-                }
-            ],
-            "rating": "average: 4.2 out of 5 reviews",
-            "reviews_span": "latest date: 2025-01-16, most recent date: 2022-02-19, date difference: 1062 days",
+            "reviews_summary": "Customers have praised the fantastic atmosphere and delicious offerings at Hlibar, particularly highlighting the tasty vegetarian quiche and a great selection of cakes and pastries. Many reviewers appreciate the friendly staff and the pleasant service, noting that the coffee shop has a beautiful menu and a wide variety of pastries to choose from. However, some have expressed frustration with long wait times, especially when it seems that police officers are prioritized over regular customers. Overall, while the quality of food and service is generally well-received, the inconsistency in wait times has been a point of contention for some visitors.",
+            "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID6prq3XA!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41",
             "photos": [
                 {
-                    "vlm_insight": "The image you've provided is actually of the interior of a café or bakery, not the exterior of a storefront. The counter is vibrant with a bright blue color, complemented by a clean, white tiled wall behind it. The space is well-organized, featuring a display of various breads on wooden shelves, a refrigerated display case with more food items, and a neatly arranged selection of drinks and condiments. The overall design is modern and inviting, with a casual, friendly atmosphere that likely appeals to customers.",
+                    "vlm_insight": "The image you provided is actually an interior view of a bakery or café, not a storefront viewed from the street. The café features a modern and clean design with a prominent blue counter that contrasts with the white tiled walls. Above the counter, wooden shelves display various breads and decorative items, adding a rustic touch to the modern ambiance. The space is well-organized and appears to be designed for efficient service, with a clear display of products and prices on a menu board, enhancing the customer experience.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID6prq3XA!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image you've described does not match the one shown. The image actually displays a cake designed to look like a circuit board, presented on a white plate. The cake is circular and features a green icing with a detailed circuit pattern in black. On top of the cake, there is a decoration resembling a robot head and a computer monitor, adding a playful and thematic touch to the design.",
+                    "vlm_insight": "The image you provided does not show a business storefront or any architectural elements. Instead, it features a cake designed to look like a circuit board in green with details resembling electronic circuits and components. On top of the cake, there is a decoration that looks like a humanoid robot with a monitor displaying various images, possibly related to technology or computing. This creative presentation appears to be themed around technology or electronics, possibly for a celebration or event related to these fields.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMdyqp5Do0qUTMDdb-F4wbqIxdnQzRZelvl4hEq!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image provided shows the interior of a business, not the exterior. It features a modern and clean design with a combination of light wood furniture and blue accents. The space is well-lit with linear lighting fixtures and includes a large display case filled with various food items, suggesting it might be a café or deli. The back wall is adorned with an array of bottles, adding to the aesthetic appeal and suggesting a focus on beverage offerings. The overall design creates a welcoming and contemporary atmosphere for customers.",
+                    "vlm_insight": "The image provided does not show a business storefront viewed from the street but rather the interior of a modern café or bakery. The design features a clean, contemporary aesthetic with light wooden furniture and a detailed tile floor that adds a touch of elegance. The counter and shelves are well-stocked with a variety of baked goods and beverages, showcased under bright, efficient lighting. The overall atmosphere is inviting, designed to attract customers to sit and enjoy their purchases within the premises.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICDycn7ygE!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image provided actually shows the interior of a bakery rather than the exterior of a business storefront. The bakery features an array of freshly baked goods displayed in an organized manner on wooden shelves. The display includes various types of bread, rolls, and pastries, each labeled with small, handwritten signs that indicate the names and prices of the items. The warm lighting and the abundance of baked goods create an inviting atmosphere, highlighting the bakery's focus on artisanal and fresh products.",
+                    "vlm_insight": "The image provided is not of a business storefront viewed from the street but rather an interior view of a bakery display. The display features a variety of freshly baked breads and pastries, neatly arranged on wooden shelves. Each item is clearly labeled with prices and descriptions, enhancing customer experience and ease of selection. The bakery uses warm lighting to highlight the textures and colors of the breads, creating an inviting atmosphere.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgID_ztGS1wE!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image shows the exterior of a bakery storefront with a modern and inviting design. The facade features a dark brick wall with contrasting white door frames and window borders, enhancing its visual appeal. The signage is distinctive, with the word \"Хлібар?\" (meaning bakery in Ukrainian) in cursive neon lights above the entrance, and vertical signage reading \"Пекарня\" (bakery) along the right side of the entrance, both set against the brick background. The storefront integrates well with its urban environment, using bright signage to stand out on a street that likely features various other businesses.",
+                    "vlm_insight": "This image shows the storefront of a bakery, as indicated by the Cyrillic script signage that reads \"Хлібар?\" and \"Пекарня,\" which translate to \"Bakery?\" and \"Bakery\" in English. The design features a modern aesthetic with a clean, white door frame contrasted against dark brick walls. Neon signage adds a vibrant and inviting touch to the storefront. The bakery integrates well into its urban environment, maintaining a neat and approachable appearance that likely attracts pedestrian traffic.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDnvofWwAE!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image you provided shows two coffee cups on a wooden table, not a business storefront. The cup in the foreground features a latte with a heart-shaped design in the foam, suggesting it is served at a cafe that pays attention to the presentation of their beverages. The cup in the background is simpler, with a red sleeve and appears to contain black coffee. This scene likely takes place inside a coffee shop, focusing on the product rather than the architectural aspects of the establishment.",
+                    "vlm_insight": "The image you've provided shows two coffee cups on a wooden table. The cup in the foreground features a latte with a heart-shaped design in the foam, suggesting it's a latte art, a common offering in cafes. The second cup, in the background, is simpler with what appears to be black coffee. This image does not depict a business storefront or provide details on architectural design, signage, or environmental integration.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDGtJPfggE!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image provided does not show the exterior of a business storefront or its architectural design, but rather focuses on the interior view of a bakery display case filled with a variety of baked goods. The display is neatly organized with clear signage in a non-English language, indicating the names and prices of the items. The baked goods, including breads, pastries, and other items, are presented in baskets and on wooden trays, enhancing their visual appeal. This setup suggests a focus on showcasing the freshness and variety of the bakery's offerings, inviting passersby to view and potentially purchase the products.",
+                    "vlm_insight": "The image provided does not show a business storefront from the street view but rather focuses on the interior display of a bakery. The display features a variety of baked goods such as bread, rolls, and pastries, neatly arranged in baskets and on wooden trays behind a glass showcase. Each item is clearly labeled with handwritten tags indicating the name and price in a non-English language, suggesting a non-English speaking country. The arrangement and presentation inside the glass display are designed to be visually appealing and accessible, enticing potential customers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDK4PKaFg!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image provided does not show the exterior of a business storefront or its architectural design from a street view. Instead, it depicts the interior of a cafe or restaurant, featuring a modern and clean design with a prominent menu board in the background. The interior includes wooden shelves stocked with various bottles and jars, and a counter area where food preparation takes place. The overall ambiance is casual and welcoming, designed to attract customers who appreciate a neat and organized space with visible product offerings.",
+                    "vlm_insight": "The image shows the interior of a modern café or eatery, rather than a view from the street. The design features a clean, contemporary aesthetic with a neutral color palette, primarily consisting of whites and natural wood tones. A prominent menu board hangs above the counter, displaying prices and options in a simple, easy-to-read format. Shelving with neatly organized jars and bottles contributes to the orderly and inviting atmosphere of the space.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICXrv2zpAE!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image you've provided shows two desserts, specifically pavlovas, topped with a variety of fresh fruits such as strawberries, blackberries, and grapes. The desserts are presented on a wooden table, suggesting the setting might be inside a cafe or bakery. The focus is on the food items, and there is no view of a business storefront or its architectural features in this image. The desserts are well-lit and appear to be the highlight of the photograph, emphasizing their appeal and the setting's focus on culinary presentation.",
+                    "vlm_insight": "The image you provided does not show a business storefront or its architectural design. Instead, it features two desserts, likely pavlovas, topped with a variety of fresh fruits such as strawberries, blackberries, and grapes, served on a wooden table. The focus of the image is on the desserts, showcasing their detailed presentation and the appealing arrangement of the fruits on top. The background is blurred, emphasizing the desserts in the foreground.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICl3fmaKA!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 },
                 {
-                    "vlm_insight": "The image provided shows the interior of a bakery rather than the exterior of a business storefront. It features a display case filled with a variety of baked goods, including breads and pastries, each labeled with names and prices. The bakery's interior design includes modern shelving and clear glass panels that allow for a full view of the products offered. This setup is typical for a bakery, designed to entice customers by showcasing the freshness and variety of the baked items available.",
+                    "vlm_insight": "The image you provided is actually of the interior of a bakery, showcasing a display case filled with various baked goods. The display case is well-organized and features clear labeling for each item, including prices and names such as \"Brioche,\" \"Panettone,\" and different types of cookies. The bakery uses modern, clean design elements with a glass front that allows customers to clearly see the products. The visible reflection in the glass suggests a bright, inviting interior atmosphere, enhancing the appeal of the baked goods on offer.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICDycn7Kg!2e10!4m2!3m1!1s0x40d4cf4c0cc2b39d:0xdc07b7b86a5c9d41"
                 }
             ],
             "street_view": {
-                "vlm_insight": "The image shows a business storefront situated on the ground floor of a multi-story building that features a mix of brick and light-colored tile façade. The storefront has large, clear glass windows framed by dark brown borders, allowing visibility into the interior. Signage is minimal, maintaining a clean and unobtrusive appearance that blends seamlessly with the residential style of the upper stories of the building. The business is integrated into a pedestrian-friendly street scene, characterized by a curved sidewalk, street trees, and decorative planters, enhancing the overall appeal and accessibility of the area.",
+                "vlm_insight": "This image shows a business storefront located on a street corner, featuring a modern architectural style with a facade combining brickwork and light-colored tiles. The storefront has large, clear glass windows that allow visibility into the interior, and it is situated on the ground floor of a multi-story building. There is minimal signage visible, with only a few posters in the windows, suggesting a subtle approach to advertising. The storefront is integrated into a pedestrian-friendly area with a paved sidewalk, street trees, and potted plants, enhancing its accessibility and aesthetic appeal in the urban environment.",
                 "url": "URL contains api key, can't be exposed"
             },
             "working_hours": [
@@ -780,57 +537,75 @@
             ]
         },
         {
+            "name": "Rosing",
+            "website": "Website is not provided",
+            "google_maps_url": "https://maps.google.com/?cid=13960843989623314546",
+            "phone_number": "044 207 1137",
+            "address": "Shchekavytska St, 30/39, Kyiv, Ukraine, 02000",
+            "latitude": 50.4705407,
+            "longitude": 30.513688000000002,
+            "reviews": "Reviews are not provided",
+            "photos": "Photos are not provided",
+            "street_view": {
+                "vlm_insight": "The image shows the entrance to a business, possibly an office or clinic, set within a building that features a modern architectural style with clean lines and a neutral color palette. The entrance is framed by beige walls and includes a glass door flanked by side panels and a transom window above, enhancing the natural light entering the space. The building's facade is textured, adding a subtle decorative element. The street view suggests a well-maintained urban area with paved surfaces and no visible street traffic or congestion, contributing to a calm and orderly ambiance.",
+                "url": "URL contains api key, can't be exposed"
+            },
+            "working_hours": "Working hours are not provided"
+        },
+        {
             "name": "Домашній маркет",
             "website": "https://aliansosnova.net.ua/",
+            "google_maps_url": "https://maps.google.com/?cid=12791206885349862396",
             "phone_number": "0800 300 480",
             "address": "Vvedenska St, 29/58, Kyiv, Ukraine, 04071",
             "latitude": 50.472262799999996,
             "longitude": 30.512217399999997,
             "reviews": "Reviews are not provided",
+            "url_to_all_photos": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNKO6J92PxgjeyVbA0VYSmMokKN9C7mqUxlHGmS!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc",
             "photos": [
                 {
-                    "vlm_insight": "The image shows a business storefront with a sign that reads \"Домашний Маркет\" (Domashniy Market), indicating it is likely a local market or grocery store. The building has a simple architectural design with a brown brick facade and features two symmetrical windows displaying images of bread and meat products, which suggest the type of goods sold inside. A central glass door provides entrance to the store, flanked by a small staircase with a metal railing, enhancing accessibility. Above the entrance, the signage is mounted on a yellow awning, which stands out against the darker brick, drawing attention to the name and function of the store.",
+                    "vlm_insight": "The image displays the exterior of a business storefront, specifically a market, set within a building with a brown brick facade. The storefront features a prominent yellow sign with the name \"Домашний Маркет\" (Home Market) in Cyrillic script, which stands out against the darker background. Two large display windows on either side of the entrance showcase images of bakery goods and meats, aiming to attract customers by highlighting some of the products available inside. The overall design is straightforward and functional, with a clean entrance and steps leading up to the door, complemented by a handrail for accessibility. The professional appearance is enhanced by the neat arrangement of signage and the tidy exterior.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNKO6J92PxgjeyVbA0VYSmMokKN9C7mqUxlHGmS!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image you've described is not available, but the one provided shows the interior of a grocery store, specifically the produce section. The store features well-organized wooden bins filled with a variety of fresh fruits and vegetables, including oranges, apples, cucumbers, and lettuce. Overhead signage in the store indicates different sections, such as one for fruits. The overall appearance is clean and inviting, designed to display the produce attractively and accessibly to customers.",
+                    "vlm_insight": "The image depicts the interior of a grocery store rather than the exterior of a business storefront. It shows a well-organized display of fresh produce including fruits and vegetables neatly arranged in wooden crates and refrigerated shelves. The store uses bright lighting to enhance the vibrant colors of the produce, creating an inviting atmosphere for shoppers. The employee, wearing a brown apron with the store's logo, is holding a pineapple, suggesting a focus on fresh, natural products.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOwrhNUTJYR7St917aLRTn2vYS1TQT6-UxZZQQT!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image provided does not show a business storefront or a street view. Instead, it displays an interior scene of a bakery or grocery store, focusing on shelves stocked with various types of bread. The shelves are bright yellow, which makes them stand out and likely helps in attracting customer attention to the products. Each shelf is well-organized, with breads neatly arranged and packaged in clear plastic, and labels are visible, indicating prices or types of bread. This setup is typical for a retail food store, emphasizing cleanliness, order, and accessibility to customers.",
+                    "vlm_insight": "The image provided shows the interior of a bakery or grocery store, specifically focusing on shelves stocked with various types of bread. The shelves are organized and feature bright yellow labeling which contrasts with the darker background, making the product names and prices easy to read. The bread is neatly arranged in baskets and on shelves, enhancing the visual appeal and suggesting a well-maintained store environment. This setup aids in customer navigation and selection, contributing to a professional appearance of the store.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOfAWlpEkk51U-hHzU1yRbW4yIX4lsz_qfcXvaI!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image you've provided is actually an interior view of a store, not a street view of a storefront. This image shows a variety of products displayed inside a retail shop, likely a convenience or grocery store. The foreground features a checkout counter with a basket filled with assorted bottled beverages and packaged snacks. In the background, shelves are stocked with a wide range of goods, including beverages, snacks, and possibly personal care items, all under bright, artificial lighting.",
+                    "vlm_insight": "The image provided actually shows the interior of a store, not the exterior of a business storefront. It captures a variety of products displayed on shelves and in baskets near a checkout counter, including snacks, beverages, and other convenience items. The store is well-organized, with clear signage for product pricing, contributing to a professional appearance. The checkout area features a wooden counter and a payment terminal, indicating a modern transactional setup.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOlLaioS0nL1JQHIdigWq0TYlvegd-2_nrLkf7h!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image you provided shows a close-up view of a person's hands selecting red bell peppers from a basket in a grocery store setting. This image does not depict a business storefront or street view. The focus is on the vibrant red peppers, which are shiny and appear fresh. The background is softly blurred, emphasizing the peppers and the action of choosing produce, typical of a grocery shopping experience.",
+                    "vlm_insight": "The image you provided shows a close-up view of a person's hands selecting red bell peppers from a basket in a grocery store setting. This image does not depict a business storefront or its architectural design, signage, or surroundings. The focus is on the fresh produce, specifically the vibrant red bell peppers, which are being carefully chosen by a shopper. The setting suggests a section of a market or store dedicated to fresh vegetables, emphasizing the quality and appeal of the produce available.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipO3eDidXbUNNfB97OkiSaaH5mfRT4Rr7HH-Ylk7!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image provided does not show a business storefront from a street view but rather depicts an indoor scene of a grocery store aisle. A person is reaching for a bottle of green-colored dairy product from a well-stocked refrigerator shelf. The products on display include various dairy items like milk and yogurt, prominently featuring Cyrillic script on their labels, suggesting the location might be in a region where this script is used, such as Russia or Eastern Europe. The setting is brightly lit, with an array of different brands and packaging designs that add color and visual interest to the scene.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront. Instead, it depicts an indoor scene of a supermarket aisle where a person is reaching for a dairy product. The shelves are well-stocked with various packaged goods, prominently displaying dairy items in green packaging. The setting is brightly lit, enhancing the visibility of the products, and the layout is organized, facilitating an easy shopping experience for customers.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNhEQQgzryfTg8PJH45YcZ4GzUDNGc8k0OU0GHh!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image provided does not depict a business storefront from a street view; instead, it shows an indoor scene at a grocery store checkout. A cashier, wearing a brown apron with a name tag, is bagging groceries including pineapples and packaged food items into a branded plastic bag. The bag features a logo and the name of the market, which contributes to the branding of the store. The background shows shelves stocked with a variety of products, indicating a well-supplied retail environment.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront or its architectural design. Instead, it depicts an indoor scene at a grocery store checkout. A cashier, wearing a brown apron and gloves, is bagging groceries including pineapples and packaged food items for a customer. The setting includes shelves stocked with various products in the background, indicating a well-organized and operational retail environment.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPCQJvYIhnEUyo_z1FTtD0HgUH9usnFQ4HM2a8S!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image you've provided is actually an interior view of a grocery store, not a street view of a storefront. The store features a vibrant and neatly organized display of fresh produce in the foreground, with wooden bins and black chalkboard signs indicating prices and names of the items. The background shows well-stocked shelves with a variety of packaged goods, ranging from jars and bottles to boxed items. The overall color scheme includes warm tones with yellow and brown accents, creating a welcoming atmosphere. The lighting is bright and evenly distributed, highlighting the products effectively.",
+                    "vlm_insight": "The image you provided is actually an interior view of a grocery store, not the exterior of a business storefront. It shows a well-organized display of fresh produce in the foreground with a variety of fruits and vegetables neatly labeled. Behind the produce, there are shelves stocked with various packaged goods and refrigerated items. The store uses warm lighting and vibrant color schemes, such as yellow and brown, to create a welcoming atmosphere.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOeck9SBFMaeheEd7RRx2yu3xmyKwJmyyKCp5pO!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image you've provided does not show a business storefront or any architectural elements. Instead, it features a close-up scene inside a grocery store or market where a person is holding a pineapple. Another person in the background is selecting bananas, indicating a vibrant, fresh produce section. The setting is characterized by a warm color palette, primarily yellow and orange, which enhances the visual appeal of the fruits displayed.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront. Instead, it depicts a close-up scene inside a grocery store or market where a person is holding a pineapple. In the background, another person is selecting bananas, and there are various other fruits visible such as oranges. The focus is on the fresh produce, highlighting a vibrant and healthy shopping environment.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOfYNiLqewJPRtqwoEeoCZORWdzTp0ogHNQYJt1!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 },
                 {
-                    "vlm_insight": "The image you've described does not match the one provided. The image shown is of an indoor scene in a grocery store. A person is selecting fruits from a well-stocked produce section. The store features bright lighting and organized shelves filled with various food products in the background. The color scheme includes a vibrant orange wall contrasting with the darker shelving units, creating a warm and inviting shopping environment.",
+                    "vlm_insight": "The image provided does not show the exterior of a business storefront; instead, it depicts an indoor scene of a grocery store. In the image, a person is selecting fruits from a well-stocked produce section. The store features a vibrant color scheme with a bright orange wall contrasting against the darker shelving filled with various grocery items. The layout is clean and organized, enhancing the professional appearance of the store.",
                     "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNKeZyd7RSiojsvjtZUNUVsanHHJu56wlUG-zzE!2e10!4m2!3m1!1s0x40d4cf6b5979fc13:0xb1837ee439cf2bfc"
                 }
             ],
             "street_view": {
-                "vlm_insight": "The image shows a business storefront integrated into the ground floor of a multi-story residential building. The building features a traditional architectural style with red brick walls and white framed windows, which adds a classic and sturdy look to the setting. The business has two visible signs, one above each window, displaying logos and text that likely indicate the nature of the business; however, the specific details on the signs are not clearly visible. The entrance to the business is marked by a small set of stairs leading to a double door, enhancing accessibility and providing a distinct entryway separate from the residential parts of the building.",
+                "vlm_insight": "This image shows a business storefront located on the ground floor of a multi-story residential building. The building features a traditional brick facade with symmetrical windows and decorative white trim that adds a classic touch to the exterior. The storefront includes a clear glass door and two large windows that display professional signage, enhancing its visibility and accessibility. The entrance is marked by a small set of stairs, leading up to the door, which helps to distinguish the business from the residential parts of the building, maintaining a professional appearance while blending seamlessly with its urban surroundings.",
                 "url": "URL contains api key, can't be exposed"
             },
             "working_hours": [
@@ -841,242 +616,6 @@
                 "Friday: 8:00 AM – 10:00 PM",
                 "Saturday: 8:00 AM – 10:00 PM",
                 "Sunday: 8:00 AM – 10:00 PM"
-            ]
-        },
-        {
-            "name": "Lviv Croissants",
-            "website": "https://lvivcroissants.com/",
-            "phone_number": "063 470 1129",
-            "address": "Yaroslavska St, 47/29, Kyiv, Ukraine, 04070",
-            "latitude": 50.47097,
-            "longitude": 30.516205,
-            "reviews_summary": "Lviv Croissants is a beloved eatery known for its simple yet delicious offerings, including a variety of savory and sweet croissants, as well as refreshing fruit drinks like lemonade and passionfruit. The atmosphere strikes a nice balance between liveliness and relaxation, making it a great spot for a quick bite. Customers appreciate the friendly service and clean environment, with some noting the addition of Croissants-Burgers to the menu. Overall, patrons express a strong desire to return, highlighting the enjoyable food and cool ambiance.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURheVBEME13EAE!2m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175",
-                    "text": "This review is for a repeat visit. It's confirmed. I love Lviv Croissants!\n\nI don't want to make more of this eatery than it is. Lviv Croissants is simple, fresh, tasty, with the right balance of liveliness and relaxing space.\n\nGreat fruit drinks: lemonade, strawberry-lemonade, passionfruit, and others. Savory and sweet croissants. Friendly help. Clean. Music is fun and \"cool\".\n\nMy family loves the tasty food.\nWe will definitely go back.",
-                    "original_text": "This review is for a repeat visit. It's confirmed. I love Lviv Croissants!\n\nI don't want to make more of this eatery than it is. Lviv Croissants is simple, fresh, tasty, with the right balance of liveliness and relaxing space.\n\nGreat fruit drinks: lemonade, strawberry-lemonade, passionfruit, and others. Savory and sweet croissants. Friendly help. Clean. Music is fun and \"cool\".\n\nMy family loves the tasty food.\nWe will definitely go back.",
-                    "original_language": "en",
-                    "author_name": "James Curtis",
-                    "author_url": "https://www.google.com/maps/contrib/100310621424786697508/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUNxLXJqN0hREAE!2m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175",
-                    "text": "Just croissants and coffe. Nothing spare. Good interior for fast bite. Btw they now have Croissants-Burgers!",
-                    "original_text": "Just croissants and coffe. Nothing spare. Good interior for fast bite. Btw they now have Croissants-Burgers!",
-                    "original_language": "en",
-                    "author_name": "Yuriy Polyashko",
-                    "author_url": "https://www.google.com/maps/contrib/102463980670216642427/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURtX2FmVlZ3EAE!2m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175",
-                    "text": "Relatively fast service.\nThe croissants are not bad either.",
-                    "original_text": "Relatively fast service.\nThe croissants are not bad either.",
-                    "original_language": "en",
-                    "author_name": "Efe Uwefoh",
-                    "author_url": "https://www.google.com/maps/contrib/104588326781618513008/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 4
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUR5bk8taUp3EAE!2m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175",
-                    "text": "Cool place. Good food.",
-                    "original_text": "Cool place. Good food.",
-                    "original_language": "en",
-                    "author_name": "Alex Nagorny",
-                    "author_url": "https://www.google.com/maps/contrib/112375228182758114308/reviews",
-                    "publish_date": "4 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUM2M3JIcTNBRRAB!2m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175",
-                    "text": "Awesome !",
-                    "original_text": "Awesome !",
-                    "original_language": "en",
-                    "author_name": "Mahmoud Hegazy",
-                    "author_url": "https://www.google.com/maps/contrib/113235832947456828039/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                }
-            ],
-            "rating": "average: 4.8 out of 5 reviews",
-            "reviews_span": "latest date: 2022-02-07, most recent date: 2021-02-27, date difference: 345 days",
-            "photos": [
-                {
-                    "vlm_insight": "The image shows the storefront of a business named \"Lviv Croissants.\" The architecture features a clean, modern design with a white painted exterior and large glass windows. The signage is simple yet stylish, with a black awning that carries the business name in white lettering, complemented by small hanging light bulbs that add a warm and welcoming ambiance. The storefront presents itself attractively in a public space, inviting passersby to enter with its open and accessible design.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICa49Ka6AE!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "The image provided does not show a business storefront or its architectural style. Instead, it features a close-up view of a meal set on a wooden table inside a café or restaurant. The meal includes two sandwiches, one with a croissant and the other with a baguette, both filled with lettuce, tomato, and other ingredients, accompanied by two cups of coffee. The setting suggests a cozy, inviting atmosphere with natural light streaming through a window, highlighting the food and creating a warm ambiance.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOiBUcpYNSgEXHzf8xD-Gnj_y6iz51YHoSPuPlS!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "The image you've provided is of an indoor café setting rather than an outdoor storefront view. The interior design features a modern, minimalist style with exposed brick walls painted white and a concrete floor. The café is well-lit with stylish hanging lights and has a cozy seating arrangement with comfortable chairs and round tables. A neon sign that reads \"Love Croissants\" adds a vibrant touch to the décor, enhancing the café's contemporary and inviting atmosphere.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICajrXjUQ!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "The image features three colorful drinks in clear plastic cups with lids and straws, placed on a wooden surface near a window. Each cup is branded with the logo \"VIV Croissants\" in a playful, modern font, suggesting a casual and inviting atmosphere of the establishment. The drinks are brightly colored in orange, red, and green, which adds a vibrant and appealing look. Through the window, a street scene is partially visible, reflecting the urban setting of the business.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipMokFtQOvY-NG2AzjkUOGoPQSTTamXdLJBtnxWt!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "This image shows a business storefront, \"Lviv Croissants,\" located in a vintage building with ornate architectural details. The storefront is well-lit, featuring a clean, modern design with a white facade and contrasting black signage that displays the business name in a stylish, contemporary font. Spotlights and window displays enhance visibility and appeal, inviting passersby to enter. The business presents itself as a cozy and inviting establishment, nestled in a snowy urban street setting, which contrasts with the warm lighting and welcoming ambiance of the interior visible through the windows.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDy8uTJhAE!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "The image shows the interior of a cozy, modern café. The design features industrial elements such as exposed ductwork on the ceiling and simple pendant lighting, which contribute to a contemporary yet inviting atmosphere. The café's counter is made of a rich, dark wood, complementing the lighter wood tones of the tables and chairs. Signage above the counter displays menu options in an elegant, easy-to-read font, enhancing the overall aesthetic and functionality of the space.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDy1MSrZw!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "The image provided does not show a business storefront or its architectural style, signage, or public presentation. Instead, it features a close-up view of a sandwich on a plate, partially wrapped in paper with the name \"LVN Croissants\" printed on it. There is also a cup of coffee in the background, suggesting the setting might be inside a café or bakery. The focus of the image is on the food, indicating a casual dining atmosphere.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICm7ZyRHg!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "The image you provided does not show a business storefront or any architectural elements. Instead, it features a close-up view of a dessert, specifically a cream-filled pastry dusted with powdered sugar, served on a white plate. The background includes two paper bags with text, suggesting the setting might be inside a bakery or café. The focus of the image is on the food item rather than any external business presentation or architectural style.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDy3pSDhAE!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "The image provided does not show a business storefront or its architectural style, signage, or public presentation. Instead, it depicts an indoor scene focused on a person pouring tea from a white teapot into a white cup. The tea appears to be red, suggesting it might be a fruit or herbal tea. The setting includes a sandwich on a plate, suggesting a café or similar dining environment, and the background hints at a counter with various items typical of a café setting.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipOn6gJdEoVxf0iZpaPbcc-j-IQE8xMJ1rBWSo8I!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                },
-                {
-                    "vlm_insight": "The image provided does not show a business storefront or its architectural style. Instead, it features a top-down view of a small round wooden table with various items on it. On the table, there are two plates with croissants filled with lettuce and tomatoes, a cup of cappuccino, a laptop, and a smartphone. The setting suggests a casual, possibly cozy café environment, but it does not provide a view of the storefront or external presentation of the business.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPROQK3pyeZ8NGsRyrkkC72ZukWMBobZEpqhtUb!2e10!4m2!3m1!1s0x40d4cfe7190a70d5:0x89bf0d33c3810175"
-                }
-            ],
-            "street_view": {
-                "vlm_insight": "The image shows a business storefront situated in a vintage building with ornate architectural details. The facade of the building is characterized by decorative moldings and several large windows, some of which are adorned with intricate iron balconies. The business itself features a modern black and white sign above the entrance, which contrasts with the classical architecture of the building. The storefront is further highlighted by small, neatly arranged potted plants and a barrier, creating a tidy and welcoming public presentation.",
-                "url": "URL contains api key, can't be exposed"
-            },
-            "working_hours": [
-                "Monday: 8:00 AM – 9:00 PM",
-                "Tuesday: 8:00 AM – 9:00 PM",
-                "Wednesday: 8:00 AM – 9:00 PM",
-                "Thursday: 8:00 AM – 9:00 PM",
-                "Friday: 8:00 AM – 9:00 PM",
-                "Saturday: 8:00 AM – 9:00 PM",
-                "Sunday: 8:00 AM – 9:00 PM"
-            ]
-        },
-        {
-            "name": "Natur Boutique - Organic shop of products",
-            "website": "http://natur-boutique.ua/",
-            "phone_number": "044 425 2598",
-            "address": "Verkhnii Val St, 50, Kyiv, Ukraine, 04070",
-            "latitude": 50.469089999999994,
-            "longitude": 30.517486999999996,
-            "reviews_summary": "The reviews highlight a welcoming atmosphere with friendly staff and a focus on healthy, organic products. Customers appreciate the variety of natural goods available, including food, drinks, teas, and cosmetics. Many express satisfaction with the overall experience, noting the store's cozy environment and the pleasant surprises upon revisiting. Additionally, the presence of a beauty and health studio offering various services adds to the appeal of this organic shop.",
-            "reviews": [
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUN3amNpT21nRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "Friendly personnel, healthy food, tasty drinks and a wide variety everyday household things.",
-                    "original_text": "Friendly personnel, healthy food, tasty drinks and a wide variety everyday household things.",
-                    "original_language": "en",
-                    "author_name": "Olha Rymartsova",
-                    "author_url": "https://www.google.com/maps/contrib/110941737497707123724/reviews",
-                    "publish_date": "8 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUQ2bTllcU9BEAE!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "Good organic products shop",
-                    "original_text": "Good organic products shop",
-                    "original_language": "en",
-                    "author_name": "SAIRAM A",
-                    "author_url": "https://www.google.com/maps/contrib/108637370801469125024/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNZMGYySXV3RRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "Healthy food,  natural goods",
-                    "original_text": "Healthy food,  natural goods",
-                    "original_language": "en",
-                    "author_name": "Oleg Bogdan",
-                    "author_url": "https://www.google.com/maps/contrib/114391229351849812194/reviews",
-                    "publish_date": "5 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSURtajRPanVnRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "A cozy store, many natural, various teas, there are cosmetics. I haven't been in for a long time and was pleasantly surprised)",
-                    "original_text": "Затишний магазин, багато натуральних, різноманітних чаїв, є косметика. Дуже давно не заходила і була приємно вражена)",
-                    "original_language": "uk",
-                    "author_name": "Dina Parhomchyk",
-                    "author_url": "https://www.google.com/maps/contrib/110600137106243347463/reviews",
-                    "publish_date": "3 years ago",
-                    "rating": 5
-                },
-                {
-                    "review_url": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNRcnVTaHlnRRAB!2m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111",
-                    "text": "Paradise organic place of Beauty and Health. This is excellent! Thanks for the Organic Products!!! And for the Beauty and Health Studio, there you can do hair removal, makeup, visit a cosmetologist and a doctor! Complete set :)",
-                    "original_text": "Райское органическое место Красоты и Здоровья. Это превосходно! Спасибо за Органические продукты!!! И за Студию Красоты и Здоровья, там можно сделать эпиляцию, макияж, посетить косметолога и врача! Полный комплект:)",
-                    "original_language": "ru",
-                    "author_name": "Alise Shapoval",
-                    "author_url": "https://www.google.com/maps/contrib/103801770926727059614/reviews",
-                    "publish_date": "8 years ago",
-                    "rating": 5
-                }
-            ],
-            "rating": "average: 5.0 out of 5 reviews",
-            "reviews_span": "latest date: 2022-02-12, most recent date: 2017-01-26, date difference: 1843 days",
-            "photos": [
-                {
-                    "vlm_insight": "This image displays the storefront of \"Natur Boutique,\" a business specializing in vitamins, herbal remedies, natural beauty products, and organic food. The facade features a clean, traditional design with large windows allowing for a clear view inside, and the windows are adorned with white text detailing the products offered. The entrance includes a wooden door flanked by potted plants, enhancing the natural aesthetic of the boutique. The signage is simple and clear, with the store's initials \"NB\" prominently displayed on the side wall, ensuring easy identification from the street.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipN6w0wSxsslOpZv6SlOBCUlhHWazyeLqrLkHNxQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image depicts a dining area with a wall mural that simulates the facade of a picturesque business storefront. The mural features a rustic European-style building with textured walls, wooden shutters in green, and vibrant flower boxes adding a splash of color. The entrance is implied by a painted doorway adorned with wooden doors and iron details, enhancing the quaint and inviting atmosphere. This artistic representation creates a unique and charming ambiance for the dining space, contributing to its visual appeal and thematic decor.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICG64re5gE!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image shows the interior of a cozy café rather than the exterior of a business storefront. The café features a rustic and inviting design with wooden furniture and a neutral color palette. Decorative elements such as wall-mounted clocks, framed pictures, and a circular mirror contribute to the café's homely atmosphere. The large window provides a view of the street outside, allowing natural light to enhance the warmth of the space.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICG64r6Bg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image provided is actually an interior view of a small grocery store rather than an exterior view of a business storefront. The store features a clean, well-organized layout with white walls and a tiled floor. On the left side, there is a window providing natural light, adorned with a sign that appears to be in Cyrillic script, suggesting a location in Eastern Europe or Russia. The store is stocked with various products including beverages, packaged goods, and fresh produce displayed in a wooden cart at the center, creating a rustic and inviting atmosphere.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNnpmBPA54Hk-MW7N1QmYOxl2z1L97MUklXvg1z!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image shows a dining area with a large wall mural depicting a picturesque business storefront. The mural features a rustic facade with a weathered wooden door and shuttered windows, surrounded by walls adorned with climbing plants and hanging flower pots, creating a charming and inviting atmosphere. The entrance is characterized by an arched doorway, enhancing the traditional aesthetic. The setting is complemented by wooden furniture, including a table and chairs, which align with the rustic theme portrayed in the mural, adding to the overall ambiance of the space.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDmj4OjRg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image shows the interior of a business, not the storefront as viewed from the street. The space is designed with a rustic and welcoming aesthetic, featuring a combination of modern and vintage elements. The walls are adorned with various decorative items including mirrors, framed pictures, and shelves filled with products, creating a cozy, eclectic atmosphere. A large wooden table serves as a central display for brochures and boxed products, while the counter at the back provides additional space for merchandise and customer service. The overall ambiance suggests a friendly and inviting environment for visitors.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipNXAdERbAs-rAFaJcrbCAqAxoVhZbfiK7R15rA3!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image you provided is actually of the interior of a grocery store, not a storefront viewed from the street. The store features a clean and organized layout with white walls and a gray floor. Multiple shelves stocked with a variety of products, including packaged foods, jars, and bottles, line the walls. A wooden bin filled with loose items is placed near the entrance, adding a rustic touch to the modern setup.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipM7G4VN0i_uDcKZSRCTz5dEn5XO6yEaLEIWzhMa!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image provided shows the interior of a business rather than the storefront viewed from the street. Inside, the shop features a modern and cozy design with a combination of wood paneling and white walls that create a warm and inviting atmosphere. The space is well-organized with various products neatly displayed on white shelving units, and a central wooden table serves as an additional display or seating area. Decorative elements like wall clocks, framed pictures, and hanging lights enhance the aesthetic appeal, contributing to a pleasant shopping environment.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sAF1QipPrCPO9gr4EVJOLEZvpjoDR9vzOR_RJX1aBOI8R!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image provided shows the interior of a cozy, inviting business rather than the exterior view of a storefront. The space is designed with a warm, homely aesthetic, featuring a combination of dining and retail elements. The room includes multiple seating areas with small tables and chairs, surrounded by shelves stocked with various products and a counter that serves as a bar, labeled \"Organic Bar.\" The decor includes soft lighting, plants, and chalkboard signs, contributing to a relaxed, welcoming atmosphere typical of a cafe or small specialty store.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC4yumxPg!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                },
-                {
-                    "vlm_insight": "The image provided does not show a business storefront viewed from the street, but rather the interior of a retail store. The store is well-lit and organized, featuring multiple shelving units stocked with a variety of products, predominantly health and organic food items. A Christmas tree is centrally placed, adding a festive touch to the decor. The store's layout includes a refrigerated display near the entrance and promotional signage, enhancing its appeal and guiding customer experience within the space.",
-                    "url": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC4yqm9SQ!2e10!4m2!3m1!1s0x40d4ce1506901edd:0xb8baf1c7eece5111"
-                }
-            ],
-            "street_view": {
-                "vlm_insight": "The image displays a business storefront situated in a vintage building with an ornate architectural design. The facade features decorative moldings and intricate details typical of early 20th-century architecture, painted in a light color that contrasts with the darker details. A prominent red sign above the central entrance reads \"НОТАРИУС\" (Notary), clearly identifying the type of service offered. The entrance is flanked by large windows with metal grilles, and graffiti is visible on the surrounding walls, adding a contemporary layer to the historical texture of the building.",
-                "url": "URL contains api key, can't be exposed"
-            },
-            "working_hours": [
-                "Monday: 9:00 AM – 8:00 PM",
-                "Tuesday: 9:00 AM – 8:00 PM",
-                "Wednesday: 9:00 AM – 8:00 PM",
-                "Thursday: 9:00 AM – 8:00 PM",
-                "Friday: 9:00 AM – 8:00 PM",
-                "Saturday: 10:00 AM – 6:00 PM",
-                "Sunday: Closed"
             ]
         }
     ]
