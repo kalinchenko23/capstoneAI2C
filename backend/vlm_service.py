@@ -4,16 +4,19 @@ import asyncio
 import json
 import requests
 
+# Load the JSON secrets config
+with open("secrets.json") as config_file:
+    config = json.load(config_file)
 
-AZURE_OPENAI_API_KEY = "2clStpxnHlCQfQs04ZSmUjpgY4CG2taxcBpruBJHHSK8OQjMeM7EJQQJ99BBACYeBjFXJ3w3AAABACOGEoKq"
-AZURE_OPENAI_ENDPOINT = "https://capstonetest.openai.azure.com/"
-DEPLOYMENT_NAME = "gpt-4"  
-API_VERSION = "2024-04-01-preview"
+AZURE_OPENAI_API_KEY_VLM = config["AZURE_OPENAI_API_KEY_VLM"]
+AZURE_OPENAI_ENDPOINT = config["AZURE_OPENAI_ENDPOINT"]
+DEPLOYMENT_NAME = config["DEPLOYMENT_NAME"]
+API_VERSION = config["API_VERSION"]
 
 
 HEADERS = {
     "Content-Type": "application/json",
-    "api-key": AZURE_OPENAI_API_KEY,
+    "api-key": AZURE_OPENAI_API_KEY_VLM,
     "User-Agent": "Image-Analysis-Tool/1.0"
 }
 

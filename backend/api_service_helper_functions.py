@@ -16,6 +16,7 @@ AZURE_OAI_ENDPOINT = config["AZURE_OAI_ENDPOINT"]
 AZURE_OAI_KEY = config["AZURE_OAI_KEY"]
 AZURE_OAI_DEPLOYMENT = config["AZURE_OAI_DEPLOYMENT"]
 
+
 async def getting_street_view_image(
     location: str,
     key: str):
