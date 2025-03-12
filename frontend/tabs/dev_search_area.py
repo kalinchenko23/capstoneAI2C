@@ -3,7 +3,7 @@
 # user bbox2: -14.445651, -14.911131 | 29.678209, 33.604494
 
 # TODO:
-# zoom shenanigans
+# check for duplicate pins... yay
 # change how your deleting the pins to match how youre deleting the boxes?
 # legend for the map signifying red is active box
 # test the shit out of the bbox coords 
@@ -13,7 +13,6 @@ import folium
 import streamlit as st
 from streamlit_folium import st_folium
 from folium.plugins import Draw
-import math
 
 from components.validation_functions import validate_location
 
@@ -22,12 +21,13 @@ def generate_map():
     return m
 
 def check_for_duplicate_boxes(bounds):
-    # value altered and returned at end after comparison
+    # value returned at end after comparison
     already_exists = False
 
-    # Convert bounds to a list of lists if it's a list of tuples
+    # Convert bounds to a list of lists for the comparison
     bounds = [list(bound) for bound in bounds]
 
+    # if the box already exists, set the value to True
     for child in st.session_state['rectangle_feature_group']._children.values():
             if isinstance(child, folium.Rectangle):
                 child_bounds = child.get_bounds()
@@ -37,6 +37,17 @@ def check_for_duplicate_boxes(bounds):
                     break
 
     return already_exists
+
+def calculate_center_of_bbox(bounds):
+    # Extract latitudes and longitudes from the bounds
+    lat_min, lon_min = bounds[0]  # Southwest corner (lat_min, lon_min)
+    lat_max, lon_max = bounds[1]  # Northeast corner (lat_max, lon_max)
+    
+    # Calculate the center of the bounding box
+    center_lat = (lat_min + lat_max) / 2
+    center_lon = (lon_min + lon_max) / 2
+    
+    return (center_lat, center_lon)
 
 @st.fragment
 def search_area():
@@ -75,7 +86,24 @@ def search_area():
                             popup=st.session_state['location_validation_results'], 
                             icon=folium.Icon(color='red', icon='crosshairs', prefix='fa')
                         ).add_to(st.session_state['points_feature_group'])
-                        st.session_state['map_zoom_level'] = 5
+
+                        # edit the "last_active_drawing" in session state to reflect the new pin
+                        lat = st.session_state['location_validation_results'][0]
+                        lon = st.session_state['location_validation_results'][1]
+
+                        new_pin = {
+                                    "type": "Feature",
+                                    "properties": {},
+                                    "geometry": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            lon,
+                                            lat
+                                        ]
+                                    }
+                                }
+
+                        st.session_state['map']['last_active_drawing'] = new_pin
 
                 if st.button('Delete Pins', key='delete_pins_button'):
                     st.session_state['points_feature_group'] = folium.FeatureGroup('points')
@@ -142,11 +170,6 @@ def search_area():
                             
                             st.session_state['map']['last_active_drawing'] = new_bounding_box 
 
-                            # zoom to the box
-                            st.session_state['map_zoom_level'] = 5
-                    
-                    
-
                 if st.button('Delete boxes', key='delete_box_button'):
                     st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
                     st.session_state['map']['last_active_drawing'] = []
@@ -155,16 +178,39 @@ def search_area():
                     # this causes the map to rerender and gets rid of any boxes in folium's default feature group
                     invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
                     folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
+
+                    # because the map is rerendering, we need to maintain the maps current zoom level and center
+                    current_center_lat = st.session_state['map']['center']['lat']
+                    current_center_lon = st.session_state['map']['center']['lng']
+                    st.session_state['map_center'] = (current_center_lat, current_center_lon)
+                    st.session_state['map_zoom_level'] = st.session_state['map']['zoom']
+
+                    
                     
                     
 
         # Handle new drawings from the user
         if 'map' in st.session_state and st.session_state['map']['last_active_drawing']:
             shape_data = st.session_state['map']['last_active_drawing']
+
+            # handle zooming to dropped pins
+            if shape_data['geometry']['type'] == 'Point':
+                lat = shape_data['geometry']['coordinates'][1]
+                lon = shape_data['geometry']['coordinates'][0]
+
+                st.session_state['map_center'] = (lat, lon)
+                st.session_state['map_zoom_level'] = 13
             
+
+            # handle bounding boxes
             if shape_data['geometry']['type'] == 'Polygon':
+
                 coords = shape_data['geometry']['coordinates']
                 bounds = [[coords[0][0][1], coords[0][0][0]], [coords[0][2][1], coords[0][2][0]]]
+
+                # handle zooming to dropped/drawn box
+                st.session_state['map_center'] = calculate_center_of_bbox(bounds)
+                st.session_state['map_zoom_level'] = 13
 
                 # Prevent duplicate rectangles
                 already_exists = any(
@@ -185,9 +231,6 @@ def search_area():
                             # st.write(f'{child} is not active')
                             child.options['color'] = 'blue'
                         
-                        # child.options['fillColor'] = 'blue'
- 
-
                 # Check if this is the last active drawing and set color to red, else blue
                 if not already_exists:
                     folium.Rectangle(
@@ -214,10 +257,13 @@ def search_area():
         }
         
         Draw(draw_options=draw_options, edit_options=edit_options).add_to(m)
-
+ 
         st_folium(m, 
+                  zoom=st.session_state['map_zoom_level'], 
+                  center=st.session_state['map_center'],
+
                   feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
-                  width=600, height=350, key='map', use_container_width=True, returned_objects=['last_active_drawing'])
+                  width=600, height=350, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
         
 
     # # Display the last active drawing coordinates
@@ -232,6 +278,8 @@ def search_area():
     #     pass
 
     # st.write(st.session_state['map'])
+    # st.write(st.session_state['map']['zoom'])
+    # st.write(st.session_state['map_zoom_level'])
 
 if __name__ == "__main__":
     search_area()
