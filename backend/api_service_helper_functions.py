@@ -109,6 +109,10 @@ async def response_formatter(responce,api_key):
         except KeyError as ex:
             new_data["name"]="Name is not provided"
         try:
+            new_data["type"]=place["types"][0]
+        except KeyError as ex:
+            new_data["type"]="Type is not provided"
+        try:
             new_data["website"]=place["websiteUri"]
         except KeyError as ex:
             new_data["website"]="Website is not provided"
@@ -135,8 +139,6 @@ async def response_formatter(responce,api_key):
 
             #Calling LLM summarization function
             new_data["reviews_summary"] = get_review_summary(AZURE_OAI_ENDPOINT,AZURE_OAI_KEY,AZURE_OAI_DEPLOYMENT,place["reviews"])
-            
-            new_data["url_to_all_reviews"]=place["googleMapsLinks"]["reviewsUri"]
             new_data["reviews"] = []
             ratings=[]
             times=[]

@@ -59,7 +59,7 @@ async def search_nearby_places(text_query: str =Body(),
                                lng_ne: float = Body(),
                                user_id = Body(), token: str =Body(),
                                pageToken: Optional[str] = Body(default=None),
-                               fieldMask: str = Body(default="places.displayName,places.websiteUri,places.nationalPhoneNumber,places.formattedAddress,places.location,places.reviews,places.photos,places.regularOpeningHours,places.googleMapsUri,nextPageToken")):
+                               fieldMask: str = Body(default="places.displayName,places.types,places.websiteUri,places.nationalPhoneNumber,places.formattedAddress,places.location,places.reviews,places.photos,places.regularOpeningHours,places.googleMapsUri,nextPageToken")):
     
     """
     This endpoint performs a text-based search for places within a specified bounding box.
