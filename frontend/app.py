@@ -5,7 +5,8 @@ from tabs.create_tabs import create_tabs
 
 from tabs.user_credentials import user_credentials
 from tabs.establishment_search import establishment_search
-from tabs.search_area import search_area
+# from tabs.search_area import search_area
+from tabs.dev_search_area import search_area
 from tabs.query_options import query_options
 from tabs.review_and_submit import review_and_submit
 
@@ -35,6 +36,3 @@ elif st.session_state['active_tab'] == 'Query Options':
       query_options()
 elif st.session_state['active_tab'] == 'Review + Submit':
       review_and_submit()
-
-
-# st.write(st.session_state)

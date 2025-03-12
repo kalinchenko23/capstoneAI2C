@@ -1,4 +1,5 @@
 import streamlit as st
+import folium
 
 def initialize_state():
     # initialize state variable that tracks which navbar tab is active
@@ -20,6 +21,22 @@ def initialize_state():
     # initialize state variable that tracks the 'location' input field
     if 'location_type' not in st.session_state:
         st.session_state['location_type'] = 'Lat/Lon'
+
+    # initialize state variable that tracks the validated location from the input field
+    if 'location_validation_results' not in st.session_state:
+        st.session_state['location_validation_results'] = None
+
+    # initialize state variable that tracks the zoom level for the map
+    if 'map_zoom_level' not in st.session_state:
+        st.session_state['map_zoom_level'] = 0
+
+    # initialize feature group for points dropped on map
+    if 'points_feature_group' not in st.session_state:
+        st.session_state['points_feature_group'] = folium.FeatureGroup('points')
+
+    #initialize feature grooup for rectangles drawn/dropped on map
+    if 'rectangle_feature_group' not in st.session_state:
+        st.session_state['rectangle_feature_group'] = folium.FeatureGroup('rectangles')
     
     # initialize state variable that tracks the 'establishment search' input field
     if 'establishment_search_input' not in st.session_state:
