@@ -108,7 +108,7 @@ def search_area():
                 label_visibility='collapsed'
             )
 
-            with st.container(border=True):
+            with st.container(key='pin_controls'):
                 if st.button('Add Pin', key='add_pin_button'):
                     st.session_state['location_validation_results'] = validate_location(location, location_type)
 
@@ -137,7 +137,7 @@ def search_area():
 
                         st.session_state['map']['last_active_drawing'] = new_pin
 
-                if st.button('Delete Pins', key='delete_pins_button'):
+                if st.button('Delete Pins'):
                     st.session_state['points_feature_group'] = folium.FeatureGroup('points')
                     
                     
@@ -162,7 +162,7 @@ def search_area():
                 label_visibility="collapsed"
             )
 
-            with st.container(border=True):
+            with st.container(key='box_controls'):
                 if st.button('Draw bounding box', key='draw_box_button'):
                     st.session_state['validated_sw_coord'] = validate_location(sw_coord, location_type)
                     st.session_state['validated_ne_coord'] = validate_location(ne_coord, location_type)

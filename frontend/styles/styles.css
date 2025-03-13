@@ -22,4 +22,23 @@ iframe[data-testid="stIFrame"] {
 }
 
 
+/* map tab buttons styling */
+.stVerticalBlock[class*='st-key-pin_controls'] {
+    display: flex;
+    flex-direction: row;
+    gap: 10px !important;
+  }
 
+.stVerticalBlock[class*='st-key-box_controls'] {
+    display: flex;
+    flex-direction: row;
+    gap: 10px !important;
+}
+
+.stElementContainer[class*='st-key-add_pin_button'] {
+    width: 80px !important;
+}
+
+.stElementContainer[class*='st-key-draw_box_button'] {
+    width: 160px !important;
+}
