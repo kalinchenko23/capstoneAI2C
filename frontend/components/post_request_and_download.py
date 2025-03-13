@@ -5,50 +5,46 @@ from datetime import datetime
 
 # from .create_excel import json_to_excel
 from .outputv5 import json_to_excel
+from .kmz import json_to_kmz
 
 # the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
 # handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
 
 @st.fragment
-def generate_download_html(base64_data, download_filename):
+def generate_download_html(base64_data, download_filename, mime_type):
     """Creates an HTML + JavaScript snippet to auto-download a file."""
     html = f"""
     <html>
     <head>
     <title>Auto Download File</title>
     <script>
-    function downloadExcel() {{
+    function downloadFile() {{
         var element = document.createElement('a');
-        element.setAttribute('href', 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{base64_data}');
+        element.setAttribute('href', 'data:{mime_type};base64,{base64_data}');
         element.setAttribute('download', '{download_filename}');
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
     }}
-    window.onload = downloadExcel;
+    window.onload = downloadFile;
     </script>
     </head>
     <body>
-    <p>Your download should start automatically. If not, <a href="#" onclick="downloadExcel()">click here</a>.</p>
+    <p>Your download should start automatically. If not, <a href="#" onclick="downloadFile()">click here</a>.</p>
     </body>
     </html>
     """
     return html
 
 @st.fragment
-def auto_download_excel(in_memory_file):
-    # Injects JavaScript download logic into Streamlit using an in-memory file.
+def auto_download_file(in_memory_file, file_extension, mime_type):
     formatted_time = datetime.now().strftime("%Y%m%d_%H%M")
-    download_filename = f"{formatted_time}.xlsx"
-
-    # Convert the in-memory Excel file to Base64
-    in_memory_file.seek(0)  # Ensure we're at the start of the file
+    download_filename = f"{formatted_time}.{file_extension}"
+    in_memory_file.seek(0)
     file_data = in_memory_file.read()
     base64_data = base64.b64encode(file_data).decode("utf-8")
-
-    # Generate the HTML for auto-download
-    html = generate_download_html(base64_data, download_filename)
-    st.components.v1.html(html, height=0)  # Embed auto-download script
+    html = generate_download_html(base64_data, download_filename, mime_type)
+    st.components.v1.html(html, height=0)
 
 @st.fragment
 def text_search_post_request():
@@ -79,7 +75,7 @@ def text_search_post_request():
         in_memory_file = json_to_excel(data)
 
         # Auto-download in browser
-        auto_download_excel(in_memory_file)
+        # auto_download_excel(in_memory_file)
 
     except requests.exceptions.Timeout:
         # Handle timeout error (e.g., server takes too long to respond)
@@ -99,39 +95,30 @@ def mock_post_request():
     import os
     import json
     """Mock version of the POST request that reads from a local JSON file instead of making an API call."""
-    
-    # Get the path to the current directory where the script is running
     current_dir = os.path.dirname(os.path.abspath(__file__))
-
-    # Build the full file path to your JSON file
     file_path = os.path.join(current_dir, 'sample_response_modified.json')
 
     try:
-        # Read the local JSON file
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        
-        # Check if the data is valid (non-empty)
         if not data:
             raise ValueError("Received empty or invalid JSON from the local file.")
         
-        # Generate Excel file in memory using the data read from the file
-        in_memory_file = json_to_excel(data)
-
-        # Auto-download in browser
-        auto_download_excel(in_memory_file)
-
+        # Generate Excel file in memory
+        excel_file = json_to_excel(data)
+        auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        
+        # Generate KMZ file in memory
+        kmz_file = json_to_kmz(data)
+        auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+        
     except FileNotFoundError:
-        # Handle case where the file does not exist
         st.error(f"File {file_path} not found. Please check the file path.")
     except json.JSONDecodeError:
-        # Handle case where the JSON is invalid
         st.error(f"Error decoding JSON from the file {file_path}. Please check the file format.")
     except ValueError as e:
-        # Handle case where the response is empty or invalid
         st.error(f"Invalid response received from the local file: {e}")
     except Exception as e:
-        # Catch any other unforeseen errors
         st.error(f"An unexpected error occurred: {e}")
 
 
@@ -139,6 +126,6 @@ def mock_post_request():
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     generate_download_html()
-    auto_download_excel()
+    auto_download_file()
     text_search_post_request()
     mock_post_request()
