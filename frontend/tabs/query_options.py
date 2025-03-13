@@ -73,7 +73,7 @@ def query_options():
                         key='vlm_input', 
                         type='default',
                         help='''
-                        Enter key words you would like AI to target.\n
+                        Enter key words you would like AI to target. (max 150 characters)\n
                         Examples: cameras, windows, security\n
                         *Leave blank for general image captioning
                         ''', 
