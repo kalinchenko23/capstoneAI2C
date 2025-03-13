@@ -163,7 +163,7 @@ def search_area():
             )
 
             with st.container(key='box_controls'):
-                if st.button('Draw bounding box', key='draw_box_button'):
+                if st.button('Add Bounding Box', key='draw_box_button'):
                     st.session_state['validated_sw_coord'] = validate_location(sw_coord, location_type)
                     st.session_state['validated_ne_coord'] = validate_location(ne_coord, location_type)
 
@@ -202,7 +202,7 @@ def search_area():
                             
                             st.session_state['map']['last_active_drawing'] = new_bounding_box 
 
-                if st.button('Delete boxes', key='delete_box_button'):
+                if st.button('Delete Boxes', key='delete_box_button'):
                     st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
                     st.session_state['map']['last_active_drawing'] = []
 

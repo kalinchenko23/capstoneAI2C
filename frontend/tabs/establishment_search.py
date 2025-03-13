@@ -12,11 +12,11 @@ def establishment_search():
             type='default',
             help='''
             Enter as if you were using Google Maps on your phone.\n
-            Examples: "food", "hotels", "gas station"
+            Examples: food, hotels, gas station
             ''', 
             autocomplete=None, 
             on_change=None, 
-            placeholder='Examples: "food", "hotels", "gas station"', 
+            placeholder='Examples: food, hotels, gas station', 
             disabled=False, 
             label_visibility="visible"
         )

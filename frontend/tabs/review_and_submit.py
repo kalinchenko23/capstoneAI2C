@@ -1,7 +1,7 @@
 import streamlit as st
 
 from styles.icons.icons import warning_icon
-from components.validation_functions import validate_user_id, validate_token, validate_establishment_search, validate_bounding_box
+from components.validation_functions import validate_user_id, validate_token, validate_establishment_search, validate_bounding_box, validate_photo_caption_keywords
 # from components.post_request_and_download import text_search_post_request
 from components.post_request_and_download import mock_post_request
 
@@ -27,10 +27,10 @@ def review_and_submit():
         requested_results += ', Photo Captions'
 
     photo_captions_target_phrase = ''
-    if st.session_state['image_analysis_input'] == "":
+    if st.session_state['vlm_input'] == "":
         photo_captions_target_phrase = 'None'
     else:
-        photo_captions_target_phrase = f'{st.session_state['image_analysis_input']}'
+        photo_captions_target_phrase = f'{st.session_state['vlm_input']}'
 
 
 
@@ -42,7 +42,7 @@ def review_and_submit():
 
         st.write(f'Results will include: {requested_results}')
 
-        st.write(f'Photo Captions Target Phrase: {photo_captions_target_phrase}')
+        st.write(f'Photo Captions Keywords: {photo_captions_target_phrase}')
 
         st.write(f'Include KMZ download: {st.session_state['kml_download_option']}')
 
@@ -59,21 +59,29 @@ def review_and_submit():
     use_container_width=False, 
     )
 
-    if submit_button: # for mocking
-        mock_post_request()
+    # if submit_button: # for mocking
+    #     mock_post_request()
 
-    # if submit_button:
-    #     validated_user_id = validate_user_id(st.session_state['user_id'])
-    #     validated_token = validate_token(st.session_state['token_input'])
-    #     validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
-    #     validated_bounding_box = validate_bounding_box(st.session_state['map'])
-    #     scroll_to_top_of_submit()
+    if submit_button:
+        validated_user_id = validate_user_id(st.session_state['user_id'])
+        validated_token = validate_token(st.session_state['token_input'])
+        validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
+        validated_bounding_box = validate_bounding_box(st.session_state['map'])
+        validated_photo_caption_keywords = validate_photo_caption_keywords(st.session_state['vlm_input'])
+        scroll_to_top_of_submit()
 
-    #     if validated_user_id and validated_token and validated_establishment_search and validated_bounding_box:
-    #         with st.spinner():
-    #             text_search_post_request()
-    #     else:
-    #         st.write('Validation Failed')
+        if (validated_user_id and 
+            validated_token and 
+            validated_establishment_search and 
+            validated_bounding_box and 
+            validated_photo_caption_keywords):
+
+            with st.spinner():
+                st.write('''if youre seeing this that means no post request is active.
+                         you should uncomment out the real one below or the mock one above.''')
+                # text_search_post_request()
+        else:
+            st.write('Validation Failed')
 
         
 

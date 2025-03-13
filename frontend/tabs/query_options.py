@@ -70,23 +70,23 @@ def query_options():
                         label='Enter Keywords for AI to Highlight (leave blank for generic image captioning)', 
                         value="", 
                         max_chars=None, 
-                        key='image_analysis_input', 
+                        key='vlm_input', 
                         type='default',
                         help='''
                         Enter key words you would like AI to target.\n
-                        Examples: "cameras", "windows", "security"\n
+                        Examples: cameras, windows, security\n
                         *Leave blank for general image captioning
                         ''', 
                         autocomplete=None, 
                         on_change=None, 
-                        placeholder='Examples: "cameras", "windows", "security"', 
+                        placeholder='Examples: cameras, windows, security', 
                         disabled=False, 
                         label_visibility="visible"
                     )
 
     # creates the kml/kmz toggle
     st.toggle(
-        'Include KML/KMZ Download', 
+        'Include KMZ Download', 
         key='kml_download_option', 
         help=None, 
         on_change=None, 

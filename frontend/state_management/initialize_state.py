@@ -63,10 +63,6 @@ def initialize_state():
             'center': {'lat': 0, 'lng': 0}
         }
 
-    # initialize state variable that tracks the 'user_id' input field
-    if 'image_analysis_input' not in st.session_state:
-        st.session_state['image_analysis_input'] = ''
-
     # initialize state variable that tracks the 'All' checkbox in 'Query Options'
     if 'all_fields_checkbox' not in st.session_state:
         st.session_state['all_fields_checkbox'] = False
@@ -83,6 +79,10 @@ def initialize_state():
     if 'include_photo_captioning_checkbox' not in st.session_state:
         st.session_state['include_photo_captioning_checkbox'] = False
 
+     # initialize state variable that tracks the 'user_id' input field
+    if 'vlm_input' not in st.session_state:
+        st.session_state['vlm_input'] = 'fuck'
+        
     # initialize state variable that tracks the 'Include KML/KMZ Download' toggle in 'Query Options'
     if 'kml_download_option' not in st.session_state:
         st.session_state['kml_download_option'] = True

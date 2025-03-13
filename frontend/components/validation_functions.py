@@ -128,6 +128,10 @@ def validate_bounding_box(map):
     else:
         return map
     
+def validate_photo_caption_keywords(vlm_input):
+    if len(vlm_input) > 150:
+        st.error('photo caption keywords can not exceed 150 characters', icon=validation_error_icon)
+    
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
@@ -137,4 +141,5 @@ if __name__ == "__main__":
     validate_token()
     validate_establishment_search()
     validate_bounding_box()
+    validate_photo_caption_keywords()
     

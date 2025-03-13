@@ -19,7 +19,7 @@ def persist_state():
     st.session_state['rectangle_feature_group'] = st.session_state['rectangle_feature_group']
     st.session_state['establishment_search_input'] = st.session_state['establishment_search_input']
     st.session_state['map'] = st.session_state['map']
-    st.session_state['image_analysis_input'] = st.session_state['image_analysis_input']
+    st.session_state['vlm_input'] = st.session_state['vlm_input']
     st.session_state['all_fields_checkbox'] = st.session_state['all_fields_checkbox']
     st.session_state['basic_data_checkbox'] = st.session_state['basic_data_checkbox']
     st.session_state['include_reviews_checkbox'] = st.session_state['include_reviews_checkbox']
