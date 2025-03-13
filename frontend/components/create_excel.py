@@ -54,59 +54,6 @@ def get_cid(data):
     except:
         return get_string(data, 'name')[:31]  # Truncate name if something goes wrong
 
-# # this version uses cid as the worksheets title
-# def json_to_excel(j_file):
-#     mydict = json_to_dict(j_file)
-#     output = io.BytesIO()  # Create an in-memory file
-#     workbook = xlsxwriter.Workbook(output)
-#     locationsheet = workbook.add_worksheet("Locations")
-    
-#     header = ('Name', 'Address', 'Phone', 'Latitude', 'Longitude', 'Hours', 'Rating', 'Website')
-#     header_format = workbook.add_format(head_format())
-#     locationsheet.write_row(0, 0, header, header_format)
-    
-#     body_format = workbook.add_format(bod_format())
-#     hours_format = workbook.add_format(hour_format())
-#     link_format = workbook.add_format(links_format())
-    
-#     data = []
-#     for location in mydict['places']:
-#         name = get_string(location, 'name')
-#         website = get_string(location, 'website')
-#         phone = get_string(location, 'phone_number')
-#         addr = get_string(location, 'address')
-#         lat = get_string(location, 'latitude')
-#         lng = get_string(location, 'longitude')
-#         rating = get_string(location, 'rating')
-#         hours = format_hours(get_list(location, 'working_hours'))
-#         data.append((name, addr, phone, lat, lng, hours, rating, website))
-        
-#         cid = get_cid(location)
-#         temp = workbook.add_worksheet(cid)
-#         temp.write(0, 0, "Picture Links", header_format)
-#         photos = get_list(location, 'photos')
-#         if isinstance(photos, str):
-#             temp.write(1, 0, photos)
-#         else:
-#             for row_num, link in enumerate(photos):
-#                 temp.write(row_num+1, 0, link, link_format)
-    
-#     for row_num, row_data in enumerate(data, start=1):
-#         for col_num, value in enumerate(row_data):
-#             format_to_use = hours_format if col_num == 6 else body_format
-#             locationsheet.write(row_num, col_num, value, format_to_use)
-    
-#     max_column_width = 90
-#     for col_num, col_name in enumerate(header):
-#         max_length = max(len(str(row[col_num])) for row in data) if data else len(col_name)
-#         col_width = min(max_length + 2, max_column_width)
-#         locationsheet.set_column(col_num, col_num, col_width)
-    
-#     workbook.close()
-#     output.seek(0)  # Reset file pointer to start
-#     return output
-
-# this version uses place name as the worksheets title
 # Function to sanitize sheet names by replacing invalid characters
 def sanitize_sheet_name(sheet_name):
     # List of invalid characters for Excel sheet names

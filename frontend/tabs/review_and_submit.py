@@ -2,8 +2,8 @@ import streamlit as st
 
 from styles.icons.icons import warning_icon
 from components.validation_functions import validate_user_id, validate_token, validate_establishment_search, validate_bounding_box
-from components.post_request_and_download import text_search_post_request
-# from components.post_request_and_download import mock_post_request
+# from components.post_request_and_download import text_search_post_request
+from components.post_request_and_download import mock_post_request
 
 from components.auto_scroller import scroll_to_top_of_submit
 
@@ -59,21 +59,21 @@ def review_and_submit():
     use_container_width=False, 
     )
 
-    # if submit_button: # for mocking
-    #     mock_post_request()
+    if submit_button: # for mocking
+        mock_post_request()
 
-    if submit_button:
-        validated_user_id = validate_user_id(st.session_state['user_id'])
-        validated_token = validate_token(st.session_state['token_input'])
-        validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
-        validated_bounding_box = validate_bounding_box(st.session_state['map'])
-        scroll_to_top_of_submit()
+    # if submit_button:
+    #     validated_user_id = validate_user_id(st.session_state['user_id'])
+    #     validated_token = validate_token(st.session_state['token_input'])
+    #     validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
+    #     validated_bounding_box = validate_bounding_box(st.session_state['map'])
+    #     scroll_to_top_of_submit()
 
-        if validated_user_id and validated_token and validated_establishment_search and validated_bounding_box:
-            with st.spinner():
-                text_search_post_request()
-        else:
-            st.write('Validation Failed')
+    #     if validated_user_id and validated_token and validated_establishment_search and validated_bounding_box:
+    #         with st.spinner():
+    #             text_search_post_request()
+    #     else:
+    #         st.write('Validation Failed')
 
         
 

@@ -3,7 +3,8 @@ import requests
 import streamlit as st
 from datetime import datetime
 
-from .create_excel import json_to_excel
+# from .create_excel import json_to_excel
+from .outputv5 import json_to_excel
 
 # the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
 # handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
@@ -36,7 +37,7 @@ def generate_download_html(base64_data, download_filename):
 
 @st.fragment
 def auto_download_excel(in_memory_file):
-    """Injects JavaScript download logic into Streamlit using an in-memory file."""
+    # Injects JavaScript download logic into Streamlit using an in-memory file.
     formatted_time = datetime.now().strftime("%Y%m%d_%H%M")
     download_filename = f"{formatted_time}.xlsx"
 
@@ -93,8 +94,51 @@ def text_search_post_request():
         # Catch any other unforeseen errors
         st.error(f"An unexpected error occurred: {e}")
 
+@st.fragment
+def mock_post_request():
+    import os
+    import json
+    """Mock version of the POST request that reads from a local JSON file instead of making an API call."""
+    
+    # Get the path to the current directory where the script is running
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Build the full file path to your JSON file
+    file_path = os.path.join(current_dir, 'sample_response_modified.json')
+
+    try:
+        # Read the local JSON file
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # Check if the data is valid (non-empty)
+        if not data:
+            raise ValueError("Received empty or invalid JSON from the local file.")
+        
+        # Generate Excel file in memory using the data read from the file
+        in_memory_file = json_to_excel(data)
+
+        # Auto-download in browser
+        auto_download_excel(in_memory_file)
+
+    except FileNotFoundError:
+        # Handle case where the file does not exist
+        st.error(f"File {file_path} not found. Please check the file path.")
+    except json.JSONDecodeError:
+        # Handle case where the JSON is invalid
+        st.error(f"Error decoding JSON from the file {file_path}. Please check the file format.")
+    except ValueError as e:
+        # Handle case where the response is empty or invalid
+        st.error(f"Invalid response received from the local file: {e}")
+    except Exception as e:
+        # Catch any other unforeseen errors
+        st.error(f"An unexpected error occurred: {e}")
+
+
+
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     generate_download_html()
     auto_download_excel()
     text_search_post_request()
+    mock_post_request()
