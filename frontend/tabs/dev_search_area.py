@@ -8,16 +8,48 @@
 # legend for the map signifying red is active box
 # test the shit out of the bbox coords 
 # styling for the whole tab
+# if you draw a box first, then drop a pin, it re-snaps back to the drawn box
 
 import folium
 import streamlit as st
 from streamlit_folium import st_folium
 from folium.plugins import Draw
+from branca.element import Template, MacroElement
 
 from components.validation_functions import validate_location
 
 def generate_map():
+    # create the map
     m = folium.Map(location=st.session_state['location_validation_results'], zoom_start=st.session_state['map_zoom_level'])
+
+    # Add the legend with the modified template
+    legend_template = """
+    {% macro html(this, kwargs) %}
+    <div id='maplegend' class='maplegend' 
+        style='position: absolute; z-index: 9999; background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 6px; padding: 10px; font-size: 12px; left: 15px; bottom: 35px;'>     
+        <div class='legend-scale'>
+        <ul class='legend-labels'>
+            <li><span style='background-color: lightblue; border: 2px solid red; opacity: 0.75;'></span>Box Used For Query</li>
+            <li><span style='background-color: lightblue; border: 2px solid blue; opacity: 0.75;'></span>Inactive Bounding Box</li>
+        </ul>
+        </div>
+    </div> 
+    <style type='text/css'>
+    .maplegend .legend-scale ul {margin: 0; padding: 0; color: #0f0f0f;}
+    .maplegend .legend-scale ul li {list-style: none; line-height: 22px; margin-bottom: 1.5px;}
+    .maplegend ul.legend-labels li span {float: left; height: 16px; width: 16px; margin-right: 4.5px; border-radius: 3px;}
+    </style>
+    {% endmacro %}
+    """
+
+    # Create the macro element
+    macro = MacroElement()
+    macro._template = Template(legend_template)
+
+    # Add the legend to the map
+    m.get_root().add_child(macro)
+
     return m
 
 def check_for_duplicate_boxes(bounds):
