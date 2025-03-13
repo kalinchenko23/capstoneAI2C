@@ -1,138 +1,286 @@
 import xlsxwriter
+
 import json
+
 import copy
-import io
+
 import re
 
-#TODO: some issues to consider-
-# there are a number of rules assosciated with naming an excel sheet (special characters, length, etc...)
-# a big one is they cant be duplicated
-# I implemented a system that sanitizes, truncates, and increments them if needed (McDonalds, McDonalds2, etc.)
-# But this made me realize that with up to 60 sheets in an excel, its gonna be REALLY hard for the user to correlate these increments to the og
-# don't plan on fixing it now but its something we are going to have to deal with
+import io
 
-# pin main tab to the bottom of workbook
-# link to corresponding tab
-# change tab name to: (place name + x digits of address) ex: 'Starbucks 1015'
+
 
 def json_to_dict(j_file):
+
     if isinstance(j_file, str):
+
         with open(j_file, "r", encoding="utf-8") as file:
+
             dictionary = json.load(file)
+
     else:
+
         dictionary = copy.deepcopy(j_file)
+
     return dictionary
 
+
+
 def format_hours(business_hours_list):
-    return "\n".join(business_hours_list) if business_hours_list else "Hours unavailable"
 
-def head_format():
-    return {'bold': True, 'font_size': 14, 'bg_color': '#C6EFCE', 'border': 1, 'align': 'center', 'valign': 'vcenter'}
+    return "\n".join(business_hours_list) if isinstance(business_hours_list, list) else business_hours_list
 
-def bod_format():
-    return {'border': 1, 'align': 'left', 'valign': 'vcenter'}
 
-def links_format():
-    return {'border': 1, 'align': 'left', 'valign': 'vcenter', 'font_color': 'blue', 'underline': 1}
 
-def hour_format():
-    return {'border': 1, 'align': 'left', 'valign': 'top', 'text_wrap': True}
+def create_formats(workbook):
+
+    return {
+
+        'header': workbook.add_format({
+
+            'bold': True, 'font_size': 14, 'bg_color': '#C6EFCE', 'border': 1, 'align': 'center', 'valign': 'vcenter'
+
+        }),
+
+        'body': workbook.add_format({'border': 1, 'align': 'left', 'valign': 'vcenter', 'text_wrap': True}),
+
+        'link': workbook.add_format({'border': 1, 'align': 'left', 'valign': 'vcenter', 'font_color': 'blue', 'underline': 1}),
+
+        'hours': workbook.add_format({'border': 1, 'align': 'left', 'valign': 'top', 'text_wrap': True})
+
+    }
+
+
+
+def adjust_column_widths(sheet):
+
+    column_widths = [20, 30, 15, 12, 12, 20, 30, 40, 15, 25, 10, 15, 40, 40, 40, 20]
+
+    for i, width in enumerate(column_widths):
+
+        sheet.set_column(i, i, width)
+
+
+
+def adjust_row_heights(sheet, max_height=100):
+
+    for row in range(1, 1000):  # Assuming a large enough row count
+
+        sheet.set_row(row, max_height)
+
+
 
 def get_string(data, val):
-    return str(data.get(val, "unavailable"))
+
+    return str(data.get(val, "unavailable")) if isinstance(data, dict) else str(data)
+
+
 
 def get_list(data, val):
-    return data.get(val, "unavailable")
 
-def get_cid(data):
-    if isinstance(data.get('reviews'), str):
-        return get_string(data, 'name')[:31]  # Ensure the name is truncated to 31 characters
-    try:
-        position = data['reviews'][0].rfind(':')
-        cid = data['reviews'][0][position+1:]
-        return cid[:31]  # Ensure the cid is truncated to 31 characters
-    except:
-        return get_string(data, 'name')[:31]  # Truncate name if something goes wrong
+    return data.get(val, "unavailable") if isinstance(data, dict) else "unavailable"
 
-# Function to sanitize sheet names by replacing invalid characters
-def sanitize_sheet_name(sheet_name):
-    # List of invalid characters for Excel sheet names
-    invalid_chars = r'[\\/\[\]\*\?:]'
+
+
+def get_review_list(data):
+
+    reviews = data.get('reviews', []) if isinstance(data, dict) else data
+
+    if isinstance(reviews, str):
+
+        return reviews
+
+    if not isinstance(reviews, list):
+
+        return 'Reviews data is not in the expected format'
+
+    return "\n".join([item.get("review_url", "No URL") for item in reviews if isinstance(item, dict)]) or 'Reviews are not provided'
+
+
+
+def get_vlm_summary(data):
+
+    photos = data.get('photos', []) if isinstance(data, dict) else data
+
+    if isinstance(photos, str):
+
+        return photos
+
+    return "\n".join([item.get("vlm_insight", "No Insight") for item in photos]) or 'Photos are not provided'
+
+
+
+def get_cid(uri):
+
+    cid = re.search(r'cid=(\d+)', uri)
+
+    return cid.group(1) if cid else 'No cid number'
+
+
+
+def create_main_sheet(workbook, formats):
+
+    sheet = workbook.add_worksheet("Locations")
+
+    header = ('Name', 'Address', 'Phone', 'Latitude', 'Longitude', 'Hours',
+
+              'Website', 'Google URL', 'CID', 'Review Summary', 'Rating',
+
+              'Review Range', 'Summary of Image', 'Photos URL', 'Review Link', 'Images Link')
+
+    sheet.write_row(0, 0, header, formats['header'])
+
+    sheet.freeze_panes(1, 0)
+
+    adjust_column_widths(sheet)
+
+    adjust_row_heights(sheet)
+
+    return sheet
+
+
+
+def create_detail_sheet(workbook, name, cid, reviews, formats):
+
+    sheet_name = (name[:15] if len(name) > 15 else name) + '_' + cid[:10]
+
+    sheet = workbook.add_worksheet(sheet_name)
+
+    header = ('CID', 'Name', 'Address', 'Author', 'Original Text', 'Original Lang', 'Translated',
+
+              'Rating', 'Date', 'URL')
+
+    sheet.write_row(0, 0, header, formats['header'])
+
+    sheet.freeze_panes(1, 0)
+
+    adjust_column_widths(sheet)
+
+    adjust_row_heights(sheet)
+
     
-    # Replace invalid characters with an underscore
-    sheet_name = re.sub(invalid_chars, '_', sheet_name)
+
+    if isinstance(reviews, str):
+
+        sheet.write(1, 0, reviews, formats['body'])
+
+    else:
+
+        for row_num, review in enumerate(reviews, start=1):
+
+            sheet.write(row_num, 0, cid, formats['body'])
+
+            sheet.write(row_num, 1, name, formats['body'])
+
+            sheet.write(row_num, 2, get_string(review, 'address'), formats['body'])
+
+            sheet.write(row_num, 3, get_string(review, 'author_name'), formats['body'])
+
+            sheet.write(row_num, 4, get_string(review, 'original_text'), formats['body'])
+
+            sheet.write(row_num, 5, get_string(review, 'original_language'), formats['body'])
+
+            sheet.write(row_num, 6, get_string(review, 'text'), formats['body'])
+
+            sheet.write(row_num, 7, get_string(review, 'rating'), formats['body'])
+
+            sheet.write(row_num, 8, get_string(review, 'publish_date'), formats['body'])
+
+            sheet.write(row_num, 9, get_string(review, 'review_url'), formats['link'])
+
     
-    # Remove leading or trailing apostrophes if any
-    sheet_name = sheet_name.strip("'")
+
+    return sheet_name
+
+
+
+def create_images_sheet(workbook, name, cid, addr, photos, formats):
+
+    sheet_name = (name[:13] if len(name) > 13 else name) + '_images_' + cid[:10]
+
+    sheet = workbook.add_worksheet(sheet_name)
+
+    header = ('CID', 'Name', 'Address', 'Tags', 'Summary', 'Link')
+
+    sheet.write_row(0, 0, header, formats['header'])
+
+    sheet.freeze_panes(1, 0)
+
+    adjust_column_widths(sheet)
+
+    adjust_row_heights(sheet)
+
     
-    # Ensure the name doesn't exceed 31 characters
-    return sheet_name[:31]
+
+    if isinstance(photos, str):
+
+        sheet.write(1, 0, photos, formats['body'])
+
+    else:
+
+        for row_num, photos in enumerate(photos, start=1):
+
+            sheet.write(row_num, 0, cid, formats['body'])
+
+            sheet.write(row_num, 1, name, formats['body'])
+
+            sheet.write(row_num, 2, addr, formats['body'])
+
+            sheet.write(row_num, 3, "PENDING", formats['body'])
+
+            sheet.write(row_num, 4, get_string(photos, 'vlm_insight'), formats['body'])
+
+            sheet.write(row_num, 5, get_string(photos, 'url'), formats['link'])
+
+    return sheet_name
+
+
 
 def json_to_excel(j_file):
     mydict = json_to_dict(j_file)
     output = io.BytesIO()  # Create an in-memory file
     workbook = xlsxwriter.Workbook(output)
-    locationsheet = workbook.add_worksheet("Locations")
     
-    header = ('Name', 'Address', 'Phone', 'Latitude', 'Longitude', 'Hours', 'Rating', 'Website')
-    header_format = workbook.add_format(head_format())
-    locationsheet.write_row(0, 0, header, header_format)
+    formats = create_formats(workbook)
+    locations_sheet = create_main_sheet(workbook, formats)
     
-    body_format = workbook.add_format(bod_format())
-    hours_format = workbook.add_format(hour_format())
-    link_format = workbook.add_format(links_format())
-    
-    data = []
-    sheet_names_used = set()  # Set to keep track of sheet names already used
-    for location in mydict['places']:
+    for row_num, location in enumerate(mydict['places'], start=1):
         name = get_string(location, 'name')
-        website = get_string(location, 'website')
-        phone = get_string(location, 'phone_number')
+        cid = get_cid(get_string(location, 'google_maps_url'))
         addr = get_string(location, 'address')
-        lat = get_string(location, 'latitude')
-        lng = get_string(location, 'longitude')
-        rating = get_string(location, 'rating')
-        hours = format_hours(get_list(location, 'working_hours'))
-        data.append((name, addr, phone, lat, lng, hours, rating, website))
         
-        # Truncate name to 31 characters and sanitize it
-        base_sheet_name = sanitize_sheet_name(name[:31])  # Truncate first, then sanitize
+        worksheet_review_name = create_detail_sheet(workbook, name, cid, location.get('reviews', []), formats)
+        worksheet_images_name = create_images_sheet(workbook, name, cid, addr, location.get('photos', []), formats)
         
-        # Handle duplicate sheet names by appending a number
-        sheet_name = base_sheet_name
-        increment = 2
-        while sheet_name in sheet_names_used:
-            sheet_name = f"_{base_sheet_name} {increment}"  # Prepend an underscore for safety
-            # Ensure sheet name doesn't exceed 31 characters
-            if len(sheet_name) > 31:
-                sheet_name = f"_{base_sheet_name[:28]} {increment}"  # Adjust length if necessary
-            increment += 1
+        worksheet_review_link = f"internal:'{worksheet_review_name}'!A1"
+        worksheet_images_link = f"internal:'{worksheet_images_name}'!A1" 
         
-        sheet_names_used.add(sheet_name)  # Add the new sheet name to the set
-        temp = workbook.add_worksheet(sheet_name)
-        temp.write(0, 0, "Picture Links", header_format)
-        photos = get_list(location, 'photos')
-        if isinstance(photos, str):
-            temp.write(1, 0, photos)
-        else:
-            for row_num, link in enumerate(photos):
-                temp.write(row_num+1, 0, link, link_format)
-    
-    for row_num, row_data in enumerate(data, start=1):
-        for col_num, value in enumerate(row_data):
-            format_to_use = hours_format if col_num == 6 else body_format
-            locationsheet.write(row_num, col_num, value, format_to_use)
-    
-    max_column_width = 90
-    for col_num, col_name in enumerate(header):
-        max_length = max(len(str(row[col_num])) for row in data) if data else len(col_name)
-        col_width = min(max_length + 2, max_column_width)
-        locationsheet.set_column(col_num, col_num, col_width)
+        data_tuple = (
+            name, 
+            addr, 
+            get_string(location, 'phone_number'),
+            get_string(location, 'latitude'), 
+            get_string(location, 'longitude'),
+            format_hours(get_list(location, 'working_hours')),
+            get_string(location, 'website'), 
+            get_string(location, 'google_maps_url'),
+            cid,
+            get_string(location, 'reviews_summary'),
+            get_string(location, 'rating'),
+            get_string(location, 'reviews_span'),
+            "PENDING",
+            get_string(location, 'url_to_all_photos'),
+            worksheet_review_link,
+            worksheet_images_link
+        )
+        
+        for col_num, value in enumerate(data_tuple):
+            if isinstance(value, list):
+                value = "\n".join(map(str, value))
+            format_to_use = formats['link'] if col_num in (14, 15) or (isinstance(value, str) and value.startswith("http")) else formats['body']
+            locations_sheet.write(row_num, col_num, value, format_to_use)
     
     workbook.close()
     output.seek(0)  # Reset file pointer to start
     return output
-
-
-
 
