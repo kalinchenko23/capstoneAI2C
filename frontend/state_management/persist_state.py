@@ -11,6 +11,8 @@ def persist_state():
     st.session_state['location_input'] = st.session_state['location_input']
     st.session_state['location_type'] = st.session_state['location_type']
     st.session_state['location_validation_results'] = st.session_state['location_validation_results']
+    st.session_state['sw_coord'] = st.session_state['sw_coord']
+    st.session_state['ne_coord'] = st.session_state['ne_coord']
     st.session_state['map_center'] = st.session_state['map_center']
     st.session_state['map_zoom_level'] = st.session_state['map_zoom_level']
     st.session_state['points_feature_group'] = st.session_state['points_feature_group']

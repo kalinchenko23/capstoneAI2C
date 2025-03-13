@@ -26,6 +26,14 @@ def initialize_state():
     if 'location_validation_results' not in st.session_state:
         st.session_state['location_validation_results'] = None
 
+    # init state variable that tracks the 'sw coordinate' input field
+    if 'sw_coord' not in st.session_state:
+        st.session_state['sw_coord'] = ''
+
+    # init state variable that tracks the 'ne coordinate' input field
+    if 'ne_coord' not in st.session_state:
+        st.session_state['ne_coord'] = ''
+
     # initialize state variable that tracks the center of the map
     if 'map_center' not in st.session_state:
         st.session_state['map_center'] = (0,0)

@@ -61,10 +61,10 @@ def search_area():
 
             location = location_column.text_input(
                 'location', 
-                value="", 
+                value='', 
                 key='location_input', 
                 placeholder='location', 
-                label_visibility="collapsed"
+                label_visibility='collapsed'
             )
 
             location_type = location_type_column.selectbox(
@@ -72,8 +72,8 @@ def search_area():
                 options=['Lat/Lon', 'MGRS', 'Address'],
                 index=0, 
                 key='location_type', 
-                placeholder="Choose an option", 
-                label_visibility="collapsed"
+                placeholder='Choose an option', 
+                label_visibility='collapsed'
             )
 
             with st.container(border=True):
@@ -116,7 +116,7 @@ def search_area():
 
             sw_coord = sw_coord_column.text_input(
                 'sw coordinate', 
-                value='14.108807, 24.4347374', 
+                value='', 
                 key='sw_coord',  
                 placeholder='sw coordinate', 
                 label_visibility="collapsed"
@@ -124,7 +124,7 @@ def search_area():
 
             ne_coord = ne_coord_column.text_input(
                 'ne coordinate', 
-                value='43.336315, 77.1691130', 
+                value='', 
                 key='ne_coord',  
                 placeholder='ne coordinate', 
                 label_visibility="collapsed"
