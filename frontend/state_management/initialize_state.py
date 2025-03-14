@@ -81,7 +81,7 @@ def initialize_state():
 
      # initialize state variable that tracks the 'user_id' input field
     if 'vlm_input' not in st.session_state:
-        st.session_state['vlm_input'] = 'fuck'
+        st.session_state['vlm_input'] = ''
         
     # initialize state variable that tracks the 'Include KML/KMZ Download' toggle in 'Query Options'
     if 'kml_download_option' not in st.session_state:

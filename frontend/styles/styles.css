@@ -35,10 +35,30 @@ iframe[data-testid="stIFrame"] {
     gap: 10px !important;
 }
 
-.stElementContainer[class*='st-key-add_pin_button'] {
+/* .stElementContainer[class*='st-key-add_pin_button']:nth-child(2) {
+    background-color: green !important;
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+} */
+
+
+/* ensures the pin buttons are aligned properly */
+.stElementContainer[class*='st-key-add_pin_button']:first-child {
     width: 80px !important;
 }
 
+/* sets the width of any validation errors that occur when dropping a pin */
+div.stVerticalBlock.st-key-pin_controls div[data-testid="stAlert"] {
+min-width: 300px;
+}
+
+/* ensures the bounding box buttons are aligned properly */
 .stElementContainer[class*='st-key-draw_box_button'] {
     width: 160px !important;
+}
+
+/* sets the width of any validation errors that occur when drawing a box */
+div.stVerticalBlock.st-key-box_controls div[data-testid="stAlert"] {
+    min-width: 300px;
 }

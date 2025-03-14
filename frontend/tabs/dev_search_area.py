@@ -9,6 +9,7 @@
 # test the shit out of the bbox coords 
 # styling for the whole tab
 # if you draw a box first, then drop a pin, it re-snaps back to the drawn box
+# errors now look stupid because of the styling
 
 import folium
 import streamlit as st
@@ -80,6 +81,12 @@ def calculate_center_of_bbox(bounds):
     center_lon = (lon_min + lon_max) / 2
     
     return (center_lat, center_lon)
+
+def force_map_rerender(m):
+    # Creating an invisible marker and adding it directly to the map
+    # this causes the map to rerender and gets rid of any boxes in folium's default feature group
+    invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
+    folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
 
 @st.fragment
 def search_area():
@@ -206,10 +213,11 @@ def search_area():
                     st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
                     st.session_state['map']['last_active_drawing'] = []
 
-                    # Creating an invisible marker and adding it directly to the map
-                    # this causes the map to rerender and gets rid of any boxes in folium's default feature group
-                    invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
-                    folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
+                    # # Creating an invisible marker and adding it directly to the map
+                    # # this causes the map to rerender and gets rid of any boxes in folium's default feature group
+                    # invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
+                    # folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
+                    force_map_rerender(m)
 
                     # because the map is rerendering, we need to maintain the maps current zoom level and center
                     current_center_lat = st.session_state['map']['center']['lat']
@@ -269,9 +277,7 @@ def search_area():
                         bounds=bounds, 
                         color='blue', 
                         fill=True
-                    ).add_to(st.session_state['rectangle_feature_group'])
-
-                    st.rerun() # rerenders the map so that a newly drawn shape is immediately being tracked
+                    ).add_to(st.session_state['rectangle_feature_group']) 
 
         # Updated draw options to disable unwanted tools
         draw_options = {
@@ -296,6 +302,8 @@ def search_area():
 
                   feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
                   width=600, height=350, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
+        
+        force_map_rerender(m)
         
 
     # # Display the last active drawing coordinates
