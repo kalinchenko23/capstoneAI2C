@@ -6,8 +6,6 @@
 # check for duplicate pins... yay
 # change how youre deleting the pins to match how youre deleting the boxes?
 # test the shit out of the bbox coords 
-# if you draw a box first, then drop a pin, it re-snaps back to the drawn box
-# same with first draw then drop box
 
 import folium
 import streamlit as st
@@ -18,8 +16,12 @@ from branca.element import Template, MacroElement
 from components.validation_functions import validate_location
 
 def generate_map():
+
     # create the map
-    m = folium.Map(location=st.session_state['location_validation_results'], zoom_start=st.session_state['map_zoom_level'])
+    m = folium.Map(location=st.session_state['location_validation_results'], zoom_start=st.session_state['map_zoom_level'], max_bounds=True)
+
+
+    
 
     # Add the legend with the modified template
     legend_template = """
@@ -86,6 +88,7 @@ def force_map_rerender(m):
     invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
     folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
 
+
 @st.fragment
 def search_area():
     m = generate_map()
@@ -141,6 +144,7 @@ def search_area():
                                 }
 
                         st.session_state['map']['last_active_drawing'] = new_pin
+                        force_map_rerender(m)
 
                 if st.button('Delete Pins'):
                     st.session_state['points_feature_group'] = folium.FeatureGroup('points')
@@ -172,49 +176,50 @@ def search_area():
                     st.session_state['validated_sw_coord'] = validate_location(sw_coord, location_type)
                     st.session_state['validated_ne_coord'] = validate_location(ne_coord, location_type)
 
-                    # if the input coords are validated:
+                    # ensure the input coordinates are valid
                     if st.session_state['validated_sw_coord'] and st.session_state['validated_ne_coord']:
+                        # Get the southwest and northeast coordinates
+                        sw_lat, sw_lon = st.session_state['validated_sw_coord']
+                        ne_lat, ne_lon = st.session_state['validated_ne_coord']
 
-                        # put the coordinates into the correct format for duplication checking and creating the feature
-                        bounds = [(st.session_state['validated_sw_coord']), (st.session_state['validated_ne_coord'])]
+                        # Ensure that the SW coordinates have lower lat/lon and NE coordinates have higher lat/lon
+                        lat_min = min(sw_lat, ne_lat)
+                        lat_max = max(sw_lat, ne_lat)
+                        lon_min = min(sw_lon, ne_lon)
+                        lon_max = max(sw_lon, ne_lon)
 
-                        # ensure a box with those coordinates doesn't already exist
+                        # Now create the bounds with the corrected coordinates
+                        bounds = [(lat_min, lon_min), (lat_max, lon_max)]
+
+                        # Check for duplicates and create the rectangle if it doesn't already exist
                         if not check_for_duplicate_boxes(bounds):
-
-                            # create the box and add it to the rectangles feature group
                             folium.Rectangle(
                                 bounds=bounds, 
                                 color='red', 
-                                fill=True
+                                fill=True, 
+                                fillColor='blue'
                             ).add_to(st.session_state['rectangle_feature_group'])
 
-                            # edit the "last_active_drawing" in session state to reflect the new box
-                            sw_lat, sw_lon = st.session_state['validated_sw_coord']
-                            ne_lat, ne_lon = st.session_state['validated_ne_coord']
-                            
+                            # Store the last active drawing as the new bounding box
                             new_bounding_box = {
-                                "type":"Feature",
-                                "properties":{},
-                                "geometry":{
-                                    "type":"Polygon",
-                                    "coordinates":[[
-                                                    [sw_lon, sw_lat],  # SW corner 
-                                                    [sw_lon, ne_lat],  # NW corner 
-                                                    [ne_lon, ne_lat],  # NE corner 
-                                                    [ne_lon, sw_lat],  # SE corner 
-                                                    [sw_lon, sw_lat]   # Closing back at SW corner (Southwest)
-                                                    ]]}}
+                                "type": "Feature",
+                                "properties": {},
+                                "geometry": {
+                                    "type": "Polygon",
+                                    "coordinates": [
+                                        [[lon_min, lat_min], [lon_min, lat_max], [lon_max, lat_max], [lon_max, lat_min], [lon_min, lat_min]]
+                                    ]
+                                }
+                            }
                             
-                            st.session_state['map']['last_active_drawing'] = new_bounding_box 
+                            st.session_state['map']['last_active_drawing'] = new_bounding_box
+                            force_map_rerender(m)
+
 
                 if st.button('Delete Boxes', key='delete_box_button'):
                     st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
                     st.session_state['map']['last_active_drawing'] = []
 
-                    # # Creating an invisible marker and adding it directly to the map
-                    # # this causes the map to rerender and gets rid of any boxes in folium's default feature group
-                    # invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
-                    # folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
                     force_map_rerender(m)
 
                     # because the map is rerendering, we need to maintain the maps current zoom level and center
@@ -222,10 +227,6 @@ def search_area():
                     current_center_lon = st.session_state['map']['center']['lng']
                     st.session_state['map_center'] = (current_center_lat, current_center_lon)
                     st.session_state['map_zoom_level'] = st.session_state['map']['zoom']
-
-                    
-                    
-                    
 
         # Handle new drawings from the user
         if 'map' in st.session_state and st.session_state['map']['last_active_drawing']:
@@ -269,7 +270,6 @@ def search_area():
                             # st.write(f'{child} is not active')
                             child.options['color'] = 'blue'
                         
-                # Check if this is the last active drawing and set color to red, else blue
                 if not already_exists:
                     folium.Rectangle(
                         bounds=bounds, 
@@ -299,25 +299,10 @@ def search_area():
                   center=st.session_state['map_center'],
 
                   feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
-                  width=600, height=350, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
+                  width=600, height=500, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
         
         force_map_rerender(m)
         
-
-    # # Display the last active drawing coordinates
-    # try:
-    #     coords = st.session_state['map']['last_active_drawing']['geometry']['coordinates']
-    #     bb = {
-    #         'sw_coord': (coords[0][0][1], coords[0][0][0]), 
-    #         'ne_coord': (coords[0][2][1], coords[0][2][0])
-    #     }
-    #     st.write(bb)
-    # except:
-    #     pass
-
-    # st.write(st.session_state['map'])
-    # st.write(st.session_state['map']['zoom'])
-    # st.write(st.session_state['map_zoom_level'])
     st.write(st.session_state['map']['last_active_drawing'])
 
 if __name__ == "__main__":

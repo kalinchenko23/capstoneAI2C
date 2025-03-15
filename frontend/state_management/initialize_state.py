@@ -40,7 +40,7 @@ def initialize_state():
 
     # initialize state variable that tracks the zoom level for the map
     if 'map_zoom_level' not in st.session_state:
-        st.session_state['map_zoom_level'] = 1
+        st.session_state['map_zoom_level'] = 2
 
     # initialize feature group for points dropped on map
     if 'points_feature_group' not in st.session_state:
@@ -59,7 +59,7 @@ def initialize_state():
         st.session_state['map'] = {
             'all_drawings': [], 
             'last_active_drawing': [], 
-            'zoom': 1, 
+            'zoom': 2, 
             'center': {'lat': 0, 'lng': 0}
         }
 
