@@ -303,7 +303,7 @@ def search_area():
         
         force_map_rerender(m)
         
-    st.write(st.session_state['map']['last_active_drawing'])
+    # st.write(st.session_state['map']['last_active_drawing'])
 
 if __name__ == "__main__":
     search_area()

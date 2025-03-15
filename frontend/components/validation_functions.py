@@ -129,8 +129,11 @@ def validate_establishment_search(establishment_search_input):
 #         return map
 
 def validate_bounding_box(map):
-    if len(map['last_active_drawing']) == 0:
-        st.error('you must provide a valid search area', icon=validation_error_icon) 
+    # Check if the 'last_active_drawing' is present and valid
+    if not map.get('last_active_drawing'):
+        st.error('You must provide a valid search area', icon=validation_error_icon)
+    elif len(map['last_active_drawing']) == 0:
+        st.error('You must provide a valid search area', icon=validation_error_icon)
     else:
         return map
     

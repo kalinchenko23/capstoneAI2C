@@ -36,3 +36,5 @@ elif st.session_state['active_tab'] == 'Query Options':
       query_options()
 elif st.session_state['active_tab'] == 'Review + Submit':
       review_and_submit()
+
+st.write(st.session_state['map'])
