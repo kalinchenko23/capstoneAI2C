@@ -4,12 +4,10 @@
 
 # TODO:
 # check for duplicate pins... yay
-# change how your deleting the pins to match how youre deleting the boxes?
-# legend for the map signifying red is active box
+# change how youre deleting the pins to match how youre deleting the boxes?
 # test the shit out of the bbox coords 
-# styling for the whole tab
 # if you draw a box first, then drop a pin, it re-snaps back to the drawn box
-# errors now look stupid because of the styling
+# same with first draw then drop box
 
 import folium
 import streamlit as st
@@ -60,7 +58,7 @@ def check_for_duplicate_boxes(bounds):
     # Convert bounds to a list of lists for the comparison
     bounds = [list(bound) for bound in bounds]
 
-    # if the box already exists, set the value to True
+    # if the box already exists, set already_exists to True
     for child in st.session_state['rectangle_feature_group']._children.values():
             if isinstance(child, folium.Rectangle):
                 child_bounds = child.get_bounds()
@@ -320,6 +318,7 @@ def search_area():
     # st.write(st.session_state['map'])
     # st.write(st.session_state['map']['zoom'])
     # st.write(st.session_state['map_zoom_level'])
+    st.write(st.session_state['map']['last_active_drawing'])
 
 if __name__ == "__main__":
     search_area()
