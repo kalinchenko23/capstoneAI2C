@@ -3,7 +3,6 @@
 # user bbox2: -14.445651, -14.911131 | 29.678209, 33.604494
 
 # TODO:
-# check for duplicate pins... yay
 # change how youre deleting the pins to match how youre deleting the boxes?
 # test the shit out of the bbox coords 
 
@@ -16,12 +15,8 @@ from branca.element import Template, MacroElement
 from components.validation_functions import validate_location
 
 def generate_map():
-
     # create the map
     m = folium.Map(location=st.session_state['location_validation_results'], zoom_start=st.session_state['map_zoom_level'], max_bounds=True)
-
-
-    
 
     # Add the legend with the modified template
     legend_template = """
@@ -52,6 +47,24 @@ def generate_map():
     m.get_root().add_child(macro)
 
     return m
+
+def check_for_duplicate_pins(coords):
+    # value returned at end after comparison
+    already_exists = False
+
+    # convert coords to a list for the comparison
+    coords = [coords[0], coords[1]]
+
+    # if the box already exists, set already_exists to True
+    for child in st.session_state['points_feature_group']._children.values():
+        if isinstance(child, folium.Marker):
+            child_coords = child.get_bounds()[0]
+
+            if coords == child_coords:
+                already_exists = True
+                break
+
+    return already_exists
 
 def check_for_duplicate_boxes(bounds):
     # value returned at end after comparison
@@ -92,7 +105,7 @@ def force_map_rerender(m):
 @st.fragment
 def search_area():
     m = generate_map()
-
+    
     with st.container(border=True, key='map-container'):
         
         with st.container(border=True):
@@ -120,31 +133,35 @@ def search_area():
                 if st.button('Add Pin', key='add_pin_button'):
                     st.session_state['location_validation_results'] = validate_location(location, location_type)
 
+                    # ensure the coordinates are validated
                     if st.session_state['location_validation_results']:
-                        folium.Marker(
-                            location=st.session_state['location_validation_results'],
-                            popup=st.session_state['location_validation_results'], 
-                            icon=folium.Icon(color='red', icon='crosshairs', prefix='fa')
-                        ).add_to(st.session_state['points_feature_group'])
 
-                        # edit the "last_active_drawing" in session state to reflect the new pin
-                        lat = st.session_state['location_validation_results'][0]
-                        lon = st.session_state['location_validation_results'][1]
+                        # Check for duplicates and create the pin if it doesn't already exist
+                        if not check_for_duplicate_pins(st.session_state['location_validation_results']):
+                            folium.Marker(
+                                location=st.session_state['location_validation_results'],
+                                popup=st.session_state['location_validation_results'], 
+                                icon=folium.Icon(color='red', icon='crosshairs', prefix='fa')
+                            ).add_to(st.session_state['points_feature_group'])
 
-                        new_pin = {
-                                    "type": "Feature",
-                                    "properties": {},
-                                    "geometry": {
-                                        "type": "Point",
-                                        "coordinates": [
-                                            lon,
-                                            lat
-                                        ]
+                            # edit the "last_active_drawing" in session state to reflect the new pin
+                            lat = st.session_state['location_validation_results'][0]
+                            lon = st.session_state['location_validation_results'][1]
+
+                            new_pin = {
+                                        "type": "Feature",
+                                        "properties": {},
+                                        "geometry": {
+                                            "type": "Point",
+                                            "coordinates": [
+                                                lon,
+                                                lat
+                                            ]
+                                        }
                                     }
-                                }
 
-                        st.session_state['map']['last_active_drawing'] = new_pin
-                        force_map_rerender(m)
+                            st.session_state['map']['last_active_drawing'] = new_pin
+                            force_map_rerender(m)
 
                 if st.button('Delete Pins'):
                     st.session_state['points_feature_group'] = folium.FeatureGroup('points')
@@ -188,7 +205,7 @@ def search_area():
                         lon_min = min(sw_lon, ne_lon)
                         lon_max = max(sw_lon, ne_lon)
 
-                        # Now create the bounds with the corrected coordinates
+                        # create the bounds with the corrected coordinates
                         bounds = [(lat_min, lon_min), (lat_max, lon_max)]
 
                         # Check for duplicates and create the rectangle if it doesn't already exist
@@ -302,8 +319,6 @@ def search_area():
                   width=600, height=500, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
         
         force_map_rerender(m)
-        
-    # st.write(st.session_state['map']['last_active_drawing'])
 
 if __name__ == "__main__":
     search_area()
