@@ -1,11 +1,12 @@
 from fastapi import FastAPI, Query, Body, HTTPException
 from llm_service import get_review_summary
 from vlm_service import analyze_images_api, get_safe_prompt
+from deep_translator import GoogleTranslator
+from datetime import datetime
 import httpx
 import aiohttp
 import json
 import base64
-from datetime import datetime
 
 # Load the JSON secrets config
 with open("secrets.json") as config_file:
@@ -91,7 +92,7 @@ async def get_photo(name: str,api_key):
   
 
 
-async def response_formatter(responce,api_key):
+async def response_formatter(responce,api_key,prompt_info,tiers):
     """
     Extracts specific fields from a JSON response provided by GoogleAPI and formats them into a structured list of dictionaries.
 
@@ -101,12 +102,17 @@ async def response_formatter(responce,api_key):
     Returns:
         list: A list of formatted dictionaries containing relevant place information.
     """
-    result=[]
+    result=[] 
+    
+    #Generating prompt for VLM
+    vlm_prompt= get_safe_prompt(prompt_info)
 
     for place in responce:
         new_data={}
-        try:
-            new_data["name"]=place["displayName"]["text"]
+        try: 
+            new_data["name"]={}
+            new_data["name"]["original_name"]=place["displayName"]["text"]
+            new_data["name"]["translated_name"]= GoogleTranslator(source="auto",target='en').translate(place["displayName"]["text"])
         except KeyError as ex:
             new_data["name"]="Name is not provided"
         try:
@@ -136,72 +142,75 @@ async def response_formatter(responce,api_key):
             new_data["latitude"]="Latitude is not provided"
             new_data["longitude"]="Longitude is not provided"
             
-        try:
-
-            #Calling LLM summarization function
-            new_data["reviews_summary"] = get_review_summary(AZURE_OAI_ENDPOINT,AZURE_OAI_KEY,AZURE_OAI_DEPLOYMENT,place["reviews"])
-            new_data["reviews"] = []
-            ratings=[]
-            times=[]
-            for review in place["reviews"]:
-                #appends review link and origianl language
-                r={}
-                r["review_url"]=review["googleMapsUri"]
-                r["text"]=review["text"]["text"]
-                r["original_text"]=review["originalText"]["text"]
-                r["original_language"]=review["originalText"]["languageCode"]
-                r["author_name"]=review["authorAttribution"]["displayName"]
-                r["author_url"]=review["authorAttribution"]["uri"]
-                r["publish_date"]=review["relativePublishTimeDescription"]
-                r["rating"]=review["rating"]
-                new_data["reviews"].append(r)
+        if "reviews" in tiers:
+            try:
+                #Calling LLM summarization function
+                new_data["reviews_summary"] = get_review_summary(AZURE_OAI_ENDPOINT,AZURE_OAI_KEY,AZURE_OAI_DEPLOYMENT,place["reviews"])
+                new_data["reviews"] = []
+                ratings=[]
+                times=[]
+                for review in place["reviews"]:
+                    #appends review link and origianl language
+                    r={}
+                    r["author_name"]={}
+                    r["review_url"]=review["googleMapsUri"]
+                    r["text"]=review["text"]["text"]
+                    r["original_text"]=review["originalText"]["text"]
+                    r["original_language"]=review["originalText"]["languageCode"]
+                    r["author_name"]["original_name"]=review["authorAttribution"]["displayName"]
+                    r["author_name"]["translated_name"]= GoogleTranslator(source="auto",target='en').translate(review["authorAttribution"]["displayName"])
+                    r["author_url"]=review["authorAttribution"]["uri"]
+                    r["publish_date"]=review["relativePublishTimeDescription"]
+                    r["rating"]=review["rating"]
+                    new_data["reviews"].append(r)
+                    
+                    ratings.append(review["rating"])
+                    times.append(review["publishTime"])
                 
-                ratings.append(review["rating"])
-                times.append(review["publishTime"])
+                #Calculates average reviews value
+                average = sum(ratings) / len(ratings)
+                new_data["rating"]=f"average: {average} out of {len(ratings)} reviews"
+
+                #Calculates average time span
+                timestamp_objects = [datetime.fromisoformat(ts[:26]).date() for ts in times]
+                latest_date = max(timestamp_objects)
+                most_recent_date = min(timestamp_objects)
+                date_diff = latest_date - most_recent_date
+                new_data["reviews_span"]=f"latest date: {latest_date}, most recent date: {most_recent_date}, date difference: {date_diff.days} days"
+            except ValueError as ex:
+                new_data["reviews_span"]="Error retreiving timestamp"
+            except KeyError as ex:
+                new_data["reviews"]="Reviews are not provided"
+
+        if "photos" in tiers:
+            try:
+                new_data["url_to_all_photos"]=place["photos"][0]["googleMapsUri"]
+                new_data["photos"] = []
+                for photo in place["photos"]:
+                    photo_info={}
+                    #Retreiving photos
+                    encoded_photo=await get_photo(photo["name"],api_key)
+
+                    #Sending photos to VLM for the insight
+                    vlm_insight=await analyze_images_api(encoded_photo,vlm_prompt)
+                    photo_info["vlm_insight"]=vlm_insight
+                    photo_info["url"]=photo["googleMapsUri"]
+                    new_data["photos"].append(photo_info)
+            except KeyError as ex:
+                new_data["photos"]="Photos are not provided"
+
+            location=place["formattedAddress"]
             
-            #Calculates average reviews value
-            average = sum(ratings) / len(ratings)
-            new_data["rating"]=f"average: {average} out of {len(ratings)} reviews"
+            #Getting streetview image
+            try:
+                encoded_street_view_image = await getting_street_view_image(location,api_key)
+                street_view_info={}
+                street_view_info["vlm_insight"]=await analyze_images_api(encoded_street_view_image[1],vlm_prompt)
+                street_view_info["url"]= "URL contains api key, can't be exposed" #encoded_street_view_image[0]
+                new_data["street_view"]=street_view_info
+            except Exception as ex:
+                new_data["street_view"]="Street view is not provided"
 
-            #Calculates average time span
-            timestamp_objects = [datetime.fromisoformat(ts[:26]).date() for ts in times]
-            latest_date = max(timestamp_objects)
-            most_recent_date = min(timestamp_objects)
-            date_diff = latest_date - most_recent_date
-            new_data["reviews_span"]=f"latest date: {latest_date}, most recent date: {most_recent_date}, date difference: {date_diff.days} days"
-        except ValueError as ex:
-            new_data["reviews_span"]="Error retreiving timestamp"
-        except KeyError as ex:
-            new_data["reviews"]="Reviews are not provided"
-
-        keywords= ["business", "storefront", "street view"]
-        vlm_prompt=get_safe_prompt(keywords)
-        
-        try:
-            new_data["url_to_all_photos"]=place["photos"][0]["googleMapsUri"]
-            new_data["photos"] = []
-            for photo in place["photos"]:
-                photo_info={}
-                #Retreiving photos
-                encoded_photo=await get_photo(photo["name"],api_key)
-
-                #Sending photos to VLM for the insight
-                vlm_insight=await analyze_images_api(encoded_photo,vlm_prompt)
-                photo_info["vlm_insight"]=vlm_insight
-                photo_info["url"]=photo["googleMapsUri"]
-                new_data["photos"].append(photo_info)
-        except KeyError as ex:
-            new_data["photos"]="Photos are not provided"
-
-        location=place["formattedAddress"]
-        filename=place["displayName"]["text"]
-        
-        #Getting streetview images
-        encoded_street_view_image = await getting_street_view_image(location,api_key)
-        street_view_info={}
-        street_view_info["vlm_insight"]=await analyze_images_api(encoded_street_view_image[1],vlm_prompt)
-        street_view_info["url"]= "URL contains api key, can't be exposed" #encoded_street_view_image[0]
-        new_data["street_view"]=street_view_info
         try:
             new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
         except KeyError as ex:

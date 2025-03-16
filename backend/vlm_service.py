@@ -31,7 +31,7 @@ def get_safe_prompt(keywords):
     payload = {
         "messages": [
             {"role": "system", "content": "You are an AI assistant that reformulates user-provided keywords into safe and neutral image analysis prompts."},
-            {"role": "user", "content": f"Given the following keywords: {', '.join(keywords)}, create a professional and neutral prompt that can be used to describe an image focusing on these elements. Do not include any potentially sensitive content."}
+            {"role": "user", "content": f"Given the following information: {keywords}, create a professional and neutral prompt that can be used to describe an image focusing on these elements. Do not include any potentially sensitive content."}
         ],
         "model": DEPLOYMENT_NAME,
         "max_tokens": 100,

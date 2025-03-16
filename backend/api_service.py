@@ -57,7 +57,10 @@ async def search_nearby_places(text_query: str =Body(),
                                lng_sw: float = Body(),
                                lat_ne: float = Body(),
                                lng_ne: float = Body(),
-                               user_id = Body(), token: str =Body(),
+                               user_id = Body(), 
+                               token: str =Body(),
+                               prompt_info: str =Body(),
+                               tiers: list = Body(),
                                pageToken: Optional[str] = Body(default=None),
                                fieldMask: str = Body(default="places.displayName,places.types,places.websiteUri,places.nationalPhoneNumber,places.formattedAddress,places.location,places.reviews,places.photos,places.regularOpeningHours,places.googleMapsUri,nextPageToken")):
     
@@ -124,7 +127,7 @@ async def search_nearby_places(text_query: str =Body(),
         await next_page(response.json())
                     
         #Calling "responce_fromatter" helper function to provide relevant fields for the output file
-        data = await response_formatter(result,API_KEY)
+        data = await response_formatter(result,API_KEY,prompt_info,tiers)
         return {"places": data}
     else:
         raise HTTPException(status_code=401, detail="Invalid user credentials")
