@@ -62,3 +62,13 @@ min-width: 300px;
 div.stVerticalBlock.st-key-box_controls div[data-testid="stAlert"] {
     min-width: 300px;
 }
+
+/* style for review section */
+/* div.stVerticalBlock.st-key-review-submit-container div[data-testid="stVerticalBlock"] {
+    background-color: pink;
+} */
+
+div.stVerticalBlock.st-key-review-submit-container div[data-testid="stColumn"]:first-of-type {
+    border-right: 1px solid rgb(168, 163, 168);
+}
+

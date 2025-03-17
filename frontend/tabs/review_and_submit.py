@@ -2,50 +2,81 @@ import streamlit as st
 
 from styles.icons.icons import warning_icon
 from components.validation_functions import validate_user_id, validate_token, validate_establishment_search, validate_bounding_box, validate_photo_caption_keywords
-# from components.post_request_and_download import text_search_post_request
+from components.post_request_and_download import text_search_post_request
 from components.post_request_and_download import mock_post_request
 
 from components.auto_scroller import scroll_to_top_of_submit
 
 # TODO:
 # build out a nice looking review for the user that highlights all of the options they have chosen
+# error handling for 'Failed to establish a new connection'
+# when error messages display, they are all stacked up at the bottom. Could probably be done better
 
 @st.fragment
 def review_and_submit():
-    #
+    # display warning for the user
+    
+    st.warning('Submitting a query **will** incur a cost for your organization based on the query options you have selected.', 
+                icon=warning_icon)
+    
     with st.container(border=True, key='review-submit-container'):
-        st.warning('Submitting a query **will** incur a cost for your orginaztion based on the query options you have selected.', 
-                   icon=warning_icon)
+        inputs_column, outputs_column = st.columns(2)
         
+        # determine which 'tiers' of data are being requested
+        requested_results = ''
+        if st.session_state['basic_data_checkbox']:
+            requested_results += 'Basic Admin data'
+        if st.session_state['include_reviews_checkbox']:
+            requested_results += ', Review Summaries'
+        if st.session_state['include_photo_captioning_checkbox']:
+            requested_results += ', Photo Captions'
 
-    requested_results = ''
-    if st.session_state['basic_data_checkbox']:
-        requested_results += 'Basic Admin data'
-    if st.session_state['include_reviews_checkbox']:
-        requested_results += ', Review Summaries'
-    if st.session_state['include_photo_captioning_checkbox']:
-        requested_results += ', Photo Captions'
+        # display the users 'vlm input', keywords to be passed to the vlm for photo captions
+        photo_captions_target_phrase = ''
+        if st.session_state['vlm_input'].strip() == "":
+            photo_captions_target_phrase = 'None'
+        else:
+            photo_captions_target_phrase = f'{st.session_state['vlm_input']}'
 
-    photo_captions_target_phrase = ''
-    if st.session_state['vlm_input'] == "":
-        photo_captions_target_phrase = 'None'
-    else:
-        photo_captions_target_phrase = f'{st.session_state['vlm_input']}'
+        # get the input bounding box coords to display to the user
+        try:
+            if st.session_state['user_bounding_box']['geometry']['coordinates']:
+                coords = st.session_state['user_bounding_box']['geometry']['coordinates']
+                ne_coord = (coords[0][2][1], coords[0][2][0])
+                sw_coord = (coords[0][0][1], coords[0][0][0])
+        # this happens when you navigate to the 'Review + Submit' tab without creating a search area/bounding box
+        except KeyError:
+            ne_coord = ''
+            sw_coord = ''
 
+        # Creates the review container
+        with st.container(border=True, key='review-container'):
+            # st.markdown("## Query Review")
 
+            inputs_column.markdown(f"""  
+            **User ID:** `{st.session_state['user_id'] or "None"}`
 
-    # creates the review container
-    with st.container(border=True, key='review-container'):
-        st.write('Query Review')
-        st.write(f'user id: {st.session_state['user_id']}')
-        st.write(f'Searching for: "{st.session_state['establishment_search_input']}" IVO ({st.session_state['location_input']})')
+            **Searching for:** `{st.session_state['establishment_search_input'] or "None"}`  
+            """)
 
-        st.write(f'Results will include: {requested_results}')
+            inputs_column.markdown(f"""
+            **Bounding Box:**  
+            """)
 
-        st.write(f'Photo Captions Keywords: {photo_captions_target_phrase}')
+            if sw_coord and ne_coord:
+                inputs_column.code(f"SW: {sw_coord}\nNE: {ne_coord}")
+            else:
+                inputs_column.markdown("`None`")
 
-        st.write(f'Include KMZ download: {st.session_state['kml_download_option']}')
+            inputs_column.markdown(f"""
+            **Photo Captions Keywords:** `{photo_captions_target_phrase}`  
+            """)
 
+            outputs_column.markdown(f"""  
+            **Results Will Include:** `{requested_results if requested_results else "No data selected"}`
+
+            **Include KMZ Download:** `{"Yes" if st.session_state['kml_download_option'] else "No"}` 
+            """)
 
     # submit button
     submit_button = st.button(
@@ -62,24 +93,30 @@ def review_and_submit():
     # if submit_button: # for mocking
     #     mock_post_request()
 
+    # upon submit, validate user inputs based on specific requirements
     if submit_button:
+        scroll_to_top_of_submit()
         validated_user_id = validate_user_id(st.session_state['user_id'])
         validated_token = validate_token(st.session_state['token_input'])
         validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
-        validated_bounding_box = validate_bounding_box(st.session_state['map'])
+        validated_bounding_box = validate_bounding_box(st.session_state['user_bounding_box'])
         validated_photo_caption_keywords = validate_photo_caption_keywords(st.session_state['vlm_input'])
-        scroll_to_top_of_submit()
-
+        
+        # if all required fields pass validation
         if (validated_user_id and 
             validated_token and 
             validated_establishment_search and 
             validated_bounding_box and 
-            validated_photo_caption_keywords):
+            validated_photo_caption_keywords is not None): # checking for None here becuase an empty string is valid in this case
 
+            # make the post request with a spinner
             with st.spinner():
                 st.write('''if youre seeing this that means no post request is active.
                          you should uncomment out the real one below or the mock one above.''')
-                # text_search_post_request()
+                
+                # text_search_post_request(validated_establishment_search, validated_bounding_box, validated_user_id, validated_token, validated_photo_caption_keywords)
+
+        # alert the user that validation failed
         else:
             st.write('Validation Failed')
 

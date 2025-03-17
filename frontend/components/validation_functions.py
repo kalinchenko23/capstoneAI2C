@@ -1,5 +1,6 @@
 import streamlit as st
 import mgrs
+import folium
 
 from styles.icons.icons import validation_error_icon
 
@@ -122,26 +123,22 @@ def validate_establishment_search(establishment_search_input):
     else:
         return establishment_search_input 
     
-# def validate_bounding_box(map):
-#     if len(map['all_drawings']) == 0 or len(map['last_active_drawing']) == 0:
-#         st.error('you must provide a valid search area', icon=validation_error_icon) 
-#     else:
-#         return map
-
-def validate_bounding_box(map):
-    # Check if the 'last_active_drawing' is present and valid
-    if not map.get('last_active_drawing'):
+def validate_bounding_box(user_bounding_box):
+    # check for none, throw error
+    if not user_bounding_box:
         st.error('You must provide a valid search area', icon=validation_error_icon)
-    elif len(map['last_active_drawing']) == 0:
-        st.error('You must provide a valid search area', icon=validation_error_icon)
+    # ensure its a rectangle, if not throw error
+    elif user_bounding_box['geometry']['type'] != 'Polygon':
+        st.error('An unexpected error occured. Please navigate back to search area tab and click the bounding box you would like to query', icon=validation_error_icon)
     else:
-        return map
+        return user_bounding_box
     
 def validate_photo_caption_keywords(vlm_input):
     if len(vlm_input) > 150:
         st.error('photo caption keywords can not exceed 150 characters', icon=validation_error_icon)
+    else:
+        return vlm_input
     
-
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     validate_location()

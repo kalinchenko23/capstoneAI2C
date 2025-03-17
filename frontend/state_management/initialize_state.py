@@ -8,7 +8,7 @@ def initialize_state():
 
     # initialize state variable that tracks the 'user_id' input field
     if 'user_id' not in st.session_state:
-        st.session_state['user_id'] = ''
+        st.session_state['user_id'] = None
 
     # initialize state variable that tracks the 'token' input field
     if 'token_input' not in st.session_state:
@@ -62,6 +62,10 @@ def initialize_state():
             'zoom': 2, 
             'center': {'lat': 0, 'lng': 0}
         }
+
+    # init state variable for tracking the box that is passed to google maps api
+    if 'user_bounding_box' not in st.session_state:
+        st.session_state['user_bounding_box'] = {}
 
     # initialize state variable that tracks the 'All' checkbox in 'Query Options'
     if 'all_fields_checkbox' not in st.session_state:

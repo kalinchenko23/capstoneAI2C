@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 from styles.icons.icons import toolbox_icon
 from tabs.create_tabs import create_tabs
@@ -25,6 +26,7 @@ st.subheader('Tactical OPE Toolkit')
 
 # define the tabs you want displayed
 active_tab = create_tabs(['User Credentials', 'Search Area', 'Query Options', 'Review + Submit'])
+
 
 # checking and conditionally rendering based on what tab is selected
 if st.session_state['active_tab'] == 'User Credentials':

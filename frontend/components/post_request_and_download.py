@@ -46,17 +46,20 @@ def auto_download_file(in_memory_file, file_extension, mime_type):
     st.components.v1.html(html, height=0)
 
 @st.fragment
-def text_search_post_request():
+def text_search_post_request(validated_establishment_search, validated_bounding_box, validated_user_id, validated_token, validated_photo_caption_keywords):
     """Handles the POST request, converts JSON response to Excel, and auto-downloads, with error handling."""
     request_body = {
-        "text_query": st.session_state['establishment_search_input'],
-        "lat_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][1],
-        "lng_sw": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][0][0],
-        "lat_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][1],
-        "lng_ne": st.session_state['map']['last_active_drawing']['geometry']['coordinates'][0][2][0],
-        "user_id": st.session_state['user_id'],
-        "token": st.session_state['token_input']
+        "text_query": validated_establishment_search,
+        "lat_sw": validated_bounding_box['geometry']['coordinates'][0][0][1],
+        "lng_sw": validated_bounding_box['geometry']['coordinates'][0][0][0],
+        "lat_ne": validated_bounding_box['geometry']['coordinates'][0][2][1],
+        "lng_ne": validated_bounding_box['geometry']['coordinates'][0][2][0],
+        "user_id": validated_user_id,
+        "token": validated_token,
+        # "vlm_input": validated_photo_caption_keywords
     }
+
+    # st.write(request_body)
 
     url = 'http://127.0.0.1:8080/search_nearby'
 
