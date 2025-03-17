@@ -3,7 +3,8 @@
 # user bbox2: -14.445651, -14.911131 | 29.678209, 33.604494
 
 # TODO:
-# change how youre deleting the pins to match how youre deleting the boxes?
+# the user can technically have a pin as 'the last active drawing', which is whats being used to query google maps api
+# currently, there is only one 'type' selector, all coords on the tab are using that 'type' for validation...
 # style for the whole tab:
     # error messages kinda look wonky
     # not in love with scrolling up and down to drop pins/boxes and look at the map
@@ -19,7 +20,7 @@ from components.validation_functions import validate_location
 
 def generate_map():
     # create the map
-    m = folium.Map(location=st.session_state['location_validation_results'], zoom_start=st.session_state['map_zoom_level'], max_bounds=True)
+    m = folium.Map(location=st.session_state['location_validation_results'], zoom_start=st.session_state['map_zoom_level'], min_zoom=2, max_bounds=True)
 
     # Add the legend with the modified template
     legend_template = """
@@ -112,7 +113,6 @@ def search_area():
     with st.container(border=True, key='map-container'):
         
         with st.container(border=True):
-            # st.write('point container')
             location_column, location_type_column = st.columns(2)
 
             location = location_column.text_input(
@@ -172,7 +172,6 @@ def search_area():
                     
 
         with st.container(border=True):
-            # st.write('bbox container')
             sw_coord_column, ne_coord_column = st.columns(2)
 
             sw_coord = sw_coord_column.text_input(
@@ -239,10 +238,12 @@ def search_area():
                 if st.button('Delete Boxes', key='delete_box_button'):
                     st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
                     st.session_state['map']['last_active_drawing'] = []
+                    st.session_state['user_bounding_box'] = None
 
                     force_map_rerender(m)
 
                     # because the map is rerendering, we need to maintain the maps current zoom level and center
+                    # without doing this, the map snaps back to the center and zoom level of the last box
                     current_center_lat = st.session_state['map']['center']['lat']
                     current_center_lon = st.session_state['map']['center']['lng']
                     st.session_state['map_center'] = (current_center_lat, current_center_lon)
@@ -286,6 +287,7 @@ def search_area():
                             # st.write(f'{child} is active')
                             child.options['color'] = 'red'
                             child.options['fillColor'] = 'blue'
+                            st.session_state['user_bounding_box'] = st.session_state['map']['last_active_drawing']
                         else:
                             # st.write(f'{child} is not active')
                             child.options['color'] = 'blue'
