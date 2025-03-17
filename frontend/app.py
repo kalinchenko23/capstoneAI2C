@@ -1,5 +1,4 @@
 import streamlit as st
-import time
 
 from styles.icons.icons import toolbox_icon
 from tabs.create_tabs import create_tabs
