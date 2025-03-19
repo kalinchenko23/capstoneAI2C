@@ -1,10 +1,8 @@
 import streamlit as st
 
-from state_management.initialize_state import initialize_state
 from state_management.persist_state import persist_state
 
 def reset_state_callback():
-    initialize_state() # initializes state variables when a tab changes
     persist_state() # persists state variables when a tab changes
     
 # got this off the internet
@@ -45,9 +43,10 @@ def create_tabs(default_tabs = [], default_active_tab=0):
                 padding-right: 0;
             }           
             </style>
-        """,unsafe_allow_html=True)       
-        return active_tab
+        """,unsafe_allow_html=True)    
+        return active_tab   
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     create_tabs()
+    reset_state_callback()

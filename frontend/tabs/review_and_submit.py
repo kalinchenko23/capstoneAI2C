@@ -5,7 +5,7 @@ from components.validation_functions import validate_user_id, validate_token, va
 from components.post_request_and_download import text_search_post_request
 from components.post_request_and_download import mock_post_request
 
-from components.auto_scroller import scroll_to_top_of_submit
+# from components.auto_scroller import scroll_to_top_of_submit
 
 # TODO:
 # build out a nice looking review for the user that highlights all of the options they have chosen
@@ -95,7 +95,7 @@ def review_and_submit():
 
     # upon submit, validate user inputs based on specific requirements
     if submit_button:
-        scroll_to_top_of_submit()
+        # scroll_to_top_of_submit()
         validated_user_id = validate_user_id(st.session_state['user_id'])
         validated_token = validate_token(st.session_state['token_input'])
         validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
@@ -112,7 +112,9 @@ def review_and_submit():
             # make the post request with a spinner
             with st.spinner():
                 st.write('''if youre seeing this that means no post request is active.
-                         you should uncomment out the real one below or the mock one above.''')
+                         you should uncomment out the real one below (text_search_post_request) or the mock one above (mock_post_request).
+                         this code is being written from frontend/tabs/review_and_submit.py
+                         ''')
                 
                 # text_search_post_request(validated_establishment_search, validated_bounding_box, validated_user_id, validated_token, validated_photo_caption_keywords)
 

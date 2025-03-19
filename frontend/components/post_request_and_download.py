@@ -73,11 +73,13 @@ def text_search_post_request(validated_establishment_search, validated_bounding_
         if not data:
             raise ValueError("Received empty response or invalid JSON.")
         
-        # Generate Excel file in memory
-        in_memory_file = json_to_excel(data)
+        # Generate and auto download Excel file in memory
+        excel_file = json_to_excel(data)
+        auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-        # Auto-download in browser
-        # auto_download_excel(in_memory_file)
+        # Generate and auto download kmz file in memory
+        kmz_file = json_to_kmz(data)
+        auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
 
     except requests.exceptions.Timeout:
         # Handle timeout error (e.g., server takes too long to respond)

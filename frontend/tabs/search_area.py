@@ -3,12 +3,11 @@
 # user bbox2: -14.445651, -14.911131 | 29.678209, 33.604494
 
 # TODO:
-# the user can technically have a pin as 'the last active drawing', which is whats being used to query google maps api
-# currently, there is only one 'type' selector, all coords on the tab are using that 'type' for validation...
+# currently, there is only one 'type' selector, all coords on the tab are using that 'type' for validation
 # style for the whole tab:
     # error messages kinda look wonky
     # not in love with scrolling up and down to drop pins/boxes and look at the map
-# test the shit out of the bbox coords 
+# test the shit out of the bbox coords to ensure the one highlighted in red is the one reflected in the query
 
 import folium
 import streamlit as st
@@ -88,7 +87,7 @@ def check_for_duplicate_boxes(bounds):
 
     return already_exists
 
-def calculate_center_of_bbox(bounds):
+def calculate_center_of_bbox(bounds): # this enables 'snapping' to a bbox
     # Extract latitudes and longitudes from the bounds
     lat_min, lon_min = bounds[0]  # Southwest corner (lat_min, lon_min)
     lat_max, lon_max = bounds[1]  # Northeast corner (lat_max, lon_max)
@@ -105,7 +104,7 @@ def force_map_rerender(m):
     invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
     folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
 
-
+# this is causing an issue if the tabs are changed too fast by the user
 @st.fragment
 def search_area():
     m = generate_map()
@@ -313,9 +312,9 @@ def search_area():
             'edit': False,  # Disable editing of existing features
             'remove': False  # Disable built-in delete (trash can)
         }
-        
+
         Draw(draw_options=draw_options, edit_options=edit_options).add_to(m)
- 
+
         st_folium(m, 
                   zoom=st.session_state['map_zoom_level'], 
                   center=st.session_state['map_center'],
@@ -323,7 +322,13 @@ def search_area():
                   feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
                   width=600, height=500, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
         
+        
         force_map_rerender(m)
 
 if __name__ == "__main__":
+    generate_map()
+    check_for_duplicate_pins()
+    check_for_duplicate_boxes()
+    calculate_center_of_bbox()
+    force_map_rerender()
     search_area()

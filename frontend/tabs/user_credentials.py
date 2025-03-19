@@ -1,5 +1,8 @@
 import streamlit as st
 
+# TODO:
+# add additional fields for VLM and LLM keys
+
 @st.fragment
 def user_credentials():
     with st.container(border=True, key='user-credentials-container'):
