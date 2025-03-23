@@ -8,17 +8,11 @@ import requests
 with open("secrets.json") as config_file:
     config = json.load(config_file)
 
-AZURE_OPENAI_API_KEY_VLM = config["AZURE_OPENAI_API_KEY_VLM"]
 AZURE_OPENAI_ENDPOINT = config["AZURE_OPENAI_ENDPOINT"]
 DEPLOYMENT_NAME = config["DEPLOYMENT_NAME"]
 API_VERSION = config["API_VERSION"]
 
 
-HEADERS = {
-    "Content-Type": "application/json",
-    "api-key": AZURE_OPENAI_API_KEY_VLM,
-    "User-Agent": "Image-Analysis-Tool/1.0"
-}
 
 
 
@@ -26,7 +20,13 @@ MAX_CONCURRENT_REQUESTS = 25
 semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
 
 
-def get_safe_prompt(keywords):
+def get_safe_prompt(keywords,vlm_key):
+
+    HEADERS = {
+        "Content-Type": "application/json",
+        "api-key": vlm_key,
+        "User-Agent": "Image-Analysis-Tool/1.0"
+    }
     """Synchronously generate a safe user prompt based on keywords using ChatGPT."""
     payload = {
         "messages": [
@@ -37,24 +37,32 @@ def get_safe_prompt(keywords):
         "max_tokens": 100,
         "temperature": 0.3
     }
-    try:
-        response = requests.post(
-            f"{AZURE_OPENAI_ENDPOINT}/openai/deployments/{DEPLOYMENT_NAME}/chat/completions?api-version={API_VERSION}",
-            headers=HEADERS,
-            json=payload,
-            timeout=60
-        )
-        if response.status_code == 200:
-            data = response.json()
-            return data.get("choices", [{}])[0].get("message", {}).get("content", "No response content")
-        else:
-            return "Describe the objects and setting in the image in a neutral manner."
-    except Exception as e:
+    
+    response = requests.post(
+        f"{AZURE_OPENAI_ENDPOINT}/openai/deployments/{DEPLOYMENT_NAME}/chat/completions?api-version={API_VERSION}",
+        headers=HEADERS,
+        json=payload,
+        timeout=60
+    )
+
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("choices", [{}])[0].get("message", {}).get("content", "No response content")
+    elif response.status_code == 401:
+        raise Exception(response.text)
+    else:
         return "Describe the objects and setting in the image in a neutral manner."
 
 
-async def analyze_image(encoded_image, session, safe_prompt, retry_count=0, max_retries=8):
+async def analyze_image(encoded_image, session, safe_prompt, vlm_key, retry_count=0, max_retries=8):
     """Analyze a binary image using Azure OpenAI GPT-4 Vision."""
+    
+    HEADERS = {
+        "Content-Type": "application/json",
+        "api-key": vlm_key,
+        "User-Agent": "Image-Analysis-Tool/1.0"
+    }
+
     async with semaphore:
         try:
             payload = {
@@ -114,13 +122,59 @@ async def analyze_image(encoded_image, session, safe_prompt, retry_count=0, max_
                 return await analyze_image(encoded_image, session, safe_prompt, retry_count + 1, max_retries)
             return f"Exception occurred: {str(e)}"
 
+async def generate_summary(image_descriptions: list, vlm_key: str):
+    """Generate a summary paragraph based on all image descriptions."""
 
+    HEADERS = {
+        "Content-Type": "application/json",
+        "api-key": vlm_key,
+        "User-Agent": "Image-Analysis-Tool/1.0"
+    }
 
-async def analyze_images_api(encoded_image,safe_prompt):
+    if not image_descriptions:
+        return "No images were analyzed."
+    
+    descriptions=[description["vlm_insight"] for description in image_descriptions]
+    # Create a prompt to summarize the descriptions
+    all_descriptions = "\n\n".join(descriptions) 
+    num_descriptions = len(descriptions)
+    
+    summary_prompt = f"""Based on the following {num_descriptions} image descriptions, 
+    create a concise one-paragraph summary that captures the key themes, 
+    settings, and objects that appear across multiple images:
+
+    {all_descriptions}
+    
+    Summarize these descriptions in one coherent paragraph:"""
+    
+    payload = {
+        "messages": [
+            {"role": "system", "content": "You are an AI assistant that creates concise, informative summaries."},
+            {"role": "user", "content": summary_prompt}
+        ],
+        "model": DEPLOYMENT_NAME,
+        "max_tokens": 250,
+        "temperature": 0.3
+    }
+    async with aiohttp.ClientSession() as session:
+        async with session.post(
+            f"{AZURE_OPENAI_ENDPOINT}/openai/deployments/{DEPLOYMENT_NAME}/chat/completions?api-version={API_VERSION}",
+            headers=HEADERS,
+            json=payload,
+            timeout=aiohttp.ClientTimeout(total=120)
+        ) as response:
+            if response.status == 200:
+                data = await response.json()
+                return data.get("choices", [{}])[0].get("message", {}).get("content", "Failed to generate summary.")
+            else:
+                return f"{response.status} something went wrong"
+   
+
+async def analyze_images_api(encoded_image,safe_prompt, vlm_key):
     """API entry point to analyze binary images from Google Maps."""
     
     #Processing binary images
     async with aiohttp.ClientSession() as session:
-        result=await analyze_image(encoded_image, session, safe_prompt)
+        result=await analyze_image(encoded_image, session, safe_prompt, vlm_key)
         return result
 

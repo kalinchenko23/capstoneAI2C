@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query, Body, HTTPException
 from llm_service import get_review_summary
-from vlm_service import analyze_images_api, get_safe_prompt
+from vlm_service import analyze_images_api, get_safe_prompt, generate_summary
 from deep_translator import GoogleTranslator
 from datetime import datetime
 import httpx
@@ -14,7 +14,6 @@ with open("secrets.json") as config_file:
 
 
 AZURE_OAI_ENDPOINT = config["AZURE_OAI_ENDPOINT"]
-AZURE_OAI_KEY = config["AZURE_OAI_KEY"]
 AZURE_OAI_DEPLOYMENT = config["AZURE_OAI_DEPLOYMENT"]
 
 
@@ -92,7 +91,7 @@ async def get_photo(name: str,api_key):
   
 
 
-async def response_formatter(responce,api_key,prompt_info,tiers):
+async def response_formatter(responce,api_key,prompt_info,tiers,llm_key,vlm_key):
     """
     Extracts specific fields from a JSON response provided by GoogleAPI and formats them into a structured list of dictionaries.
 
@@ -105,7 +104,10 @@ async def response_formatter(responce,api_key,prompt_info,tiers):
     result=[] 
     
     #Generating prompt for VLM
-    vlm_prompt= get_safe_prompt(prompt_info)
+    try:
+        vlm_prompt=get_safe_prompt(prompt_info, vlm_key)
+    except Exception as ex:
+        raise HTTPException(status_code=401,detail=f"{ex}")
 
     for place in responce:
         new_data={}
@@ -145,7 +147,7 @@ async def response_formatter(responce,api_key,prompt_info,tiers):
         if "reviews" in tiers:
             try:
                 #Calling LLM summarization function
-                new_data["reviews_summary"] = get_review_summary(AZURE_OAI_ENDPOINT,AZURE_OAI_KEY,AZURE_OAI_DEPLOYMENT,place["reviews"])
+                new_data["reviews_summary"] = get_review_summary(AZURE_OAI_ENDPOINT,llm_key,AZURE_OAI_DEPLOYMENT,place["reviews"])
                 new_data["reviews"] = []
                 ratings=[]
                 times=[]
@@ -192,12 +194,17 @@ async def response_formatter(responce,api_key,prompt_info,tiers):
                     encoded_photo=await get_photo(photo["name"],api_key)
 
                     #Sending photos to VLM for the insight
-                    vlm_insight=await analyze_images_api(encoded_photo,vlm_prompt)
+                    vlm_insight=await analyze_images_api(encoded_photo,vlm_prompt,vlm_key)
                     photo_info["vlm_insight"]=vlm_insight
                     photo_info["url"]=photo["googleMapsUri"]
                     new_data["photos"].append(photo_info)
+                new_data["prompt_used"]=vlm_prompt
+                new_data["photos_summary"] = await generate_summary(new_data["photos"],vlm_key)
+
             except KeyError as ex:
                 new_data["photos"]="Photos are not provided"
+            except Exception as ex:
+                raise HTTPException(status_code=int(ex.code),detail=f"{ex}")
 
             location=place["formattedAddress"]
             
