@@ -105,17 +105,31 @@ def validate_search_radius(search_radius, search_radius_units):
         except ValueError:
             st.error('Please enter a valid search radius (number between 1 and 5000)', icon=validation_error_icon)
 
-def validate_user_id(user_id):
-    if len(user_id.strip()) == 0:
-        st.error('user-id field can not be empty', icon=validation_error_icon) 
+def validate_google_maps_api_key(google_maps_api_key):
+    if len(google_maps_api_key) == 0:
+        st.error('google maps api key field can not be empty', icon=validation_error_icon) 
     else:
-        return user_id     
+        return google_maps_api_key
 
-def validate_token(token):
-    if len(token.strip()) == 0:
-        st.error('token field can not be empty', icon=validation_error_icon) 
+def validate_llm_key(llm_key):
+    if st.session_state['include_reviews_checkbox']: # if the key is required
+        if len(llm_key) == 0: # display an error if an empty key has been provided
+            st.error('llm key field can not be empty if review summarization is selected', icon=validation_error_icon) 
+            return None
+        else: # some non empty key has been provided
+            return llm_key
+    else: # if the key is not required, return an empty string (this is passed to the post request)
+        return '' 
+    
+def validate_vlm_key(vlm_key):
+    if st.session_state['include_photo_captioning_checkbox']: # if the key is required
+        if len(vlm_key) == 0: # display an error if an empty key has been provided
+            st.error('vlm key field can not be empty if photo captioning is selected', icon=validation_error_icon) 
+            return None
+        else: # some non empty key has been provided
+            return vlm_key
     else:
-        return token 
+        return '' # if the key is not required, return an empty string (this is passed to the post request)
 
 def validate_establishment_search(establishment_search_input):
     if len(establishment_search_input.strip()) == 0:
@@ -143,9 +157,9 @@ def validate_photo_caption_keywords(vlm_input):
 if __name__ == "__main__":
     validate_location()
     validate_search_radius()
-    validate_user_id()
-    validate_token()
+    validate_google_maps_api_key()
     validate_establishment_search()
     validate_bounding_box()
     validate_photo_caption_keywords()
+    validate_llm_key()
     
