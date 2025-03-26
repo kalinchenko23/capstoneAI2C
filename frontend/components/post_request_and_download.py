@@ -2,6 +2,8 @@ import base64
 import requests
 import streamlit as st
 from datetime import datetime
+import os
+import json
 
 from .create_excel import json_to_excel
 from .create_kmz import json_to_kmz
@@ -109,9 +111,6 @@ def text_search_post_request(validated_establishment_search,
 
 @st.fragment
 def mock_post_request(bbox_tuples, search_term):
-    
-    import os
-    import json
     """Mock version of the POST request that reads from a local JSON file instead of making an API call."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_dir, 'sample_response_modified.json')
