@@ -1,6 +1,5 @@
 import streamlit as st
 import mgrs
-import folium
 
 from styles.icons.icons import validation_error_icon
 
