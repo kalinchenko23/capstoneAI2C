@@ -4,15 +4,13 @@ import folium
 def initialize_state():
     # initialize state variable that tracks which navbar tab is active
     if 'active_tab' not in st.session_state:
-      st.session_state['active_tab'] = 'User Credentials'
+      st.session_state['active_tab'] = 'Search Area'
 
-    # initialize state variable that tracks the 'user_id' input field
-    if 'user_id' not in st.session_state:
-        st.session_state['user_id'] = None
-
-    # initialize state variable that tracks the 'token' input field
-    if 'token_input' not in st.session_state:
-        st.session_state['token_input'] = ''
+    # search area state variables
+    #================================================================================================================
+    # initialize state variable that tracks the 'establishment search' input field
+    if 'establishment_search_input' not in st.session_state:
+        st.session_state['establishment_search_input'] = ''
 
     # initialize state variable that tracks the 'location' input field
     if 'location_input' not in st.session_state:
@@ -50,10 +48,6 @@ def initialize_state():
     if 'rectangle_feature_group' not in st.session_state:
         st.session_state['rectangle_feature_group'] = folium.FeatureGroup('rectangles')
     
-    # initialize state variable that tracks the 'establishment search' input field
-    if 'establishment_search_input' not in st.session_state:
-        st.session_state['establishment_search_input'] = ''
-
     # initialize state variable that tracks the map and the shapes drawn on it
     if 'map' not in st.session_state:
         st.session_state['map'] = {
@@ -67,6 +61,8 @@ def initialize_state():
     if 'user_bounding_box' not in st.session_state:
         st.session_state['user_bounding_box'] = {}
 
+    # query options state variables
+    #================================================================================================================
     # initialize state variable that tracks the 'All' checkbox in 'Query Options'
     if 'all_fields_checkbox' not in st.session_state:
         st.session_state['all_fields_checkbox'] = False
@@ -75,21 +71,30 @@ def initialize_state():
     if 'basic_data_checkbox' not in st.session_state:
         st.session_state['basic_data_checkbox'] = True
 
+    if 'google_maps_api_key' not in st.session_state:
+        st.session_state['google_maps_api_key'] = ''
+
     # initialize state variable that tracks the 'Include AI Review Summarization' checkbox in 'Query Options'
     if 'include_reviews_checkbox' not in st.session_state:
         st.session_state['include_reviews_checkbox'] = False
 
+    if 'llm_key' not in st.session_state:
+        st.session_state['llm_key'] = ''
+
     # initialize state variable that tracks the 'Include AI Photo Captioning' checkbox in 'Query Options'
     if 'include_photo_captioning_checkbox' not in st.session_state:
         st.session_state['include_photo_captioning_checkbox'] = False
+    
+    if 'vlm_key' not in st.session_state:
+        st.session_state['vlm_key'] = ''
 
      # initialize state variable that tracks the 'user_id' input field
     if 'vlm_input' not in st.session_state:
         st.session_state['vlm_input'] = ''
         
     # initialize state variable that tracks the 'Include KML/KMZ Download' toggle in 'Query Options'
-    if 'kml_download_option' not in st.session_state:
-        st.session_state['kml_download_option'] = True
+    if 'kmz_download_option' not in st.session_state:
+        st.session_state['kmz_download_option'] = True
 
 
 # Ensures the code runs only when this file is executed directly
