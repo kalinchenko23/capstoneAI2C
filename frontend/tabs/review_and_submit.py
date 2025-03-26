@@ -122,19 +122,19 @@ def review_and_submit():
 
                 # mock_post_request(bbox_tuples, 'grocery store')
 
-                st.write('''if youre seeing this that means no post request is active.
-                         you should uncomment out the real one below (text_search_post_request) or the mock one above (mock_post_request).
-                         this code is being written from frontend/tabs/review_and_submit.py
-                         ''')
+                # st.write('''if youre seeing this that means no post request is active.
+                #          you should uncomment out the real one below (text_search_post_request) or the mock one above (mock_post_request).
+                #          this code is being written from frontend/tabs/review_and_submit.py
+                #          ''')
                 
-                # text_search_post_request(validated_establishment_search,
-                #                          validated_bounding_box,
-                #                          validated_photo_caption_keywords,
-                #                          requested_tiers,
-                #                          validated_google_maps_api_key,
-                #                          validated_llm_key, 
-                #                          validated_vlm_key, 
-                #                          bbox_tuples)
+                text_search_post_request(validated_establishment_search,
+                                         validated_bounding_box,
+                                         validated_photo_caption_keywords,
+                                         requested_tiers,
+                                         validated_google_maps_api_key,
+                                         validated_llm_key, 
+                                         validated_vlm_key, 
+                                         bbox_tuples)
 
         # alert the user that validation failed
         # else:
