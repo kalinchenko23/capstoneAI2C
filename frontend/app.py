@@ -27,12 +27,10 @@ with open('./styles/styles.css') as f:
 st.subheader('Tactical OPE Toolkit') 
 
 # define the tabs you want displayed
-active_tab = create_tabs(['User Credentials', 'Search Area', 'Query Options', 'Review + Submit'])
+active_tab = create_tabs(['Search Area', 'Query Options', 'Review + Submit'])
 
 # checking and conditionally rendering based on what tab is selected
-if st.session_state['active_tab'] == 'User Credentials':
-      user_credentials()
-elif st.session_state['active_tab'] == 'Search Area':
+if st.session_state['active_tab'] == 'Search Area':
       establishment_search()
       search_area()
 elif st.session_state['active_tab'] == 'Query Options':
