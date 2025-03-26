@@ -46,20 +46,31 @@ def auto_download_file(in_memory_file, file_extension, mime_type):
     st.components.v1.html(html, height=0)
 
 @st.fragment
-def text_search_post_request(validated_establishment_search, validated_bounding_box, validated_user_id, validated_token, validated_photo_caption_keywords):
+def text_search_post_request(validated_establishment_search,
+                             validated_bounding_box,
+                             validated_photo_caption_keywords,
+                             requested_tiers,
+                             validated_google_maps_api_key,
+                             validated_llm_key, 
+                             validated_vlm_key, 
+                             bbox_tuples
+                            ):
     """Handles the POST request, converts JSON response to Excel, and auto-downloads, with error handling."""
+
     request_body = {
-        "text_query": validated_establishment_search,
+        "text_query": validated_establishment_search, # establishment search
         "lat_sw": validated_bounding_box['geometry']['coordinates'][0][0][1],
-        "lng_sw": validated_bounding_box['geometry']['coordinates'][0][0][0],
-        "lat_ne": validated_bounding_box['geometry']['coordinates'][0][2][1],
-        "lng_ne": validated_bounding_box['geometry']['coordinates'][0][2][0],
-        "user_id": validated_user_id,
-        "token": validated_token,
-        # "vlm_input": validated_photo_caption_keywords
+        "lng_sw": validated_bounding_box['geometry']['coordinates'][0][0][0], 
+        "lat_ne": validated_bounding_box['geometry']['coordinates'][0][2][1], 
+        "lng_ne": validated_bounding_box['geometry']['coordinates'][0][2][0], 
+        "prompt_info": validated_photo_caption_keywords,  # vlm input
+        "tiers": requested_tiers, # data to include in report
+        "google_api_key": validated_google_maps_api_key,
+        "llm_key": validated_llm_key, 
+        "vlm_key": validated_vlm_key
     }
 
-    # st.write(request_body)
+    st.write(f'post request with following body:\n {request_body}')
 
     url = 'http://127.0.0.1:8080/search_nearby'
 
@@ -73,13 +84,15 @@ def text_search_post_request(validated_establishment_search, validated_bounding_
         if not data:
             raise ValueError("Received empty response or invalid JSON.")
         
-        # Generate and auto download Excel file in memory
+        # Generate Excel file in memory
         excel_file = json_to_excel(data)
         auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-        # Generate and auto download kmz file in memory
-        kmz_file = json_to_kmz(data)
-        auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+        # conditional to check if a kmz should be returned to the user
+        if st.session_state['kmz_download_option']:
+            # Generate KMZ file in memory
+            kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
+            auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
 
     except requests.exceptions.Timeout:
         # Handle timeout error (e.g., server takes too long to respond)
@@ -95,7 +108,8 @@ def text_search_post_request(validated_establishment_search, validated_bounding_
         st.error(f"An unexpected error occurred: {e}")
 
 @st.fragment
-def mock_post_request():
+def mock_post_request(bbox_tuples, search_term):
+    
     import os
     import json
     """Mock version of the POST request that reads from a local JSON file instead of making an API call."""
@@ -112,10 +126,15 @@ def mock_post_request():
         excel_file = json_to_excel(data)
         auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
         
-        # Generate KMZ file in memory
-        kmz_file = json_to_kmz(data)
-        auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+        # conditional to check if a kmz should be returned to the user
+        if st.session_state['kmz_download_option']:
+            # Generate KMZ file in memory
+            kmz_file = json_to_kmz(data, bbox_tuples, search_term)
+            auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
         
+
+
+
     except FileNotFoundError:
         st.error(f"File {file_path} not found. Please check the file path.")
     except json.JSONDecodeError:
