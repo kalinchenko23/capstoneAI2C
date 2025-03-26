@@ -6,7 +6,8 @@ import json
 
 import copy
 
-import io
+from io import BytesIO
+
 
 
 def json_to_dict(j_file):
@@ -91,50 +92,115 @@ def generalize(name):
 
     return "default"
 
-    
-def json_to_kmz(j_file):
+
+def get_nw_se_coordinates(bbox_tuples):
+    lat_sw = bbox_tuples[0][1]
+    lng_sw = bbox_tuples[0][0]
+    lat_ne = bbox_tuples[2][1]
+    lng_ne = bbox_tuples[2][0]
+
+    return (lat_sw, lng_sw), (lat_ne, lng_ne)
+
+
+def json_to_kmz(j_file, bbox_tuples, search_term):
+
+    output = BytesIO()
+
     kml = simplekml.Kml()
+
+    # adds the validated bounding box to the kmz
+    pol = kml.newpolygon(name='Search Area')
+    pol.outerboundaryis = bbox_tuples
+    pol.style.linestyle.color = simplekml.Color.red
+    pol.style.linestyle.width = 2
+    pol.style.polystyle.fill = 0
+    sw, ne = get_nw_se_coordinates(bbox_tuples)
+    pol.description = f'''
+                        Search Term: {search_term}\n
+                        SW coordinate: ({sw[0]}, {sw[1]})\nNE coordinate: ({ne[0]}, {ne[1]})
+                       '''
+
     data = json_to_dict(j_file)
     locations = []
 
-    for item in data['places']:
-        name = get_string(item, 'name')
+    for item in data['places']: 
+
+        name = get_string(item['name'], 'original_name') + ':' + get_string(item['name'], 'translated_name')
+
         loc_type = generalize(get_string(item, 'type'))
+
         website = get_string(item, 'website')
+
         phone = get_string(item, 'phone_number')
+
         addr = get_string(item, 'address')
+
         lat = get_string(item, 'latitude')
+
         lng = get_string(item, 'longitude')
+
         hours = format_hours(get_list(item, 'working_hours'))
+
         url = get_string(item, 'google_maps_url')
+
         desc = f"""
+
         Phone: {phone}
+
+        
+
         Address: {addr}
+
+        
+
         Website: {website}
+
+        
+
         Hours: {hours}
+
+        
+
         Google Maps: {url}
+
         """.strip()
+
         icon_url = get_icon(loc_type)
+
         locations.append({"name": name, "coords": (lng, lat), "desc": desc, 'icon': icon_url})
-    
+
+
+
     for item in locations:
+
         pnt = kml.newpoint(name=item["name"], coords=[item["coords"]])
+
         pnt.description = item["desc"]
-        pnt.style.iconstyle.icon.href = item["icon"]
+
+        pnt.style.iconstyle.icon.href = item["icon"]  # Set custom icon
+
         pnt.style.iconstyle.scale = 1.5
+
+
+
+
+
     
-    # Get KML data as a string
-    kml_data = kml.kml()
 
-    # Save KML to an in-memory file (BytesIO)
-    kml_buffer = io.BytesIO()
-    kml_buffer.write(kml_data.encode('utf-8'))
-    kml_buffer.seek(0)
+    
 
-    # Create KMZ in memory
-    kmz_buffer = io.BytesIO()
-    with zipfile.ZipFile(kmz_buffer, "w", zipfile.ZIP_DEFLATED) as kmz:
-        kmz.writestr("doc.kml", kml_buffer.getvalue())
+    output = BytesIO()
 
-    kmz_buffer.seek(0)
-    return kmz_buffer
+    output.write(kml.kml().encode('utf-8'))
+
+    output.seek(0)
+
+    
+
+    #kml.save(outfile)
+
+    #with zipfile.ZipFile(outfile, "w", zipfile.ZIP_DEFLATED) as kmz:
+
+    #    kmz.write("link.kml")
+
+    return output
