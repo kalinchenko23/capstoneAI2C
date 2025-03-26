@@ -41,32 +41,86 @@ def query_options():
         st.checkbox(label='All', 
                     key='all_fields_checkbox',  
                     on_change=update_states_all_selected)
+        
 
+
+
+
+
+
+        # basic data chekbox
         with st.container(border=True):
-            # basic data chekbox
-            st.checkbox(label='Basic Data', 
+            basic_col_1, basic_col_2 = st.columns(2)
+            
+            basic_col_1.checkbox(label='Basic Data', 
                         key='basic_data_checkbox', 
                         help=basic_data_help, 
                         on_change=update_states_basic_selected
                         )
+            
+            # creates the text input field for google maps api key
+            if st.session_state['basic_data_checkbox']:
+                    basic_col_2.text_input(
+                        label='Google Maps API Key:', 
+                        value="", 
+                        key='google_maps_api_key', 
+                        type='password',   
+                        placeholder='Google Maps API Key:',  
+                        label_visibility="collapsed"
+                    )
 
-            # ai review summary checkbox
-            st.checkbox(label='Include AI Review Summarization',  
+
+
+
+
+
+
+        # ai review summary checkbox
+        with st.container(border=True):
+            review_col_1, review_col_2 = st.columns(2)
+
+            review_col_1.checkbox(label='Include AI Review Summarization',  
                         key='include_reviews_checkbox', 
                         help=review_summarization_help, 
                         )
+            
+            # if 'include ai review summarization' is selected, creates the text input field for the llm key
+            if st.session_state['include_reviews_checkbox']:
+                review_col_2.text_input(
+                    label='OpenAI LLM Key:', 
+                    value="", 
+                    key='llm_key', 
+                    type='password',   
+                    placeholder='Open AI LLM Key:',  
+                    label_visibility="collapsed"
+                )
 
+
+
+
+
+        with st.container(border=True):
+            photo_col_1, photo_col_2 = st.columns(2)
         
             # ai photo captions checkbox
-            st.checkbox(label='Include AI Photo Captioning',  
+            photo_col_1.checkbox(label='Include AI Photo Captioning',  
                         key='include_photo_captioning_checkbox', 
                         help=photo_captioning_help, 
                         )
 
             # if 'include ai photo captioning' is selected, creates the text input field
             if st.session_state['include_photo_captioning_checkbox']:
+                photo_col_2.text_input(
+                    label='OpenAI VLM Key:', 
+                    value="", 
+                    key='vlm_key', 
+                    type='password',   
+                    placeholder='Open AI VLM Key:',  
+                    label_visibility="collapsed"
+                )
+
                 with st.container(border=True, key='image_analysis_container'):
-                    vlm_input = st.text_input(
+                    st.text_input(
                         label='Enter Keywords for AI to Highlight (leave blank for generic image captioning)', 
                         value="", 
                         max_chars=None, 
@@ -84,10 +138,10 @@ def query_options():
                         label_visibility="visible"
                     )
 
-    # creates the kml/kmz toggle
+    # creates the kmz toggle
     st.toggle(
         'Include KMZ Download', 
-        key='kml_download_option', 
+        key='kmz_download_option', 
         help=None, 
         on_change=None, 
         disabled=False, 
