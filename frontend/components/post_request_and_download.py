@@ -78,7 +78,7 @@ def text_search_post_request(validated_establishment_search,
 
     try:
         # Make the POST request and get the response
-        response = requests.post(url, json=request_body, timeout=10)  # Added timeout for graceful fail
+        response = requests.post(url, json=request_body)
         response.raise_for_status()  # Will raise an HTTPError for bad responses (4xx, 5xx)
         
         # Check if the response contains valid JSON
