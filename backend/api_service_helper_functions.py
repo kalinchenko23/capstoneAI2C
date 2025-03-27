@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query, Body, HTTPException
 from llm_service import get_review_summary
-from vlm_service import analyze_images_api, get_safe_prompt, generate_summary
+from vlm_service import get_safe_prompt, generate_summary, analyze_image
 from deep_translator import GoogleTranslator
 from datetime import datetime
 import httpx
@@ -13,8 +13,9 @@ with open("secrets.json") as config_file:
     config = json.load(config_file)
 
 
-AZURE_OAI_ENDPOINT = config["AZURE_OAI_ENDPOINT"]
-AZURE_OAI_DEPLOYMENT = config["AZURE_OAI_DEPLOYMENT"]
+LLM_ENDPOINT = config["LLM_ENDPOINT"]
+LLM_DEPLOYMENT = config["LLM_DEPLOYMENT"]
+LLM_API_VERSION= config["LLM_API_VERSION"]
 
 
 async def getting_street_view_image(
@@ -42,8 +43,8 @@ async def getting_street_view_image(
         "size": "600x400",
         "key": key
     }
-    if location:
-        params["location"] = location
+    
+    params["location"] = location
     
     query = "&".join(f"{k}={v}" for k, v in params.items())
     url = f"https://maps.googleapis.com/maps/api/streetview?{query}"
@@ -74,9 +75,7 @@ async def get_photo(name: str,api_key):
     if not name:
         raise ValueError("The 'name' parameter cannot be empty.")
 
-    MAX_WIDTH = 800  
-    MAX_HEIGHT = 600  
-    url = f"https://places.googleapis.com/v1/{name}/media?key={api_key}&maxWidthPx={MAX_WIDTH}&maxHeightPx={MAX_HEIGHT}"
+    url = f"https://places.googleapis.com/v1/{name}/media?key={api_key}&maxWidthPx={800}&maxHeightPx={600}"
     
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
@@ -87,7 +86,7 @@ async def get_photo(name: str,api_key):
                 encoded_image = base64.b64encode(image_data).decode('utf-8')
                 return encoded_image
             else:
-                print(f"Error: {response.status}, {await response.text()}")
+                return None
   
 
 
@@ -147,7 +146,7 @@ async def response_formatter(responce,api_key,prompt_info,tiers,llm_key,vlm_key)
         if "reviews" in tiers:
             try:
                 #Calling LLM summarization function
-                new_data["reviews_summary"] = get_review_summary(AZURE_OAI_ENDPOINT,llm_key,AZURE_OAI_DEPLOYMENT,place["reviews"])
+                new_data["reviews_summary"] = get_review_summary(llm_key,place["reviews"])
                 new_data["reviews"] = []
                 ratings=[]
                 times=[]
@@ -188,16 +187,17 @@ async def response_formatter(responce,api_key,prompt_info,tiers,llm_key,vlm_key)
             try:
                 new_data["url_to_all_photos"]=place["photos"][0]["googleMapsUri"]
                 new_data["photos"] = []
+                
                 for photo in place["photos"]:
                     photo_info={}
                     #Retreiving photos
                     encoded_photo=await get_photo(photo["name"],api_key)
-
                     #Sending photos to VLM for the insight
-                    vlm_insight=await analyze_images_api(encoded_photo,vlm_prompt,vlm_key)
+                    vlm_insight=await analyze_image(encoded_photo,vlm_prompt,vlm_key)
                     photo_info["vlm_insight"]=vlm_insight
                     photo_info["url"]=photo["googleMapsUri"]
                     new_data["photos"].append(photo_info)
+                
                 new_data["prompt_used"]=vlm_prompt
                 new_data["photos_summary"] = await generate_summary(new_data["photos"],vlm_key)
 
@@ -205,19 +205,19 @@ async def response_formatter(responce,api_key,prompt_info,tiers,llm_key,vlm_key)
                 new_data["photos"]="Photos are not provided"
             except Exception as ex:
                 raise HTTPException(status_code=int(ex.code),detail=f"{ex}")
-
-            location=place["formattedAddress"]
             
             #Getting streetview image
             try:
                 encoded_street_view_image = await getting_street_view_image(location,api_key)
                 street_view_info={}
-                street_view_info["vlm_insight"]=await analyze_images_api(encoded_street_view_image[1],vlm_prompt)
+                street_view_info["vlm_insight"]=await analyze_image(encoded_street_view_image[1],vlm_prompt)
                 street_view_info["url"]= "URL contains api key, can't be exposed" #encoded_street_view_image[0]
                 new_data["street_view"]=street_view_info
             except Exception as ex:
                 new_data["street_view"]="Street view is not provided"
-
+        
+        location=place["formattedAddress"]
+        
         try:
             new_data["working_hours"]=place["regularOpeningHours"]["weekdayDescriptions"]
         except KeyError as ex:

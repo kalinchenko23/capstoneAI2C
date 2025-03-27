@@ -8,14 +8,10 @@ import requests
 with open("secrets.json") as config_file:
     config = json.load(config_file)
 
-AZURE_OPENAI_ENDPOINT = config["AZURE_OPENAI_ENDPOINT"]
-DEPLOYMENT_NAME = config["DEPLOYMENT_NAME"]
-API_VERSION = config["API_VERSION"]
-
-
-
-
-
+#Defining config information
+VLM_ENDPOINT = "https://noland-capstone-ai.openai.azure.com/"
+VLM_DEPLOYMENT = "gpt-4"
+API_VERSION = "2024-05-01-preview"
 MAX_CONCURRENT_REQUESTS = 25  
 semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
 
@@ -33,13 +29,13 @@ def get_safe_prompt(keywords,vlm_key):
             {"role": "system", "content": "You are an AI assistant that reformulates user-provided keywords into safe and neutral image analysis prompts."},
             {"role": "user", "content": f"Given the following information: {keywords}, create a professional and neutral prompt that can be used to describe an image focusing on these elements. Do not include any potentially sensitive content."}
         ],
-        "model": DEPLOYMENT_NAME,
+        "model": VLM_DEPLOYMENT,
         "max_tokens": 100,
         "temperature": 0.3
     }
     
     response = requests.post(
-        f"{AZURE_OPENAI_ENDPOINT}/openai/deployments/{DEPLOYMENT_NAME}/chat/completions?api-version={API_VERSION}",
+        f"{VLM_ENDPOINT}/openai/deployments/{VLM_DEPLOYMENT}/chat/completions?api-version={API_VERSION}",
         headers=HEADERS,
         json=payload,
         timeout=60
@@ -54,7 +50,7 @@ def get_safe_prompt(keywords,vlm_key):
         return "Describe the objects and setting in the image in a neutral manner."
 
 
-async def analyze_image(encoded_image, session, safe_prompt, vlm_key, retry_count=0, max_retries=8):
+async def analyze_image(encoded_image, safe_prompt, vlm_key, retry_count=0, max_retries=8):
     """Analyze a binary image using Azure OpenAI GPT-4 Vision."""
     
     HEADERS = {
@@ -62,8 +58,8 @@ async def analyze_image(encoded_image, session, safe_prompt, vlm_key, retry_coun
         "api-key": vlm_key,
         "User-Agent": "Image-Analysis-Tool/1.0"
     }
-
-    async with semaphore:
+    async with aiohttp.ClientSession() as session:
+    
         try:
             payload = {
                 "messages": [
@@ -73,13 +69,13 @@ async def analyze_image(encoded_image, session, safe_prompt, vlm_key, retry_coun
                         {"type": "image_url", "image_url": f"data:image/jpeg;base64,{encoded_image}"}
                     ]}
                 ],
-                "model": DEPLOYMENT_NAME,
+                "model": VLM_DEPLOYMENT,
                 "max_tokens": 150,
                 "temperature": 0.3
             }
 
             async with session.post(
-                f"{AZURE_OPENAI_ENDPOINT}/openai/deployments/{DEPLOYMENT_NAME}/chat/completions?api-version={API_VERSION}",
+                f"{VLM_ENDPOINT}/openai/deployments/{VLM_DEPLOYMENT}/chat/completions?api-version={API_VERSION}",
                 headers=HEADERS,
                 json=payload,
                 timeout=aiohttp.ClientTimeout(total=120)
@@ -95,18 +91,9 @@ async def analyze_image(encoded_image, session, safe_prompt, vlm_key, retry_coun
                     if retry_count < max_retries:
                         wait_time = 2 ** retry_count
                         await asyncio.sleep(wait_time)
-                        return await analyze_binary_image(encoded_image, session, safe_prompt, retry_count + 1, max_retries)
+                        return await analyze_image(encoded_image, session, safe_prompt, retry_count + 1, max_retries)
                     else:
                         return "Rate limit exceeded after multiple retries"
-                
-                elif response.status >= 500:  # Server errors
-                    
-                    if retry_count < max_retries:
-                        wait_time = 1 * (retry_count + 1)  # Linear backoff for server errors
-                        await asyncio.sleep(wait_time)
-                        return await analyze_binary_image(encoded_image, session, safe_prompt, retry_count + 1, max_retries)
-                    else:
-                        return "Server error after multiple retries"
 
                 elif response.status == 400:
                     response_text = await response.text()
@@ -116,10 +103,6 @@ async def analyze_image(encoded_image, session, safe_prompt, vlm_key, retry_coun
                 return f"Error {response.status}: {await response.text()}"
 
         except Exception as e:
-            if retry_count < max_retries:
-                wait_time = 2 * (retry_count + 1)
-                await asyncio.sleep(wait_time)
-                return await analyze_image(encoded_image, session, safe_prompt, retry_count + 1, max_retries)
             return f"Exception occurred: {str(e)}"
 
 async def generate_summary(image_descriptions: list, vlm_key: str):
@@ -152,13 +135,13 @@ async def generate_summary(image_descriptions: list, vlm_key: str):
             {"role": "system", "content": "You are an AI assistant that creates concise, informative summaries."},
             {"role": "user", "content": summary_prompt}
         ],
-        "model": DEPLOYMENT_NAME,
+        "model": VLM_DEPLOYMENT,
         "max_tokens": 250,
         "temperature": 0.3
     }
     async with aiohttp.ClientSession() as session:
         async with session.post(
-            f"{AZURE_OPENAI_ENDPOINT}/openai/deployments/{DEPLOYMENT_NAME}/chat/completions?api-version={API_VERSION}",
+            f"{VLM_ENDPOINT}/openai/deployments/{VLM_DEPLOYMENT}/chat/completions?api-version={API_VERSION}",
             headers=HEADERS,
             json=payload,
             timeout=aiohttp.ClientTimeout(total=120)
@@ -169,12 +152,6 @@ async def generate_summary(image_descriptions: list, vlm_key: str):
             else:
                 return f"{response.status} something went wrong"
    
-
-async def analyze_images_api(encoded_image,safe_prompt, vlm_key):
-    """API entry point to analyze binary images from Google Maps."""
     
-    #Processing binary images
-    async with aiohttp.ClientSession() as session:
-        result=await analyze_image(encoded_image, session, safe_prompt, vlm_key)
-        return result
+   
 

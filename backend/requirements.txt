@@ -6,5 +6,6 @@ httpx
 azure-data-tables
 pytest-asyncio
 openai
+aiohttp
 googletrans
 deep_translator
