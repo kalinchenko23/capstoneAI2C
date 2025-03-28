@@ -41,7 +41,7 @@ def review_and_submit():
         if st.session_state['vlm_input'].strip() == "":
             photo_captions_target_phrase = 'None'
         else:
-            photo_captions_target_phrase = f'{st.session_state['vlm_input']}'
+            photo_captions_target_phrase = f"{st.session_state['vlm_input']}"
 
         # get the input bounding box coords to display to the user
         try:
