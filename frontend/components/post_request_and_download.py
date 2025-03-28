@@ -74,40 +74,44 @@ def text_search_post_request(validated_establishment_search,
 
     st.write(f'post request with following body:\n {request_body}')
 
-    url = 'http://127.0.0.1:8080/search_nearby'
+    # local deployment url
+    url = 'http://127.0.0.1:8000/search_nearby'
 
-    try:
-        # Make the POST request and get the response
-        response = requests.post(url, json=request_body)
-        response.raise_for_status()  # Will raise an HTTPError for bad responses (4xx, 5xx)
-        
-        # Check if the response contains valid JSON
-        data = response.json()
-        if not data:
-            raise ValueError("Received empty response or invalid JSON.")
-        
-        # Generate Excel file in memory
-        excel_file = json_to_excel(data)
-        auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    # kubernetes deployment url
+    # url = 'http://backend:8000/search_nearby'
 
-        # conditional to check if a kmz should be returned to the user
-        if st.session_state['kmz_download_option']:
-            # Generate KMZ file in memory
-            kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
-            auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+    # try:
+    # Make the POST request and get the response
+    response = requests.post(url, json=request_body)
+    response.raise_for_status()  # Will raise an HTTPError for bad responses (4xx, 5xx)
+    
+    # Check if the response contains valid JSON
+    data = response.json()
+    if not data:
+        raise ValueError("Received empty response or invalid JSON.")
+    
+    # Generate Excel file in memory
+    excel_file = json_to_excel(data)
+    auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-    except requests.exceptions.Timeout:
-        # Handle timeout error (e.g., server takes too long to respond)
-        st.error("The request timed out. Please try again later.")
-    except requests.exceptions.RequestException as e:
-        # Handle other request exceptions (e.g., network issues, bad status codes)
-        st.error(f"An error occurred while making the request: {e}")
-    except ValueError as e:
-        # Handle case where the response is empty or invalid JSON
-        st.error(f"Invalid response received from the API: {e}")
-    except Exception as e:
-        # Catch any other unforeseen errors
-        st.error(f"An unexpected error occurred: {e}")
+    # conditional to check if a kmz should be returned to the user
+    if st.session_state['kmz_download_option']:
+        # Generate KMZ file in memory
+        kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
+        auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+
+    # except requests.exceptions.Timeout:
+    #     # Handle timeout error (e.g., server takes too long to respond)
+    #     st.error("The request timed out. Please try again later.")
+    # except requests.exceptions.RequestException as e:
+    #     # Handle other request exceptions (e.g., network issues, bad status codes)
+    #     st.error(f"An error occurred while making the request: {e}")
+    # except ValueError as e:
+    #     # Handle case where the response is empty or invalid JSON
+    #     st.error(f"Invalid response received from the API: {e}")
+    # except Exception as e:
+    #     # Catch any other unforeseen errors
+    #     st.error(f"An unexpected error occurred: {e}")
 
 @st.fragment
 def mock_post_request(bbox_tuples, search_term):
