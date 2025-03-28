@@ -67,7 +67,7 @@ def search_area():
                 # location type input
                 location_type = location_type_column.selectbox(
                 label='type', 
-                options=['Lat/Lon', 'MGRS', 'Address'],
+                options=['Lat/Lon'],
                 index=0, 
                 key='location_type', 
                 placeholder='Choose an option', 

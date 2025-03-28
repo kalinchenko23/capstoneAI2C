@@ -1,4 +1,2 @@
-secrets.conf
 venv/
-google_maps_api_key.txt
 __pycache__

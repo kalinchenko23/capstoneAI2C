@@ -1,5 +1,4 @@
 import streamlit as st
-import mgrs
 
 from styles.icons.icons import validation_error_icon
 
@@ -9,21 +8,8 @@ def validate_location(location, location_type):
         st.error('location field can not be empty', icon=validation_error_icon)
 
     else:
-        # instantiting the conversion object needed for any conversions
-        # might want to move this depending on wether we offer more conversions or not...
-        conversion_base = mgrs.MGRS()
-
-        if location_type == 'MGRS':
-            # try to convert mgrs to dd (Lat/Lon)
-            try:
-                mgrs_to_dd = conversion_base.toLatLon(location)
-                return mgrs_to_dd
-            
-            except mgrs.core.MGRSError:
-                st.error(f'Invalid MGRS - "{location}"\n', icon=validation_error_icon)
-
-
-        elif location_type == 'Lat/Lon':
+        
+        if location_type == 'Lat/Lon':
             try:
                 # checking to see if input location are comma seperated or not
                 if ',' in location:
@@ -74,11 +60,6 @@ def validate_location(location, location_type):
                     
 
             return (dd_lat, dd_lon)   
-
-
-        elif location_type == 'Address':
-            # have to handle geocoding with geocoding api, might be more expensive but will surely be more accurate
-            st.write('address selected - TODO')
 
 def validate_search_radius(search_radius, search_radius_units):
     # ensure that a value has been input for the "search radius" input field
