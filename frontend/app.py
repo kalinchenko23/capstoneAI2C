@@ -12,7 +12,7 @@ from tabs.review_and_submit import review_and_submit
 
 
 st.set_page_config(
-page_title="Tactical OPE Toolkit", 
+page_title="PLAIDE", 
 page_icon=toolbox_icon,
 layout="wide"
 )
@@ -24,7 +24,7 @@ initialize_state()
 with open('./styles/styles.css') as f:
       st.markdown(f'<style>{f.read()}<style>', unsafe_allow_html=True)
 
-st.subheader('Tactical OPE Toolkit') 
+st.markdown('<h3>PL<span style="color:red;">AI</span>DE</h3>', unsafe_allow_html=True)
 
 # define the tabs you want displayed
 active_tab = create_tabs(['Search Area', 'Query Options', 'Review + Submit'])
