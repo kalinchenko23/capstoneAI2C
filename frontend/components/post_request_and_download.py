@@ -7,6 +7,7 @@ import json
 
 from .create_excel import json_to_excel
 from .create_kmz import json_to_kmz
+from styles.icons.icons import no_results_icon
 
 # the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
 # handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
@@ -88,30 +89,30 @@ def text_search_post_request(validated_establishment_search,
     # Check if the response contains valid JSON
     data = response.json()
     if not data:
-        raise ValueError("Received empty response or invalid JSON.")
-    
-    # Generate Excel file in memory
-    excel_file = json_to_excel(data)
-    auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
+    else:
+        # Generate Excel file in memory
+        excel_file = json_to_excel(data)
+        auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-    # conditional to check if a kmz should be returned to the user
-    if st.session_state['kmz_download_option']:
-        # Generate KMZ file in memory
-        kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
-        auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+        # conditional to check if a kmz should be returned to the user
+        if st.session_state['kmz_download_option']:
+            # Generate KMZ file in memory
+            kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
+            auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
 
-    # except requests.exceptions.Timeout:
-    #     # Handle timeout error (e.g., server takes too long to respond)
-    #     st.error("The request timed out. Please try again later.")
-    # except requests.exceptions.RequestException as e:
-    #     # Handle other request exceptions (e.g., network issues, bad status codes)
-    #     st.error(f"An error occurred while making the request: {e}")
-    # except ValueError as e:
-    #     # Handle case where the response is empty or invalid JSON
-    #     st.error(f"Invalid response received from the API: {e}")
-    # except Exception as e:
-    #     # Catch any other unforeseen errors
-    #     st.error(f"An unexpected error occurred: {e}")
+        # except requests.exceptions.Timeout:
+        #     # Handle timeout error (e.g., server takes too long to respond)
+        #     st.error("The request timed out. Please try again later.")
+        # except requests.exceptions.RequestException as e:
+        #     # Handle other request exceptions (e.g., network issues, bad status codes)
+        #     st.error(f"An error occurred while making the request: {e}")
+        # except ValueError as e:
+        #     # Handle case where the response is empty or invalid JSON
+        #     st.error(f"Invalid response received from the API: {e}")
+        # except Exception as e:
+        #     # Catch any other unforeseen errors
+        #     st.error(f"An unexpected error occurred: {e}")
 
 @st.fragment
 def mock_post_request(bbox_tuples, search_term):
