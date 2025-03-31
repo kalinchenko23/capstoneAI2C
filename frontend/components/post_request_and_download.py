@@ -73,7 +73,8 @@ def text_search_post_request(validated_establishment_search,
         "vlm_key": validated_vlm_key
     }
 
-    st.write(f'post request with following body:\n {request_body}')
+    # this is used during testing
+    # st.write(f'post request with following body:\n {request_body}')
 
     # local deployment url
     url = 'http://127.0.0.1:8000/search_nearby'
