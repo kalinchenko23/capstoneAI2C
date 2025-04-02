@@ -67,6 +67,21 @@ Ensure you have the following installed:
 - **Kubernetes (kubectl)**
 - **Google Cloud API Key**
 
+### Setup Docker Desktop
+1. **Download Docker Desktop**:
+   Download Docker Desktop to your local computer using the following link:
+   ```sh
+   https://www.docker.com/products/docker-desktop/
+   ```
+   
+2. **Login to Docker Desktop**:
+   Login to Docker Desktop using your google email account. In Docker Desktop go to the Images tab and open the terminal window.
+
+3. **Download Image**:
+   Option A: Complete a docker pull command to download the image. Observe the names of the images being populated in the Image Tab. The syntax for this command is “docker pull <image name>".
+
+   Option B: Complete the setup steps below. If you are running the codebase in WSL and running Docker Desktop on Windows ensure they are connected: Open Docker Desktop → Settings → Resources → WSL Integration
+
 ### Setup Steps
 1. **Clone the repository**:
    ```sh
@@ -95,13 +110,8 @@ Ensure you have the following installed:
    docker build -t backend:lastest
    ```
 
-### Setup Docker Desktop
-1. **Download Docker Desktop**:
-   ```sh
-   Download Docker Desktop to your local computer using the following link: https://www.docker.com/products/docker-desktop/
-   ```
-2. **Login to Docker Desktop**:
-   Login to Docker Desktop using your google email account. In Docker Desktop go to the Images tab and open the terminal window. 
+
+
 
 
 ## References
