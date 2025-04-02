@@ -3,10 +3,8 @@ import streamlit as st
 from styles.icons.icons import toolbox_icon
 from state_management.initialize_state import initialize_state
 from tabs.create_tabs import create_tabs
-from tabs.user_credentials import user_credentials
 from tabs.establishment_search import establishment_search
 from tabs.search_area import search_area
-# from tabs.redesign_search_area import search_area
 from tabs.query_options import query_options
 from tabs.review_and_submit import review_and_submit
 
@@ -24,6 +22,7 @@ initialize_state()
 with open('./styles/styles.css') as f:
       st.markdown(f'<style>{f.read()}<style>', unsafe_allow_html=True)
 
+# Display app name in upper left corner
 st.markdown('<h3>PL<span style="color:red;">AI</span>DE</h3>', unsafe_allow_html=True)
 
 # define the tabs you want displayed
