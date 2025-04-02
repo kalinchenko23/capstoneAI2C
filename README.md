@@ -78,12 +78,26 @@ Ensure you have the following installed:
    Login to Docker Desktop using your google email account. In Docker Desktop go to the Images tab and open the terminal window.
 
 3. **Download Image**:
+   
    Option A: Complete a docker pull command to download the image. Observe the names of the images being populated in the Image Tab. The syntax for this command is “docker pull <image name>".
 
    Option B: Complete the setup steps below. If you are running the codebase in WSL and running Docker Desktop on Windows ensure they are connected: Open Docker Desktop → Settings → Resources → WSL Integration
 
+   NOTE: Do not continue to the next step until you have completed steps 1-4 of the Setup Steps. These steps should populate Docker Images in your Docker Desktop.
+
+4. **Docker Image Configuration**:
+   - Open up powershell in Admin mode on your computer.
+   - run the following commands to create a directory named "my-docker-project" and change directory into the newly created directory
+   ```sh
+   mkdir my-docker-project
+   ```
+   ```sh
+   cd my-docker-project
+   ```
+   - 
+
 ### Setup Steps
-1. **Clone the repository**:
+1. **Clone the repository or Import Zip File**:
    ```sh
    git clone https://github.com/kalinchenko23/capstoneAI2C.git
    capstoneAI2C
