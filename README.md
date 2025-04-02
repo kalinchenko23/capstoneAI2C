@@ -1,4 +1,4 @@
-# SOF/C OPE Toolkit: Google Maps Data Extraction and Analysis
+# PLAIDE: Google Maps Data Extraction and Analysis
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -14,15 +14,15 @@
 
 ## Project Overview
 
-The **Special Operations Forces (SOF) Operational Preparation of the Environment (OPE) Toolkit** automates the process of extracting and analyzing Google Maps data for mission-critical intelligence operations. The toolkit reduces the time SOF analysts spend gathering and formatting location data from **days** to **minutes** by leveraging **Google Maps API**, **Large Language Models (LLM)**, and **Vision Language Models (VLM)**.
+The **PLAIDE Application** automates the process of extracting and analyzing Google Maps data. The toolkit reduces the time a users spends gathering and formatting location data from **days** to **minutes** by leveraging **Google Maps API**, **Large Language Models (LLM)**, and **Vision Language Models (VLM)**.
 
-This cloud-native application, deployed on **Azure Kubernetes Service (AKS)**, provides a web-based user interface for analysts to retrieve structured and georeferenced reports with crucial location information.
+This cloud-native application, deployed on **Azure Kubernetes Service (AKS)** as well as local hosted variation via Docker Desktop, provides a user interface for analysts to retrieve structured and georeferenced reports with crucial location information.
 
 ---
 
 ## Problem Statement
 
-SOF analysts manually extract location-based information from **Google Maps**, requiring **8-40 hours** per request. The process is inefficient, with analysts manually gathering **names, locations, hours of operation, summaries of reviews, and descriptions of photos**.
+Users manually extract location-based information from **Google Maps**, requiring **8-40 hours** per request. The process is inefficient, with users manually gathering **names, locations, hours of operation, summaries of reviews, and descriptions of photos**.
 
 ### Key challenges:
 - No automated way to extract and analyze Google Maps data.
@@ -34,32 +34,10 @@ SOF analysts manually extract location-based information from **Google Maps**, r
 ## Motivation
 
 **Why build this?**
-- Reduce intelligence-gathering time by **90%**.
+- Reduce information-gathering time by **90%**.
 - Enable real-time, structured data analysis.
 - Provide AI-enhanced insights for faster decision-making.
 - Improve operational effectiveness with **Excel and geospatial reports**.
-
-**Similar Work:**
-- Existing tools require extensive manual effort and lack automated AI-based analysis.
-
----
-
-## Capacity / Capability Gaps
-- No capacity or capability gaps identified at this time.
-
----
-
-## AI2C Fit:
-- This project directly aligns with AI2C / SOF Portfolios guidance for the SOF OPE Toolkit.
-
----
-
-## RFI's for Customer:
-- RFI are handled by the AI2c mentors and by a member of the development team
-
----
-
-## Mentor and Customer Info:
 
 ---
 
@@ -114,38 +92,6 @@ Ensure you have the following installed:
      GOOGLE_API_KEY=your_google_maps_api_key
      AZURE_OPENAI_KEY=your_azure_openai_key
      ```
-
-5 **Further instractions are comming later...**
-
-**Testing includes:**
-- Google API response validation.
-- LLM & VLM output accuracy.
-- UI integration tests.
-- Performance benchmarks.
-
----
-
-## Roadmap / Anticipated Tasks
-
-### 📌 Current Progress
-- ✅ User authentication & access control
-- ✅ UI & API integration (Google Maps)
-- ✅ Basic AI summarization (LLM)
-
-
-### 🚀 Upcoming Features
-- [ ] Improved UI validation
-- [ ] VLM insights integration
-- [ ] Excel/KMZ output file generating
-
----
-
-## Acknowledgments
-
-- **Google Maps API** – For geospatial data.
-- **Azure OpenAI** – For AI-powered text/image analysis.
-- **SOF Intelligence Analysts** – For providing mission-critical requirements.
-
 ---
 
 ## References
