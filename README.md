@@ -76,7 +76,7 @@ Ensure you have the following installed:
 
 2. **Set up a virtual environment**:
    ```sh
-   python -m venv venv
+   python3 -m venv venv
    source venv/bin/activate  # MacOS/Linux
    venv\Scripts\activate  # Windows
    ```
@@ -86,13 +86,23 @@ Ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
-4. **Set up environment variables**:
-   - Create a `.secrets.json` file and configure the following:
-     ```
-     GOOGLE_API_KEY=your_google_maps_api_key
-     AZURE_OPENAI_KEY=your_azure_openai_key
-     ```
----
+4. **Create Docker Images**:
+   ```sh
+   cd frontend
+   docker build -t frontend:latest
+   cd ..
+   cd backend
+   docker build -t backend:lastest
+   ```
+
+### Setup Docker Desktop
+1. **Download Docker Desktop**:
+   ```sh
+   Download Docker Desktop to your local computer using the following link: https://www.docker.com/products/docker-desktop/
+   ```
+2. **Login to Docker Desktop**:
+   Login to Docker Desktop using your google email account. In Docker Desktop go to the Images tab and open the terminal window. 
+
 
 ## References
 
