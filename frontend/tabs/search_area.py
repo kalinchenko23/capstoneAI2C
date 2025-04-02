@@ -316,12 +316,11 @@ def search_area():
         Draw(draw_options=draw_options, edit_options=edit_options).add_to(m)
 
         st_folium(m, 
-                  zoom=st.session_state['map_zoom_level'], 
-                  center=st.session_state['map_center'],
+                zoom=st.session_state['map_zoom_level'], 
+                center=st.session_state['map_center'],
 
-                  feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
-                  width=600, height=500, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
-        
+                feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
+                width=600, height=500, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
         
         force_map_rerender(m)
 
