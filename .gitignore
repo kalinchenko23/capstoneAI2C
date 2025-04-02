@@ -1,2 +1,2 @@
-secrets.conf
 venv/
+__pycache__
