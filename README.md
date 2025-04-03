@@ -78,56 +78,38 @@ Ensure you have the following installed:
    
 3. **Login to Docker Desktop**:
 
-   Login to Docker Desktop using your google email account. In Docker Desktop go to the Images tab and open the terminal window.
+   - Login to Docker Desktop using your google email account. In Docker Desktop go to the Images tab and open the terminal window.
+   - If you are running the codebase in WSL and running Docker Desktop on Windows ensure they are connected: Open Docker Desktop → Settings → Resources → WSL Integration
 
-4. **Download Image**:
-   
-   - Option A: Complete a docker pull command to download the image. Observe the names of the images being populated in the Image Tab. The syntax for this command is “docker pull <image name>".
+4. **Build and Run Images**:
 
-   - Option B: Complete the setup steps below. If you are running the codebase in WSL and running Docker Desktop on Windows ensure they are connected: Open Docker Desktop → Settings → Resources → WSL Integration
-
-   NOTE: Do not continue to the next step until you have completed steps 1-4 of the Setup Steps. These steps should populate Docker Images in your Docker Desktop.
-
-5. **Docker Image Configuration**:
-   - Open up powershell in Admin mode on your computer.
-   - run the following commands to create a directory named "my-docker-project" and change directory into the newly created directory
-   
+   - Clone the github repo or download code zipfile. 
+   - Using VSCODE and the integrated terminal navigate to the application parent directory "cd capstoneAI2C" or "cd capstoneAI2C-main"
+   - Execute the below command to use docker-compose to build the frontend and backend Docker Images using the docker-compose.yaml and run the images
    ```sh
-   mkdir my-docker-project
+   docker-compose up -d --build
    ```
-   
-   ```sh
-   cd my-docker-project
-   ```
-   
-   - create the docker-compose.yaml in the my-docker-project directory using notepad via the below command
-     
-   ```sh
-   notepad docker-compose.yaml 
-   ```
-   - You should see a notepad pop up. Copy the contents of the docker-compose.yaml within this repo into the notepad document and save it.
+   - The above command take approximately 90 seconds to complete. The terminal output from this command will look like the below:
+      ✔ backend                       Built
+      ✔ frontend                      Built                                                                                                                   
+      ✔ Network capstoneai2c_default  Created                                                                                                                 
+      ✔ Container backend             Started                                                                                                                
+      ✔ Container frontend            Started
   
-6. **Start Docker Images**:
-   - In the powershell terminal execute the below command to start the Docker Images. This command was successful if the terminal returned "Started" or "Running".
-   
-   ```sh
-   docker-compose up -d
-   ```
-   
    - To verify the containters are running, execute the following command in the powershell terminal. Ensure the status is listed as "Up".
    
    ```sh
    docker ps
    ```
 
-7. **Access the Application**:
+8. **Access the Application**:
    - To access the application open a browser and paste in the below URL:
      
    ```sh
    http://localhost/
    ```
 
-8. **Stopping the Application**:
+9. **Stopping the Application**:
    - In the event there is a need stop the containers run the following command:
 
    ```sh
@@ -141,46 +123,6 @@ Ensure you have the following installed:
    ```
 
 Admin Note: The docker engine needs to run to allow docker compose to run the containers. To ensure this occurs go to Docker Desktop and click on the settings gear in the upper right hand corner. Under the General tab ensure the box labeled “Start Docker Desktop when you sign in to your computer” is checked. 
-
-### Setup Steps
-1. **Clone the repository or Import Zip File**:
-   ```sh
-   git clone https://github.com/kalinchenko23/capstoneAI2C.git
-   capstoneAI2C
-   ```
-
-2. **Set up a virtual environment**:
-   ```sh
-   python3 -m venv venv
-   source venv/bin/activate  # MacOS/Linux
-   venv\Scripts\activate  # Windows
-   ```
-
-3. **Install dependencies**:
-   ```sh
-   pip install -r requirements.txt
-   ```
-
-4. **Create Docker Images**:
-   ```sh
-   cd frontend
-   ```
-   ```sh
-   docker build -t frontend:latest .
-   ```
-   ```sh
-   cd ..
-   ```
-   ```sh
-   cd backend
-   ```
-   ```sh
-   docker build -t backend:latest .
-   ```
-
-
-
-
 
 ## References
 
