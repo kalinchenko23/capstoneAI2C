@@ -140,6 +140,8 @@ Ensure you have the following installed:
    docker ps
    ```
 
+Admin Note: The docker engine needs to run to allow docker compose to run the containers. To ensure this occurs go to Docker Desktop and click on the settings gear in the upper right hand corner. Under the General tab ensure the box labeled “Start Docker Desktop when you sign in to your computer” is checked. 
+
 ### Setup Steps
 1. **Clone the repository or Import Zip File**:
    ```sh
