@@ -8,16 +8,6 @@ import aiohttp
 import json
 import base64
 
-# Load the JSON secrets config
-with open("secrets.json") as config_file:
-    config = json.load(config_file)
-
-
-LLM_ENDPOINT = config["LLM_ENDPOINT"]
-LLM_DEPLOYMENT = config["LLM_DEPLOYMENT"]
-LLM_API_VERSION= config["LLM_API_VERSION"]
-
-
 async def getting_street_view_image(
     location: str,
     key: str):

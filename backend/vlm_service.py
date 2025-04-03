@@ -4,10 +4,6 @@ import asyncio
 import json
 import requests
 
-# Load the JSON secrets config
-with open("secrets.json") as config_file:
-    config = json.load(config_file)
-
 #Defining config information
 VLM_ENDPOINT = "https://noland-capstone-ai.openai.azure.com/"
 VLM_DEPLOYMENT = "gpt-4"
