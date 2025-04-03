@@ -101,7 +101,7 @@ Ensure you have the following installed:
    - You should see a notepad pop up. Copy the contents of the docker-compose.yaml within this repo into the notepad document and save it.
   
 5. **Start Docker Images**:
-   - In the powershell terminal execute the below command to start the Docker Images. This command was successful is the terminal returned "Started" or "Running".
+   - In the powershell terminal execute the below command to start the Docker Images. This command was successful if the terminal returned "Started" or "Running".
    ```sh
    docker-compose up -d
    ```
