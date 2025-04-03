@@ -90,6 +90,7 @@ Ensure you have the following installed:
    docker-compose up -d --build
    ```
    - The above command take approximately 90 seconds to complete. The terminal output from this command will look like the below:
+     
       ✔ backend                       Built
       ✔ frontend                      Built                                                                                                                   
       ✔ Network capstoneai2c_default  Created                                                                                                                 
