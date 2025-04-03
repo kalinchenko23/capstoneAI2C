@@ -82,15 +82,16 @@ Ensure you have the following installed:
 
 4. **Download Image**:
    
-   Option A: Complete a docker pull command to download the image. Observe the names of the images being populated in the Image Tab. The syntax for this command is “docker pull <image name>".
+   - Option A: Complete a docker pull command to download the image. Observe the names of the images being populated in the Image Tab. The syntax for this command is “docker pull <image name>".
 
-   Option B: Complete the setup steps below. If you are running the codebase in WSL and running Docker Desktop on Windows ensure they are connected: Open Docker Desktop → Settings → Resources → WSL Integration
+   - Option B: Complete the setup steps below. If you are running the codebase in WSL and running Docker Desktop on Windows ensure they are connected: Open Docker Desktop → Settings → Resources → WSL Integration
 
    NOTE: Do not continue to the next step until you have completed steps 1-4 of the Setup Steps. These steps should populate Docker Images in your Docker Desktop.
 
 5. **Docker Image Configuration**:
    - Open up powershell in Admin mode on your computer.
    - run the following commands to create a directory named "my-docker-project" and change directory into the newly created directory
+   
    ```sh
    mkdir my-docker-project
    ```
@@ -98,6 +99,7 @@ Ensure you have the following installed:
    cd my-docker-project
    ```
    - create the docker-compose.yaml in the my-docker-project directory using notepad via the below command
+     
    ```sh
    notepad docker-compose.yaml 
    ```
@@ -105,10 +107,13 @@ Ensure you have the following installed:
   
 6. **Start Docker Images**:
    - In the powershell terminal execute the below command to start the Docker Images. This command was successful if the terminal returned "Started" or "Running".
+   
    ```sh
    docker-compose up -d
    ```
+   
    - To verify the containters are running, execute the following command in the powershell terminal. Ensure the status is listed as "Up".
+     
    ```sh
    docker ps
    ```
