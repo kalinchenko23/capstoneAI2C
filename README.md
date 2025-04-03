@@ -6,8 +6,6 @@
 - [Motivation](#motivation)
 - [Key Features](#key-features)
 - [Installation](#installation)
-- [Roadmap](#roadmap)
-- [Acknowledgments](#acknowledgments)
 - [References](#references)
 
 ---
