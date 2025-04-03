@@ -60,10 +60,9 @@ Users manually extract location-based information from **Google Maps**, requirin
 ### Prerequisites
 Ensure you have the following installed:
 - **Python 3.9+**
-- **Docker**
-- **Azure CLI**
-- **Kubernetes (kubectl)**
+- **VSCODE**
 - **Google Cloud API Key**
+- **OpenAI API Key**
 
 ### Setup Docker Desktop
 1. **Download Docker Desktop**:
