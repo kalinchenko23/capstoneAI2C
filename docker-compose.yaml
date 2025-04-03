@@ -1,16 +1,22 @@
+version: "3.10"
 services:
   backend:
-    image: backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: backend
     ports:
       - "8000:8000"
     restart: always
 
   frontend:
-    image: frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: frontend
     ports:
       - "80:8501"
     depends_on:
       - backend
     restart: always
+
