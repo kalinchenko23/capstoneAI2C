@@ -94,7 +94,7 @@ Ensure you have the following installed:
       ✔ Container backend             Started                                                                                                                
       ✔ Container frontend            Started
   
-   - To verify the containters are running, execute the following command in the powershell terminal. Ensure the status is listed as "Up".
+   - To verify the containters are running, execute the following command in the VSCODE integrated terminal. Ensure the status is listed as "Up".
    
    ```sh
    docker ps
