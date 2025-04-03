@@ -69,15 +69,18 @@ Ensure you have the following installed:
 
 ### Setup Docker Desktop
 1. **Download Docker Desktop**:
+
    Download Docker Desktop to your local computer using the following link:
+   
    ```sh
    https://www.docker.com/products/docker-desktop/
    ```
    
-2. **Login to Docker Desktop**:
+3. **Login to Docker Desktop**:
+
    Login to Docker Desktop using your google email account. In Docker Desktop go to the Images tab and open the terminal window.
 
-3. **Download Image**:
+4. **Download Image**:
    
    Option A: Complete a docker pull command to download the image. Observe the names of the images being populated in the Image Tab. The syntax for this command is “docker pull <image name>".
 
@@ -85,7 +88,7 @@ Ensure you have the following installed:
 
    NOTE: Do not continue to the next step until you have completed steps 1-4 of the Setup Steps. These steps should populate Docker Images in your Docker Desktop.
 
-4. **Docker Image Configuration**:
+5. **Docker Image Configuration**:
    - Open up powershell in Admin mode on your computer.
    - run the following commands to create a directory named "my-docker-project" and change directory into the newly created directory
    ```sh
@@ -100,7 +103,7 @@ Ensure you have the following installed:
    ```
    - You should see a notepad pop up. Copy the contents of the docker-compose.yaml within this repo into the notepad document and save it.
   
-5. **Start Docker Images**:
+6. **Start Docker Images**:
    - In the powershell terminal execute the below command to start the Docker Images. This command was successful if the terminal returned "Started" or "Running".
    ```sh
    docker-compose up -d
@@ -110,7 +113,7 @@ Ensure you have the following installed:
    docker ps
    ```
 
-6. **Access the Application**:
+7. **Access the Application**:
    - To access the application open a browser and paste in the below URL:
    ```sh
    http://localhost/
