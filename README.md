@@ -94,7 +94,27 @@ Ensure you have the following installed:
    ```sh
    cd my-docker-project
    ```
-   - 
+   - create the docker-compose.yaml in the my-docker-project directory using notepad via the below command
+   ```sh
+   notepad docker-compose.yaml 
+   ```
+   - You should see a notepad pop up. Copy the contents of the docker-compose.yaml within this repo into the notepad document and save it.
+  
+5. **Start Docker Images**:
+   - In the powershell terminal execute the below command to start the Docker Images. This command was successful is the terminal returned "Started" or "Running".
+   ```sh
+   docker-compose up -d
+   ```
+   - To verify the containters are running, execute the following command in the powershell terminal. Ensure the status is listed as "Up".
+   ```sh
+   docker ps
+   ```
+
+6. **Access the Application**:
+   - To access the application open a browser and paste in the below URL:
+   ```sh
+   http://localhost/
+   ```
 
 ### Setup Steps
 1. **Clone the repository or Import Zip File**:
@@ -118,10 +138,10 @@ Ensure you have the following installed:
 4. **Create Docker Images**:
    ```sh
    cd frontend
-   docker build -t frontend:latest
+   docker build -t frontend:latest .
    cd ..
    cd backend
-   docker build -t backend:lastest
+   docker build -t backend:latest .
    ```
 
 
