@@ -1,4 +1,4 @@
-# SOF/C OPE Toolkit: Google Maps Data Extraction and Analysis
+# PLAIDE: Google Maps Data Extraction and Analysis
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -14,15 +14,15 @@
 
 ## Project Overview
 
-The **Special Operations Forces (SOF) Operational Preparation of the Environment (OPE) Toolkit** automates the process of extracting and analyzing Google Maps data for mission-critical intelligence operations. The toolkit reduces the time SOF analysts spend gathering and formatting location data from **days** to **minutes** by leveraging **Google Maps API**, **Large Language Models (LLM)**, and **Vision Language Models (VLM)**.
+The **PLAIDE Application** automates the process of extracting and analyzing Google Maps data. The toolkit reduces the time a users spends gathering and formatting location data from **days** to **minutes** by leveraging **Google Maps API**, **Large Language Models (LLM)**, and **Vision Language Models (VLM)**.
 
-This cloud-native application, deployed on **Azure Kubernetes Service (AKS)**, provides a web-based user interface for analysts to retrieve structured and georeferenced reports with crucial location information.
+This cloud-native application, deployed on **Azure Kubernetes Service (AKS)** as well as local hosted variation via Docker Desktop, provides a user interface for analysts to retrieve structured and georeferenced reports with crucial location information.
 
 ---
 
 ## Problem Statement
 
-SOF analysts manually extract location-based information from **Google Maps**, requiring **8-40 hours** per request. The process is inefficient, with analysts manually gathering **names, locations, hours of operation, summaries of reviews, and descriptions of photos**.
+Users manually extract location-based information from **Google Maps**, requiring **8-40 hours** per request. The process is inefficient, with users manually gathering **names, locations, hours of operation, summaries of reviews, and descriptions of photos**.
 
 ### Key challenges:
 - No automated way to extract and analyze Google Maps data.
@@ -34,13 +34,10 @@ SOF analysts manually extract location-based information from **Google Maps**, r
 ## Motivation
 
 **Why build this?**
-- Reduce intelligence-gathering time by **90%**.
+- Reduce information-gathering time by **90%**.
 - Enable real-time, structured data analysis.
 - Provide AI-enhanced insights for faster decision-making.
 - Improve operational effectiveness with **Excel and geospatial reports**.
-
-**Similar Work:**
-- Existing tools require extensive manual effort and lack automated AI-based analysis.
 
 ---
 
@@ -70,8 +67,37 @@ Ensure you have the following installed:
 - **Kubernetes (kubectl)**
 - **Google Cloud API Key**
 
+### Setup Docker Desktop
+1. **Download Docker Desktop**:
+   Download Docker Desktop to your local computer using the following link:
+   ```sh
+   https://www.docker.com/products/docker-desktop/
+   ```
+   
+2. **Login to Docker Desktop**:
+   Login to Docker Desktop using your google email account. In Docker Desktop go to the Images tab and open the terminal window.
+
+3. **Download Image**:
+   
+   Option A: Complete a docker pull command to download the image. Observe the names of the images being populated in the Image Tab. The syntax for this command is “docker pull <image name>".
+
+   Option B: Complete the setup steps below. If you are running the codebase in WSL and running Docker Desktop on Windows ensure they are connected: Open Docker Desktop → Settings → Resources → WSL Integration
+
+   NOTE: Do not continue to the next step until you have completed steps 1-4 of the Setup Steps. These steps should populate Docker Images in your Docker Desktop.
+
+4. **Docker Image Configuration**:
+   - Open up powershell in Admin mode on your computer.
+   - run the following commands to create a directory named "my-docker-project" and change directory into the newly created directory
+   ```sh
+   mkdir my-docker-project
+   ```
+   ```sh
+   cd my-docker-project
+   ```
+   - 
+
 ### Setup Steps
-1. **Clone the repository**:
+1. **Clone the repository or Import Zip File**:
    ```sh
    git clone https://github.com/kalinchenko23/capstoneAI2C.git
    capstoneAI2C
@@ -79,7 +105,7 @@ Ensure you have the following installed:
 
 2. **Set up a virtual environment**:
    ```sh
-   python -m venv venv
+   python3 -m venv venv
    source venv/bin/activate  # MacOS/Linux
    venv\Scripts\activate  # Windows
    ```
@@ -89,45 +115,18 @@ Ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
-4. **Set up environment variables**:
-   - Create a `.secrets.json` file and configure the following:
-     ```
-     GOOGLE_API_KEY=your_google_maps_api_key
-     AZURE_OPENAI_KEY=your_azure_openai_key
-     ```
-
-5 **Further instractions are comming later...**
-
-**Testing includes:**
-- Google API response validation.
-- LLM & VLM output accuracy.
-- UI integration tests.
-- Performance benchmarks.
-
----
-
-## Roadmap
-
-### 📌 Current Progress
-- ✅ User authentication & access control
-- ✅ UI & API integration (Google Maps)
-- ✅ Basic AI summarization (LLM)
+4. **Create Docker Images**:
+   ```sh
+   cd frontend
+   docker build -t frontend:latest
+   cd ..
+   cd backend
+   docker build -t backend:lastest
+   ```
 
 
-### 🚀 Upcoming Features
-- [ ] Improved UI validation
-- [ ] VLM insights integration
-- [ ] Excel/KMZ output file generating
 
----
 
-## Acknowledgments
-
-- **Google Maps API** – For geospatial data.
-- **Azure OpenAI** – For AI-powered text/image analysis.
-- **SOF Intelligence Analysts** – For providing mission-critical requirements.
-
----
 
 ## References
 
