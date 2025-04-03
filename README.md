@@ -95,9 +95,11 @@ Ensure you have the following installed:
    ```sh
    mkdir my-docker-project
    ```
+   
    ```sh
    cd my-docker-project
    ```
+   
    - create the docker-compose.yaml in the my-docker-project directory using notepad via the below command
      
    ```sh
@@ -120,6 +122,7 @@ Ensure you have the following installed:
 
 7. **Access the Application**:
    - To access the application open a browser and paste in the below URL:
+     
    ```sh
    http://localhost/
    ```
