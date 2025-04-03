@@ -138,9 +138,17 @@ Ensure you have the following installed:
 4. **Create Docker Images**:
    ```sh
    cd frontend
+   ```
+   ```sh
    docker build -t frontend:latest .
+   ```
+   ```sh
    cd ..
+   ```
+   ```sh
    cd backend
+   ```
+   ```sh
    docker build -t backend:latest .
    ```
 
