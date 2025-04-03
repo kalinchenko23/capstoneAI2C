@@ -82,7 +82,7 @@ Ensure you have the following installed:
 
    - Clone the github repo or download code zipfile. 
    - Using VSCODE and the integrated terminal navigate to the application parent directory "cd capstoneAI2C" or "cd capstoneAI2C-main"
-   - Execute the below command to use docker-compose to build the frontend and backend Docker Images using the docker-compose.yaml and run the images
+   - Execute the below command in the VSCODE integrated terminal to use docker-compose to build the frontend and backend Docker Images using the docker-compose.yaml and run the images
    ```sh
    docker-compose up -d --build
    ```
