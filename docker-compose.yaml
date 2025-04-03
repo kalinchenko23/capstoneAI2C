@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: backend:latest
+    container_name: backend
+    ports:
+      - "8000:8000"
+    restart: always
+
+  frontend:
+    image: frontend:latest
+    container_name: frontend
+    ports:
+      - "80:8501"
+    depends_on:
+      - backend
+    restart: always
