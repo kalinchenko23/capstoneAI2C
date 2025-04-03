@@ -64,7 +64,7 @@ Ensure you have the following installed:
 - **Google Cloud API Key**
 - **OpenAI API Key**
 
-### Setup Docker Desktop
+### Setup Steps
 1. **Download Docker Desktop**:
 
    Download Docker Desktop to your local computer using the following link:
