@@ -135,4 +135,3 @@ Ensure you have the following installed:
 - **Azure Kubernetes Service (AKS):** [Microsoft Azure](https://azure.microsoft.com/en-us/products/kubernetes-service)
 - **Azure Pricing Calculator:** [Azure Pricing](https://azure.microsoft.com/en-us/pricing/calculator/)
 - **Streamlit:** [Streamlit.io](https://streamlit.io/)
-
