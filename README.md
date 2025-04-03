@@ -115,7 +115,7 @@ Ensure you have the following installed:
    ```
    
    - To verify the containters are running, execute the following command in the powershell terminal. Ensure the status is listed as "Up".
-     
+   
    ```sh
    docker ps
    ```
@@ -125,6 +125,19 @@ Ensure you have the following installed:
      
    ```sh
    http://localhost/
+   ```
+
+8. **Stopping the Application**:
+   - In the event there is a need stop the containers run the following command:
+
+   ```sh
+   docker-compose down --volumes
+   ```
+   - If the output of this command is “no such service -volumes”, ensure there are have two dashes (-) before volumes. The correct output from this command is, "container frontend removed, container backend removed, and network my-docker-project_default removed” each printed on their own separate line.
+   - To ensure there are no containers running execute the following:
+      
+   ```sh
+   docker ps
    ```
 
 ### Setup Steps
