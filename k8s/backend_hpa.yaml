@@ -1,0 +1,26 @@
+apiVersion: autoscaling/v2  # Specifies the API version of the Horizontal Pod Autoscaler
+kind: HorizontalPodAutoscaler  # Defines the resource type as a HorizontalPodAutoscaler
+metadata:
+  name: backendhpa  # Name of the Horizontal Pod Autoscaler resource
+  namespace: default  # Namespace where the HPA is created
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1  # API version of the resource being scaled (Deployment in this case)
+    kind: Deployment  # The type of resource being scaled (Deployment)
+    name: backend  # Name of the Deployment being scaled
+  minReplicas: 1  # Minimum number of pods to maintain
+  maxReplicas: 3  # Maximum number of pods to scale to
+  metrics:
+  - type: Resource  # Indicates the metric type is based on resource usage (e.g., CPU, memory)
+    resource:
+      name: cpu  # The resource being measured (CPU usage)
+      target:
+        type: Utilization  # The scaling target is based on resource utilization percentage
+        averageUtilization: 50  # Target average CPU utilization is 50%
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 50  # Time window to wait before scaling down again (in seconds)
+      policies:
+        - type: Pods  # Scaling policy applies to pods (not percentage of replicas)
+          value: 1  # Scale down by 1 pod at a time
+          periodSeconds: 10  # Period of 10 seconds for scaling down policy
