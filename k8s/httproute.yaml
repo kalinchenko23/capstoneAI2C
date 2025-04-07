@@ -1,0 +1,15 @@
+metadata:
+  name: route
+  namespace: default  # Ensure this matches your Gateway's namespace
+spec:
+  parentRefs:
+    - name: gateway  # The name of your Gateway resource
+      namespace: default
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: "/"  # Matches all paths
+      backendRefs:
+        - name: frontend  # The name of your Service
+          port: 8501      # The port your Service is listening on
