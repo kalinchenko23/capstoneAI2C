@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: sofacrcapstone.azurecr.io/backend:v2
+        ports:
+        - containerPort: 8000   # Updated port to 8000
+        resources:
+          requests:
+            cpu: "100m"       # Request 100m CPU (adjust based on actual usage)
+            memory: "512Mi"    # Request 128Mi memory (adjust based on actual usage)
+          limits:
+            memory: "512Mi"

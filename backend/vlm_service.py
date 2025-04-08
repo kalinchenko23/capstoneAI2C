@@ -20,6 +20,10 @@ def get_safe_prompt(keywords,vlm_key):
         "User-Agent": "Image-Analysis-Tool/1.0"
     }
     """Synchronously generate a safe user prompt based on keywords using ChatGPT."""
+    
+    if not keywords.strip():  # Check for empty or whitespace-only string
+        return "Describe the objects and setting in the image in a neutral manner."
+        
     payload = {
         "messages": [
             {"role": "system", "content": "You are an AI assistant that reformulates user-provided keywords into safe and neutral image analysis prompts."},
