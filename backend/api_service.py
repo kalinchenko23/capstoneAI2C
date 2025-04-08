@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Query, Body, HTTPException, Response
 from api_service_helper_functions import getting_street_view_image, response_formatter
 from typing import Optional
+from estimator import cost_time_predict 
 import httpx
 import json
 import re
@@ -88,4 +89,71 @@ async def search_nearby_places(text_query: str =Body(),
     data = await response_formatter(result,google_api_key,prompt_info,tiers,llm_key,vlm_key)
     return {"places": data}
 
+@app.post("/estimator")
+async def search_nearby_places(text_query: str =Body(),
+                               lat_sw: float = Body(),
+                               lng_sw: float = Body(),
+                               lat_ne: float = Body(),
+                               lng_ne: float = Body(),
+                               google_api_key: str = Body(),
+                               pageToken: Optional[str] = Body(default=None),
+                               fieldMask: str = Body(default="places.displayName,nextPageToken")):
     
+    """
+    This endpoint performs a search for places in order to estimate how long 
+    a main query will take and how much will it cost.
+    """
+    
+    headers = {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": google_api_key,
+        "X-Goog-FieldMask": fieldMask
+    }
+
+    payload={
+    "textQuery": text_query,
+    "locationRestriction": {
+        "rectangle": {
+            "low": {
+                "latitude": lat_sw,
+                "longitude": lng_sw
+            },
+            "high": {
+                "latitude": lat_ne,
+                "longitude": lng_ne
+            }
+        }
+    },
+    "pageToken": pageToken
+    
+    }
+    result={}
+    
+    async with httpx.AsyncClient() as client:
+        response = await client.post(TEXT_SEARCH_URL, json=payload, headers=headers)
+        
+    if response.status_code != 200:
+        raise HTTPException(
+            status_code=response.status_code,
+            detail=f"Error from Google API: {response.text}"
+        )
+    
+    if "places" in response.json().keys():
+        result=response.json()["places"]
+    else:
+        return result
+    
+    #Reccursive function that checks if there is a next page 
+    async def next_page(next_page_response: dict):
+        if "nextPageToken" in next_page_response.keys():
+            async with httpx.AsyncClient() as client:
+                payload["pageToken"]=next_page_response["nextPageToken"]
+                # payload["pageSize"]=20
+                response = await client.post(TEXT_SEARCH_URL, json=payload, headers=headers)
+                for place in response.json()["places"]:
+                    result.append(place)
+                await next_page(response.json())
+        else:
+            return False
+    await next_page(response.json())
+    return  cost_time_predict(len(result))
