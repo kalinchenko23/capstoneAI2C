@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: sofacrcapstone.azurecr.io/backend:v2
+        image: sofacrcapstone.azurecr.io/backend:latest
         ports:
         - containerPort: 8000   # Updated port to 8000
         resources:
