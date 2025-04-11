@@ -1,5 +1,6 @@
 def cost_time_predict(places:int):
     results={
+    "places": places,
     "basic_time":"couple of seconds",
     "basic_cost":round(0.04*places,2),
     "reviews_time":round(2*places/60,2),
