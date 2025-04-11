@@ -66,6 +66,13 @@ jobs:
       - name: Set up kubectl
         uses: azure/setup-kubectl@v1
 
+      - name: Log in to Azure with Managed Identity
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AKS_MANAGED_IDENTITY_CLIENT_ID }}  # Managed Identity's Client ID
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}  # Your Azure Tenant ID
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
       - name: Get AKS credentials
         run: |
           az aks get-credentials --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name capstoneaks
