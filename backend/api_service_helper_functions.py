@@ -7,6 +7,8 @@ import httpx
 import aiohttp
 import json
 import base64
+import openai
+
 
 async def getting_street_view_image(
     location: str,
@@ -172,6 +174,8 @@ async def response_formatter(responce,api_key,prompt_info,tiers,llm_key,vlm_key)
                 new_data["reviews_span"]="Error retreiving timestamp"
             except KeyError as ex:
                 new_data["reviews"]="Reviews are not provided"
+            except openai.AuthenticationError as ex:
+                raise HTTPException(status_code=ex.status_code,detail=f"Your LLM key or endpoint is incorrect")
 
         if "photos" in tiers:
             try:
@@ -190,11 +194,8 @@ async def response_formatter(responce,api_key,prompt_info,tiers,llm_key,vlm_key)
                 
                 new_data["prompt_used"]=vlm_prompt
                 new_data["photos_summary"] = await generate_summary(new_data["photos"],vlm_key)
-
             except KeyError as ex:
                 new_data["photos"]="Photos are not provided"
-            except Exception as ex:
-                raise HTTPException(status_code=int(ex.code),detail=f"{ex}")
             
             #Getting streetview image
             try:
