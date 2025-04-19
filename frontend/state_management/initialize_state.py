@@ -96,6 +96,12 @@ def initialize_state():
     if 'kmz_download_option' not in st.session_state:
         st.session_state['kmz_download_option'] = True
 
+    if 'price_predicted' not in st.session_state:
+        st.session_state['price_predicted'] = False
+
+    if 'price_prediction' not in st.session_state:
+        st.session_state['price_prediction'] = {}
+
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":

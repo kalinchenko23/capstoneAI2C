@@ -1,13 +1,28 @@
 import streamlit as st
+import pandas as pd
+
+from components.cost_estimator import mock_cost_estimator
 
 # TODO:
 # big info box
 
 @st.fragment
 def query_options():
+    test_col_1, test_col_2 = st.columns(2)
+
     # creates the "select output fields" containers and pills
-    with st.container(border=True, key='select_output_fields_container'):
-        st.write('Select the Data Included in Output')
+    with test_col_1.container(border=True, key='select_output_fields_container'):
+        col_1, col_2, col_3 = st.columns(3) # this is just an easy way to move the toggle further to the right
+        col_1.write('Select the Data Included in Output')
+        # creates the kmz toggle
+        col_3.toggle(
+            'Include KMZ Download', 
+            key='kmz_download_option', 
+            help=None, 
+            on_change=None, 
+            disabled=False, 
+            label_visibility="visible"
+        )
 
         # sentences displayed when a user hovers over the corresponding '?' 
         # need to do something in the styling to differentiate the help text box from the background
@@ -42,11 +57,6 @@ def query_options():
                     key='all_fields_checkbox',  
                     on_change=update_states_all_selected)
         
-
-
-
-
-
 
         # basic data chekbox
         with st.container(border=True):
@@ -95,10 +105,6 @@ def query_options():
                     label_visibility="collapsed"
                 )
 
-
-
-
-
         with st.container(border=True):
             photo_col_1, photo_col_2 = st.columns(2)
         
@@ -138,15 +144,109 @@ def query_options():
                         label_visibility="visible"
                     )
 
-    # creates the kmz toggle
-    st.toggle(
-        'Include KMZ Download', 
-        key='kmz_download_option', 
-        help=None, 
-        on_change=None, 
-        disabled=False, 
-        label_visibility="visible"
-    )
+    # beginning of cost prediction stuff
+    
+    with test_col_2.container(border=True):
+        # st.write(st.session_state['price_prediction'])
+        # st.write(st.session_state['price_predicted'])
+
+        if st.session_state['price_predicted'] == False:
+
+            precondtions_prompt = ('In order to make a prediction you must provide:\n'
+                                    '1. Establishment Search Term\n'
+                                    '2. Search Area Bounding Box\n'
+                                    '3. Google Maps API Key'
+                                    )
+            
+            prediction_cost_prompt = "Predicting the cost will incur a charge between 3 and 9 cents."
+
+            # three conditions need to be met for the price prediction button to be enabled
+            predict_cost_preconditions = bool(st.session_state['establishment_search_input'] and 
+                                         st.session_state['user_bounding_box'] and 
+                                         st.session_state['google_maps_api_key'])
+            
+            if st.button('Predict Query Time and Cost', 
+                            help=prediction_cost_prompt if predict_cost_preconditions else precondtions_prompt, 
+                            on_click=None, 
+                            type="secondary", 
+                            disabled=False if predict_cost_preconditions else True, 
+                            use_container_width=True):
+                
+                mock_cost_estimator()
+                st.session_state['price_predicted'] = True
+                st.rerun(scope='fragment')
+            
+            table_data = [
+                            {"Tier": "Basic",  "Time": "--",  "Cost": "--"},
+                            {"Tier": "Review", "Time": "--",  "Cost": "--"},
+                            {"Tier": "Photo",  "Time": "--",  "Cost": "--"},
+                            {"Tier": "All",    "Time": "--",  "Cost": "--"}
+                        ]
+            
+            df = pd.DataFrame(table_data)
+            df.reset_index(drop=True)
+            st.write('establishments found: -')
+            st.table(df)
+            
+        
+        elif st.session_state['price_predicted'] == True:
+            st.button('Predict Query Time and Cost', 
+                        help="Price already predicted for current search term and search area",  
+                        type="secondary", 
+                        disabled=True, 
+                        use_container_width=True)
+            
+            data = st.session_state['price_prediction']
+            table_data = [
+                            {"Tier": "Basic",  "Time": data["basic_time"],      "Cost": data["basic_cost"]},
+                            {"Tier": "Review", "Time": data["reviews_time"],    "Cost": data["reviews_cost"]},
+                            {"Tier": "Photo",  "Time": data["photos_time"],     "Cost": data["photos_cost"]},
+                            {"Tier": "All",    "Time": data["time_everything"], "Cost": data["cost_everything"]}
+                        ]
+            df = pd.DataFrame(table_data)
+            df.reset_index(drop=True)
+
+            # Round all numeric values (except for "couple of seconds", which is a string)
+            df["Cost"] = df["Cost"].apply(lambda x: f"{x:.2f}" if isinstance(x, (int, float)) else x)
+            df["Time"] = df["Time"].apply(lambda x: f"{x:.2f}" if isinstance(x, (int, float)) else x)
+            
+            # Display without index
+            st.write(f'establishments found: {data["places"]}')
+            st.table(df)
+
+            # set state variable tracking if a prediction has been generated
+            st.session_state['price_predicted'] = True
+
+            # get the sums of currently selected tiers to display to the user
+            total_prediction = st.session_state['price_prediction']
+            time_prediction = 0
+            cost_prediction = 0
+
+            if st.session_state['basic_data_checkbox']:
+                time_prediction += total_prediction['basic_time']
+                cost_prediction += total_prediction['basic_cost']
+            if st.session_state['include_reviews_checkbox']:
+                time_prediction += total_prediction['reviews_time']
+                cost_prediction += total_prediction['reviews_cost']
+            if st.session_state['include_photo_captioning_checkbox']:
+                time_prediction += total_prediction['photos_time']
+                cost_prediction += total_prediction['photos_cost']
+            
+            time_prediction = round(time_prediction, 2)
+            cost_prediction = round(cost_prediction, 2)
+
+            prediction_totals_col_1, prediction_totals_col_2 = st.columns(2)
+
+            prediction_totals_col_1.write(f'Predicted Query Time: {time_prediction}')
+            prediction_totals_col_2.write(f'Predicted Query Cost: {cost_prediction}')
+            
+
+
+
+
+            
+    
+
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":

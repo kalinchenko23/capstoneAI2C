@@ -7,7 +7,6 @@
 # style for the whole tab:
     # error messages kinda look wonky
     # not in love with scrolling up and down to drop pins/boxes and look at the map
-# test the shit out of the bbox coords to ensure the one highlighted in red is the one reflected in the query
 
 import folium
 import streamlit as st
@@ -103,6 +102,10 @@ def force_map_rerender(m):
     # this causes the map to rerender and gets rid of any boxes in folium's default feature group
     invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
     folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
+
+def reset_price_prediction():
+    st.session_state['price_predicted'] = False
+    st.session_state['price_prediction'] = {}
 
 # this is causing an issue if the tabs are changed too fast by the user
 @st.fragment
@@ -218,6 +221,9 @@ def search_area():
                                 fillColor='blue'
                             ).add_to(st.session_state['rectangle_feature_group'])
 
+                            # this resets the price prediction state variables if a new bounding box is drawn
+                            reset_price_prediction()
+
                             # Store the last active drawing as the new bounding box
                             new_bounding_box = {
                                 "type": "Feature",
@@ -238,6 +244,9 @@ def search_area():
                     st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
                     st.session_state['map']['last_active_drawing'] = []
                     st.session_state['user_bounding_box'] = None
+
+                    # this resets the price prediction state variables if the bounding boxes are deleted
+                    reset_price_prediction()
 
                     force_map_rerender(m)
 
@@ -270,6 +279,7 @@ def search_area():
                 # handle zooming to dropped/drawn box
                 st.session_state['map_center'] = calculate_center_of_bbox(bounds)
                 st.session_state['map_zoom_level'] = 13
+                
 
                 # Prevent duplicate rectangles
                 already_exists = any(
@@ -277,26 +287,31 @@ def search_area():
                     for child in st.session_state['rectangle_feature_group']._children.values()
                 )
 
+                if st.session_state['user_bounding_box'] != st.session_state['map']['last_active_drawing']:
+                    reset_price_prediction()
+
                 for child in st.session_state['rectangle_feature_group']._children.values():
                     if isinstance(child, folium.Rectangle):
                         coords = shape_data['geometry']['coordinates']
                         bounds = [[coords[0][0][1], coords[0][0][0]], [coords[0][2][1], coords[0][2][0]]]
 
                         if child.get_bounds() == bounds:
-                            # st.write(f'{child} is active')
                             child.options['color'] = 'red'
                             child.options['fillColor'] = 'blue'
                             st.session_state['user_bounding_box'] = st.session_state['map']['last_active_drawing']
                         else:
-                            # st.write(f'{child} is not active')
                             child.options['color'] = 'blue'
                         
                 if not already_exists:
                     folium.Rectangle(
                         bounds=bounds, 
                         color='blue', 
-                        fill=True
-                    ).add_to(st.session_state['rectangle_feature_group']) 
+                        fill=True).add_to(st.session_state['rectangle_feature_group']) 
+                    
+
+                
+                    
+                
 
         # Updated draw options to disable unwanted tools
         draw_options = {
@@ -321,7 +336,7 @@ def search_area():
 
                 feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
                 width=600, height=500, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
-        
+
         force_map_rerender(m)
 
 if __name__ == "__main__":

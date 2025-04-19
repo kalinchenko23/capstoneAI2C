@@ -8,6 +8,7 @@ import json
 from .create_excel import json_to_excel
 from .create_kmz import json_to_kmz
 from styles.icons.icons import no_results_icon
+from styles.icons.icons import validation_error_icon
 
 # the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
 # handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
@@ -74,20 +75,43 @@ def text_search_post_request(validated_establishment_search,
     }
 
     # this is used during testing
-    # st.write(f'post request with following body:\n {request_body}')
+    st.write(f'post request with following body:\n {request_body}')
 
     # kubernetes deployment url
-    # url = 'http://127.0.0.1:8000/search_nearby'
+    url = 'http://127.0.0.1:8000/search_nearby'
 
     # local deployment url
-    url = 'http://backend:8000/search_nearby'
+    # url = 'http://backend:8000/search_nearby'
 
-    # Make the POST request and get the response
-    response = requests.post(url, json=request_body)
-    response.raise_for_status()  # Will raise an HTTPError for bad responses (4xx, 5xx)
+    try:
+        # make the post request
+        response = requests.post(url, json=request_body)
+        # if you get a 4xx or 5xx, raise an error
+        response.raise_for_status()
+        data = response.json()
     
-    # Check if the response contains valid JSON
-    data = response.json()
+    except requests.exceptions.HTTPError as e:
+        st.write(f'e: {e}')
+        error = json.loads(response.content.decode('utf-8'))
+        error_detail_str = error.get('detail', '')
+        
+        try:
+            # parse the error response from google maps api
+            # This assumes the first `{` is the start of the real JSON
+            json_part = error_detail_str[error_detail_str.index('{'):]
+            nested_error = json.loads(json_part)
+
+            if nested_error['error']['message'] == "API key not valid. Please pass a valid API key.":
+                st.error("Invalid Google Maps API Key provided. Please check your key and try again.", icon=validation_error_icon)
+
+            else:
+                st.write('whoopsie daisy')
+
+        except (ValueError, json.JSONDecodeError) as e:
+            st.error(f"Failed to parse nested error JSON: {e}")
+        
+        return
+
     if not data:
         st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
     else:
@@ -143,3 +167,4 @@ if __name__ == "__main__":
     auto_download_file()
     text_search_post_request()
     mock_post_request()
+    extract_error_message()
