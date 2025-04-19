@@ -13,7 +13,7 @@ def cost_estimator():
                     "lng_sw":30.509044,
                     "lat_ne":50.472441,
                     "lng_ne": 30.519623, 
-                    "google_api_key":"AIzaSyDu8FoGGPCgYmyF12dNGj475bTTPZMYtkk"
+                    "google_api_key":""
                     }
     
     # kubernetes deployment url
