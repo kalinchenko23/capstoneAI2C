@@ -1,10 +1,35 @@
 import streamlit as st
 import pandas as pd
 
+from components.cost_estimator import cost_estimator
 from components.cost_estimator import mock_cost_estimator
 
 # TODO:
-# big info box
+
+
+def format_duration(seconds):
+    seconds_in_minute = 60
+    seconds_in_hour = 3600
+
+    hours = seconds // seconds_in_hour
+    remaining_seconds = seconds % seconds_in_hour
+
+    minutes = remaining_seconds // seconds_in_minute
+    leftover_seconds = remaining_seconds % seconds_in_minute
+
+    # Optional: round up minutes only if we already have at least 1 minute or hour
+    if leftover_seconds and (minutes > 0 or hours > 0):
+        minutes += 1
+
+    parts = []
+    if hours > 0:
+        parts.append(f"{hours} hour{'s' if hours != 1 else ''}")
+    if minutes > 0:
+        parts.append(f"{minutes} minute{'s' if minutes != 1 else ''}")
+
+    return ' '.join(parts) or "Less than a minute"
+
+
 
 @st.fragment
 def query_options():
@@ -172,9 +197,11 @@ def query_options():
                             disabled=False if predict_cost_preconditions else True, 
                             use_container_width=True):
                 
-                mock_cost_estimator()
-                st.session_state['price_predicted'] = True
-                st.rerun(scope='fragment')
+                with st.spinner():
+                    # cost_estimator()
+                    mock_cost_estimator()
+                    st.session_state['price_predicted'] = True
+                    st.rerun(scope='fragment')
             
             table_data = [
                             {"Tier": "Basic",  "Time": "--",  "Cost": "--"},
@@ -198,10 +225,10 @@ def query_options():
             
             data = st.session_state['price_prediction']
             table_data = [
-                            {"Tier": "Basic",  "Time": data["basic_time"],      "Cost": data["basic_cost"]},
-                            {"Tier": "Review", "Time": data["reviews_time"],    "Cost": data["reviews_cost"]},
-                            {"Tier": "Photo",  "Time": data["photos_time"],     "Cost": data["photos_cost"]},
-                            {"Tier": "All",    "Time": data["time_everything"], "Cost": data["cost_everything"]}
+                            {"Tier": "Basic",  "Time": format_duration(data["basic_time"]),      "Cost": data["basic_cost"]},
+                            {"Tier": "Review", "Time": format_duration(data["reviews_time"]),    "Cost": data["reviews_cost"]},
+                            {"Tier": "Photo",  "Time": format_duration(data["photos_time"]),     "Cost": data["photos_cost"]},
+                            {"Tier": "All",    "Time": format_duration(data["time_everything"]), "Cost": data["cost_everything"]}
                         ]
             df = pd.DataFrame(table_data)
             df.reset_index(drop=True)
@@ -211,7 +238,7 @@ def query_options():
             df["Time"] = df["Time"].apply(lambda x: f"{x:.2f}" if isinstance(x, (int, float)) else x)
             
             # Display without index
-            st.write(f'establishments found: {data["places"]}')
+            st.write(f'Establishments Found: {data["places"]}')
             st.table(df)
 
             # set state variable tracking if a prediction has been generated
@@ -235,10 +262,15 @@ def query_options():
             time_prediction = round(time_prediction, 2)
             cost_prediction = round(cost_prediction, 2)
 
-            prediction_totals_col_1, prediction_totals_col_2 = st.columns(2)
+            query_time_prediction_col, query_cost_prediction_col = st.columns(2)
 
-            prediction_totals_col_1.write(f'Predicted Query Time: {time_prediction}')
-            prediction_totals_col_2.write(f'Predicted Query Cost: {cost_prediction}')
+            # although these are being used below, Im putting them in state so that they can be displayed
+            # on the 'Review + Submit' tab. (This avoids having to format/round the same numbers twice)
+            st.session_state['predicted_time'] = f'{format_duration(time_prediction)}'
+            st.session_state['predicted_cost'] = f'${cost_prediction:.2f}'
+
+            query_time_prediction_col.write(f'Predicted Query Time: {st.session_state['predicted_time']}')
+            query_cost_prediction_col.write(f'Predicted Query Cost: {st.session_state['predicted_cost']}')
             
 
 

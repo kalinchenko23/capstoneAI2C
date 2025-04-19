@@ -167,4 +167,3 @@ if __name__ == "__main__":
     auto_download_file()
     text_search_post_request()
     mock_post_request()
-    extract_error_message()

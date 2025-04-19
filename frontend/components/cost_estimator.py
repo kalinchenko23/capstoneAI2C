@@ -3,17 +3,28 @@ import requests
 import os
 import json
 
+from components.validation_functions import validate_establishment_search, validate_bounding_box, validate_google_maps_api_key
+
+# the error from the backend when you put in the wrong api key is:
+'''
+{
+    "detail": "Error from Google API: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"places.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n"
+}
+'''
+
 @st.fragment
 def cost_estimator():
-    st.write('call the endpoint...')
+    validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
+    validated_bounding_box = validate_bounding_box(st.session_state['user_bounding_box'])
+    validated_google_maps_api_key = validate_google_maps_api_key(st.session_state['google_maps_api_key'])
 
     request_body = {
-                    "text_query":"продуктовий магазин",
-                    "lat_sw":50.468330,
-                    "lng_sw":30.509044,
-                    "lat_ne":50.472441,
-                    "lng_ne": 30.519623, 
-                    "google_api_key":"AIzaSyDu8FoGGPCgYmyF12dNGj475bTTPZMYtkk"
+                    "text_query": validated_establishment_search,
+                    "lat_sw": validated_bounding_box['geometry']['coordinates'][0][0][1],
+                    "lng_sw": validated_bounding_box['geometry']['coordinates'][0][0][0], 
+                    "lat_ne": validated_bounding_box['geometry']['coordinates'][0][2][1], 
+                    "lng_ne": validated_bounding_box['geometry']['coordinates'][0][2][0], 
+                    "google_api_key": validated_google_maps_api_key,
                     }
     
     # kubernetes deployment url
@@ -27,12 +38,13 @@ def cost_estimator():
 
     # Check if the response contains valid JSON
     data = response.json()
-    if not data:
-        st.error(f'there is no data')
+
+    if data:
+        st.session_state['price_prediction'] = data
     else:
-        st.write(data)
+        st.error(f'there is no data')
 
-
+    
 
 @st.fragment
 def mock_cost_estimator():

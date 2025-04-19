@@ -36,32 +36,6 @@ def review_and_submit():
             requested_results += ', Photo Captions'
             requested_tiers.append('photos')
 
-        # trying to generate time and cost predictions based on prediction (if the user made the prediction)
-        if st.session_state['price_predicted']:
-            total_prediction = st.session_state['price_prediction']
-            time_prediction = 0
-            cost_prediction = 0
-
-            if st.session_state['basic_data_checkbox']:
-                time_prediction += total_prediction['basic_time']
-                cost_prediction += total_prediction['basic_cost']
-            if st.session_state['include_reviews_checkbox']:
-                time_prediction += total_prediction['reviews_time']
-                cost_prediction += total_prediction['reviews_cost']
-            if st.session_state['include_photo_captioning_checkbox']:
-                time_prediction += total_prediction['photos_time']
-                cost_prediction += total_prediction['photos_cost']
-            
-            time_prediction = round(time_prediction, 2)
-            cost_prediction = round(cost_prediction, 2)
-
-            # conditions to check which time/cost prediction to display
-            # total_cost_prediction = price_prediction['cost_everything']
-            # total_time_prediction = price_prediction['time_everything']
-        else:
-            time_prediction = "-"
-            cost_prediction = "-"
-
         # display the users 'vlm input', keywords to be passed to the vlm for photo captions
         photo_captions_target_phrase = ''
         if st.session_state['vlm_input'].strip() == "":
@@ -105,9 +79,9 @@ def review_and_submit():
             """)
 
             outputs_column.markdown(f"""
-            **Predicted Time:** `{time_prediction}`
+            **Predicted Time:** `{st.session_state['predicted_time']}`
 
-            **Predicted Cost:** `{cost_prediction}`
+            **Predicted Cost:** `{st.session_state['predicted_cost']}`
             """)
         
     # submit button
