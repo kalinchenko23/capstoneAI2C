@@ -126,7 +126,7 @@ def query_options():
                     value="", 
                     key='llm_key', 
                     type='password',   
-                    placeholder='Open AI LLM Key:',  
+                    placeholder='OpenAI LLM Key:',  
                     label_visibility="collapsed"
                 )
 
@@ -146,7 +146,7 @@ def query_options():
                     value="", 
                     key='vlm_key', 
                     type='password',   
-                    placeholder='Open AI VLM Key:',  
+                    placeholder='OpenAI VLM Key:',  
                     label_visibility="collapsed"
                 )
 
