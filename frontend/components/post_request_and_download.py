@@ -7,8 +7,8 @@ import json
 
 from .create_excel import json_to_excel
 from .create_kmz import json_to_kmz
+from .handle_post_request_errors import handle_post_request_errors
 from styles.icons.icons import no_results_icon
-from styles.icons.icons import validation_error_icon
 
 # the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
 # handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
@@ -75,55 +75,36 @@ def text_search_post_request(validated_establishment_search,
     }
 
     # this is used during testing
-    st.write(f'post request with following body:\n {request_body}')
-
-    # kubernetes deployment url
-    url = 'http://127.0.0.1:8000/search_nearby'
+    # st.write(f'post request with following body:\n {request_body}')
 
     # local deployment url
     # url = 'http://backend:8000/search_nearby'
+    url = 'http://127.0.0.1:8000/search_nearby'
 
-    try:
-        # make the post request
-        response = requests.post(url, json=request_body)
-        # if you get a 4xx or 5xx, raise an error
-        response.raise_for_status()
+    # make the post request
+    response = requests.post(url, json=request_body)
+
+    # 200 - successful query from all apis
+    if response.status_code == 200:
         data = response.json()
-    
-    except requests.exceptions.HTTPError as e:
-        st.write(f'e: {e}')
-        error = json.loads(response.content.decode('utf-8'))
-        error_detail_str = error.get('detail', '')
-        
-        try:
-            # parse the error response from google maps api
-            # This assumes the first `{` is the start of the real JSON
-            json_part = error_detail_str[error_detail_str.index('{'):]
-            nested_error = json.loads(json_part)
 
-            if nested_error['error']['message'] == "API key not valid. Please pass a valid API key.":
-                st.error("Invalid Google Maps API Key provided. Please check your key and try again.", icon=validation_error_icon)
+        if data:
+            # Generate Excel file in memory
+            excel_file = json_to_excel(data)
+            auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-            else:
-                st.write('whoopsie daisy')
+            # conditional to check if a kmz should be returned to the user
+            if st.session_state['kmz_download_option']:
+                # Generate KMZ file in memory
+                kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
+                auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
 
-        except (ValueError, json.JSONDecodeError) as e:
-            st.error(f"Failed to parse nested error JSON: {e}")
-        
-        return
+        else:
+            st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
 
-    if not data:
-        st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
     else:
-        # Generate Excel file in memory
-        excel_file = json_to_excel(data)
-        auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-
-        # conditional to check if a kmz should be returned to the user
-        if st.session_state['kmz_download_option']:
-            # Generate KMZ file in memory
-            kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
-            auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+        handle_post_request_errors(response.status_code, response)
+        return
 
 @st.fragment
 def mock_post_request(bbox_tuples, search_term):
@@ -147,9 +128,6 @@ def mock_post_request(bbox_tuples, search_term):
             kmz_file = json_to_kmz(data, bbox_tuples, search_term)
             auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
         
-
-
-
     except FileNotFoundError:
         st.error(f"File {file_path} not found. Please check the file path.")
     except json.JSONDecodeError:
@@ -158,8 +136,6 @@ def mock_post_request(bbox_tuples, search_term):
         st.error(f"Invalid response received from the local file: {e}")
     except Exception as e:
         st.error(f"An unexpected error occurred: {e}")
-
-
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
