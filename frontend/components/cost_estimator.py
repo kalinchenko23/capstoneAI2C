@@ -4,15 +4,9 @@ import os
 import json
 
 from components.validation_functions import validate_establishment_search, validate_bounding_box, validate_google_maps_api_key
+from .handle_post_request_errors import handle_post_request_errors
+from styles.icons.icons import no_results_icon
 
-# the error from the backend when you put in the wrong api key is:
-'''
-{
-    "detail": "Error from Google API: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"places.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n"
-}
-'''
-
-@st.fragment
 def cost_estimator():
     validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
     validated_bounding_box = validate_bounding_box(st.session_state['user_bounding_box'])
@@ -34,17 +28,22 @@ def cost_estimator():
     # url = 'http://backend:8000/estimator'
 
     response = requests.post(url, json=request_body)
-    response.raise_for_status()  # Will raise an HTTPError for bad responses (4xx, 5xx)
 
-    # Check if the response contains valid JSON
-    data = response.json()
+    # 200 - successful query from google maps api
+    if response.status_code == 200:
+        st.session_state['price_predicted'] = True
+        
+        data = response.json()
+        if data:
+            st.session_state['price_prediction'] = data
+        else:
+            st.session_state['price_prediction'] = {}
 
-    if data:
-        st.session_state['price_prediction'] = data
-    else:
-        st.error(f'there is no data')
+        st.rerun(scope='fragment')
 
-    
+    else: # any status code that isn't a 200 from the google maps api
+        handle_post_request_errors(response.status_code, response)
+        return
 
 @st.fragment
 def mock_cost_estimator():
