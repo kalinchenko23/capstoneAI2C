@@ -7,7 +7,10 @@ import json
 
 from .create_excel import json_to_excel
 from .create_kmz import json_to_kmz
+from .handle_post_request_errors import handle_post_request_errors
 from styles.icons.icons import no_results_icon
+from styles.icons.icons import validation_error_icon
+from styles.icons.icons import successful_download
 
 # the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
 # handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
@@ -76,30 +79,39 @@ def text_search_post_request(validated_establishment_search,
     # this is used during testing
     # st.write(f'post request with following body:\n {request_body}')
 
-    # kubernetes deployment url
-    # url = 'http://127.0.0.1:8000/search_nearby'
-
     # local deployment url
     url = 'http://backend:8000/search_nearby'
+    # url = 'http://127.0.0.1:8000/search_nearby'
 
-    # Make the POST request and get the response
-    response = requests.post(url, json=request_body)
-    response.raise_for_status()  # Will raise an HTTPError for bad responses (4xx, 5xx)
-    
-    # Check if the response contains valid JSON
-    data = response.json()
-    if not data:
-        st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
-    else:
-        # Generate Excel file in memory
-        excel_file = json_to_excel(data)
-        auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    try:
+        # make the post request
+        response = requests.post(url, json=request_body)
 
-        # conditional to check if a kmz should be returned to the user
-        if st.session_state['kmz_download_option']:
-            # Generate KMZ file in memory
-            kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
-            auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+        # 200 - successful query from all apis
+        if response.status_code == 200:
+            data = response.json()
+
+            if data:
+                # Generate Excel file in memory
+                excel_file = json_to_excel(data)
+                auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                st.success('Excel file successfully downloaded to the browser.', icon=successful_download)
+
+                # conditional to check if a kmz should be returned to the user
+                if st.session_state['kmz_download_option']:
+                    # Generate KMZ file in memory
+                    kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
+                    auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+                    st.success('KMZ file successfully downloaded to the browser.', icon=successful_download)
+
+            else:
+                st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
+
+        else:
+            handle_post_request_errors(response.status_code, response)
+            return
+    except:
+        st.error('Could not establish a connection to the backend when making the post request.', icon=validation_error_icon)
 
 @st.fragment
 def mock_post_request(bbox_tuples, search_term):
@@ -123,9 +135,6 @@ def mock_post_request(bbox_tuples, search_term):
             kmz_file = json_to_kmz(data, bbox_tuples, search_term)
             auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
         
-
-
-
     except FileNotFoundError:
         st.error(f"File {file_path} not found. Please check the file path.")
     except json.JSONDecodeError:
@@ -134,8 +143,6 @@ def mock_post_request(bbox_tuples, search_term):
         st.error(f"Invalid response received from the local file: {e}")
     except Exception as e:
         st.error(f"An unexpected error occurred: {e}")
-
-
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":

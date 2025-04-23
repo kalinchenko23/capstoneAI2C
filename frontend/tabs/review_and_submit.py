@@ -2,13 +2,10 @@ import streamlit as st
 
 from styles.icons.icons import warning_icon
 from components.validation_functions import validate_vlm_key, validate_llm_key, validate_establishment_search, validate_bounding_box, validate_google_maps_api_key, validate_photo_caption_keywords
-from components.post_request_and_download import text_search_post_request
-from components.post_request_and_download import mock_post_request
 
-# from components.auto_scroller import scroll_to_top_of_submit
+from components.post_request_and_download import text_search_post_request
 
 # TODO:
-# error handling for 'Failed to establish a new connection'
 # when error messages display, they are all stacked up at the bottom. Could probably be done better
 
 @st.fragment
@@ -44,13 +41,11 @@ def review_and_submit():
             photo_captions_target_phrase = f"{st.session_state['vlm_input']}"
 
         # get the input bounding box coords to display to the user
-        try:
-            if st.session_state['user_bounding_box']['geometry']['coordinates']:
-                coords = st.session_state['user_bounding_box']['geometry']['coordinates']
-                ne_coord = (coords[0][2][1], coords[0][2][0])
-                sw_coord = (coords[0][0][1], coords[0][0][0])
-        # this happens when you navigate to the 'Review + Submit' tab without creating a search area/bounding box
-        except KeyError:
+        if st.session_state['user_bounding_box']:
+            coords = st.session_state['user_bounding_box']['geometry']['coordinates']
+            ne_coord = (coords[0][2][1], coords[0][2][0])
+            sw_coord = (coords[0][0][1], coords[0][0][0])
+        else:
             ne_coord = ''
             sw_coord = ''
 
@@ -80,6 +75,12 @@ def review_and_submit():
             **Include KMZ Download:** `{"Yes" if st.session_state['kmz_download_option'] else "No"}` 
             """)
 
+            outputs_column.markdown(f"""
+            **Predicted Time:** `{st.session_state['predicted_time']}`
+
+            **Predicted Cost:** `{st.session_state['predicted_cost']}`
+            """)
+        
     # submit button
     submit_button = st.button(
     'submit', 
@@ -94,9 +95,6 @@ def review_and_submit():
 
     # upon submit, validate user inputs based on specific requirements
     if submit_button:
-        
-        # scroll_to_top_of_submit()
-        # with st.container(border=True, key='errors'):
         validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
         validated_bounding_box = validate_bounding_box(st.session_state['user_bounding_box'])
         validated_photo_caption_keywords = validate_photo_caption_keywords(st.session_state['vlm_input'])
@@ -119,14 +117,6 @@ def review_and_submit():
 
             # make the post request with a spinner
             with st.spinner():
-
-                # mock_post_request(bbox_tuples, 'grocery store')
-
-                # st.write('''if youre seeing this that means no post request is active.
-                #          you should uncomment out the real one below (text_search_post_request) or the mock one above (mock_post_request).
-                #          this code is being written from frontend/tabs/review_and_submit.py
-                #          ''')
-                
                 text_search_post_request(validated_establishment_search,
                                          validated_bounding_box,
                                          validated_photo_caption_keywords,
@@ -135,11 +125,7 @@ def review_and_submit():
                                          validated_llm_key, 
                                          validated_vlm_key, 
                                          bbox_tuples)
-
-        # alert the user that validation failed
-        # else:
-            # st.write('Validation Failed')
-
+                
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     review_and_submit()

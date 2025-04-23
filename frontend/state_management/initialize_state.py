@@ -96,6 +96,22 @@ def initialize_state():
     if 'kmz_download_option' not in st.session_state:
         st.session_state['kmz_download_option'] = True
 
+    # initialize state variable that tracks wether a prediction has been generated for the current search area/term
+    if 'price_predicted' not in st.session_state:
+        st.session_state['price_predicted'] = False
+
+    # initialize state variable that stores the return from the POST request to the cost_estimator endpoint
+    if 'price_prediction' not in st.session_state:
+        st.session_state['price_prediction'] = {}
+
+    # initialize state variable that stores the current predictions predicted cost (based on selected tiers)
+    if 'predicted_cost' not in st.session_state:
+        st.session_state['predicted_cost'] = '-'
+
+    # # initialize state variable that stores the current predictions predicted time (based on selected tiers)
+    if 'predicted_time' not in st.session_state:
+        st.session_state['predicted_time'] = '-'
+
 
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":

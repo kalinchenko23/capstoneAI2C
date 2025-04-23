@@ -1,5 +1,10 @@
 import streamlit as st
 
+def reset_price_estimator():
+    # this resets the price prediction state variables if the establishment search term changes
+    st.session_state['price_predicted'] = False
+    st.session_state['price_prediction'] = {}
+
 @st.fragment
 def establishment_search():
     # creates the "establishment search" container and input field
@@ -15,7 +20,7 @@ def establishment_search():
             Examples: food, hotels, gas station
             ''', 
             autocomplete=None, 
-            on_change=None, 
+            on_change=reset_price_estimator, 
             placeholder='Examples: food, hotels, gas station', 
             disabled=False, 
             label_visibility="visible"
@@ -24,3 +29,4 @@ def establishment_search():
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     establishment_search()
+    reset_price_estimator()
