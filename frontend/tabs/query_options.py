@@ -269,7 +269,7 @@ def query_options():
                 query_cost_prediction_col.write(f'Predicted Query Cost: {st.session_state["predicted_cost"]}')
 
             else: #'price_prediction' has been generated but there were no results in the query from google
-                st.error(f'No results found for "{st.session_state['establishment_search_input']}" within your bounding box.', icon=no_results_icon)
+                st.error(f"No results found for \"{st.session_state['establishment_search_input']}\" within your bounding box.", icon=no_results_icon)
 
                 table_data = [
                             {"Tier": "Basic",  "Time": "--",  "Cost": "--"},
