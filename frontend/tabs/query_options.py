@@ -265,8 +265,8 @@ def query_options():
                 st.session_state['predicted_time'] = f'{format_duration(time_prediction)}'
                 st.session_state['predicted_cost'] = f'${cost_prediction:.2f}'
 
-                query_time_prediction_col.write(f'Predicted Query Time: {st.session_state['predicted_time']}')
-                query_cost_prediction_col.write(f'Predicted Query Cost: {st.session_state['predicted_cost']}')
+                query_time_prediction_col.write(f'Predicted Query Time: {st.session_state["predicted_time"]}')
+                query_cost_prediction_col.write(f'Predicted Query Cost: {st.session_state["predicted_cost"]}')
 
             else: #'price_prediction' has been generated but there were no results in the query from google
                 st.error(f'No results found for "{st.session_state['establishment_search_input']}" within your bounding box.', icon=no_results_icon)
