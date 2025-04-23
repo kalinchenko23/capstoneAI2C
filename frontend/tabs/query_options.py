@@ -200,7 +200,7 @@ def query_options():
                         ]
             
             df = pd.DataFrame(table_data)
-
+            df.index = [''] * len(df) # hides the numbers in the index col of the table. You cant easily remove that entire column using st.table
             # display generic empty table
             st.write('establishments found: -')
             st.table(df)
@@ -231,6 +231,8 @@ def query_options():
                 df["Cost"] = df["Cost"].apply(lambda x: f"{x:.2f}" if isinstance(x, (int, float)) else x)
                 df["Time"] = df["Time"].apply(lambda x: f"{x:.2f}" if isinstance(x, (int, float)) else x)
                 
+                df.index = [''] * len(df) # hides the numbers in the index col of the table. You cant easily remove that entire column using st.table
+
                 # Display Results
                 st.write(f'Establishments Found: {data["places"]}')
                 st.table(df)
@@ -277,7 +279,7 @@ def query_options():
                         ]
             
                 df = pd.DataFrame(table_data)
-
+                df.index = [''] * len(df) # hides the numbers in the index col of the table. You cant easily remove that entire column using st.table
                 # display results
                 st.write('establishments found: -')
                 st.table(df)
