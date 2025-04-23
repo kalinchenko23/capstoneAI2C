@@ -10,6 +10,7 @@ from .create_kmz import json_to_kmz
 from .handle_post_request_errors import handle_post_request_errors
 from styles.icons.icons import no_results_icon
 from styles.icons.icons import validation_error_icon
+from styles.icons.icons import successful_download
 
 # the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
 # handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
@@ -94,12 +95,14 @@ def text_search_post_request(validated_establishment_search,
                 # Generate Excel file in memory
                 excel_file = json_to_excel(data)
                 auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                st.success('Excel file successfully downloaded to the browser.', icon=successful_download)
 
                 # conditional to check if a kmz should be returned to the user
                 if st.session_state['kmz_download_option']:
                     # Generate KMZ file in memory
                     kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
                     auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+                    st.success('KMZ file successfully downloaded to the browser.', icon=successful_download)
 
             else:
                 st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
