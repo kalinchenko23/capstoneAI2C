@@ -9,6 +9,7 @@ from .create_excel import json_to_excel
 from .create_kmz import json_to_kmz
 from .handle_post_request_errors import handle_post_request_errors
 from styles.icons.icons import no_results_icon
+from styles.icons.icons import validation_error_icon
 
 # the 'generate_download_html' and 'auto_download_excel' are necessary becuase streamlit doesn't support the way we are trying to 
 # handle the download. The BLUF is they want another button explicitly for downloading, whereas we want to 'auto download' upon submission
@@ -78,33 +79,36 @@ def text_search_post_request(validated_establishment_search,
     # st.write(f'post request with following body:\n {request_body}')
 
     # local deployment url
-    # url = 'http://backend:8000/search_nearby'
-    url = 'http://127.0.0.1:8000/search_nearby'
+    url = 'http://backend:8000/search_nearby'
+    # url = 'http://127.0.0.1:8000/search_nearby'
 
-    # make the post request
-    response = requests.post(url, json=request_body)
+    try:
+        # make the post request
+        response = requests.post(url, json=request_body)
 
-    # 200 - successful query from all apis
-    if response.status_code == 200:
-        data = response.json()
+        # 200 - successful query from all apis
+        if response.status_code == 200:
+            data = response.json()
 
-        if data:
-            # Generate Excel file in memory
-            excel_file = json_to_excel(data)
-            auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+            if data:
+                # Generate Excel file in memory
+                excel_file = json_to_excel(data)
+                auto_download_file(excel_file, "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-            # conditional to check if a kmz should be returned to the user
-            if st.session_state['kmz_download_option']:
-                # Generate KMZ file in memory
-                kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
-                auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+                # conditional to check if a kmz should be returned to the user
+                if st.session_state['kmz_download_option']:
+                    # Generate KMZ file in memory
+                    kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
+                    auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
+
+            else:
+                st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
 
         else:
-            st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
-
-    else:
-        handle_post_request_errors(response.status_code, response)
-        return
+            handle_post_request_errors(response.status_code, response)
+            return
+    except:
+        st.error('Could not establish a connection to the backend when making the post request.', icon=validation_error_icon)
 
 @st.fragment
 def mock_post_request(bbox_tuples, search_term):

@@ -6,6 +6,7 @@ import json
 from components.validation_functions import validate_establishment_search, validate_bounding_box, validate_google_maps_api_key
 from .handle_post_request_errors import handle_post_request_errors
 from styles.icons.icons import no_results_icon
+from styles.icons.icons import validation_error_icon
 
 def cost_estimator():
     validated_establishment_search = validate_establishment_search(st.session_state['establishment_search_input'])
@@ -21,29 +22,33 @@ def cost_estimator():
                     "google_api_key": validated_google_maps_api_key,
                     }
     
-    # kubernetes deployment url
-    url = 'http://127.0.0.1:8000/estimator'
-
     # local deployment url
-    # url = 'http://backend:8000/estimator'
+    url = 'http://backend:8000/estimator'
+    # url = 'http://127.0.0.1:8000/estimator'
 
-    response = requests.post(url, json=request_body)
+    try:
+        response = requests.post(url, json=request_body)
 
-    # 200 - successful query from google maps api
-    if response.status_code == 200:
-        st.session_state['price_predicted'] = True
-        
-        data = response.json()
-        if data:
-            st.session_state['price_prediction'] = data
-        else:
-            st.session_state['price_prediction'] = {}
+        # 200 - successful query from google maps api
+        if response.status_code == 200:
+            st.session_state['price_predicted'] = True
+            
+            data = response.json()
+            if data:
+                st.session_state['price_prediction'] = data
+            else:
+                st.session_state['price_prediction'] = {}
 
-        st.rerun(scope='fragment')
+            st.rerun(scope='fragment')
 
-    else: # any status code that isn't a 200 from the google maps api
-        handle_post_request_errors(response.status_code, response)
-        return
+        else: # any status code that isn't a 200 from the google maps api
+            handle_post_request_errors(response.status_code, response)
+            return
+    
+    except requests.exceptions.ConnectionError:
+        st.error('Could not establish a connection to the backend when making the post request.', icon=validation_error_icon)
+
+    
 
 @st.fragment
 def mock_cost_estimator():
