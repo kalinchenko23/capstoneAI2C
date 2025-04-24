@@ -51,7 +51,6 @@ def review_and_submit():
 
         # Creates the review container
         with st.container(border=True, key='review-container'):
-            
             inputs_column.markdown(f"""  
             **Searching for:** `{st.session_state['establishment_search_input'] or "None"}`  
             """)
@@ -73,6 +72,8 @@ def review_and_submit():
             **Results Will Include:** `{requested_results if requested_results else "No data selected"}`
 
             **Include KMZ Download:** `{"Yes" if st.session_state['kmz_download_option'] else "No"}` 
+
+            **Include JSON Download:** `{"Yes" if st.session_state['json_download_option'] else "No"}`
             """)
 
             outputs_column.markdown(f"""
