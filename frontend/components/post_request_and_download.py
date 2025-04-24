@@ -81,8 +81,8 @@ def text_search_post_request(validated_establishment_search,
     # st.write(f'post request with following body:\n {request_body}')
 
     # local deployment url
-    # url = 'http://backend:8000/search_nearby'
-    url = 'http://127.0.0.1:8000/search_nearby'
+    url = 'http://backend:8000/search_nearby'
+    # url = 'http://127.0.0.1:8000/search_nearby'
 
     try:
         # make the post request
