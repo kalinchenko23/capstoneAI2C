@@ -4,6 +4,7 @@ import streamlit as st
 from datetime import datetime
 import os
 import json
+import io
 
 from .create_excel import json_to_excel
 from .create_kmz import json_to_kmz
@@ -80,8 +81,8 @@ def text_search_post_request(validated_establishment_search,
     # st.write(f'post request with following body:\n {request_body}')
 
     # local deployment url
-    url = 'http://backend:8000/search_nearby'
-    # url = 'http://127.0.0.1:8000/search_nearby'
+    # url = 'http://backend:8000/search_nearby'
+    url = 'http://127.0.0.1:8000/search_nearby'
 
     try:
         # make the post request
@@ -103,6 +104,16 @@ def text_search_post_request(validated_establishment_search,
                     kmz_file = json_to_kmz(data, bbox_tuples, validated_establishment_search)
                     auto_download_file(kmz_file, "kmz", "application/vnd.google-earth.kmz")
                     st.success('KMZ file successfully downloaded to the browser.', icon=successful_download)
+
+                # conditional to check if a json should be returned to the user
+                if st.session_state['json_download_option']:
+                    # Generate JSON file in memory
+                    json_str = json.dumps(data, indent=2, ensure_ascii=False)
+                    json_bytes = json_str.encode('utf-8')
+                    json_file = io.BytesIO(json_bytes)
+                    # the auto_download_file func is already expecting a BytesIO object so I converted the json dict
+                    auto_download_file(json_file, "json", "application/json")
+                    st.success('JSON file successfully downloaded to the browser.', icon=successful_download)
 
             else:
                 st.error(f'No results found for "{validated_establishment_search}" within your bounding box.', icon=no_results_icon)
