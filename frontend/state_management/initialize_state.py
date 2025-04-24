@@ -96,6 +96,10 @@ def initialize_state():
     if 'kmz_download_option' not in st.session_state:
         st.session_state['kmz_download_option'] = True
 
+    # initialize state variable that tracks the 'Include JSON Download' toggle in 'Query Options'
+    if 'json_download_option' not in st.session_state:
+        st.session_state['json_download_option'] = True
+
     # initialize state variable that tracks wether a prediction has been generated for the current search area/term
     if 'price_predicted' not in st.session_state:
         st.session_state['price_predicted'] = False

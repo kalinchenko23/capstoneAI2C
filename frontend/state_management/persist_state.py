@@ -30,6 +30,7 @@ def persist_state():
     st.session_state['vlm_key'] = st.session_state['vlm_key']
     st.session_state['vlm_input'] = st.session_state['vlm_input']
     st.session_state['kmz_download_option'] = st.session_state['kmz_download_option']
+    st.session_state['json_download_option'] = st.session_state['json_download_option']
 
 
 # Ensures the code runs only when this file is executed directly
