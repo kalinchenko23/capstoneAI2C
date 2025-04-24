@@ -1,0 +1,11 @@
+{
+    "places": 60,
+    "basic_time": 5,
+    "basic_cost": 0,
+    "reviews_time": 120,
+    "reviews_cost": 1.2,
+    "photos_time": 2040,
+    "photos_cost": 12.0,
+    "time_everything": 2165,
+    "cost_everything": 13.2
+}
