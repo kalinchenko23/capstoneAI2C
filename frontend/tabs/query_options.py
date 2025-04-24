@@ -37,10 +37,20 @@ def query_options():
     with query_options_col.container(border=True, key='select_output_fields_container'):
         col_1, col_2, col_3 = st.columns(3) # this is just an easy way to move the toggle further to the right
         col_1.write('Select the Data Included in Output')
+
         # creates the kmz toggle
         col_3.toggle(
-            'Include KMZ Download', 
+            'Download KMZ', 
             key='kmz_download_option', 
+            help=None, 
+            on_change=None, 
+            disabled=False, 
+            label_visibility="visible"
+        )
+        # creates the json toggle
+        col_3.toggle(
+            'Download JSON', 
+            key='json_download_option', 
             help=None, 
             on_change=None, 
             disabled=False, 
