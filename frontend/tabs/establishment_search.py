@@ -5,7 +5,6 @@ def reset_price_estimator():
     st.session_state['price_predicted'] = False
     st.session_state['price_prediction'] = {}
 
-@st.fragment
 def establishment_search():
     # creates the "establishment search" container and input field
     with st.container(border=True, key='establishment_search_container'):
