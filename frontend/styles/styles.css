@@ -5,7 +5,7 @@ header {visibility: hidden;}     /* Hide the header */
 
 h3 {
     margin-left: -80px !important;
-    margin-top: -85px !important;
+    margin-top: -80px !important;
     position: absolute !important;  
     left: 1% !important; 
     font-size: 24px !important;
@@ -72,3 +72,17 @@ div.stVerticalBlock.st-key-review-submit-container div[data-testid="stColumn"]:f
     border-right: 1px solid rgb(168, 163, 168);
 }
 
+/* this is targeting the time/cost predictor in the "Query Options" section */
+#root > div:nth-child(1) > div.withScreencast > div > div > section > div.stMainBlockContainer.block-container.st-emotion-cache-1ibsh2c.ekr3hml4 > div > div > div > div.stHorizontalBlock.st-emotion-cache-ocqkz7.eiemyj0 > div:nth-child(2) {
+    max-width: 500px;
+}
+
+/* this is targeting the "add pin" popover */
+#bui3 {
+    width: 700px
+}
+
+/* this is targeting the "add bounding box" popover */
+#bui4 {
+    width: 700px
+}
