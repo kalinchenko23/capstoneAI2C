@@ -2,11 +2,29 @@ import streamlit as st
 
 from styles.icons.icons import warning_icon
 from components.validation_functions import validate_vlm_key, validate_llm_key, validate_establishment_search, validate_bounding_box, validate_google_maps_api_key, validate_photo_caption_keywords
-
 from components.post_request_and_download import text_search_post_request
 
-# TODO:
-# when error messages display, they are all stacked up at the bottom. Could probably be done better
+# I am using this as a way to stop the user from interacting with input widgets while the query is being processed
+# if the user closes this popup window the process ends
+@st.dialog('Submit')
+def submit_dialog_popup(validated_establishment_search,
+                                         validated_bounding_box,
+                                         validated_photo_caption_keywords,
+                                         requested_tiers,
+                                         validated_google_maps_api_key,
+                                         validated_llm_key, 
+                                         validated_vlm_key, 
+                                         bbox_tuples):
+    
+    with st.spinner():
+                text_search_post_request(validated_establishment_search,
+                                         validated_bounding_box,
+                                         validated_photo_caption_keywords,
+                                         requested_tiers,
+                                         validated_google_maps_api_key,
+                                         validated_llm_key, 
+                                         validated_vlm_key, 
+                                         bbox_tuples)
 
 @st.fragment
 def review_and_submit():
@@ -19,7 +37,6 @@ def review_and_submit():
         inputs_column, outputs_column = st.columns(2)
         
         # determine which 'tiers' of data are being requested 
-
         # this string is used to generate the review section
         requested_results = ''
         # this list is going to be passed to the actual post request. (Ex: ["reviews", "photos"])
@@ -116,9 +133,7 @@ def review_and_submit():
             # convert validated bbox to required data structure for kmz
             bbox_tuples = [tuple(item) for item in validated_bounding_box['geometry']['coordinates'][0]]
 
-            # make the post request with a spinner
-            with st.spinner():
-                text_search_post_request(validated_establishment_search,
+            submit_dialog_popup(validated_establishment_search,
                                          validated_bounding_box,
                                          validated_photo_caption_keywords,
                                          requested_tiers,
@@ -130,3 +145,4 @@ def review_and_submit():
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     review_and_submit()
+    submit_dialog_popup()
