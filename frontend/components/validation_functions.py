@@ -22,9 +22,9 @@ def validate_location(location, location_type):
                             Invalid location format\n
                             Please enter coordinates in one of the following valid formats:
                             
-                            - Latitude, Longitude (e.g., 21.318604, -157.9254212)
-                            - Latitude,Longitude (e.g., 21.318604,-157.9254212)
-                            - Latitude Longitude (e.g., 21.318604 -157.9254212)
+                            - 21.318604, -157.9254212
+                            - 21.318604,-157.9254212
+                            - 21.318604 -157.9254212
                           """, icon=validation_error_icon)
                 return
 
