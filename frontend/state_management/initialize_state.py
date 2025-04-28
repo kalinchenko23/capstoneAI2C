@@ -16,10 +16,6 @@ def initialize_state():
     if 'location_input' not in st.session_state:
         st.session_state['location_input'] = ''
     
-    # initialize state variable that tracks the 'location' input field
-    if 'location_type' not in st.session_state:
-        st.session_state['location_type'] = 'Lat/Lon'
-
     # initialize state variable that tracks the validated location from the input field
     if 'location_validation_results' not in st.session_state:
         st.session_state['location_validation_results'] = None
