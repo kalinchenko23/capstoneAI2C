@@ -9,7 +9,6 @@ h3 {
     position: absolute !important;  
     left: 1% !important; 
     font-size: 24px !important;
-    
 }
 
 [data-testid="InputInstructions"] {
@@ -19,33 +18,6 @@ h3 {
 /* hides the js div, script, doc, that is created in order to enable the auto-scroller */
 iframe[data-testid="stIFrame"] {
     display: none !important;
-}
-
-
-/* map tab buttons styling */
-.stVerticalBlock[class*='st-key-pin_controls'] {
-    display: flex;
-    flex-direction: row;
-    gap: 10px !important;
-  }
-
-.stVerticalBlock[class*='st-key-box_controls'] {
-    display: flex;
-    flex-direction: row;
-    gap: 10px !important;
-}
-
-/* .stElementContainer[class*='st-key-add_pin_button']:nth-child(2) {
-    background-color: green !important;
-    display: flex;
-    flex-direction: row;
-    min-width: 300px;
-} */
-
-
-/* ensures the pin buttons are aligned properly */
-.stElementContainer[class*='st-key-add_pin_button']:first-child {
-    width: 80px !important;
 }
 
 /* sets the width of any validation errors that occur when dropping a pin */
@@ -63,11 +35,6 @@ div.stVerticalBlock.st-key-box_controls div[data-testid="stAlert"] {
     min-width: 300px;
 }
 
-/* style for review section */
-/* div.stVerticalBlock.st-key-review-submit-container div[data-testid="stVerticalBlock"] {
-    background-color: pink;
-} */
-
 div.stVerticalBlock.st-key-review-submit-container div[data-testid="stColumn"]:first-of-type {
     border-right: 1px solid rgb(168, 163, 168);
 }
@@ -77,12 +44,17 @@ div.stVerticalBlock.st-key-review-submit-container div[data-testid="stColumn"]:f
     max-width: 500px;
 }
 
-/* this is targeting the "add pin" popover */
-#bui3 {
-    width: 700px
+div[data-testid="stTextInputRootElement"] {
+    min-width: 335px;
 }
 
-/* this is targeting the "add bounding box" popover */
-#bui4 {
-    width: 700px
+/* this is targeting the 'Add Pin' button inside the Add pin popover */
+div[data-testid="stElementContainer"].st-key-add_pin_button button.st-emotion-cache-ocsh0s {
+    margin-left: 80px;
+}
+
+/* this is targeting the "Add Bounding Box" button inside the "Add Bounding Box" popover */
+div[data-testid="stElementContainer"].st-key-draw_box_button button.st-emotion-cache-ocsh0s {
+    margin-left: 80px;
+    margin-top: 55px
 }
