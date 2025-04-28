@@ -104,7 +104,7 @@ def search_area():
         col1, col2, col3, col4 = st.columns(4)
 
         with col1.popover("Add Pin"):
-            location_input_column, location_type_column, add_pin_column = st.columns(3)
+            location_input_column, add_pin_column = st.columns(2)
 
             location = location_input_column.text_input(
                 'location', 
@@ -114,17 +114,8 @@ def search_area():
                 label_visibility='collapsed'
             )
 
-            location_type = location_type_column.selectbox(
-                label='type', 
-                options=['Lat/Lon'],
-                index=0, 
-                key='location_type', 
-                placeholder='Choose an option', 
-                label_visibility='collapsed'
-            )
-
             if add_pin_column.button('Add Pin', key='add_pin_button'):
-                    st.session_state['location_validation_results'] = validate_location(location, location_type)
+                    st.session_state['location_validation_results'] = validate_location(location)
 
                     # ensure the coordinates are validated
                     if st.session_state['location_validation_results']:
@@ -162,9 +153,9 @@ def search_area():
                     
 
         with col3.popover("Add Bounding Box"):
-            sw_coord_column, ne_coord_column, add_box_col = st.columns(3)
+            coord_column, add_box_col = st.columns(2)
 
-            sw_coord = sw_coord_column.text_input(
+            sw_coord = coord_column.text_input(
                 'sw coordinate', 
                 value='', 
                 key='sw_coord',  
@@ -172,7 +163,7 @@ def search_area():
                 label_visibility="collapsed"
             )
 
-            ne_coord = ne_coord_column.text_input(
+            ne_coord = coord_column.text_input(
                 'ne coordinate', 
                 value='', 
                 key='ne_coord',  
@@ -182,8 +173,8 @@ def search_area():
 
             with st.container(key='box_controls'):
                 if add_box_col.button('Add Bounding Box', key='draw_box_button'):
-                    st.session_state['validated_sw_coord'] = validate_location(sw_coord, location_type)
-                    st.session_state['validated_ne_coord'] = validate_location(ne_coord, location_type)
+                    st.session_state['validated_sw_coord'] = validate_location(sw_coord)
+                    st.session_state['validated_ne_coord'] = validate_location(ne_coord)
 
                     # ensure the input coordinates are valid
                     if st.session_state['validated_sw_coord'] and st.session_state['validated_ne_coord']:
