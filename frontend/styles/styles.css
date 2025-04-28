@@ -44,6 +44,18 @@ div.stVerticalBlock.st-key-review-submit-container div[data-testid="stColumn"]:f
     max-width: 500px;
 }
 
+div[data-baseweb="input"][data-testid="stTextInputRootElement"]:has(input[placeholder="lat, lon"]) {
+    min-width: 335px !important;
+  }
+
+div[data-baseweb="input"][data-testid="stTextInputRootElement"]:has(input[placeholder="sw coordinate"]) {
+min-width: 335px !important;
+}
+
+div[data-baseweb="input"][data-testid="stTextInputRootElement"]:has(input[placeholder="ne coordinate"]) {
+min-width: 335px !important;
+}
+
 /* div[data-testid="stTextInputRootElement"] {
     min-width: 335px;
 } */
@@ -79,6 +91,11 @@ div[data-testid="stTextInputRootElement"] input[placeholder="ne coordinate"] {
     margin-top: 55px
 } */
 
+div[data-testid="stElementContainer"].st-key-add_pin_button button[data-testid="stBaseButton-secondary"] {
+    margin-left: 80px;
+}
+
 div[data-testid="stElementContainer"].st-key-draw_box_button button[data-testid="stBaseButton-secondary"] {
+    margin-left: 80px;
     margin-top: 55px
 }
