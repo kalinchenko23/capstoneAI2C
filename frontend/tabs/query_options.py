@@ -29,14 +29,13 @@ def format_duration(seconds):
 
 
 
-@st.fragment
 def query_options():
     query_options_col, price_prediction_col = st.columns(2)
 
     # creates the "select output fields" containers and pills
     with query_options_col.container(border=True, key='select_output_fields_container'):
-        col_1, col_2, col_3 = st.columns(3) # this is just an easy way to move the toggle further to the right
-        col_1.write('Select the Data Included in Output')
+        col_1, col_2, col_3 = st.columns(3) # this is just an easy way to move the toggles further to the right
+        col_1.write('Select the Data Included in Report')
 
         # creates the kmz toggle
         col_3.toggle(

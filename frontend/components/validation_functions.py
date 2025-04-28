@@ -2,64 +2,62 @@ import streamlit as st
 
 from styles.icons.icons import validation_error_icon
 
-def validate_location(location, location_type):
+def validate_location(location):
     # first ensure that a value has been input for the "location" input field
     if len(location.strip()) == 0:
         st.error('location field can not be empty', icon=validation_error_icon)
 
     else:
+        try:
+            # checking to see if input location are comma seperated or not
+            if ',' in location:
+                lat_str, lon_str = location.split(",")
+            else:
+                lat_str, lon_str = location.split(" ")
         
-        if location_type == 'Lat/Lon':
-            try:
-                # checking to see if input location are comma seperated or not
-                if ',' in location:
-                    lat_str, lon_str = location.split(",")
-                else:
-                    lat_str, lon_str = location.split(" ")
+        except ValueError:
+            st.error("""
+                        Invalid location format\n
+                        Please enter coordinates in one of the following valid formats:
+                        
+                        - 21.318604, -157.9254212
+                        - 21.318604,-157.9254212
+                        - 21.318604 -157.9254212
+                        """, icon=validation_error_icon)
+            return
+
             
-            except ValueError:
-                st.error("""
-                            Invalid location format\n
-                            Please enter coordinates in one of the following valid formats:
-                            
-                            - Latitude, Longitude (e.g., 21.318604, -157.9254212)
-                            - Latitude,Longitude (e.g., 21.318604,-157.9254212)
-                            - Latitude Longitude (e.g., 21.318604 -157.9254212)
-                          """, icon=validation_error_icon)
-                return
+        try:
+            # checking to see if the latitude can be converted to a float and that its value is legitimate
+            dd_lat = float(lat_str.strip())
 
+            if not (-90 <= dd_lat <= 90):
+                raise ValueError
+
+        except ValueError:
+            st.error(f"""
+                        Invalid latitude - "{lat_str}"\n
+                        Please ensure that latitude is between -90 and 90
+                        """, icon=validation_error_icon)
+            return
                 
-            try:
-                # checking to see if the latitude can be converted to a float and that its value is legitimate
-                dd_lat = float(lat_str.strip())
 
-                if not (-90 <= dd_lat <= 90):
-                    raise ValueError
+        try:
+            # checking to see if the longitude can be converted to a float and that its value is legitimate
+            dd_lon = float(lon_str.strip())
 
-            except ValueError:
-                st.error(f"""
-                            Invalid latitude - "{lat_str}"\n
-                            Please ensure that latitude is between -90 and 90
-                            """, icon=validation_error_icon)
-                return
-                    
+            if not (-180 <= dd_lon <= 180):
+                raise ValueError
 
-            try:
-                # checking to see if the longitude can be converted to a float and that its value is legitimate
-                dd_lon = float(lon_str.strip())
+        except ValueError: # happens when lon cant be casted to a float
+            st.error(f"""
+                        Invalid longitude - "{lon_str}"\n
+                        Please ensure that longitude is between -180 and 180
+                        """, icon=validation_error_icon)
+            return 
+                
 
-                if not (-180 <= dd_lon <= 180):
-                    raise ValueError
-
-            except ValueError: # happens when lon cant be casted to a float
-                st.error(f"""
-                            Invalid longitude - "{lon_str}"\n
-                            Please ensure that longitude is between -180 and 180
-                            """, icon=validation_error_icon)
-                return 
-                    
-
-            return (dd_lat, dd_lon)   
+        return (dd_lat, dd_lon)   
 
 def validate_search_radius(search_radius, search_radius_units):
     # ensure that a value has been input for the "search radius" input field

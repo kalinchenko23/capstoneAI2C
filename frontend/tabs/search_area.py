@@ -1,13 +1,3 @@
-# -24.76716, 133.592090
-# user bbox: 14.108807, 24.4347374 | 43.336315, 77.1691130
-# user bbox2: -14.445651, -14.911131 | 29.678209, 33.604494
-
-# TODO:
-# currently, there is only one 'type' selector, all coords on the tab are using that 'type' for validation
-# style for the whole tab:
-    # error messages kinda look wonky
-    # not in love with scrolling up and down to drop pins/boxes and look at the map
-
 import folium
 import streamlit as st
 from streamlit_folium import st_folium
@@ -107,36 +97,25 @@ def reset_price_prediction():
     st.session_state['price_predicted'] = False
     st.session_state['price_prediction'] = {}
 
-# this is causing an issue if the tabs are changed too fast by the user
-@st.fragment
 def search_area():
     m = generate_map()
     
     with st.container(border=True, key='map-container'):
-        
-        with st.container(border=True):
-            location_column, location_type_column = st.columns(2)
+        col1, col2, col3, col4 = st.columns(4)
 
-            location = location_column.text_input(
+        with col1.popover("Add Pin"):
+            location_input_column, add_pin_column = st.columns(2)
+
+            location = location_input_column.text_input(
                 'location', 
                 value='', 
                 key='location_input', 
-                placeholder='location', 
+                placeholder='lat, lon', 
                 label_visibility='collapsed'
             )
 
-            location_type = location_type_column.selectbox(
-                label='type', 
-                options=['Lat/Lon'],
-                index=0, 
-                key='location_type', 
-                placeholder='Choose an option', 
-                label_visibility='collapsed'
-            )
-
-            with st.container(key='pin_controls'):
-                if st.button('Add Pin', key='add_pin_button'):
-                    st.session_state['location_validation_results'] = validate_location(location, location_type)
+            if add_pin_column.button('Add Pin', key='add_pin_button'):
+                    st.session_state['location_validation_results'] = validate_location(location)
 
                     # ensure the coordinates are validated
                     if st.session_state['location_validation_results']:
@@ -167,16 +146,16 @@ def search_area():
 
                             st.session_state['map']['last_active_drawing'] = new_pin
                             force_map_rerender(m)
-
-                if st.button('Delete Pins'):
-                    st.session_state['points_feature_group'] = folium.FeatureGroup('points')
+        
+        if col2.button('Delete Pins'):
+            st.session_state['points_feature_group'] = folium.FeatureGroup('points')
                     
                     
 
-        with st.container(border=True):
-            sw_coord_column, ne_coord_column = st.columns(2)
+        with col3.popover("Add Bounding Box"):
+            coord_column, add_box_col = st.columns(2)
 
-            sw_coord = sw_coord_column.text_input(
+            sw_coord = coord_column.text_input(
                 'sw coordinate', 
                 value='', 
                 key='sw_coord',  
@@ -184,7 +163,7 @@ def search_area():
                 label_visibility="collapsed"
             )
 
-            ne_coord = ne_coord_column.text_input(
+            ne_coord = coord_column.text_input(
                 'ne coordinate', 
                 value='', 
                 key='ne_coord',  
@@ -193,9 +172,9 @@ def search_area():
             )
 
             with st.container(key='box_controls'):
-                if st.button('Add Bounding Box', key='draw_box_button'):
-                    st.session_state['validated_sw_coord'] = validate_location(sw_coord, location_type)
-                    st.session_state['validated_ne_coord'] = validate_location(ne_coord, location_type)
+                if add_box_col.button('Add Bounding Box', key='draw_box_button'):
+                    st.session_state['validated_sw_coord'] = validate_location(sw_coord)
+                    st.session_state['validated_ne_coord'] = validate_location(ne_coord)
 
                     # ensure the input coordinates are valid
                     if st.session_state['validated_sw_coord'] and st.session_state['validated_ne_coord']:
@@ -240,22 +219,22 @@ def search_area():
                             force_map_rerender(m)
 
 
-                if st.button('Delete Boxes', key='delete_box_button'):
-                    st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
-                    st.session_state['map']['last_active_drawing'] = []
-                    st.session_state['user_bounding_box'] = None
+        if col4.button('Delete Boxes', key='delete_box_button'):
+            st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
+            st.session_state['map']['last_active_drawing'] = []
+            st.session_state['user_bounding_box'] = None
 
-                    # this resets the price prediction state variables if the bounding boxes are deleted
-                    reset_price_prediction()
+            # this resets the price prediction state variables if the bounding boxes are deleted
+            reset_price_prediction()
 
-                    force_map_rerender(m)
+            force_map_rerender(m)
 
-                    # because the map is rerendering, we need to maintain the maps current zoom level and center
-                    # without doing this, the map snaps back to the center and zoom level of the last box
-                    current_center_lat = st.session_state['map']['center']['lat']
-                    current_center_lon = st.session_state['map']['center']['lng']
-                    st.session_state['map_center'] = (current_center_lat, current_center_lon)
-                    st.session_state['map_zoom_level'] = st.session_state['map']['zoom']
+            # because the map is rerendering, we need to maintain the maps current zoom level and center
+            # without doing this, the map snaps back to the center and zoom level of the last box
+            current_center_lat = st.session_state['map']['center']['lat']
+            current_center_lon = st.session_state['map']['center']['lng']
+            st.session_state['map_center'] = (current_center_lat, current_center_lon)
+            st.session_state['map_zoom_level'] = st.session_state['map']['zoom']
 
         # Handle new drawings from the user
         if 'map' in st.session_state and st.session_state['map']['last_active_drawing']:
@@ -308,11 +287,6 @@ def search_area():
                         color='blue', 
                         fill=True).add_to(st.session_state['rectangle_feature_group']) 
                     
-
-                
-                    
-                
-
         # Updated draw options to disable unwanted tools
         draw_options = {
             'polyline': False, 
