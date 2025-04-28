@@ -44,17 +44,42 @@ div.stVerticalBlock.st-key-review-submit-container div[data-testid="stColumn"]:f
     max-width: 500px;
 }
 
-div[data-testid="stTextInputRootElement"] {
+/* div[data-testid="stTextInputRootElement"] {
+    min-width: 335px;
+} */
+
+/* div[data-testid="stTextInputRootElement"].st-key-location_input {
     min-width: 335px;
 }
 
+div[data-testid="stTextInputRootElement"] input[placeholder="sw coordinate"] {
+    min-width: 335px;
+}
+
+div[data-testid="stTextInputRootElement"] input[placeholder="ne coordinate"] {
+    min-width: 335px;
+} */
+
+div[data-testid="stTextInputRootElement"] input[aria-label="location"] {
+    min-width: 400px;
+}
+
 /* this is targeting the 'Add Pin' button inside the Add pin popover */
-div[data-testid="stElementContainer"].st-key-add_pin_button button.st-emotion-cache-ocsh0s {
+/* div[data-testid="stElementContainer"].st-key-add_pin_button button.st-emotion-cache-ocsh0s {
+    margin-left: 80px;
+} */
+
+div[data-testid="stElementContainer"].st-key-add_pin_button button[data-testid="stBaseButton-secondary"] {
     margin-left: 80px;
 }
 
 /* this is targeting the "Add Bounding Box" button inside the "Add Bounding Box" popover */
-div[data-testid="stElementContainer"].st-key-draw_box_button button.st-emotion-cache-ocsh0s {
+/* div[data-testid="stElementContainer"].st-key-draw_box_button button.st-emotion-cache-ocsh0s {
+    margin-left: 80px;
+    margin-top: 55px
+} */
+
+div[data-testid="stElementContainer"].st-key-draw_box_button button[data-testid="stBaseButton-secondary"] {
     margin-left: 80px;
     margin-top: 55px
 }
