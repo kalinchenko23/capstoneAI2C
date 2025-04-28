@@ -6,7 +6,7 @@ from components.post_request_and_download import text_search_post_request
 
 # I am using this as a way to stop the user from interacting with input widgets while the query is being processed
 # if the user closes this popup window the process ends
-@st.dialog('Submit')
+@st.dialog('Query In Progress')
 def submit_dialog_popup(validated_establishment_search,
                                          validated_bounding_box,
                                          validated_photo_caption_keywords,
@@ -16,6 +16,8 @@ def submit_dialog_popup(validated_establishment_search,
                                          validated_vlm_key, 
                                          bbox_tuples):
     
+    st.warning('Exiting this window while a query is being processed will result in the termination of the query.')
+
     with st.spinner():
                 text_search_post_request(validated_establishment_search,
                                          validated_bounding_box,
