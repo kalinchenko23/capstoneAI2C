@@ -60,18 +60,18 @@ div[data-testid="stTextInputRootElement"] input[placeholder="ne coordinate"] {
     min-width: 335px;
 } */
 
-div[data-testid="stTextInputRootElement"] input[aria-label="location"] {
+/* div[data-testid="stTextInputRootElement"] input[aria-label="location"] {
     min-width: 400px;
-}
+} */
 
 /* this is targeting the 'Add Pin' button inside the Add pin popover */
 /* div[data-testid="stElementContainer"].st-key-add_pin_button button.st-emotion-cache-ocsh0s {
     margin-left: 80px;
 } */
 
-div[data-testid="stElementContainer"].st-key-add_pin_button button[data-testid="stBaseButton-secondary"] {
+/* div[data-testid="stElementContainer"].st-key-add_pin_button button[data-testid="stBaseButton-secondary"] {
     margin-left: 80px;
-}
+} */
 
 /* this is targeting the "Add Bounding Box" button inside the "Add Bounding Box" popover */
 /* div[data-testid="stElementContainer"].st-key-draw_box_button button.st-emotion-cache-ocsh0s {
@@ -80,6 +80,5 @@ div[data-testid="stElementContainer"].st-key-add_pin_button button[data-testid="
 } */
 
 div[data-testid="stElementContainer"].st-key-draw_box_button button[data-testid="stBaseButton-secondary"] {
-    margin-left: 80px;
     margin-top: 55px
 }
