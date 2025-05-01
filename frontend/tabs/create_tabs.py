@@ -1,16 +1,11 @@
 import streamlit as st
 
-from state_management.persist_state import persist_state
-
-def reset_state_callback():
-    persist_state() # persists state variables when a tab changes
-    
 # got this off the internet
 # it is a way to get around streamlit tabs not supporting conditional rendering: (https://docs.streamlit.io/develop/api-reference/layout/st.tabs)
 def create_tabs(default_tabs = [], default_active_tab=0):
         if not default_tabs:
             return None
-        active_tab = st.radio("required_label", default_tabs, index=default_active_tab, label_visibility='collapsed', key='active_tab', on_change=reset_state_callback)
+        active_tab = st.radio("required_label", default_tabs, index=default_active_tab, label_visibility='collapsed', key='active_tab')
         child = default_tabs.index(active_tab)+1
         st.markdown(""" 
             <style type="text/css">
@@ -49,4 +44,3 @@ def create_tabs(default_tabs = [], default_active_tab=0):
 # Ensures the code runs only when this file is executed directly
 if __name__ == "__main__":
     create_tabs()
-    reset_state_callback()
