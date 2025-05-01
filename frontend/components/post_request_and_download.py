@@ -85,6 +85,9 @@ def text_search_post_request(validated_establishment_search,
     # url = 'http://127.0.0.1:8000/search_nearby'
 
     try:
+        # flipping the boolean flag that is used to disable the submit key
+        st.session_state['query_submitted'] = True
+
         # make the post request
         response = requests.post(url, json=request_body)
 
