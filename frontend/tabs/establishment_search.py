@@ -5,7 +5,10 @@ def reset_price_estimator():
     st.session_state['price_predicted'] = False
     st.session_state['price_prediction'] = {}
 
-@st.fragment
+    # this resets the query submitted and duplicate query warning state variable if the establishment search term changes
+    st.session_state['query_submitted'] = False
+    st.session_state['duplicate_query_warning_displayed'] = False
+
 def establishment_search():
     # creates the "establishment search" container and input field
     with st.container(border=True, key='establishment_search_container'):
