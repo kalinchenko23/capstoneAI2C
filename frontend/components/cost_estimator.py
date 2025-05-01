@@ -39,7 +39,7 @@ def cost_estimator():
             else:
                 st.session_state['price_prediction'] = {}
 
-            st.rerun(scope='fragment')
+            st.rerun()
 
         else: # any status code that isn't a 200 from the google maps api
             handle_post_request_errors(response.status_code, response)
