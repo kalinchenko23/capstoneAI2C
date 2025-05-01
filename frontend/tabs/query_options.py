@@ -27,9 +27,53 @@ def format_duration(seconds):
 
     return ' '.join(parts) or "Less than a minute"
 
+def force_basic_data():
+    # update basic tier #
+    # this forces the 'Basic Data' checkbox to always be True
+    st.session_state['basic_data_checkbox'] = True
 
 
-@st.fragment
+def reset_query_submitted():
+    # this resets the query submitted and duplicate query warning state variable if:
+    # the requested tiers, download toggles, api keys, OR photo caption keywords change
+    st.session_state['query_submitted'] = False
+    st.session_state['duplicate_query_warning_displayed'] = False
+
+def update_requested_tiers():
+    # this resets the query submitted state variable if the requested tiers changes
+    reset_query_submitted()
+
+    # update reviews # 
+    # if the reviews toggle is on and 'reviews' is not already in the tier list, add it
+    if st.session_state['include_reviews_checkbox'] and not 'reviews' in st.session_state['requested_tiers']:
+        st.session_state['requested_tiers'].append('reviews')
+
+    # if the reviews toggle is off and 'reviews' is already in the tier list, remove it:
+    elif not st.session_state['include_reviews_checkbox'] and 'reviews' in st.session_state['requested_tiers']:
+        st.session_state['llm_key'] = '' # clears the key field when the box is unchecked
+        st.session_state['requested_tiers'].remove('reviews')
+
+    # update photos #
+    # if the photos toggle is on and 'photos' is not already in the tier list, add it
+    if st.session_state['include_photo_captioning_checkbox'] and not 'photos' in st.session_state['requested_tiers']:
+        st.session_state['requested_tiers'].append('photos')
+
+    # if the photos toggle is off and 'photos' is already in the tier list, remove it:
+    elif not st.session_state['include_photo_captioning_checkbox'] and 'photos' in st.session_state['requested_tiers']:
+        st.session_state['vlm_key'] = '' # clears the key field when the box is unchecked
+        st.session_state['requested_tiers'].remove('photos')
+
+# triggered when the 'All' checkbox is selected/deselected; automatically selects/deselects the other checkboxes
+def update_states_all_selected():
+    if st.session_state['all_fields_checkbox']:
+        st.session_state['include_reviews_checkbox'] = True
+        st.session_state['include_photo_captioning_checkbox'] = True
+    else:
+        st.session_state['include_reviews_checkbox'] = False
+        st.session_state['include_photo_captioning_checkbox'] = False
+    
+    update_requested_tiers()
+
 def query_options():
     query_options_col, price_prediction_col = st.columns(2)
 
@@ -43,7 +87,7 @@ def query_options():
             'Download KMZ', 
             key='kmz_download_option', 
             help=None, 
-            on_change=None, 
+            on_change=reset_query_submitted, 
             disabled=False, 
             label_visibility="visible"
         )
@@ -52,7 +96,7 @@ def query_options():
             'Download JSON', 
             key='json_download_option', 
             help=None, 
-            on_change=None, 
+            on_change=reset_query_submitted, 
             disabled=False, 
             label_visibility="visible"
         )
@@ -72,19 +116,6 @@ def query_options():
         review_summarization_help = 'Selecting this option will trigger AI to summarize the reviews for each location.'
         photo_captioning_help = 'Selecting this option will trigger AI to caption all available photos from each location.'
 
-        # triggered when the 'All' checkbox is selected; automatically selects/deselects the other checkboxes
-        def update_states_all_selected():
-            if st.session_state['all_fields_checkbox']:
-                st.session_state['include_reviews_checkbox'] = True
-                st.session_state['include_photo_captioning_checkbox'] = True
-            else:
-                st.session_state['include_reviews_checkbox'] = False
-                st.session_state['include_photo_captioning_checkbox'] = False
-
-        # this forces the 'Basic Data' checkbox to always be True
-        def update_states_basic_selected():
-            st.session_state['basic_data_checkbox'] = True
-
         # all chekbox
         st.checkbox(label='All', 
                     key='all_fields_checkbox',  
@@ -98,19 +129,20 @@ def query_options():
             basic_col_1.checkbox(label='Basic Data', 
                         key='basic_data_checkbox', 
                         help=basic_data_help, 
-                        on_change=update_states_basic_selected
+                        on_change=force_basic_data
                         )
             
             # creates the text input field for google maps api key
             if st.session_state['basic_data_checkbox']:
-                    basic_col_2.text_input(
-                        label='Google Maps API Key:', 
-                        value="", 
-                        key='google_maps_api_key', 
-                        type='password',   
-                        placeholder='Google Maps API Key:',  
-                        label_visibility="collapsed"
-                    )
+                basic_col_2.text_input(
+                    label='Google Maps API Key:', 
+                    value="", 
+                    key='google_maps_api_key', 
+                    type='password',   
+                    placeholder='Google Maps API Key:',  
+                    label_visibility="collapsed",
+                    on_change=reset_query_submitted
+                )
 
         # ai review summary checkbox
         with st.container(border=True):
@@ -119,6 +151,7 @@ def query_options():
             review_col_1.checkbox(label='Include AI Review Summarization',  
                         key='include_reviews_checkbox', 
                         help=review_summarization_help, 
+                        on_change=update_requested_tiers
                         )
             
             # if 'include ai review summarization' is selected, creates the text input field for the llm key
@@ -129,7 +162,8 @@ def query_options():
                     key='llm_key', 
                     type='password',   
                     placeholder='OpenAI LLM Key:',  
-                    label_visibility="collapsed"
+                    label_visibility="collapsed",
+                    on_change=reset_query_submitted
                 )
 
         with st.container(border=True):
@@ -139,6 +173,7 @@ def query_options():
             photo_col_1.checkbox(label='Include AI Photo Captioning',  
                         key='include_photo_captioning_checkbox', 
                         help=photo_captioning_help, 
+                        on_change=update_requested_tiers
                         )
 
             # if 'include ai photo captioning' is selected, creates the text input field
@@ -149,14 +184,15 @@ def query_options():
                     key='vlm_key', 
                     type='password',   
                     placeholder='OpenAI VLM Key:',  
-                    label_visibility="collapsed"
+                    label_visibility="collapsed",
+                    on_change=reset_query_submitted
                 )
 
                 with st.container(border=True, key='image_analysis_container'):
                     st.text_input(
                         label='Enter Keywords for AI to Highlight (leave blank for generic image captioning)', 
                         value="", 
-                        max_chars=None, 
+                        max_chars=150, 
                         key='vlm_input', 
                         type='default',
                         help='''
@@ -165,7 +201,7 @@ def query_options():
                         *Leave blank for general image captioning
                         ''', 
                         autocomplete=None, 
-                        on_change=None, 
+                        on_change=reset_query_submitted, 
                         placeholder='Examples: cameras, windows, security', 
                         disabled=False, 
                         label_visibility="visible"
