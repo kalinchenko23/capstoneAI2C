@@ -295,6 +295,8 @@ def search_area():
                             
                             st.session_state['map']['last_active_drawing'] = new_bounding_box
 
+                            # force_map_rerender_cb()
+
         if col1.button(trashcan_icon, help='Delete Bounding Boxes', on_click=force_map_rerender_cb, args=('delete_boxes', )):
             st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
             st.session_state['map']['last_active_drawing'] = []
@@ -362,6 +364,8 @@ def search_area():
                         bounds=bounds, 
                         color='blue', 
                         fill=True).add_to(st.session_state['rectangle_feature_group']) 
+                    
+                    force_map_rerender_cb()
                     
         # Updated draw options to disable unwanted tools
         draw_options = {
