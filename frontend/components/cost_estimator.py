@@ -5,7 +5,6 @@ import json
 
 from components.validation_functions import validate_establishment_search, validate_bounding_box, validate_google_maps_api_key
 from .handle_post_request_errors import handle_post_request_errors
-from styles.icons.icons import no_results_icon
 from styles.icons.icons import validation_error_icon
 
 def cost_estimator():
