@@ -28,10 +28,8 @@ def format_duration(seconds):
     return ' '.join(parts) or "Less than a minute"
 
 def force_basic_data():
-    # update basic tier #
-    # this forces the 'Basic Data' checkbox to always be True
+    # this forces the 'Basic Data' checkbox to always be True, I didn't like the styling if you disable it through streamlit
     st.session_state['basic_data_checkbox'] = True
-
 
 def reset_query_submitted():
     # this resets the query submitted and duplicate query warning state variable if:
@@ -48,7 +46,7 @@ def update_requested_tiers():
     if st.session_state['include_reviews_checkbox'] and not 'reviews' in st.session_state['requested_tiers']:
         st.session_state['requested_tiers'].append('reviews')
 
-    # if the reviews toggle is off and 'reviews' is already in the tier list, remove it:
+    # if the reviews toggle is off and 'reviews' is already in the tier list, remove it
     elif not st.session_state['include_reviews_checkbox'] and 'reviews' in st.session_state['requested_tiers']:
         st.session_state['llm_key'] = '' # clears the key field when the box is unchecked
         st.session_state['requested_tiers'].remove('reviews')
@@ -58,7 +56,7 @@ def update_requested_tiers():
     if st.session_state['include_photo_captioning_checkbox'] and not 'photos' in st.session_state['requested_tiers']:
         st.session_state['requested_tiers'].append('photos')
 
-    # if the photos toggle is off and 'photos' is already in the tier list, remove it:
+    # if the photos toggle is off and 'photos' is already in the tier list, remove it
     elif not st.session_state['include_photo_captioning_checkbox'] and 'photos' in st.session_state['requested_tiers']:
         st.session_state['vlm_key'] = '' # clears the key field when the box is unchecked
         st.session_state['requested_tiers'].remove('photos')
@@ -75,6 +73,10 @@ def update_states_all_selected():
     update_requested_tiers()
 
 def query_options():
+    from tabs.establishment_search import establishment_search
+    with st.container(key='search_term_container'):
+        establishment_search()
+
     query_options_col, price_prediction_col = st.columns(2)
 
     # creates the "select output fields" containers and pills
@@ -110,11 +112,10 @@ def query_options():
         - location (lat/lon)
         - phone number
         - website url 
-        - reviews
         - hours of operation
         - photos'''
-        review_summarization_help = 'Selecting this option will trigger AI to summarize the reviews for each location.'
-        photo_captioning_help = 'Selecting this option will trigger AI to caption all available photos from each location.'
+        review_summarization_help = 'Selecting this option will trigger AI to summarize available reviews for each location.'
+        photo_captioning_help = 'Selecting this option will trigger AI to caption available photos from each location.'
 
         # all chekbox
         st.checkbox(label='All', 
@@ -123,7 +124,7 @@ def query_options():
         
 
         # basic data chekbox
-        with st.container(border=True):
+        with st.container():
             basic_col_1, basic_col_2 = st.columns(2)
             
             basic_col_1.checkbox(label='Basic Data', 
@@ -145,7 +146,7 @@ def query_options():
                 )
 
         # ai review summary checkbox
-        with st.container(border=True):
+        with st.container():
             review_col_1, review_col_2 = st.columns(2)
 
             review_col_1.checkbox(label='Include AI Review Summarization',  
@@ -166,7 +167,7 @@ def query_options():
                     on_change=reset_query_submitted
                 )
 
-        with st.container(border=True):
+        with st.container():
             photo_col_1, photo_col_2 = st.columns(2)
         
             # ai photo captions checkbox
@@ -208,7 +209,7 @@ def query_options():
                     )
 
     # beginning of cost prediction stuff
-    with price_prediction_col.container(border=True):
+    with price_prediction_col.container(border=True, key='test_test_container'):
 
         # this state var is instantiated as False and changes to True when the Price Prediction button is clicked
         if st.session_state['price_predicted'] == False:  
@@ -311,8 +312,10 @@ def query_options():
                 st.session_state['predicted_time'] = f'{format_duration(time_prediction)}'
                 st.session_state['predicted_cost'] = f'${cost_prediction:.2f}'
 
-                query_time_prediction_col.write(f'Predicted Query Time: {st.session_state["predicted_time"]}')
-                query_cost_prediction_col.write(f'Predicted Query Cost: {st.session_state["predicted_cost"]}')
+                query_time_prediction_col.text(f'''Predicted Query Time: 
+                                                {st.session_state["predicted_time"]}''')
+                query_cost_prediction_col.text(f'''Predicted Query Cost: 
+                                                {st.session_state["predicted_cost"]}''')
 
             else: #'price_prediction' has been generated but there were no results in the query from google
                 st.error(f"No results found for \"{st.session_state['establishment_search_input']}\" within your bounding box.", icon=no_results_icon)
