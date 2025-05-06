@@ -1,19 +1,27 @@
-# TODO:
-# style for the whole tab:
-    # error messages kinda look wonky
-
 import folium
 import streamlit as st
 from streamlit_folium import st_folium
 from folium.plugins import Draw
 from branca.element import Template, MacroElement
+import math
+
+from styles.icons.icons import pin_icon, bounding_box_icon, trashcan_icon
 
 from components.validation_functions import validate_location
 
 def generate_map():
     # create the map
-    m = folium.Map(location=st.session_state['location_validation_results'], zoom_start=st.session_state['map_zoom_level'], min_zoom=2, max_bounds=True)
-
+    m = folium.Map(location=(39, 34), 
+                   zoom_start=st.session_state['map_zoom_level'], 
+                   attr= st.session_state['dummy_string_for_map_rerendering'],
+                   min_zoom=2, 
+                   min_lat=-90, 
+                   min_lon=-180,
+                   max_lat=90,
+                   max_lon=180,
+                   max_bounds=True
+                   )
+    
     # Add the legend with the modified template
     legend_template = """
     {% macro html(this, kwargs) %}
@@ -91,11 +99,71 @@ def calculate_center_of_bbox(bounds): # this enables 'snapping' to a bbox
     
     return (center_lat, center_lon)
 
-def force_map_rerender(m):
-    # Creating an invisible marker and adding it directly to the map
-    # this causes the map to rerender and gets rid of any boxes in folium's default feature group
-    invisible_icon = folium.Icon(icon='circle', icon_size=(0,0), shadow_size=(0,0))
-    folium.Marker(location=(0,0), icon=invisible_icon).add_to(m)
+def calculate_zoom_based_on_bbox_size(bounds):
+    # !!! this is an approximation and should NOT be taken as super accurate
+    (lat_min, lon_min), (lat_max, lon_max) = bounds
+
+    # Mean latitude for adjusting longitude distance
+    mean_lat = math.radians((lat_min + lat_max) / 2)
+
+    # Approximate degrees to kilometers
+    lat_km = 111.32
+    lon_km = 111.32 * math.cos(mean_lat)
+
+    # Height and width in km
+    height_km = abs(lat_max - lat_min) * lat_km
+    width_km = abs(lon_max - lon_min) * lon_km
+
+    approx_area = height_km * width_km # area in km^2
+
+    # long logic chain that is determining the zoom level based on the size of the box
+    if approx_area < 0.0005:
+        st.session_state['map_zoom_level'] = 19
+    elif approx_area < 0.003:
+        st.session_state['map_zoom_level'] = 18
+    elif approx_area < 0.01:
+        st.session_state['map_zoom_level'] = 17
+    elif approx_area < 0.05:
+        st.session_state['map_zoom_level'] = 16
+    elif approx_area < 0.8:
+        st.session_state['map_zoom_level'] = 15
+    elif approx_area < 1.0:
+        st.session_state['map_zoom_level'] = 14
+    elif approx_area < 20:
+        st.session_state['map_zoom_level'] = 13
+    elif approx_area < 50:
+        st.session_state['map_zoom_level'] = 12
+    elif approx_area < 100:
+        st.session_state['map_zoom_level'] = 11
+    elif approx_area < 500:
+        st.session_state['map_zoom_level'] = 10
+    elif approx_area < 2_000:
+        st.session_state['map_zoom_level'] = 9
+    elif approx_area < 10_000:
+        st.session_state['map_zoom_level'] = 8
+    elif approx_area < 100_000:
+        st.session_state['map_zoom_level'] = 7
+    elif approx_area < 700_000:
+        st.session_state['map_zoom_level'] = 6
+    elif approx_area < 2_000_000:
+        st.session_state['map_zoom_level'] = 5
+    elif approx_area < 8_000_000:
+        st.session_state['map_zoom_level'] = 4
+    elif approx_area < 16_000_000:
+        st.session_state['map_zoom_level'] = 3
+    else:
+        st.session_state['map_zoom_level'] = 2
+
+def force_map_rerender_cb(caller=''):
+    # this is adding a space to one of the state variables that are used to generate the map at the top of the file;
+    # by changing this value, the map rerenders
+
+    if caller == 'delete_boxes':
+        # ensure there are boxes on the map, this prevents the map rerendering when delete is clicked if nothings on the map
+        if len(st.session_state['rectangle_feature_group']._children) > 1:
+            st.session_state['dummy_string_for_map_rerendering'] = st.session_state['dummy_string_for_map_rerendering'] + ' '
+    else:
+        st.session_state['dummy_string_for_map_rerendering'] = st.session_state['dummy_string_for_map_rerendering'] + ' '
 
 def reset_price_prediction():
     # this resets the price prediction state variables if the bounding box changes
@@ -110,10 +178,10 @@ def reset_price_prediction():
 def search_area():
     m = generate_map()
     
-    with st.container(border=True, key='map-container'):
-        col1, col2, col3, col4 = st.columns(4)
+    with st.container(key='map_container'):
+        col1, col2 = st.columns(2)
 
-        with col1.popover("Add Pin"):
+        with col1.popover(pin_icon, help='Add Pin'):
             location_input_column, add_pin_column = st.columns(2)
 
             location = location_input_column.text_input(
@@ -155,14 +223,14 @@ def search_area():
                                     }
 
                             st.session_state['map']['last_active_drawing'] = new_pin
-                            force_map_rerender(m)
+
+                            force_map_rerender_cb()
         
-        if col2.button('Delete Pins'):
+        if col1.button(trashcan_icon, help='Delete Pins'):
             st.session_state['points_feature_group'] = folium.FeatureGroup('points')
                     
-                    
 
-        with col3.popover("Add Bounding Box"):
+        with col1.popover(bounding_box_icon, help='Add Bounding Box'):
             coord_column, add_box_col = st.columns(2)
 
             sw_coord = coord_column.text_input(
@@ -226,19 +294,15 @@ def search_area():
                             }
                             
                             st.session_state['map']['last_active_drawing'] = new_bounding_box
-                            force_map_rerender(m)
 
-
-        if col4.button('Delete Boxes', key='delete_box_button'):
+        if col1.button(trashcan_icon, help='Delete Bounding Boxes', on_click=force_map_rerender_cb, args=('delete_boxes', )):
             st.session_state['rectangle_feature_group']._children.clear() # removing all shapes from rectangle feature group
             st.session_state['map']['last_active_drawing'] = []
             st.session_state['user_bounding_box'] = None
 
             # this resets the price prediction state variables if the bounding boxes are deleted
             reset_price_prediction()
-
-            force_map_rerender(m)
-
+            
             # because the map is rerendering, we need to maintain the maps current zoom level and center
             # without doing this, the map snaps back to the center and zoom level of the last box
             current_center_lat = st.session_state['map']['center']['lat']
@@ -265,11 +329,12 @@ def search_area():
                 coords = shape_data['geometry']['coordinates']
                 bounds = [[coords[0][0][1], coords[0][0][0]], [coords[0][2][1], coords[0][2][0]]]
 
-                # handle zooming to dropped/drawn box
+                # handle centering on dropped/drawn box
                 st.session_state['map_center'] = calculate_center_of_bbox(bounds)
-                st.session_state['map_zoom_level'] = 13
-                
 
+                # dynamically determine how far to zoom based on the size of the box
+                calculate_zoom_based_on_bbox_size(bounds)
+                
                 # Prevent duplicate rectangles
                 already_exists = any(
                     isinstance(child, folium.Rectangle) and bounds == child.locations
@@ -290,7 +355,8 @@ def search_area():
                             st.session_state['user_bounding_box'] = st.session_state['map']['last_active_drawing']
                         else:
                             child.options['color'] = 'blue'
-                        
+     
+                # drawing our box to the map
                 if not already_exists:
                     folium.Rectangle(
                         bounds=bounds, 
@@ -314,19 +380,20 @@ def search_area():
 
         Draw(draw_options=draw_options, edit_options=edit_options).add_to(m)
 
-        st_folium(m, 
-                zoom=st.session_state['map_zoom_level'], 
-                center=st.session_state['map_center'],
-
-                feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
-                width=600, height=500, key='map', use_container_width=True, returned_objects=['last_active_drawing', 'zoom', 'center'])
-
-        force_map_rerender(m)
+        with col2.container():
+            st_folium(m, 
+                    zoom=st.session_state['map_zoom_level'], 
+                    center=st.session_state['map_center'],
+                    feature_group_to_add=[st.session_state['points_feature_group'], st.session_state['rectangle_feature_group']],
+                    width=1020, height=510, key='map', use_container_width=False, returned_objects=['last_active_drawing', 'zoom', 'center'])
+            
 
 if __name__ == "__main__":
     generate_map()
     check_for_duplicate_pins()
     check_for_duplicate_boxes()
     calculate_center_of_bbox()
-    force_map_rerender()
+    calculate_zoom_based_on_bbox_size()
+    force_map_rerender_cb()
+    reset_price_prediction()
     search_area()
