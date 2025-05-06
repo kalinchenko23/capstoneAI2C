@@ -32,17 +32,18 @@ def submit_dialog_popup(validated_establishment_search,
                                          validated_vlm_key, 
                                          bbox_tuples):
     
-    st.warning('**Exiting this window while a query is being processed will result in the termination of the query.**', icon=terminated_query_warning)
+    st.warning('**Closing this popup while a query is being processed will result in the termination of the query.**', icon=terminated_query_warning)
 
     with st.spinner():
-                text_search_post_request(validated_establishment_search,
-                                         validated_bounding_box,
-                                         validated_photo_caption_keywords,
-                                         st.session_state['requested_tiers'],
-                                         validated_google_maps_api_key,
-                                         validated_llm_key, 
-                                         validated_vlm_key, 
-                                         bbox_tuples)
+        text_search_post_request(validated_establishment_search,
+                                    validated_bounding_box,
+                                    validated_photo_caption_keywords,
+                                    st.session_state['requested_tiers'],
+                                    validated_google_maps_api_key,
+                                    validated_llm_key, 
+                                    validated_vlm_key, 
+                                    bbox_tuples)
+            
                 
 def review_and_submit():
     # display warning for the user
