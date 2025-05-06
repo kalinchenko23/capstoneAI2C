@@ -11,7 +11,7 @@ def reset_price_estimator():
 
 def establishment_search():
     # creates the "establishment search" container and input field
-    with st.container(border=True, key='establishment_search_container'):
+    with st.container(key='establishment_search_container'):
         establishment_query = st.text_input(
             label='Establishment Search', 
             value="", 
