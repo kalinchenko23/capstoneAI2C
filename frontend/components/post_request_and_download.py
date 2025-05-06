@@ -52,7 +52,6 @@ def auto_download_file(in_memory_file, file_extension, mime_type):
     html = generate_download_html(base64_data, download_filename, mime_type)
     st.components.v1.html(html, height=0)
 
-@st.fragment
 def text_search_post_request(validated_establishment_search,
                              validated_bounding_box,
                              validated_photo_caption_keywords,
