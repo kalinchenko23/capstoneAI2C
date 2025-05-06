@@ -1,74 +1,54 @@
 
-#MainMenu {visibility: hidden;}  /* Hide the hamburger menu */
-footer {visibility: hidden;}     /* Hide the footer */
-header {visibility: hidden;}     /* Hide the header */
+/* Application General styles ======================================== */
+/* Hide the hamburger menu */
+#MainMenu {visibility: hidden;} 
+/* Hide the footer */
+footer {visibility: hidden;}
+/* Hide the header */
+header {visibility: hidden;}     
 
+/* targets the 'plaid' app heading */
 h3 {
     margin-left: -80px !important;
     margin-top: -85px !important;
     position: absolute !important;  
     left: 1% !important; 
     font-size: 24px !important;
-    
 }
 
+/* hides the "Press Enter to Apply" message in all of the text boxes */
 [data-testid="InputInstructions"] {
     display: none;
 }
 
-/* hides the js div, script, doc, that is created in order to enable the auto-scroller */
-iframe[data-testid="stIFrame"] {
-    display: none !important;
+
+/* 'Establishment Search' tab styles ======================================== */
+/* targets the inside of the add pin and add box popover modals */
+div[data-testid="stPopoverBody"] {
+    margin-right: 16px;
+    max-width: 350px;
+}
+
+/* this is targeting the lat, lon input in the add pin popover */
+div[data-testid="stPopoverBody"] [data-testid="stHorizontalBlock"] > div[data-testid="stColumn"]:nth-of-type(1) {
+    min-width: 225px;
+}
+
+/* this is targeting the map 'pin' and 'box' widgets on the left hand side */
+.stVerticalBlock.st-key-map_container > * > [data-testid="stColumn"]:nth-of-type(1) {
+    max-width: 57px;
 }
 
 
-/* map tab buttons styling */
-.stVerticalBlock[class*='st-key-pin_controls'] {
-    display: flex;
-    flex-direction: row;
-    gap: 10px !important;
-  }
-
-.stVerticalBlock[class*='st-key-box_controls'] {
-    display: flex;
-    flex-direction: row;
-    gap: 10px !important;
+/* 'Query Options' tab styles ======================================== */
+/* this is targeting the time and cost prediction widget */
+.stElementContainer.st-key-active_tab + [data-testid="stElementContainer"] + [data-testid="stVerticalBlockBorderWrapper"] + [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-of-type(2) {
+    max-width: 400px;
 }
 
-/* .stElementContainer[class*='st-key-add_pin_button']:nth-child(2) {
-    background-color: green !important;
-    display: flex;
-    flex-direction: row;
-    min-width: 300px;
-} */
 
-
-/* ensures the pin buttons are aligned properly */
-.stElementContainer[class*='st-key-add_pin_button']:first-child {
-    width: 80px !important;
-}
-
-/* sets the width of any validation errors that occur when dropping a pin */
-div.stVerticalBlock.st-key-pin_controls div[data-testid="stAlert"] {
-min-width: 300px;
-}
-
-/* ensures the bounding box buttons are aligned properly */
-.stElementContainer[class*='st-key-draw_box_button'] {
-    width: 160px !important;
-}
-
-/* sets the width of any validation errors that occur when drawing a box */
-div.stVerticalBlock.st-key-box_controls div[data-testid="stAlert"] {
-    min-width: 300px;
-}
-
-/* style for review section */
-/* div.stVerticalBlock.st-key-review-submit-container div[data-testid="stVerticalBlock"] {
-    background-color: pink;
-} */
-
+/* 'Review + Submit' tab styles ======================================== */
+/* this is creating the vertical divider between the inputs and outputs on the submit + review tab */
 div.stVerticalBlock.st-key-review-submit-container div[data-testid="stColumn"]:first-of-type {
     border-right: 1px solid rgb(168, 163, 168);
 }
-
