@@ -8,7 +8,7 @@ import aiohttp
 import json
 import base64
 import openai
-
+json
 
 async def getting_street_view_image(
     location: str,
@@ -199,9 +199,9 @@ async def response_formatter(responce,api_key,prompt_info,tiers,llm_key,vlm_key)
             
             #Getting streetview image
             try:
-                encoded_street_view_image = await getting_street_view_image(location,api_key)
+                encoded_street_view_image = await getting_street_view_image(place["location"],api_key)
                 street_view_info={}
-                street_view_info["vlm_insight"]=await analyze_image(encoded_street_view_image[1],vlm_prompt)
+                street_view_info["vlm_insight"]=await analyze_image(encoded_street_view_image[1],vlm_prompt,vlm_key)
                 street_view_info["url"]= "URL contains api key, can't be exposed" #encoded_street_view_image[0]
                 new_data["street_view"]=street_view_info
             except Exception as ex:

@@ -10,7 +10,7 @@ header {visibility: hidden;}
 /* targets the 'plaid' app heading */
 h3 {
     margin-left: -80px !important;
-    margin-top: -85px !important;
+    margin-top: -80px !important;
     position: absolute !important;  
     left: 1% !important; 
     font-size: 24px !important;

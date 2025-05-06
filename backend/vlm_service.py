@@ -55,35 +55,6 @@ def get_safe_prompt(keywords,vlm_key):
 async def analyze_image(encoded_image, safe_prompt, vlm_key, retry_count=0, max_retries=8):
     """Analyze a binary image using Azure OpenAI GPT-4 Vision."""
     
-    # client = openai.AzureOpenAI(
-    #         azure_endpoint=VLM_ENDPOINT,
-    #         api_key=vlm_key,
-    #         api_version=API_VERSION,
-    #         # You can set a default timeout for the client
-    #         timeout=120 # Total timeout in seconds
-    #     )
-    
-    # messages = [
-    #     {"role": "system", "content": "You are an AI vision model that analyzes images and provides factual descriptions of primary objects, settings, and scenes in four sentences or less, without speculation or interpretation."},
-    #     {"role": "user", "content": [
-    #         {"type": "text", "text": safe_prompt},
-    #         # Use the dictionary format for image_url with the data URI
-    #         {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{encoded_image}", "detail": "auto"}}
-    #     ]}]
-    # response = client.chat.completions.create(
-    #         model=VLM_DEPLOYMENT, # Pass the deployment name here as 'model'
-    #         messages=messages,
-    #         max_tokens=150,
-    #         temperature=0.3,
-    #         # Timeout can also be set per request if needed, overrides client default
-    #         # timeout=120
-    #     )
-    # if response.choices:
-    #         # The result message content is typically in response.choices[0].message.content
-    #         # The message object itself might contain role etc.
-    #         message_content = response.choices[0].message
-    #         return message_content.content if message_content and hasattr(message_content, 'content') else message_content
-    
     HEADERS = {
         "Content-Type": "application/json",
         "api-key": vlm_key,
@@ -131,8 +102,15 @@ async def analyze_image(encoded_image, safe_prompt, vlm_key, retry_count=0, max_
                 raise HTTPException(status_code=401,detail="Your VLM key or endpoint is incorrect")
 
 async def generate_summary(image_descriptions: list, vlm_key: str):
-    """Generate a summary paragraph based on all image descriptions."""
+    """Generate a summary paragraph based on all image descriptions.
 
+    Args:
+        image_descriptions (list): _description_
+        vlm_key (str): _description_
+
+    Returns:
+        _type_: _description_
+    """  
     HEADERS = {
         "Content-Type": "application/json",
         "api-key": vlm_key,
@@ -176,7 +154,5 @@ async def generate_summary(image_descriptions: list, vlm_key: str):
                 return data.get("choices", [{}])[0].get("message", {}).get("content", "Failed to generate summary.")
             else:
                 return f"{response.status} something went wrong"
-   
-    
-   
+
 

@@ -13,6 +13,9 @@ page_icon=toolbox_icon,
 layout="wide"
 )
 
+# Display app name in upper left corner
+st.markdown('<h3>PL<span style="color:red;">AI</span>DE</h3>', unsafe_allow_html=True)
+
 # initialize state variables used throughout the application
 initialize_state()
 
