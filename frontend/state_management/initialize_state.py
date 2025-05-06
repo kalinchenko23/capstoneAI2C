@@ -43,7 +43,7 @@ def initialize_state():
 
     # initialize and persist state variable that tracks the center of the map
     if 'map_center' not in st.session_state:
-        st.session_state['map_center'] = (0,0)
+        st.session_state['map_center'] = (39,34)
     else:
         st.session_state['map_center'] = st.session_state['map_center']
 
@@ -70,8 +70,8 @@ def initialize_state():
         st.session_state['map'] = {
             'all_drawings': [], 
             'last_active_drawing': [], 
-            'zoom': 2, 
-            'center': {'lat': 0, 'lng': 0}
+            'zoom': st.session_state['map_zoom_level'], 
+            'center': {'lat': 39, 'lng': 34}
         }
     else:
         st.session_state['map'] = st.session_state['map']
@@ -81,6 +81,12 @@ def initialize_state():
         st.session_state['user_bounding_box'] = {}
     else:
         st.session_state['user_bounding_box'] = st.session_state['user_bounding_box']
+
+    # init and persist state variable that is used (in a hacky way), to force the map to rerender
+    if 'dummy_string_for_map_rerendering' not in st.session_state:
+        st.session_state['dummy_string_for_map_rerendering'] = ''
+    else: 
+        st.session_state['dummy_string_for_map_rerendering'] = st.session_state['dummy_string_for_map_rerendering'] 
 
     # query options state variables
     #================================================================================================================
