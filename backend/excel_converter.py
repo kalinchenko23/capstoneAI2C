@@ -77,7 +77,6 @@ def json_to_dict(j_file):
     else:
 
         dictionary = copy.deepcopy(j_file)
-        print(dictionary)
 
     return dictionary
 

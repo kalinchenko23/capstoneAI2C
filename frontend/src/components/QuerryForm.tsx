@@ -15,14 +15,12 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
   const [selectedTiers, setSelectedTiers] = useState<string[]>([]);
   const markersRef = useRef<google.maps.Marker[]>([]);
 
-  // --- ADD THIS FUNCTION ---
   const handleTierChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
     setSelectedTiers((prev) =>
       checked ? [...prev, value] : prev.filter((tier) => tier !== value)
     );
   };
-  // -------------------------
 
   useEffect(() => {
     return () => {
@@ -110,12 +108,42 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
         a.click();
         window.URL.revokeObjectURL(url);
       }
+        if (selectedFormats.includes('json')) {
+        const jsonBlob = new Blob([JSON.stringify(searchResults, null, 2)], { type: 'application/json' });
+        const jsonUrl = window.URL.createObjectURL(jsonBlob);
+        const jsonLink = document.createElement('a');
+        jsonLink.href = jsonUrl;
+        jsonLink.download = `${formData.text_query.replace(/\s+/g, '_')}.json`;
+        jsonLink.click();
+        window.URL.revokeObjectURL(jsonUrl);
+      }
+
+      // Excel Download
+      if (selectedFormats.includes('excel')){
+          const excelRequest = {places: searchResults};
+          const excelResp = await fetch('http://127.0.0.1:8000/get_excel', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(excelRequest), // reuse the same payload or change if needed
+        });
+
+        if (!excelResp.ok) throw new Error(`Excel generation failed: ${excelResp.status}`);
+
+        const excelBlob = await excelResp.blob();
+        const excelUrl = window.URL.createObjectURL(excelBlob);
+        const excelAnchor = document.createElement('a');
+        excelAnchor.href = excelUrl;
+        excelAnchor.download = `${formData.text_query.replace(/\s+/g, '_')}.xlsx`; // or .csv
+        excelAnchor.click();
+        window.URL.revokeObjectURL(excelUrl);
+              }
       // Add other format handlers (JSON, Excel) here if needed
     } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
+    
   };
 
   const inputStyle = 'w-full mb-2 p-2 rounded bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500';
@@ -127,27 +155,77 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
   );
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex flex-col flex-grow">
-      <div className="flex-grow">
-        <label className="text-sm font-semibold text-gray-300 block">Query <span className="text-red-500">*</span></label>
+  <form onSubmit={handleSubmit} className="w-full">
+    <div className="space-y-4">
+      <div>
+        <label className="text-sm font-semibold text-gray-300 block">
+          Query <span className="text-red-500">*</span>
+        </label>
         <input type="text" name="query" placeholder="e.g., Restaurants" className={inputStyle} required />
-
-        <label className="text-sm font-semibold text-gray-300 block">Prompt <span className="text-red-500">*</span></label>
-        <input type="text" name="llm_prompt" placeholder="e.g., that serve vegan food" className={inputStyle} required />
-
-        <label className="text-sm font-semibold text-gray-300 block">Google API Key <span className="text-red-500">*</span></label>
-        <input type="text" name="googleapi" placeholder="Your Google API Key" className={inputStyle} required />
-
-        {selectedTiers.includes('reviews') && (<><label className="text-sm font-semibold text-gray-300 block">LLM Key <span className="text-red-500">*</span></label><input type="text" name="llm" placeholder="LLM key" className={inputStyle} required/></>)}
-        {selectedTiers.includes('photos') && (<><label className="text-sm font-semibold text-gray-300 block">VLM Key <span className="text-red-500">*</span></label><input type="text" name="vlm" placeholder="VLM key" className={inputStyle} required/></>)}
-
-        <div className="mb-2"><p className="text-sm font-semibold text-gray-300 mb-2">Data Tiers</p><div className="flex flex-wrap gap-2">{checkbox('tiers', 'reviews', 'Reviews', handleTierChange)}{checkbox('tiers', 'photos', 'Photos', handleTierChange)}</div></div>
-        <div className="mb-4"><p className="text-sm font-semibold text-gray-300 mb-2">Output Format <span className="text-red-500">*</span></p><div className="flex flex-wrap gap-2">{checkbox('format', 'excel', 'Excel')}{checkbox('format', 'json', 'JSON')}{checkbox('format', 'kmz', 'KMZ')}</div></div>
       </div>
-      <button type="submit" className="w-full mt-auto py-2 px-4 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded disabled:bg-gray-500" disabled={loading}>{loading ? 'Processing...' : 'Submit Query'}</button>
-      {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
-    </form>
-  );
+
+      <div>
+        <label className="text-sm font-semibold text-gray-300 block">
+          Prompt <span className="text-red-500">*</span>
+        </label>
+        <input type="text" name="llm_prompt" placeholder="e.g., that serve vegan food" className={inputStyle} required />
+      </div>
+
+      <div>
+        <label className="text-sm font-semibold text-gray-300 block">
+          Google API Key <span className="text-red-500">*</span>
+        </label>
+        <input type="text" name="googleapi" placeholder="Your Google API Key" className={inputStyle} required />
+      </div>
+
+      {selectedTiers.includes('reviews') && (
+        <div>
+          <label className="text-sm font-semibold text-gray-300 block">
+            LLM Key <span className="text-red-500">*</span>
+          </label>
+          <input type="text" name="llm" placeholder="LLM key" className={inputStyle} required />
+        </div>
+      )}
+
+      {selectedTiers.includes('photos') && (
+        <div>
+          <label className="text-sm font-semibold text-gray-300 block">
+            VLM Key <span className="text-red-500">*</span>
+          </label>
+          <input type="text" name="vlm" placeholder="VLM key" className={inputStyle} required />
+        </div>
+      )}
+
+      <div>
+        <p className="text-sm font-semibold text-gray-300 mb-2">Data Tiers</p>
+        <div className="flex flex-wrap gap-2">
+          {checkbox('tiers', 'reviews', 'Reviews', handleTierChange)}
+          {checkbox('tiers', 'photos', 'Photos', handleTierChange)}
+        </div>
+      </div>
+
+      <div>
+        <p className="text-sm font-semibold text-gray-300 mb-2">Output Format <span className="text-red-500">*</span></p>
+        <div className="flex flex-wrap gap-2">
+          {checkbox('format', 'excel', 'Excel')}
+          {checkbox('format', 'json', 'JSON')}
+          {checkbox('format', 'kmz', 'KMZ')}
+        </div>
+      </div>
+    </div>
+
+    {/* The margin-top class (`mt-6`) now controls the spacing */}
+    <button
+      type="submit"
+      className="w-full mt-6 py-2 px-4 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded disabled:bg-gray-500"
+      disabled={loading}
+    >
+      {loading ? 'Processing...' : 'Submit Query'}
+    </button>
+
+    {error ? <p className="mt-4 text-red-500 text-center">{error}</p> : null}
+  </form>
+);
 };
 
 export default MyFormComponent;

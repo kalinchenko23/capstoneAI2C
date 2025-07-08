@@ -47,9 +47,10 @@ const MapWithFormSide = () => {
   } | null>(null);
 
   const rectangleRef = useRef<google.maps.Rectangle | null>(null);
+  const historyStack = useRef<google.maps.Rectangle[]>([]);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY, // Ensure .env variable is set
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
     libraries: ["drawing", "places"],
   });
 
@@ -90,6 +91,33 @@ const MapWithFormSide = () => {
     }
   };
 
+  const undoBoundingBox = () => {
+    if (rectangleRef.current) {
+      rectangleRef.current.setMap(null); // remove current
+      rectangleRef.current = null;
+    }
+
+    if (historyStack.current.length > 0) {
+      const prevRect = historyStack.current.pop()!;
+      rectangleRef.current = prevRect;
+      prevRect.setMap(map);
+
+      const bounds = prevRect.getBounds();
+      if (bounds) {
+        setBbox({
+          lat_sw: bounds.getSouthWest().lat(),
+          lng_sw: bounds.getSouthWest().lng(),
+          lat_ne: bounds.getNorthEast().lat(),
+          lng_ne: bounds.getNorthEast().lng(),
+        });
+        setBoundingBoxPresent(true);
+      }
+    } else {
+      setBbox(null);
+      setBoundingBoxPresent(false);
+    }
+  };
+
   const onLoad = (mapInstance: google.maps.Map) => {
     setMap(mapInstance);
 
@@ -110,12 +138,15 @@ const MapWithFormSide = () => {
         draggable: true,
       },
     });
+
     drawingManager.setMap(mapInstance);
 
     google.maps.event.addListener(drawingManager, 'overlaycomplete', (event: google.maps.drawing.OverlayCompleteEvent) => {
       if (rectangleRef.current) {
+        historyStack.current.push(rectangleRef.current);
         rectangleRef.current.setMap(null);
       }
+
       if (event.type === google.maps.drawing.OverlayType.RECTANGLE) {
         rectangleRef.current = event.overlay as google.maps.Rectangle;
         drawingManager.setDrawingMode(null);
@@ -132,6 +163,7 @@ const MapWithFormSide = () => {
             setBoundingBoxPresent(true);
           }
         };
+
         updateBounds();
         rectangleRef.current.addListener("bounds_changed", updateBounds);
       }
@@ -142,14 +174,14 @@ const MapWithFormSide = () => {
   if (!isLoaded) return <div>Loading Map...</div>;
 
   return (
-    <div className="w-full flex flex-col lg:flex-row h-screen bg-gray-900">
+    <div id="map" className="w-full flex flex-col lg:flex-row h-screen bg-gray-900">
       <div className="w-full lg:w-2/3 h-full">
         <GoogleMap mapContainerStyle={mapContainerStyle} center={defaultCenter} zoom={12} onLoad={onLoad} />
       </div>
 
       <div className="w-full lg:w-1/3 p-6 text-white flex flex-col gap-4 overflow-y-auto">
         <h1 className="text-3xl font-bold text-yellow-400 text-center">Query Interface</h1>
-        
+
         <form onSubmit={handleCoordinateSubmit} className="flex flex-col gap-2 p-4 bg-gray-800 rounded-lg">
           <h2 className="text-xl font-semibold mb-2 text-gray-300">Find Place</h2>
           <input type="text" value={inputLat} onChange={(e) => setInputLat(e.target.value)} placeholder="Latitude" className="p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
@@ -163,15 +195,16 @@ const MapWithFormSide = () => {
             <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search Term (e.g., hospitals)" className="p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
             <input type="text" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="Google API Key" className="p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
             <button type="submit" className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded">Estimate Cost</button>
+            <button type="button" onClick={undoBoundingBox} className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded mt-2">Undo Last Bounding Box</button>
             {estimatorResult && (
               <div className="p-3 mt-2 bg-gray-700 rounded text-sm"><div className="text-gray-300">{formatEstimatorResult(estimatorResult)}</div></div>
             )}
           </form>
         )}
-        
-        <div className="p-4 bg-gray-800 rounded-lg flex-grow flex flex-col">
-            <h2 className="text-xl font-semibold text-gray-300 mb-4">Main Query & Download</h2>
-            <MyFormComponent lat_sw={bbox?.lat_sw} lng_sw={bbox?.lng_sw} lat_ne={bbox?.lat_ne} lng_ne={bbox?.lng_ne} map={map} />
+
+        <div className="p-4 bg-gray-800 rounded-lg">
+          <h2 className="text-xl font-semibold text-gray-300 mb-4">Main Query & Download</h2>
+          <MyFormComponent lat_sw={bbox?.lat_sw} lng_sw={bbox?.lng_sw} lat_ne={bbox?.lat_ne} lng_ne={bbox?.lng_ne} map={map} />
         </div>
       </div>
     </div>
