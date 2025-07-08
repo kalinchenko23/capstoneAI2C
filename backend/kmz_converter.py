@@ -424,7 +424,7 @@ def json_to_kmz(j_file, bbox_tuples, search_term):
 
 
 
-    output.write(kml.kml().encode('utf-8'))
+    kml.savekmz(output)
 
     output.seek(0)
 
