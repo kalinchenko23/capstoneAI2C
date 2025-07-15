@@ -20,11 +20,11 @@ function formatEstimatorResult(data: any) {
     <>
       There are a total of{" "}
       <span className="text-yellow-400 font-semibold">{data.places}</span> places found. The reviews will take{" "}
-      <span className="text-yellow-400 font-semibold">{data.reviews_time}</span> seconds and cost about{" "}
+      <span className="text-yellow-400 font-semibold">{data.reviews_time}</span> minutes and cost about{" "}
       <span className="text-yellow-400 font-semibold">${data.reviews_cost}</span>. Photos will take{" "}
-      <span className="text-yellow-400 font-semibold">{data.photos_time}</span> seconds and cost about{" "}
+      <span className="text-yellow-400 font-semibold">{data.photos_time}</span> minutes and cost about{" "}
       <span className="text-yellow-400 font-semibold">${data.photos_cost}</span>. Total estimates are{" "}
-      <span className="text-red-400 font-semibold">{data.time_everything}</span> seconds and{" "}
+      <span className="text-red-400 font-semibold">{data.time_everything}</span> minutes and{" "}
       <span className="text-red-400 font-semibold">${data.cost_everything}</span>.
     </>
   );
@@ -129,10 +129,10 @@ const MapWithFormSide = () => {
         drawingModes: [google.maps.drawing.OverlayType.RECTANGLE],
       },
       rectangleOptions: {
-        strokeColor: "#FFC107",
+        strokeColor: "black",
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: "#FFC107",
+        fillColor: "Khaki",
         fillOpacity: 0.35,
         editable: true,
         draggable: true,

@@ -10,4 +10,9 @@ aiohttp
 googletrans
 deep_translator
 xlsxwriter
-simplekml
+sentence-transformers
+faiss-cpu
+transformers
+torch
+bitsandbytes
+accelerate

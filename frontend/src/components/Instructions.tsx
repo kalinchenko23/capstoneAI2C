@@ -25,13 +25,15 @@ export const Instructions = () => {
 
       <ol className="list-decimal list-inside space-y-3">
         <li>
-          <strong>Draw Area on the Map:</strong> Use the map interface to draw a shape (rectangle, circle, or polygon) to define your area of interest. You can adjust or redraw the area as needed.
+          <strong>Draw Area on the Map:</strong> Use the map interface to draw a shape (rectangle) to define your area of interest. You can adjust or redraw the area as needed.
         </li>
 
         <li>
           <strong>Enter Search Parameter:</strong> In the search box, type what you're looking for (e.g., "restaurants", "hospitals", "schools") and press <strong>Search</strong>.
         </li>
-
+        <li>
+          <strong>Enter VLM Prompt</strong> to let model know what it should focus on while parsing the images.
+        </li>
         <li>
           <strong>View Results:</strong> The app will show matching places within your drawn area on the map and in a list below.
         </li>

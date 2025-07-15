@@ -1,6 +1,7 @@
-from fastapi import FastAPI, Query, Body, HTTPException
+from fastapi import HTTPException
 from llm_service import get_review_summary
 from vlm_service import get_safe_prompt, generate_summary, analyze_image
+from recommender_service import rank_live_results_granularly
 from deep_translator import GoogleTranslator
 from datetime import datetime
 import httpx
@@ -212,6 +213,12 @@ async def response_formatter(response,api_key,prompt_info,tiers,llm_key,vlm_key)
         except KeyError as ex:
             new_data["working_hours"]="Working hours are not provided"
         
+        new_data["recommended"]=False
+        
         result.append(new_data)
+    
+    rank_index=rank_live_results_granularly(result, prompt_info, vlm_key)
+    for i in rank_index:
+        result[i]["recommended"]=True
         
     return result

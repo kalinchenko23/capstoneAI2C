@@ -24,8 +24,7 @@ async def get_safe_prompt(keywords: str, vlm_key: str) -> str:
         {
             "role": "user",
             "content": (
-                f"Given the following information: {keywords}, create a professional and neutral prompt that can be used "
-                "to describe an image focusing on these elements. Do not include any potentially sensitive content."
+                f"Given the following information: {keywords}, create a professional and neutral prompt"
             )
         }
     ]

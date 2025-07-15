@@ -132,8 +132,7 @@ async def search_nearby_places(text_query: str = Body(),
             return
 
     # 4. Start the pagination process with the initial response data
-    await next_page(initial_data)
-                
+    await next_page(initial_data)         
     # 5. 'result' now contains all places from all pages. Pass it to the formatter.
     data = await response_formatter(result, google_api_key, prompt_info, tiers, llm_key, vlm_key)
     

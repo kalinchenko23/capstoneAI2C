@@ -168,7 +168,7 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
         <label className="text-sm font-semibold text-gray-300 block">
           Prompt <span className="text-red-500">*</span>
         </label>
-        <input type="text" name="llm_prompt" placeholder="e.g., that serve vegan food" className={inputStyle} required />
+        <input type="text" name="llm_prompt" placeholder="e.g., look for outdoor seating" className={inputStyle} required />
       </div>
 
       <div>
