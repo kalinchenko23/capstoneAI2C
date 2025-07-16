@@ -217,7 +217,14 @@ async def response_formatter(response,api_key,prompt_info,tiers,llm_key,vlm_key)
         
         result.append(new_data)
     
-    rank_index=rank_live_results_granularly(result, prompt_info, vlm_key)
+    # Setting different threshhold for the ranking base of the total number of places
+    if len(result)<=3:
+        rank_index=rank_live_results_granularly(result, prompt_info, vlm_key, top_n=1)
+    elif len(result)>=10:
+        rank_index=rank_live_results_granularly(result, prompt_info, vlm_key, top_n=1)
+    else:
+        rank_index=rank_live_results_granularly(result, prompt_info, vlm_key)
+    
     for i in rank_index:
         result[i]["recommended"]=True
         
