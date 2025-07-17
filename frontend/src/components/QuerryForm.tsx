@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import JSZip from 'jszip';
+
+// Define an interface for the place data for better type safety
+interface Place {
+  name: {
+    original_name: string;
+  };
+  latitude: number;
+  longitude: number;
+  recommended?: boolean; 
+}
 
 interface MyFormComponentProps {
   lat_sw?: number;
@@ -14,6 +23,9 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
   const [error, setError] = useState<string | null>(null);
   const [selectedTiers, setSelectedTiers] = useState<string[]>([]);
   const markersRef = useRef<google.maps.Marker[]>([]);
+  
+  // Create a ref to hold the InfoWindow instance
+  const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
 
   const handleTierChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
@@ -22,34 +34,82 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
     );
   };
 
+  // Effect to clear markers and close InfoWindow when the component unmounts
   useEffect(() => {
     return () => {
+      infoWindowRef.current?.close();
       markersRef.current.forEach(marker => marker.setMap(null));
       markersRef.current = [];
     };
   }, []);
 
-  const processKmzForMap = async (kmzBlob: Blob) => {
+  /**
+   * Clears existing markers and renders new ones from JSON data.
+   * @param {Place[]} places - An array of place objects from the API.
+   */
+  const processJsonForMap = async (places: Place[]) => {
     if (!map) return;
+    
+    // Close any open InfoWindow before clearing markers
+    infoWindowRef.current?.close();
     markersRef.current.forEach(marker => marker.setMap(null));
     markersRef.current = [];
-    
-    try {
-      const zip = await JSZip.loadAsync(kmzBlob);
-      const kmlFile = Object.values(zip.files).find(file => file.name.endsWith('.kml'));
-      if (!kmlFile) throw new Error('No .kml file found in the KMZ archive.');
 
-      const kmlText = await kmlFile.async('text');
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(kmlText, 'text/xml');
-      const placemarks = xmlDoc.getElementsByTagName('Placemark');
-      
-      const newMarkers = Array.from(placemarks).map(pm => {
-        const name = pm.getElementsByTagName('name')[0]?.textContent || 'No Name';
-        const coordinatesStr = pm.getElementsByTagName('coordinates')[0]?.textContent || '';
-        const [lng, lat] = coordinatesStr.trim().split(',').map(Number);
-        return new google.maps.Marker({ position: { lat, lng }, map, title: name });
-      });
+    // Initialize the InfoWindow if it doesn't exist
+    if (!infoWindowRef.current) {
+        infoWindowRef.current = new google.maps.InfoWindow();
+    }
+
+    try {
+      const newMarkers = places.map(place => {
+        const name = place.name?.original_name || 'No Name';
+        const lat = place.latitude;
+        const lng = place.longitude;
+
+        if (typeof lat !== 'number' || typeof lng !== 'number') {
+          console.warn('Invalid coordinates for place:', place);
+          return null;
+        }
+
+        const markerOptions: google.maps.MarkerOptions = {
+          position: { lat, lng },
+          map,
+          title: name,
+        };
+
+        if (place.recommended === true) {
+          markerOptions.icon = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+        }
+
+        const marker = new google.maps.Marker(markerOptions);
+
+        // Add a click listener to each marker
+        marker.addListener('click', () => {
+          const infoWindow = infoWindowRef.current;
+          if (infoWindow) {
+            // Create HTML content for the InfoWindow
+            const content = `
+              <div style="color: #000;">
+                <div style="text-align: center;">
+                  <strong style="font-size: 1.1em; text-align: center;">${place.name.original_name}</strong>${place.recommended ? '<p style="font-weight: bold; color: #1E88E5;">Recommended</p>' : ''}
+                </div>
+                <br>
+                <strong style="font-size: 1.1em; text-align: center;">Coordinates:</strong><p>${place.latitude.toFixed(5)}, ${place.longitude.toFixed(5)}</p>
+                <br>
+                <strong style="font-size: 1.1em;">Summary of the reviews:</strong><p>${place.reviews_summary}</p>
+                <br>
+                <strong style="font-size: 1.1em;">Summary of the photos:</strong><p>${place.photos_summary}</p>
+                <br>
+                <strong style="font-size: 1.1em; text-align: center;">Url to all photos:</strong></p>${place.url_to_all_photos}</p>
+              </div>
+            `;
+            infoWindow.setContent(content);
+            infoWindow.open(map, marker);
+          }
+        });
+
+        return marker;
+      }).filter((marker): marker is google.maps.Marker => marker !== null);
 
       markersRef.current = newMarkers;
 
@@ -59,8 +119,8 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
         map.fitBounds(bounds);
       }
     } catch (err) {
-      console.error("Error processing KMZ file:", err);
-      setError("Failed to render KMZ data on map.");
+      console.error("Error processing JSON for map:", err);
+      setError("Failed to render location data on the map.");
     }
   };
 
@@ -75,23 +135,62 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
 
     const form = e.currentTarget;
     const selectedFormats = Array.from(form.querySelectorAll('input[name="format"]:checked')).map(input => (input as HTMLInputElement).value);
+    
     if (selectedFormats.length === 0) {
       setError("Please select at least one output format.");
       setLoading(false);
       return;
     }
+    
     const formData = {
       text_query: form.query.value, prompt_info: form.llm_prompt.value, tiers: selectedTiers,
       format: selectedFormats, google_api_key: form.googleapi.value, llm_key: form.llm?.value || '',
       vlm_key: form.vlm?.value || '', lat_sw, lng_sw, lat_ne, lng_ne,
     };
+
     try {
       const response = await fetch('http://127.0.0.1:8000/search_nearby', {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData),
       });
-      if (!response.ok) throw new Error(`Search request failed: ${response.status}`);
-      const searchResults = await response.json();
 
+      if (!response.ok) throw new Error(`Search request failed: ${response.status} ${response.statusText}`);
+      const searchResults: Place[] = await response.json();
+
+      await processJsonForMap(searchResults);
+
+      // --- Handle file downloads based on selected formats ---
+
+      if (selectedFormats.includes('json')) {
+        const jsonBlob = new Blob([JSON.stringify(searchResults, null, 2)], { type: 'application/json' });
+        const jsonUrl = window.URL.createObjectURL(jsonBlob);
+        const jsonLink = document.createElement('a');
+        jsonLink.href = jsonUrl;
+        jsonLink.download = `${formData.text_query.replace(/\s+/g, '_')}.json`;
+        document.body.appendChild(jsonLink);
+        jsonLink.click();
+        document.body.removeChild(jsonLink);
+        window.URL.revokeObjectURL(jsonUrl);
+      }
+
+      if (selectedFormats.includes('excel')) {
+        const excelRequest = { places: searchResults };
+        const excelResp = await fetch('http://127.0.0.1:8000/get_excel', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(excelRequest),
+        });
+        if (!excelResp.ok) throw new Error(`Excel generation failed: ${excelResp.status}`);
+        const excelBlob = await excelResp.blob();
+        const excelUrl = window.URL.createObjectURL(excelBlob);
+        const excelAnchor = document.createElement('a');
+        excelAnchor.href = excelUrl;
+        excelAnchor.download = `${formData.text_query.replace(/\s+/g, '_')}.xlsx`;
+        document.body.appendChild(excelAnchor);
+        excelAnchor.click();
+        document.body.removeChild(excelAnchor);
+        window.URL.revokeObjectURL(excelUrl);
+      }
+      
       if (selectedFormats.includes('kmz')) {
         const bbox = [[formData.lng_sw, formData.lat_sw], [formData.lng_sw, formData.lat_ne], [formData.lng_ne, formData.lat_ne], [formData.lng_ne, formData.lat_sw], [formData.lng_sw, formData.lat_sw]];
         const kmzRequest = { data: searchResults, bbox, search_term: formData.text_query };
@@ -100,52 +199,24 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
         });
         if (!kmzResp.ok) throw new Error(`KMZ generation failed: ${kmzResp.status}`);
         const kmzBlob = await kmzResp.blob();
-        await processKmzForMap(kmzBlob);
         const url = window.URL.createObjectURL(kmzBlob);
         const a = document.createElement('a');
         a.href = url;
         a.download = `${formData.text_query.replace(/\s+/g, '_')}.kmz`;
+        document.body.appendChild(a);
         a.click();
+        document.body.removeChild(a);
         window.URL.revokeObjectURL(url);
       }
-        if (selectedFormats.includes('json')) {
-        const jsonBlob = new Blob([JSON.stringify(searchResults, null, 2)], { type: 'application/json' });
-        const jsonUrl = window.URL.createObjectURL(jsonBlob);
-        const jsonLink = document.createElement('a');
-        jsonLink.href = jsonUrl;
-        jsonLink.download = `${formData.text_query.replace(/\s+/g, '_')}.json`;
-        jsonLink.click();
-        window.URL.revokeObjectURL(jsonUrl);
-      }
-
-      // Excel Download
-      if (selectedFormats.includes('excel')){
-          const excelRequest = {places: searchResults};
-          const excelResp = await fetch('http://127.0.0.1:8000/get_excel', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(excelRequest), // reuse the same payload or change if needed
-        });
-
-        if (!excelResp.ok) throw new Error(`Excel generation failed: ${excelResp.status}`);
-
-        const excelBlob = await excelResp.blob();
-        const excelUrl = window.URL.createObjectURL(excelBlob);
-        const excelAnchor = document.createElement('a');
-        excelAnchor.href = excelUrl;
-        excelAnchor.download = `${formData.text_query.replace(/\s+/g, '_')}.xlsx`; // or .csv
-        excelAnchor.click();
-        window.URL.revokeObjectURL(excelUrl);
-              }
-      // Add other format handlers (JSON, Excel) here if needed
+      
     } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
-    
   };
 
+  // --- JSX for the form ---
   const inputStyle = 'w-full mb-2 p-2 rounded bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500';
   const checkbox = (name: string, value: string, label: string, onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void) => (
     <label className="inline-flex items-center mr-4 cursor-pointer" key={value}>
@@ -155,77 +226,76 @@ const MyFormComponent: React.FC<MyFormComponentProps> = ({ lat_sw, lng_sw, lat_n
   );
 
   return (
-  <form onSubmit={handleSubmit} className="w-full">
-    <div className="space-y-4">
-      <div>
-        <label className="text-sm font-semibold text-gray-300 block">
-          Query <span className="text-red-500">*</span>
-        </label>
-        <input type="text" name="query" placeholder="e.g., Restaurants" className={inputStyle} required />
-      </div>
-
-      <div>
-        <label className="text-sm font-semibold text-gray-300 block">
-          Prompt <span className="text-red-500">*</span>
-        </label>
-        <input type="text" name="llm_prompt" placeholder="e.g., look for outdoor seating" className={inputStyle} required />
-      </div>
-
-      <div>
-        <label className="text-sm font-semibold text-gray-300 block">
-          Google API Key <span className="text-red-500">*</span>
-        </label>
-        <input type="text" name="googleapi" placeholder="Your Google API Key" className={inputStyle} required />
-      </div>
-
-      {selectedTiers.includes('reviews') && (
+    <form onSubmit={handleSubmit} className="w-full">
+      <div className="space-y-4">
         <div>
           <label className="text-sm font-semibold text-gray-300 block">
-            LLM Key <span className="text-red-500">*</span>
+            Query <span className="text-red-500">*</span>
           </label>
-          <input type="text" name="llm" placeholder="LLM key" className={inputStyle} required />
+          <input type="text" name="query" placeholder="e.g., Restaurants" className={inputStyle} required />
         </div>
-      )}
 
-      {selectedTiers.includes('photos') && (
         <div>
           <label className="text-sm font-semibold text-gray-300 block">
-            VLM Key <span className="text-red-500">*</span>
+            Prompt <span className="text-red-500">*</span>
           </label>
-          <input type="text" name="vlm" placeholder="VLM key" className={inputStyle} required />
+          <input type="text" name="llm_prompt" placeholder="e.g., look for outdoor seating" className={inputStyle} required />
         </div>
-      )}
 
-      <div>
-        <p className="text-sm font-semibold text-gray-300 mb-2">Data Tiers</p>
-        <div className="flex flex-wrap gap-2">
-          {checkbox('tiers', 'reviews', 'Reviews', handleTierChange)}
-          {checkbox('tiers', 'photos', 'Photos', handleTierChange)}
+        <div>
+          <label className="text-sm font-semibold text-gray-300 block">
+            Google API Key <span className="text-red-500">*</span>
+          </label>
+          <input type="text" name="googleapi" placeholder="Your Google API Key" className={inputStyle} required />
+        </div>
+
+        {selectedTiers.includes('reviews') && (
+          <div>
+            <label className="text-sm font-semibold text-gray-300 block">
+              LLM Key <span className="text-red-500">*</span>
+            </label>
+            <input type="text" name="llm" placeholder="LLM key" className={inputStyle} required />
+          </div>
+        )}
+
+        {selectedTiers.includes('photos') && (
+          <div>
+            <label className="text-sm font-semibold text-gray-300 block">
+              VLM Key <span className="text-red-500">*</span>
+            </label>
+            <input type="text" name="vlm" placeholder="VLM key" className={inputStyle} required />
+          </div>
+        )}
+
+        <div>
+          <p className="text-sm font-semibold text-gray-300 mb-2">Data Tiers</p>
+          <div className="flex flex-wrap gap-2">
+            {checkbox('tiers', 'reviews', 'Reviews', handleTierChange)}
+            {checkbox('tiers', 'photos', 'Photos', handleTierChange)}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-gray-300 mb-2">Output Format <span className="text-red-500">*</span></p>
+          <div className="flex flex-wrap gap-2">
+            {checkbox('format', 'excel', 'Excel')}
+            {checkbox('format', 'json', 'JSON')}
+            {checkbox('format', 'kmz', 'KMZ')}
+          </div>
         </div>
       </div>
 
-      <div>
-        <p className="text-sm font-semibold text-gray-300 mb-2">Output Format <span className="text-red-500">*</span></p>
-        <div className="flex flex-wrap gap-2">
-          {checkbox('format', 'excel', 'Excel')}
-          {checkbox('format', 'json', 'JSON')}
-          {checkbox('format', 'kmz', 'KMZ')}
-        </div>
-      </div>
-    </div>
+      <button
+        type="submit"
+        className="w-full mt-6 py-2 px-4 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded disabled:bg-gray-500"
+        disabled={loading}
+      >
+        {loading ? 'Processing...' : 'Submit Query'}
+      </button>
 
-    {/* The margin-top class (`mt-6`) now controls the spacing */}
-    <button
-      type="submit"
-      className="w-full mt-6 py-2 px-4 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded disabled:bg-gray-500"
-      disabled={loading}
-    >
-      {loading ? 'Processing...' : 'Submit Query'}
-    </button>
-
-    {error ? <p className="mt-4 text-red-500 text-center">{error}</p> : null}
-  </form>
-);
+      {error ? <p className="mt-4 text-red-500 text-center">{error}</p> : null}
+    </form>
+  );
 };
 
 export default MyFormComponent;

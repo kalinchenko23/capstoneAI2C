@@ -1,431 +1,107 @@
-"""
-
-This module is to get json file/raw data then extracts it to kmz
-
-There are 8 total functions:
-
-
-
-json_to_dict(j_file) - converts file into json 
-
-format_hours(business_hours_list) - formats hours information to a location
-
-get_string(data, val) - gets string data from json
-
-get_list(data, val) - gets list data from json
-
-get_icon(type) - gets the icon from the google (internet needed)
-
-generalize(name) - generalizes the type based on name 
-
-get_nw_se_coordinates(bbox_tuples) - for bounding boxes
-
-json_to_kmz(j_file, bbox_tuples, search_term) - main function
-
-"""
-
 import simplekml
-
 import json
-
-import copy
-
 from io import BytesIO
 
+# --- Constants ---
+ICON_URLS = {
+    "restaurant": "http://maps.google.com/mapfiles/kml/shapes/dining.png",
+    "hotel": "http://maps.google.com/mapfiles/kml/shapes/lodging.png",
+    "shopping": "http://maps.google.com/mapfiles/kml/shapes/shopping.png",
+    "park": "http://maps.google.com/mapfiles/kml/shapes/parks.png",
+    "default": "http://maps.google.com/mapfiles/kml/shapes/info-i.png"
+}
+TYPE_MAPPING = {
+    "restaurant": "restaurant", "food": "restaurant", "eat": "restaurant", 
+    "cuisine": "restaurant", "cafe": "restaurant",
+    "hotel": "hotel", "motel": "hotel", "resort": "hotel", 
+    "inn": "hotel", "lodge": "hotel", "cabin": "hotel",
+    "store": "shopping", "deli": "shopping", "bakery": "shopping", 
+    "grocery": "shopping", "market": "shopping",
+    "park": "park"
+}
 
-
-"""
-
-Purpose of this function is to take j_file & turn it to dictionary
-
-If the j_file is a path to json text, it converts to json dictionary
-
-If the j_file is a raw jason, copy it then return the copy
-
-"""
-
+# --- Functions ---
 def json_to_dict(j_file):
-
-    """
-
-    Args:
-
-        j_file (str or dict): Path to a JSON file or a dictionary object.
-
-    Returns:
-
-        dict: A dictionary containing the loaded JSON data.
-
-    """
-
+    """Converts a JSON file path or dictionary object into a dictionary."""
     if isinstance(j_file, str):
-
         with open(j_file, "r", encoding="utf-8") as file:
-
-            dictionary = json.load(file)
-
-    else:
-
-        dictionary = copy.deepcopy(j_file)
-
-    return dictionary
-
-
-
-"""
-
-Formats business hours as a newline-separated string.
-
-If hours are present(list), return with lines
-
-If hours are not present (str), returns msg "hours not available"
-
-"""
+            return json.load(file)
+    return j_file if isinstance(j_file, dict) else {}
 
 def format_hours(business_hours_list):
-
-    """
-
-    Args:
-
-        business_hours_list (list or str): Business hours in list or string format.
-
-    Returns:
-
-        str: Formatted business hours string.
-
-    """
-
+    """Formats a list of business hours into a newline-separated string."""
     if isinstance(business_hours_list, list):
-
-        return "\n".join(business_hours_list)  
-
-    else:
-
-        return business_hours_list
-
-
-
-"""
-
-Safely retrieves a string value from a dictionary.
-
-if its str - should return "not available"
-
-if something goes wrong in dictionary returns "unavailable"
-
-returns value of whatever key in string
-
-"""
+        return "\n".join(business_hours_list)
+    return business_hours_list if business_hours_list else "unavailable"
 
 def get_string(data, val):
-
-    """
-
-    Args:
-
-        data (dict): Dictionary to search.
-
-        val (str): Key to retrieve the value for.
-
-    Returns:
-
-        str: Retrieved value as a string, or "unavailable" if not found.
-
-    """
-
-    try:
-
-        answer = data[val]
-
-        return str(answer)
-
-    except:
-
-        return "unavailable"
-
-
-
-"""
-
-Safely retrieves a list from a dictionary.
-
-If the list is empty is will return 'unavailable'
-
-If the something goes wrong in dictionary, returns 'unavailable'
-
-returns values of whatver key in list
-
-"""
+    """Gets a value from a dict as a string, returning 'unavailable' if not found."""
+    return str(data.get(val, "unavailable"))
 
 def get_list(data, val):
-
-    """
-
-    Args:
-
-        data (dict): Dictionary to search.
-
-        val (str): Key to retrieve the value for.
-
-    Returns:
-
-        list or str: Retrieved value or "unavailable" if not found.
-
-    """
-
+    """Gets a list from a dict, returning 'unavailable' if not found."""
     return data.get(val, "unavailable") if isinstance(data, dict) else "unavailable"
 
-
-
-
-
-"""
-
-Retrieves ICONs from google
-
-Returns icon based on location type 
-
-"""
-
-def get_icon(type):
-
-    """
-
-    Args:
-
-        type (str): Type of location (e.g., "restaurant", "hotel").
-
-    Returns:
-
-        str: URL of the icon.
-
-    """
-
-    icons = {
-
-        "restaurant": "http://maps.google.com/mapfiles/kml/shapes/dining.png",
-
-        "hotel": "http://maps.google.com/mapfiles/kml/shapes/lodging.png",
-
-        "shopping": "http://maps.google.com/mapfiles/kml/shapes/shopping.png",
-
-        "park": "http://maps.google.com/mapfiles/kml/shapes/parks.png",
-
-        "default": "http://maps.google.com/mapfiles/kml/shapes/info-i.png"
-
-    }
-
-    return icons.get(type.lower(), icons["default"])
-
-
-
-
-
-"""
-
-Returns type of the location based on key names
-
-"""
+def get_icon(loc_type):
+    """Gets the icon URL for a given location type."""
+    return ICON_URLS.get(loc_type.lower(), ICON_URLS["default"])
 
 def generalize(name):
+    """Generalizes a specific location type using a direct mapping."""
+    return TYPE_MAPPING.get(str(name).lower(), "default")
 
-    """
-
-    Args:
-
-        name (str): Specific name of the location type.
-
-    Returns:
-
-        str: Generalized location type (e.g., "restaurant", "hotel").
-
-    """
-
-    types = {
-
-        "restaurant": ("restaurant", "food", "eat", "cuisine", "cafe"),
-
-        "hotel": ("hotel", "motel", "resort", "inn", "lodge", "cabin"),
-
-        "shopping": ("store", "deli", "bakery", "grocery", "market"),
-
-        "park": ("park")
-
-    }
-
-    for key, item in types.items():
-
-        if name in item:
-
-            return key
-
-    return "default"
-
-
-
-"""
-
-Extracts southwest and northeast coordinates from a bounding box.
-
-"""
-
-def get_nw_se_coordinates(bbox_tuples):
-
-    """
-
-    Args:
-
-        bbox_tuples (list): List of 4 corner tuples representing a bounding box.
-
-    Returns:
-
-        tuple: (SW_lat_lng, NE_lat_lng) as coordinate pairs.
-
-    """
-
-    lat_sw = bbox_tuples[0][1]
-
-    lng_sw = bbox_tuples[0][0]
-
-    lat_ne = bbox_tuples[2][1]
-
-    lng_ne = bbox_tuples[2][0]
-
-    return (lat_sw, lng_sw), (lat_ne, lng_ne)
-
-
-
-"""
-
-This is the main function of this module
-
-Converts JSON data representing places into a KMZ file with KML content.
-
-"""
+def get_sw_ne_coordinates(bbox_tuples):
+    """Extracts SW and NE coordinates from bounding box tuples."""
+    sw_lng, sw_lat = bbox_tuples[0]
+    ne_lng, ne_lat = bbox_tuples[2]
+    return (sw_lat, sw_lng), (ne_lat, ne_lng)
 
 def json_to_kmz(j_file, bbox_tuples, search_term):
-
     """
+    Creates a KMZ file in memory from JSON data of places.
 
     Args:
-
-        j_file (str or dict): JSON file path or data dictionary of places.
-
-        bbox_tuples (list): List of coordinate tuples forming a bounding box.
-
-        search_term (str): Term used for the location search.
+        j_file (str or dict): JSON file path or data dictionary.
+        bbox_tuples (list): List of coordinate tuples for the bounding box.
+        search_term (str): The search term used.
 
     Returns:
-
-        BytesIO: A KMZ (zipped KML) file object as a binary stream.
-
+        BytesIO: A KMZ file object as a binary stream.
     """
-
     output = BytesIO()
-
     kml = simplekml.Kml()
-
-
-
-    # Add bounding box polygon
-
-    pol = kml.newpolygon(name='Search Area')
-
-    pol.outerboundaryis = bbox_tuples
-
-    pol.style.linestyle.color = simplekml.Color.red
-
-    pol.style.linestyle.width = 2
-
-    pol.style.polystyle.fill = 0
-
-    sw, ne = get_nw_se_coordinates(bbox_tuples)
-
-    pol.description = f'''
-
-                        Search Term: {search_term}\n
-
-                        SW coordinate: ({sw[0]}, {sw[1]})\nNE coordinate: ({ne[0]}, {ne[1]})
-
-                       '''
-
-
-
     data = json_to_dict(j_file)
 
-    locations = []
+    # Add bounding box polygon
+    pol = kml.newpolygon(name='Search Area')
+    pol.outerboundaryis = bbox_tuples
+    pol.style.linestyle.color = simplekml.Color.red
+    pol.style.linestyle.width = 2
+    pol.style.polystyle.fill = 0
+    sw, ne = get_sw_ne_coordinates(bbox_tuples)
+    pol.description = f"Search Term: {search_term}\nSW: {sw}\nNE: {ne}"
 
-
-
-    for item in data['places']:
-
-        name = get_string(item['name'], 'original_name') + ':' + get_string(item['name'], 'translated_name')
-
-        loc_type = generalize(get_string(item, 'type'))
-
-        website = get_string(item, 'website')
-
-        phone = get_string(item, 'phone_number')
-
-        addr = get_string(item, 'address')
-
-        lat = get_string(item, 'latitude')
-
-        lng = get_string(item, 'longitude')
-
-        hours = format_hours(get_list(item, 'working_hours'))
-
-        url = get_string(item, 'google_maps_url')
-
-
-
-        #this was the only way to format the information on kmz
-
+    # Process each place and add it directly to the KML object
+    for item in data.get('places', []):
+        name_data = item.get('name', {})
+        name = f"{get_string(name_data, 'original_name')}:{get_string(name_data, 'translated_name')}"
+        
         desc = f"""
-
-        Phone: {phone}
-
-
-
-        Address: {addr}
-
-
-
-        Website: {website}
-
-
-
-        Hours: {hours}
-
-
-
-        Google Maps: {url}
-
+        Phone: {get_string(item, 'phone_number')}
+        Address: {get_string(item, 'address')}
+        Website: {get_string(item, 'website')}
+        Hours: {format_hours(get_list(item, 'working_hours'))}
+        Google Maps: {get_string(item, 'Maps_url')}
         """.strip()
 
-
-
-        icon_url = get_icon(loc_type)
-
-        locations.append({"name": name, "coords": (lng, lat), "desc": desc, 'icon': icon_url})
-
-
-
-    for item in locations:
-
-        pnt = kml.newpoint(name=item["name"], coords=[item["coords"]])
-
-        pnt.description = item["desc"]
-
-        pnt.style.iconstyle.icon.href = item["icon"]
-
+        coords = (get_string(item, 'longitude'), get_string(item, 'latitude'))
+        loc_type = generalize(get_string(item, 'type'))
+        
+        pnt = kml.newpoint(name=name, coords=[coords])
+        pnt.description = desc
+        pnt.style.iconstyle.icon.href = get_icon(loc_type)
         pnt.style.iconstyle.scale = 1.5
 
-
-
     kml.savekmz(output)
-
     output.seek(0)
-
     return output

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
-import MyFormComponent from "./QuerryForm"; // Adjust path if necessary
+import MyFormComponent from "./QuerryForm"; 
 
 const mapContainerStyle = {
   width: "100%",
@@ -18,14 +18,15 @@ function formatEstimatorResult(data: any) {
   }
   return (
     <>
-      There are a total of{" "}
-      <span className="text-yellow-400 font-semibold">{data.places}</span> places found. The reviews will take{" "}
-      <span className="text-yellow-400 font-semibold">{data.reviews_time}</span> minutes and cost about{" "}
-      <span className="text-yellow-400 font-semibold">${data.reviews_cost}</span>. Photos will take{" "}
-      <span className="text-yellow-400 font-semibold">{data.photos_time}</span> minutes and cost about{" "}
-      <span className="text-yellow-400 font-semibold">${data.photos_cost}</span>. Total estimates are{" "}
-      <span className="text-red-400 font-semibold">{data.time_everything}</span> minutes and{" "}
-      <span className="text-red-400 font-semibold">${data.cost_everything}</span>.
+      There {data.places === 1 ? "is" : "are"} a total of{" "}
+      <span className="text-yellow-400 font-semibold">{data.places}</span>{" "}
+      {data.places === 1 ? "place" : "places"} found. The review analysis will take{" "}
+      <span className="text-yellow-400 font-semibold">{data.reviews_time}</span>{" "}
+      {data.reviews_time === 1 ? "minute" : "minutes"}. Photo analysis will take{" "}
+      <span className="text-yellow-400 font-semibold">{data.photos_time}</span>{" "}
+      {data.photos_time === 1 ? "minute" : "minutes"}. Total estimates are{" "}
+      <span className="text-red-400 font-semibold">{data.time_everything}</span>{" "}
+      {data.time_everything === 1 ? "minute" : "minutes"}.
     </>
   );
 }

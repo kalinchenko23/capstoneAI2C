@@ -1,1 +1,0 @@
-  client = OpenAI(api_key=api_key)

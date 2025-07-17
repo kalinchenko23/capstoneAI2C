@@ -4,18 +4,9 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
-import { Menu } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
+
 
 
 interface RouteProps {
@@ -53,9 +44,10 @@ export const Navbar = () => {
 
           {/* mobile */}
           <span className="flex md:hidden">
-            <ModeToggle />
+            
+            {/* <ModeToggle /> */}
 
-            <Sheet
+            {/* <Sheet
               open={isOpen}
               onOpenChange={setIsOpen}
             >
@@ -99,7 +91,7 @@ export const Navbar = () => {
                   </a>
                 </nav>
               </SheetContent>
-            </Sheet>
+            </Sheet> */}
           </span>
 
           {/* desktop */}

@@ -4,8 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import time
 
-def rank_live_results_granularly(api_data, user_prompt, api_key, top_n=3):
-    
+def rank_live_results(api_data, user_prompt, api_key, top_n=3):  
     """
     Ranks live API data based on semantic similarity to a user prompt.
     
@@ -63,7 +62,7 @@ def rank_live_results_granularly(api_data, user_prompt, api_key, top_n=3):
     prompt_embedding = np.array(all_embeddings[0])
     snippet_embeddings = np.array(all_embeddings[1:])
     
-    # Calculate similarity for every snippet
+    # Calculate similarity for every snippet using cosine_similarity
     similarities = [cosine_similarity([prompt_embedding], [emb])[0][0] for emb in snippet_embeddings]
 
     # Find the best match for each location
@@ -80,7 +79,7 @@ def rank_live_results_granularly(api_data, user_prompt, api_key, top_n=3):
     best_matches_df = results_df.loc[best_match_indices]
 
     
-    # Rank locations based on their best match score ---
+    # Rank locations based on their best match score
     # Convert the original API data to a DataFrame to merge results
     locations_df = pd.DataFrame(api_data)
     

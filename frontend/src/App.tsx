@@ -11,11 +11,7 @@ function App() {
       <Navbar />
       <Instructions />
       <MapWithFormBelow />
-      {/* <HowItWorks /> */}
-      {/* <Features /> */}
-      {/* <Services /> */}
       <FAQ />
-      {/* <Footer /> */}
     </>
   );
 }

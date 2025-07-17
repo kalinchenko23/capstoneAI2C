@@ -1,38 +1,48 @@
 import json
 from openai import OpenAI
+from typing import List, Dict
 
 LLM_DEPLOYMENT = "gpt-4.1-mini-2025-04-14"
 
-def get_review_summary(llm_key,reviews): 
-    """Initialize the OpenAI client, provide system message, pass json reviews to OpenAI Model"""
-
-    reviews_list=[]    
-    # Iterate over the reviews for each place
-    for review in reviews:
-        review_data = {
-            "review_text": review.get("text", {}).get("text", "")
-        }
-        reviews_list.append(review_data)
-    
-    # Initialize the OpenAI client...
-    client = OpenAI(api_key=llm_key)
-
-    # Create a system message
-    system_message = """You are a local travel advisor that summarizes customer reviews. 
-    Summarize the review_text field in four sentences. The review should be in one paragraph not in bullet format.
+def get_review_summary(client: OpenAI, reviews: List[Dict]) -> str:
     """
-    messages_array = [{"role": "system", "content": system_message}]
+    Summarizes customer reviews using an OpenAI LLM.
+    
+    Args:
+        llm_key (str): API key for OpenAI.
+        reviews (List[Dict]): List of review dictionaries.
 
-    messages_array.append({"role": "user", "content": json.dumps(reviews_list, indent=2)})
-    response = client.chat.completions.create(
-        model=LLM_DEPLOYMENT,
-        temperature=0.0,
-        max_tokens=1200,
-        messages=messages_array
-    )
+    Returns:
+        str: A summary paragraph of all reviews.
+    """
+    if not reviews:
+        return "No reviews available for summarization."
 
-    generated_text = response.choices[0].message.content
+    review_texts = [{"review_text": r.get("text", {}).get("text", "")} for r in reviews if r.get("text")]
 
-    # Add generated text to message array
-    messages_array.append({"role": "assistant", "content": generated_text})
-    return generated_text
+    messages = [
+        {
+            "role": "system",
+            "content": (
+                "You are a local travel advisor that summarizes customer reviews. "
+                "Summarize the 'review_text' fields in four sentences. "
+                "The summary should be a single paragraph, not in bullet format."
+            )
+        },
+        {
+            "role": "user",
+            "content": json.dumps(review_texts, indent=2)
+        }
+    ]
+
+    try:
+        response = client.chat.completions.create(
+            model=LLM_DEPLOYMENT,
+            temperature=0.0,
+            max_tokens=400,
+            messages=messages
+        )
+        return response.choices[0].message.content.strip() if response.choices else "No summary generated."
+    
+    except Exception as e:
+        return f"Failed to generate review summary: {str(e)}"

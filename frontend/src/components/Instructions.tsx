@@ -1,6 +1,3 @@
-
-import Map from "./Map"
-
 export const Instructions = () => {
   return (
     <>
